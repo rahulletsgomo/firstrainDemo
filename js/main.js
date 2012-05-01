@@ -1,12 +1,13 @@
 $("#signinButton").live("click", authenticateUser);
+
 userID = "";
 URL = "http://10.10.10.134:9999"
 
 function authenticateUser() {
     var url = URL + "/DataProvider/validateUser";
     //"http://mobile.firstrain.com/ipad02/authentication.jsp";
-    var usernameField = $("#usernameInput").val();
-    var passwordField = $("#truePWInput").val();
+    var usernameField = "vandana"//$("#usernameInput").val();
+    var passwordField = "firstrain"//$("#truePWInput").val();
     var data = {username:usernameField, password:passwordField};
 //    callAJAX(url, data, "getMonitorInfo")
     try {
@@ -26,7 +27,7 @@ function authenticateUser() {
                 else {
                     alert("Login Password do not match : " + data.status)
                 }
-                console.log(JSON.stringify(data));
+//                console.log(JSON.stringify(data));
             },
             error:function (e) {
                 alert("unsuccessful : " + e.status)
@@ -42,35 +43,7 @@ function authenticateUser() {
 function getMonitorInfo() {
     var url = URL + "/DataProvider/monitorDetails";
     var data = {userId:userID};
-    callAJAX(url, data)
-/*    try {
-        $.ajax({
-            url:url,
-            type:"GET",
-            dataType:"JSON",
-            async:true,
-            data:{userId:83},
-            success:function (data) {
-                if (data.status == "SUCCESS") {
-//                    changeContent(data)
-                }
-                else {
-                    alert("Data is not in successfull state : ")
-                }
-//                console.log(JSON.stringify(data));
-                var getData = JSON.stringify(data);
-                getMonitorDetails(data)
-//                console.log(">>>>>>>> JSON Response : "+getData.data.userName)
-//                console.log(">>>>>>>> myMonitor List : "+getData.data.myMonitorList.length);
-            },
-            error:function (e) {
-                alert("unsuccessful : " + e.status)
-            }
-        });
-    }
-    catch (e) {
-        alert("adasdasd : " + e)
-    }*/
+    callAJAX(url, data, "getMonitorInfo")
 }
 
 
@@ -81,6 +54,7 @@ function getMonitorDetails(data) {
      "eventAvailable":false,"tweetAvailable":false,"mailAvailable":false,
      "mailBadge":false,"hasNew":false,"resultList":{"subList":[]}
      */
+    console.log("Successfully inside getMonitorDetails");
     console.log(">>>>>>>> JSON Response from getMonitor Details : " + data.data.myMonitorList.length)
     var storeData = "";
     var monitorIdList = [];
@@ -90,7 +64,7 @@ function getMonitorDetails(data) {
         storeData += " : " + data.data.myMonitorList[i].tweetAvailable + "<br />";
     }
     for (var i = 0; i < monitorIdList.length; i++) {
-        console.log(">>>>>>> Monitor Ids : " + monitorIdList[i])
+//        console.log(">>>>>>> Monitor Ids : " + monitorIdList[i])
 //        getMonitorSearchDetails(monitorIdList[i])
     }
     $("#testMonitorContent").html(storeData)
@@ -98,16 +72,16 @@ function getMonitorDetails(data) {
 
 }
 
-function getSearchResults(){
+function getSearchResults() {
 
 }
 function getMonitorSearchDetails(monitorID) {
     var url = URL + "/DataProvider/monitorDetails/searchResults";
     var data = {id:monitorID, type:"monitor"};
-    callAJAX(url, data)
+    callAJAX(url, data, "getMonitorSearchDetails")
 }
 
-function callAJAX(url, data){
+function callAJAX(url, data, callingFunction) {
     try {
         $.ajax({
             url:url,
@@ -116,31 +90,31 @@ function callAJAX(url, data){
             async:true,
             data:data,
             success:function (data) {
-                if (data.status == "SUCCESS") {
-                }
-                else {
+                if (data.status != "SUCCESS") {
                     alert("Data is not in successfull state : ")
                 }
-                getMonitorDetails(data)
-                /*if(functionToCall != ""){
-                    switch(functionToCall){
-                        case "getMonitorInfo":
-                            getMonitorInfo(data);
-                            break;
-                        default:
-                            console.log(">>>>>>>> JSON Response : "+JSON.stringify(data))
-                    }
-                }*/
-                var getData = JSON.stringify(data);
-                console.log(">>>>>>>> Monitor Search Response : " + getData)
+                methodToCall(callingFunction, data)
             },
             error:function (e) {
-                alert("unsuccessful : " + e.status)
+                alert("Unable to get the data : " + e.status)
             }
         });
     }
     catch (e) {
         alert("Unable to get into ajax function : " + e)
+    }
+}
+
+function methodToCall(callingFunction, data) {
+    switch (callingFunction) {
+        case "getMonitorInfo" :
+            getMonitorDetails(data);
+            break;
+        case "getMonitorSearchDetails" :
+            console.log(">>>>>>>> Monitor Search Response : " + JSON.stringify(data));
+            break;
+        default :
+            console.log(">>>>>>>> Sorry no operation is available for this event ....");
     }
 }
 
