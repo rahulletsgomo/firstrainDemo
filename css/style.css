@@ -346,4 +346,11 @@ input::-webkit-input-placeholder {
 #mask { position:absolute; top:0px; left:0px; z-index:9000; background-color:#000000; display:none; }
 .close { position:absolute; right:-15px; top:-13px; }
 
+/*
+Landing Page
+*/
+#docSummary{
+    height: 10px;
+    overflow: hidden;
+}
 

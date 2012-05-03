@@ -3,19 +3,16 @@
 <head>
     <title>FirstRain Mobile</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no;"/>
-    <!-- Turn off telephone number detection. -->
     <meta name="format-detection" content="telephone=no">
     <meta charset="utf-8">
 
-    <!-- Load the Framework Javascript files -->
-    <script type="text/javascript" charset="utf-8" src="phonegap-1.4.1.js"></script>
-    <script type="text/javascript" charset="utf-8" src="jquery-1.6.4.min.js"></script>
-    <script type="text/javascript" charset="utf-8" src="jquery.mobile-1.0.1.min.js"></script>
-    <!--<script type="text/javascript" charset="utf-8" src="js/getData.js"></script>-->
-    <script type="text/javascript" src="js/testJSON/loginSection.js"></script>
     <link href="jquery.mobile-1.0.1.min.css" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="css/style.css" type="text/css"/>
 
+    <script type="text/javascript" charset="utf-8" src="phonegap-1.4.1.js"></script>
+    <script type="text/javascript" charset="utf-8" src="jquery-1.6.4.min.js"></script>
+    <script type="text/javascript" charset="utf-8" src="jquery.mobile-1.0.1.min.js"></script>
+    <script type="text/javascript" src="js/testJSON/loginSection.js"></script>
 </head>
 
 <body>
@@ -66,18 +63,19 @@
     </div>
 
     <div data-role="content">
-        <div class='monitorTeaser' style="padding-bottom:10px;">
-            <h3 class="screenSubHeader bgred">FirstReads<label style="float:right;">1 to 20</label></h3>
-            <ul data-role="listview" id="userPasslistview" data-theme="d"
+        <div class='monitorTeaser' id="docArea" style="padding-bottom:10px;">
+            <h3 class="screenSubHeader bgred">FirstReads<label style="float:right;"><span id="currentDoc"></span> to
+                <span id="docLength"></span> </label></h3>
+            <ul data-role="listview" data-theme="d"
                 style="padding:0px;margin:0;-webkit-box-shadow: 0px 4px 5px #999;">
                 <li style="padding:2px 0 0 2px;">
                     <div style="padding:10px;">
-                        <div style="font-size:20px;" id="headLineSpace">Google Challenge Oracle Copyright Claim</div>
-                        <div style="color:#5a91bb;height:30px;line-height:30px"><img src='img/jw.png'
-                                                                                     style="height:15px"/> Information
-                            Week
+                        <div style="font-size:20px;" id="docTitle">Google Challenge Oracle Copyright Claim</div>
+                        <div style="color:#5a91bb;height:30px;line-height:30px">
+                            <img id="docIcon" src='img/jw.png' style="height:15px"/>
+                            <span id="docSourceName"></span>
                         </div>
-                        <div style="padding-bottom:10px" id="testMonitorContent">This is a dummy content
+                        <div style="padding-bottom:10px" id="docSummary">This is a dummy content
                         </div>
                     </div>
                 </li>

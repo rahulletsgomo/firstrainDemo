@@ -24,8 +24,47 @@ function recentHistory() {
     callAJAX(url, "recentHistory");
 }
 
-function inserFirstReads(){
+function inserFirstReads(data) {
+    var docList = data.data.docList;
+    var docCount = data.data.docList.length;
+    getCurrentNode = 0;
+    getCurrentNodeNumber = getCurrentNode + 1;
 
+    getFirstReads(docList, docCount);
+
+    $("#docArea").bind("click", function () {
+        getFirstReads(docList, docCount, true)
+    })
+
+    $("#docArea").bind("swipeLeft", function () {
+        alert(">>>>> Swiped Left ...");
+    })
+
+    $("#docArea").bind("swipeRight", function () {
+        alert(">>>>> Swiped Right ...");
+    })
+
+}
+
+function getFirstReads(docList, docCount, changeContent) {
+
+
+    if (changeContent) {
+        getCurrentNode = getCurrentNode + 1;
+        getCurrentNodeNumber++;
+        console.log(">>>>getCurrentNode : " + getCurrentNode + ", getCurrentNodeNumber : " + getCurrentNodeNumber)
+    }
+
+    $("#currentDoc").html(getCurrentNodeNumber)
+    $("#docLength").html(docCount)
+    var docTitle = docList[getCurrentNode].title
+    var docSourceName = docList[getCurrentNode].source.name
+    var docIcon = docList[getCurrentNode].favicon
+    var docSummary = docList[getCurrentNode].summary
+    $("#docTitle").html(docTitle)
+    $("#docSourceName").html(docSourceName)
+    $("#docIcon").attr("src", docIcon)
+    $("#docSummary").html(docSummary)
 }
 
 function insertActiveMonitor(data) {
@@ -81,6 +120,7 @@ function methodToCall(callingFunction, data) {
         case "landingPage":
 //            console.log(">>>>>>>>>>> Response from landingPage user : " + JSON.stringify(data));
             insertActiveMonitor(data)
+            inserFirstReads(data)
             break;
         case "recentHistory":
             console.log(">>>>>>>>>>> Response from recentHistory user : " + JSON.stringify(data));
