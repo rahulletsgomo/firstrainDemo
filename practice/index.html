@@ -1,0 +1,58 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title>This is the index page of the practice section</title>
+
+    <link href="css/jquery.mobile-1.0.1.min.css" rel="stylesheet" type="text/css">
+    <link href="css/style.css" rel="stylesheet" type="text/css">
+    <link href="css/frMobileMain.css" rel="stylesheet" type="text/css">
+    <script type="text/javascript" src="js/jquery-1.6.4.min.js"></script>
+    <script type="text/javascript" src="js/jquery.mobile-1.0.1.min.js"></script>
+    <script type="text/javascript" src="js/landingPage.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+
+</head>
+<body>
+<div data-role="page" id="homePage">
+
+    <div data-role="header" class="customheader" data-position="fixed">
+        <h1>FirstRain</h1>
+        <input type="button" id="login-button" class="header_bt ui-btn-right" value="Menu" data-role="none">
+    </div>
+    <div data-role="content">
+        <div class='monitorTeaser' id="docArea" style="padding-bottom:10px;">
+            <h3 class="screenSubHeader bgred">FirstReads<label style="float:right;"><span id="currentDoc"></span> to
+                <span id="docLength"></span> </label></h3>
+            <ul data-role="listview" data-theme="d"
+                style="padding:0px;margin:0;-webkit-box-shadow: 0px 4px 5px #999;">
+                <li style="padding:2px 0 0 2px;">
+                    <div style="padding:10px;">
+                        <div style="font-size:20px;" id="docTitle">Google Challenge Oracle Copyright Claim</div>
+                        <div style="color:#5a91bb;height:30px;line-height:30px">
+                            <img id="docIcon" src='img/jw.png' style="height:15px"/>
+                            <span id="docSourceName"></span>
+                        </div>
+                        <div style="padding-bottom:10px" id="docSummary">This is a dummy content
+                        </div>
+                    </div>
+                </li>
+            </ul>
+
+        </div>
+
+        <div class='monitorTeaser' style="padding-bottom:2px;">
+            <h3 class="screenSubHeader">Recently Active Monitors</h3>
+            <ul data-role="listview" id="activeMonitorList" data-theme="d"
+                style="padding:0px;margin:0;-webkit-box-shadow: 0px 4px 5px #999;">
+            </ul>
+
+        </div>
+        <div class='touchable showAllMonitorsButton'>All Monitors</div>
+    </div>
+
+</div>
+
+
+</body>
+</html>
