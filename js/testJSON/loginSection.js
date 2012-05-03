@@ -24,20 +24,22 @@ function recentHistory() {
     callAJAX(url, "recentHistory");
 }
 
+function inserFirstReads(){
+
+}
+
 function insertActiveMonitor(data) {
     var monitorList = data.data.topMonitorList;
     var monitorNames = "";
     for (var i = 0; i < monitorList.length; i++) {
-        monitorNames += '<li style="padding:2px 0 0 2px;">';
+        monitorNames += '<li class="ui-li ui-li-static ui-body-d" style="padding:2px 0 0 2px;">';
         monitorNames += '<div style="padding:10px;">';
         monitorNames += '<label style="font-size:14px;text-shadow:none;">' + monitorList[i].monitorName + '</label>';
         monitorNames += '<label style="float:right;">';
         monitorNames += '<img src = "../../img/r-icon_carrot.png" style = "height:24px" /></label>';
         monitorNames += '</div></li>';
-//        monitorNames += "<li>" + monitorList[i].monitorName + "</li>";
-        console.log(">>>>>>> Monitor Name : " + monitorList[i].monitorName)
     }
-    $("#activeMonitorList").append(monitorNames)
+    $("#activeMonitorList").html(monitorNames)
 }
 
 
