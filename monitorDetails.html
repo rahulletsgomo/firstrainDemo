@@ -1,0 +1,66 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title>This is a test page</title>
+
+    <link href="jquery.mobile-1.0.1.min.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="css/monitorDetails.css" type="text/css"/>
+    <link rel="stylesheet" href="css/style.css" type="text/css"/>
+
+    <script type="text/javascript" charset="utf-8" src="phonegap-1.4.1.js"></script>
+    <script type="text/javascript" charset="utf-8" src="jquery-1.6.4.min.js"></script>
+    <script type="text/javascript" charset="utf-8" src="jquery.mobile-1.0.1.min.js"></script>
+    <script type="text/javascript" src="js/globalVars.js"></script>
+    <script type="text/javascript" src="js/ajaxFunctions.js"></script>
+    <script type="text/javascript" src="js/monitorDetails.js"></script>
+
+</head>
+<body onload="check()">
+<div data-role="page" id="firstrainLoginPage"
+     style="background:-webkit-gradient(linear, center top, center bottom, from(#008BBA), to(#003198));">
+    <div data-role="header" class="customheader" data-position="fixed">
+        <h1>FirstRain</h1>
+    </div>
+    <div class="header">
+        <div class="bluebtn">ALL Selection</div>
+    </div>
+    <div class="online_info_container">
+        <div><h4><span id="Monitor_monitorName">Online Information &#38; Content Service Trends</span></h4></div>
+        <div class="subheader_red">First Reads</div>
+        <div class="newscontainer">
+            <div class="news_content">
+                <div class="news_heading">Online Information &#38; Content Service Trends</div>
+                <div class="source_container">
+                    <div class="source_name">Mashable</div>
+                    <div class="date">Wed, May 2</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="subheader_blue">Online Information &#38; Content Service Trends</div>
+        <div class="newscontainer">
+            <div class="news_content">
+                <div class="news_heading">Online Information &#38; Content Service Trends</div>
+                <div class="source_container">
+                    <div class="source_name">Mashable</div>
+                    <div class="date">Wed, May 2</div>
+                </div>
+            </div>
+            <div class="news_content">
+                <div class="news_heading">Online Information &#38; Content Service Trends</div>
+                <div class="source_container">
+                    <div class="source_name">Mashable</div>
+                    <div class="date">Wed, May 2</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+    function check() {
+        document.getElementById("Monitor_monitorName").innerHTML = "Content Changed";
+    }
+</script>
+</body>
+</html>

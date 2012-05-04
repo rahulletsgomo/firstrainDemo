@@ -1,0 +1,112 @@
+.header {
+    width: 100%;
+    background: whiteSmoke;
+    color: #ffffff;
+    border: 1px solid #E5E5E5;
+}
+
+.bluebtn {
+    width: 50%;
+    padding: 20px;
+    display: block;
+    cursor: pointer;
+    text-align: center;
+    font-size: 14px;
+    line-height: 14px;
+    font-weight: bold;
+    color: white;
+    text-shadow: 0px 1px 0px rgba(0, 0, 0, 0.4);
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    background-color: #00509B;
+    background: -webkit-gradient(linear, left top, left bottom, from(#009FD1), to(#00509B));
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+    -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+    margin: 10px 64px;
+}
+
+.online_info_container {
+    width: 100%;
+    background: whiteSmoke;
+    padding: 7px;
+    float: left;
+
+}
+
+.online_info_container h4 {
+    text-shadow: 0px 3px #ffffff;
+    margin: 0px;
+    color: #666666;
+    font: 600 16px/17px "Open Sans", Helvetica, Arial, sans-serif;
+
+}
+
+.newscontainer {
+    width: 95%;
+    float: left;
+    -webkit-box-shadow: 0px 2px 3px -1px rgba(100, 100, 100, .7) !important;
+
+}
+
+.subheader_red {
+    width: 92%;
+    float: left;
+    padding: 3px 5px;
+    margin: 0;
+    font-size: 12px;
+    text-shadow: none;
+    color: white;
+    font-weight: bold;
+    background: -webkit-gradient(linear, left top, left bottom, from(#b80000), to(#9b0000));
+    border-bottom: 2px solid #3b6f3a;
+    margin-top: 20px;
+}
+
+.subheader_blue {
+    width: 92%;
+    float: left;
+    padding: 3px 5px;
+    margin: 0;
+    font-size: 12px;
+    text-shadow: none;
+    color: white;
+    font-weight: bold;
+    background: -webkit-gradient(linear, left top, left bottom, from(#125790), to(#203F5E));
+    border-bottom: 2px solid #030045;
+    margin-top: 20px;
+}
+
+.newscontainer .news_content {
+    border: 1px solid #D6D6D6;
+
+    padding: 20px 20px 20px 40px;
+    position: relative;
+    overflow: hidden;
+    background: url("img/r-icon_carrot.png") no-repeat 98% 50%;
+
+}
+
+.newscontainer .news_content .news_heading {
+
+    font: 600 20px/21px "Open Sans", Helvetica, Arial, sans-serif;
+    margin-bottom: 15px;
+}
+
+.source_container {
+    width: 100%;
+    float: left;
+}
+
+.source_name {
+    color: #5A91BB;
+    font-size: 14px;
+    float: left;
+    font-weight: bold;
+
+}
+
+.date {
+    color: #666;
+    float: right;
+    font-weight: bold;
+}

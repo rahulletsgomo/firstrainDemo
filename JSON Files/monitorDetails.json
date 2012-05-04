@@ -1,0 +1,770 @@
+{"message":"Monitor Result populated successfully !!!", "data":{
+    "monitorId":"M:69813",
+    "monitorName":"at&t",
+    "itemCount":3,
+    "managementTurnoverAvailable":true,
+    "eventAvailable":true,
+    "tweetAvailable":true,
+    "mailAvailable":false,
+    "mailBadge":false,
+    "hasNew":true,
+    "tweetScope":3,
+    "itemList":[
+        {
+            "id":"S:4950401",
+            "title":"Capco Group",
+            "focusedOn":"",
+            "hasChart":false
+        },
+        {
+            "id":"S:4950273",
+            "title":"Melcor Developments Ltd.",
+            "focusedOn":"",
+            "hasChart":false
+        },
+        {
+            "id":"S:4950315",
+            "title":"Wells Fargo & Company",
+            "focusedOn":"",
+            "hasChart":false
+        }
+    ],
+    "resultList":{
+        "subList":[
+            {
+                "title":"at&t",
+                "type":"MonitorSummary",
+                "id":"M:69813",
+                "hasMoreResults":true,
+                "last":5,
+                "mgmtTurnover":[],
+                "events":[],
+                "tweets":[],
+                "docs":[],
+                "searchList":[],
+                "docBuckets":[
+                    {
+                        "title":"Yesterday",
+                        "docList":[
+                            {
+                                "id":"D:526247003",
+                                "date":1335984041000,
+                                "source":{
+                                    "name":"Bloomberg.com",
+                                    "id":"SRC:10257",
+                                    "searchToken":"S:Bloombergcom"
+                                },
+                                "title":"Wells Fargo’s Market Share of U.S. Mortgages Tops 33%",
+                                "groupId":315904339,
+                                "url":"http://www.bloomberg.com/news/2012-05-02/wells-fargo-s-market-share-of-u-s-mortgages-tops-33-.html",
+                                "accessType":0,
+                                "matchedContentTypes":[
+                                    {
+                                        "name":"News Wires",
+                                        "id":"C:276205",
+                                        "searchToken":"F:NewsWires"
+                                    }
+                                ],
+                                "clipped":false,
+                                "image":"http://10.10.10.45/imagerepository/1/486/4a/a9/4aa9fbf0-9489-11e1-a8a5-0019b9cc211d.jpg",
+                                "favicon":"http://10.10.10.45/imagerepository/3/477/06/e4/06e42bc0-8dd6-11e1-add4-0019b9cc211d.ico"
+                            },
+                            {
+                                "id":"D:526238501",
+                                "date":1335982583000,
+                                "source":{
+                                    "name":"Southeast Texas Record",
+                                    "id":"SRC:41344",
+                                    "searchToken":"S:SoutheastTexasRecord"
+                                },
+                                "title":"Bank accuses Beaumont man of hiding assets to avoid repaying $6M",
+                                "groupId":315897346,
+                                "url":"http://www.setexasrecord.com/news/243686-bank-accuses-beaumont-man-of-hiding-assets-to-avoid-repaying-6m",
+                                "accessType":0,
+                                "matchedContentTypes":[
+                                    {
+                                        "name":"News and Web",
+                                        "id":"C:500840",
+                                        "searchToken":"F:NewsandWeb"
+                                    }
+                                ],
+                                "clipped":false,
+                                "image":"http://10.10.10.45/imagerepository/1/486/45/ed/45ed8cb0-9486-11e1-a8a5-0019b9cc211d.jpg",
+                                "favicon":"http://10.10.10.45/imagerepository/3/478/35/7a/357a8910-8ddc-11e1-add4-0019b9cc211d.bmp"
+                            }
+                        ]
+                    },
+                    {
+                        "title":"Tuesday, 01-May",
+                        "docList":[
+                            {
+                                "id":"D:526046405",
+                                "date":1335937463000,
+                                "source":{
+                                    "name":"Wells Fargo & Company",
+                                    "id":"SRC:7624",
+                                    "searchToken":"S:WellsFargoCompany"
+                                },
+                                "title":"Wells Fargo  launches WellsFargoCommunity.com, its new online resource for planning for a college education",
+                                "groupId":315562142,
+                                "url":"https://www.wellsfargo.com/press/2012/20120501_WellsFargolaunches",
+                                "accessType":0,
+                                "matchedContentTypes":[
+                                    {
+                                        "name":"Press Releases",
+                                        "id":"C:276204",
+                                        "searchToken":"F:PressReleases"
+                                    }
+                                ],
+                                "clipped":false,
+                                "favicon":"http://10.10.10.45/imagerepository/3/478/8f/01/8f01d8d0-8ddc-11e1-add4-0019b9cc211d.ico"
+                            },
+                            {
+                                "id":"D:525978601",
+                                "date":1335912416000,
+                                "source":{
+                                    "name":"Winston-Salem Journal",
+                                    "id":"SRC:70419",
+                                    "searchToken":"S:WinstonSalemJournal"
+                                },
+                                "title":"Wells Fargo penalized more than $2.7M for Wachovia-era investment violations",
+                                "groupId":315680466,
+                                "url":"http://www2.journalnow.com/business/2012/may/01/wells-fargo-penalized-more-than-27m-for-wachovia-e-ar-2230441/",
+                                "accessType":0,
+                                "matchedContentTypes":[
+                                    {
+                                        "name":"News and Web",
+                                        "id":"C:500840",
+                                        "searchToken":"F:NewsandWeb"
+                                    }
+                                ],
+                                "clipped":false,
+                                "favicon":"http://10.10.10.45/imagerepository/3/477/31/5d/315d5c80-8dd8-11e1-add4-0019b9cc211d.ico"
+                            },
+                            {
+                                "id":"D:525883955",
+                                "date":1335892247000,
+                                "source":{
+                                    "name":"Bloomberg.com",
+                                    "id":"SRC:10257",
+                                    "searchToken":"S:Bloombergcom"
+                                },
+                                "title":"Finra Fines Wells Fargo, Three Others Over ETF Sales",
+                                "groupId":315590313,
+                                "url":"http://www.bloomberg.com/news/2012-05-01/finra-fines-citigroup-morgan-stanley-over-leveraged-etf-sales.html",
+                                "accessType":0,
+                                "matchedContentTypes":[
+                                    {
+                                        "name":"News Wires",
+                                        "id":"C:276205",
+                                        "searchToken":"F:NewsWires"
+                                    }
+                                ],
+                                "clipped":false,
+                                "favicon":"http://10.10.10.45/imagerepository/3/477/06/e4/06e42bc0-8dd6-11e1-add4-0019b9cc211d.ico"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "title":"FirstTweets",
+                "type":"Tweets",
+                "hasMoreResults":true,
+                "last":5,
+                "mgmtTurnover":[],
+                "events":[],
+                "tweets":[
+                    {
+                        "name":"Titleist Europe",
+                        "id":"TW:198018597266792448",
+                        "date":1336046280000,
+                        "description":"The official Twitter page for Titleist on the European Tour!!",
+                        "title":"<span class='bold'> <span class='colorBlue'>#TeamTitleist</span> video: <span class='colorBlue'>@TitleistEurope</span> ambassador <span class='colorBlue'>@McIlroyRory</span> updates  <span class='colorBlue'>#TeamTitleist</span> from Quail Hollow range, home of Wells Fargo Championship</span>",
+                        "entity":{
+                            "name":"Wells Fargo & Company",
+                            "id":"C:289630",
+                            "searchToken":"C:WellsFargoCompany",
+                            "ticker":"WFC"
+                        },
+                        "userImage":"http://a0.twimg.com/profile_images/783218960/Titleist_Europe_normal.jpg",
+                        "screenName":"TitleistEurope",
+                        "timeLabel":"2 hours",
+                        "clipped":false
+                    },
+                    {
+                        "name":"Erik Schatzker",
+                        "id":"TW:198021220032200705",
+                        "date":1336046880000,
+                        "description":"Bloomberg TV anchor, editor-at-large. I host InsideTrack, weekdays 0600-0800 ET.",
+                        "title":"<span class='bold'>Wells Fargo had an astounding 33.9% of the U.S. mortgage market last quarter, more than the next seven banks combined</span>",
+                        "entity":{
+                            "name":"Wells Fargo & Company",
+                            "id":"C:289630",
+                            "searchToken":"C:WellsFargoCompany",
+                            "ticker":"WFC"
+                        },
+                        "userImage":"http://a0.twimg.com/profile_images/1214997948/ehs2_normal.png",
+                        "screenName":"ErikSchatzker",
+                        "timeLabel":"2 hours",
+                        "clipped":false
+                    },
+                    {
+                        "name":"Natasha Kulkarni",
+                        "id":"TW:198052327020695554",
+                        "date":1336054320000,
+                        "description":"From Trading to TV. When I'm not reporting breaking business news, I'm  dishing celebrity gossip! Tweets are my own, not Bloomberg's. RTs are not endorsements.",
+                        "title":"<span class='bold'> <span class='colorBlue'>#WellsFargo</span> won the biggest market share in home lending ever recorded as rivals pulled back after suffering $65B+ in total mortgage losses.</span>",
+                        "entity":{
+                            "name":"Wells Fargo & Company",
+                            "id":"C:289630",
+                            "searchToken":"C:WellsFargoCompany",
+                            "ticker":"WFC"
+                        },
+                        "userImage":"http://a0.twimg.com/profile_images/1638597361/peuf_20111114_6_normal.jpg",
+                        "screenName":"ReporterNatasha",
+                        "timeLabel":"19 mins",
+                        "clipped":false
+                    },
+                    {
+                        "name":"Charlotte Saulter",
+                        "id":"TW:198055156053577729",
+                        "date":1336054980000,
+                        "description":"HIgh Volume REO Broker. I sold 155 Bank Owned Homes in 2010.\n866-847-1407",
+                        "title":"<span class='bold'>Wells Fargo pushes home lending dominance: Wells Fargo &amp; Co. has won the largest-ever market share in the U.S.</span> h... <span class='lightGrey'>http://t.co/PMg4azRY</span>",
+                        "entity":{
+                            "name":"Wells Fargo & Company",
+                            "id":"C:289630",
+                            "searchToken":"C:WellsFargoCompany",
+                            "ticker":"WFC"
+                        },
+                        "userImage":"http://a0.twimg.com/profile_images/1278535977/20090915110956_premier_proof_normal.jpg",
+                        "screenName":"PinoleREOBroker",
+                        "timeLabel":"8 mins",
+                        "clipped":false
+                    },
+                    {
+                        "name":"Andy Brooks",
+                        "id":"TW:198028718818598914",
+                        "date":1336048680000,
+                        "description":"I live to inspire and empower men to reach their full potential. Thanks to incredible grace, I get to wake up every day to pursue my calling.",
+                        "title":"<span class='bold'>Our team running the driving range at the Wells Fargo Championship has been first class. They've been phenomenal from sun up to sun down!</span>",
+                        "entity":{
+                            "name":"Wells Fargo & Company",
+                            "id":"C:289630",
+                            "searchToken":"C:WellsFargoCompany",
+                            "ticker":"WFC"
+                        },
+                        "userImage":"http://a0.twimg.com/profile_images/2129123361/Screen_shot_2012-04-15_at_1.44.56_PM_normal.png",
+                        "screenName":"andyalexbrooks",
+                        "timeLabel":"1 hour",
+                        "clipped":false
+                    }
+                ],
+                "docs":[],
+                "searchList":[],
+                "docBuckets":[]
+            },
+            {
+                "title":"Management Changes",
+                "type":"ManagementTurnover",
+                "hasMoreResults":true,
+                "last":5,
+                "mgmtTurnover":[
+                    {
+                        "id":"MT:17974503",
+                        "date":1338534000000,
+                        "title":"<span class='colorOrange'>Melcor Developments Ltd.</span><br/><span class='bold'>Ralph Young</span>, President <span class='bold'><span class='colorBlue'>MOVED</span></span> ",
+                        "changeType":"INTERNALMOVE",
+                        "futureEvent":true,
+                        "clipped":false
+                    },
+                    {
+                        "id":"MT:17974504",
+                        "date":1338534000000,
+                        "title":"<span class='colorOrange'>Melcor Developments Ltd.</span><br/><span class='bold'>Brian Barker</span> <span class='bold'><span class='colorBlue'>MOVED</span></span> to President",
+                        "changeType":"INTERNALMOVE",
+                        "futureEvent":true,
+                        "clipped":false
+                    },
+                    {
+                        "id":"MT:17963233",
+                        "date":1335337200000,
+                        "title":"<span class='colorOrange'>Wells Fargo &amp; Company</span><br/><span class='bold'>Tracy Maziek</span> <span class='bold'><span class='colorGreen'>JOINED</span></span> as Senior Managing Director of Healthcare Finance Group-Wells Fargo Capital Finance, Santa Monica, CA",
+                        "changeType":"HIRE",
+                        "futureEvent":false,
+                        "clipped":false
+                    },
+                    {
+                        "id":"MT:17573401",
+                        "date":1335250800000,
+                        "title":"<span class='colorOrange'>Wells Fargo &amp; Company</span><br/><span class='bold'>Mackey J. Mcdonald</span>, Board of Directors <span class='bold'><span class='colorRed'>LEFT</span></span> ",
+                        "changeType":"DEPARTURE",
+                        "futureEvent":false,
+                        "clipped":false
+                    },
+                    {
+                        "id":"MT:17899882",
+                        "date":1334646000000,
+                        "title":"<span class='colorOrange'>Wells Fargo &amp; Company</span><br/><span class='bold'>Bruce Hoffmeister</span>, Senior Vice President of Wells Fargo Private Bank <span class='bold'><span class='colorRed'>LEFT</span></span> for Wilmington Trust Corporation",
+                        "changeType":"DEPARTURE",
+                        "futureEvent":false,
+                        "clipped":false
+                    }
+                ],
+                "events":[],
+                "tweets":[],
+                "docs":[],
+                "searchList":[],
+                "docBuckets":[]
+            },
+            {
+                "title":"Major Stock & Financial Events",
+                "type":"Event",
+                "hasMoreResults":true,
+                "last":5,
+                "mgmtTurnover":[],
+                "events":[
+                    {
+                        "id":"SEC:119312512200732",
+                        "date":1335855600000,
+                        "title":"<span class='colorOrange'>Wells Fargo &amp; Company</span><br/>Filed an <span class='bold'>8K Statement</span> on Other Events",
+                        "entity":{
+                            "name":"Wells Fargo & Company",
+                            "id":"C:289630",
+                            "searchToken":"C:WellsFargoCompany",
+                            "ticker":"WFC"
+                        },
+                        "url":"http://www.sec.gov/Archives/edgar/data/72971/000119312512200732/d343184d8k.htm",
+                        "secFormType":"8-K",
+                        "clipped":false
+                    },
+                    {
+                        "id":"SEC:119312512196512",
+                        "date":1335769200000,
+                        "title":"<span class='colorOrange'>Wells Fargo &amp; Company</span><br/>Filed an <span class='bold'>8K Statement</span> on Financial Statements and Exhibits",
+                        "entity":{
+                            "name":"Wells Fargo & Company",
+                            "id":"C:289630",
+                            "searchToken":"C:WellsFargoCompany",
+                            "ticker":"WFC"
+                        },
+                        "url":"http://www.sec.gov/Archives/edgar/data/72971/000119312512196512/d344137d8k.htm",
+                        "secFormType":"8-K",
+                        "clipped":false
+                    },
+                    {
+                        "id":"SEC:119312512190611",
+                        "date":1335510000000,
+                        "title":"<span class='colorOrange'>Wells Fargo &amp; Company</span><br/>Filed an <span class='bold'>8K Statement</span> on Submission of Matters to a Vote of Security Holders",
+                        "entity":{
+                            "name":"Wells Fargo & Company",
+                            "id":"C:289630",
+                            "searchToken":"C:WellsFargoCompany",
+                            "ticker":"WFC"
+                        },
+                        "url":"http://www.sec.gov/Archives/edgar/data/72971/000119312512190611/d341994d8k.htm",
+                        "secFormType":"8-K",
+                        "clipped":false
+                    },
+                    {
+                        "id":"SEC:119312512179047",
+                        "date":1335250800000,
+                        "title":"<span class='colorOrange'>Wells Fargo &amp; Company</span><br/>Filed an <span class='bold'>8K Statement</span> on Financial Statements and Exhibits",
+                        "entity":{
+                            "name":"Wells Fargo & Company",
+                            "id":"C:289630",
+                            "searchToken":"C:WellsFargoCompany",
+                            "ticker":"WFC"
+                        },
+                        "url":"http://www.sec.gov/Archives/edgar/data/72971/000119312512179047/d339335d8k.htm",
+                        "secFormType":"8-K",
+                        "clipped":false
+                    },
+                    {
+                        "id":"SEC:119312512161609",
+                        "date":1334300400000,
+                        "title":"<span class='colorOrange'>Wells Fargo &amp; Company</span><br/>Filed an <span class='bold'>8K Statement</span> on Results of Operations and Financial Condition",
+                        "entity":{
+                            "name":"Wells Fargo & Company",
+                            "id":"C:289630",
+                            "searchToken":"C:WellsFargoCompany",
+                            "ticker":"WFC"
+                        },
+                        "url":"http://www.sec.gov/Archives/edgar/data/72971/000119312512161609/d333074d8k.htm",
+                        "secFormType":"8-K",
+                        "clipped":false
+                    }
+                ],
+                "tweets":[],
+                "docs":[],
+                "searchList":[],
+                "docBuckets":[]
+            },
+            {
+                "title":"Capco Group",
+                "type":"Search",
+                "id":"S:4950401",
+                "hasMoreResults":false,
+                "mgmtTurnover":[],
+                "events":[],
+                "tweets":[],
+                "docs":[],
+                "searchList":[],
+                "docBuckets":[
+                    {
+                        "title":"Thursday, 01-Dec",
+                        "docList":[
+                            {
+                                "id":"D:487272873",
+                                "date":1322760925000,
+                                "source":{
+                                    "name":"Plansponsor",
+                                    "id":"SRC:46084",
+                                    "searchToken":"S:Plansponsor"
+                                },
+                                "title":"Penson Worldwide Appoints Independent Director",
+                                "groupId":284482378,
+                                "url":"http://www.plansponsor.com/Penson_Worldwide_Appoints_Independent_Director.aspx",
+                                "accessType":0,
+                                "matchedContentTypes":[
+                                    {
+                                        "name":"Industry Sources",
+                                        "id":"C:288557",
+                                        "searchToken":"F:IndustrySources"
+                                    },
+                                    {
+                                        "name":"News and Web",
+                                        "id":"C:500840",
+                                        "searchToken":"F:NewsandWeb"
+                                    }
+                                ],
+                                "clipped":false,
+                                "favicon":"http://mobile.firstrain.com/frmobile/Favicon_Default.ico"
+                            }
+                        ]
+                    },
+                    {
+                        "title":"Wednesday, 30-Nov",
+                        "docList":[
+                            {
+                                "id":"D:486827824",
+                                "date":1322666242000,
+                                "source":{
+                                    "name":"Business Wire",
+                                    "id":"SRC:22302",
+                                    "searchToken":"S:BusinessWire"
+                                },
+                                "title":"Penson Worldwide, Inc. Appoints Diane Schueneman as Independent Director",
+                                "groupId":284111289,
+                                "url":"http://www.businesswire.com/news/home/20111130005263/en",
+                                "accessType":0,
+                                "matchedContentTypes":[
+                                    {
+                                        "name":"Press Releases",
+                                        "id":"C:276204",
+                                        "searchToken":"F:PressReleases"
+                                    }
+                                ],
+                                "clipped":false,
+                                "favicon":"http://10.10.10.45/imagerepository/3/477/ed/0d/ed0d11c0-8dd6-11e1-add4-0019b9cc211d.ico"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "title":"Melcor Developments Ltd.",
+                "type":"Search",
+                "id":"S:4950273",
+                "hasMoreResults":true,
+                "mgmtTurnover":[],
+                "events":[],
+                "tweets":[],
+                "docs":[],
+                "searchList":[],
+                "docBuckets":[
+                    {
+                        "title":"Saturday, 28-Apr",
+                        "docList":[
+                            {
+                                "id":"D:525238368",
+                                "date":1335629084000,
+                                "source":{
+                                    "name":"Edmonton Journal",
+                                    "id":"SRC:31545",
+                                    "searchToken":"S:EdmontonJournal"
+                                },
+                                "title":"Melcor CEO new University of Alberta chancellor",
+                                "groupId":315067915,
+                                "url":"http://www.edmontonjournal.com/news/Melcor+University+Alberta+chancellor/6532580/story.html",
+                                "accessType":0,
+                                "matchedContentTypes":[
+                                    {
+                                        "name":"News and Web",
+                                        "id":"C:500840",
+                                        "searchToken":"F:NewsandWeb"
+                                    }
+                                ],
+                                "clipped":false,
+                                "favicon":"http://10.10.10.45/imagerepository/3/477/90/37/90373dd0-8dd7-11e1-add4-0019b9cc211d.ico"
+                            }
+                        ]
+                    },
+                    {
+                        "title":"Thursday, 26-Apr",
+                        "docList":[
+                            {
+                                "id":"D:524852036",
+                                "date":1335491076000,
+                                "source":{
+                                    "name":"Calgary Herald",
+                                    "id":"SRC:20315",
+                                    "searchToken":"S:CalgaryHerald"
+                                },
+                                "title":"Edmonton’s Melcor names...",
+                                "groupId":314725616,
+                                "url":"http://www.calgaryherald.com/business/Edmonton+Melcor+names+Brian+Baker+president/6525693/story.html",
+                                "accessType":0,
+                                "matchedContentTypes":[
+                                    {
+                                        "name":"News and Web",
+                                        "id":"C:500840",
+                                        "searchToken":"F:NewsandWeb"
+                                    }
+                                ],
+                                "clipped":false,
+                                "favicon":"http://10.10.10.45/imagerepository/3/477/7a/aa/7aaa65c0-8dda-11e1-add4-0019b9cc211d.ico"
+                            },
+                            {
+                                "id":"D:524776667",
+                                "date":1335472409000,
+                                "source":{
+                                    "name":"SYS-CON Media",
+                                    "id":"SRC:445",
+                                    "searchToken":"S:SYSCONMedia"
+                                },
+                                "title":"Melcor Announces Appointment of Brian Baker to President & COO",
+                                "groupId":314685286,
+                                "url":"http://www.sys-con.com/node/2264697",
+                                "accessType":0,
+                                "matchedContentTypes":[
+                                    {
+                                        "name":"Press Releases",
+                                        "id":"C:276204",
+                                        "searchToken":"F:PressReleases"
+                                    },
+                                    {
+                                        "name":"Industry Sources",
+                                        "id":"C:288557",
+                                        "searchToken":"F:IndustrySources"
+                                    }
+                                ],
+                                "clipped":false,
+                                "favicon":"http://10.10.10.45/imagerepository/3/478/29/17/29174290-8ddb-11e1-add4-0019b9cc211d.ico"
+                            }
+                        ]
+                    },
+                    {
+                        "title":"Monday, 23-Apr",
+                        "docList":[
+                            {
+                                "id":"D:523627312",
+                                "date":1335182334000,
+                                "source":{
+                                    "name":"The Dividend Guy Blog",
+                                    "id":"SRC:47217",
+                                    "searchToken":"S:TheDividendGuyBlog"
+                                },
+                                "title":"Can Dividends Save The Economy?",
+                                "groupId":313744512,
+                                "url":"http://www.thedividendguyblog.com/can-dividends-save-the-economy/",
+                                "accessType":0,
+                                "matchedContentTypes":[
+                                    {
+                                        "name":"Blogs",
+                                        "id":"C:276206",
+                                        "searchToken":"F:Blogs"
+                                    },
+                                    {
+                                        "name":"Industry Sources",
+                                        "id":"C:288557",
+                                        "searchToken":"F:IndustrySources"
+                                    }
+                                ],
+                                "clipped":false,
+                                "favicon":"http://10.10.10.45/imagerepository/3/477/19/ab/19ab1e50-8dd9-11e1-add4-0019b9cc211d.ico"
+                            }
+                        ]
+                    },
+                    {
+                        "title":"Tuesday, 17-Apr",
+                        "docList":[
+                            {
+                                "id":"D:522378688",
+                                "date":1334719953000,
+                                "source":{
+                                    "name":"Edmonton Journal",
+                                    "id":"SRC:31545",
+                                    "searchToken":"S:EdmontonJournal"
+                                },
+                                "title":"Melcor backs YMCA’s affordable housing initiative",
+                                "groupId":312713993,
+                                "url":"http://www.edmontonjournal.com/business/Melcor+backs+YMCA+affordable+housing+initiative/6475317/story.html",
+                                "accessType":0,
+                                "matchedContentTypes":[
+                                    {
+                                        "name":"News and Web",
+                                        "id":"C:500840",
+                                        "searchToken":"F:NewsandWeb"
+                                    }
+                                ],
+                                "clipped":false,
+                                "favicon":"http://10.10.10.45/imagerepository/3/477/90/37/90373dd0-8dd7-11e1-add4-0019b9cc211d.ico"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "title":"Wells Fargo & Company",
+                "type":"Search",
+                "id":"S:4950315",
+                "hasMoreResults":true,
+                "mgmtTurnover":[],
+                "events":[],
+                "tweets":[],
+                "docs":[],
+                "searchList":[],
+                "docBuckets":[
+                    {
+                        "title":"Today",
+                        "docList":[
+                            {
+                                "id":"D:526486498",
+                                "date":1336051288000,
+                                "source":{
+                                    "name":"PR Newswire",
+                                    "id":"SRC:146",
+                                    "searchToken":"S:PRNewswire"
+                                },
+                                "title":"Wells Fargo earns national honor for best-in-class volunteer program",
+                                "groupId":316102860,
+                                "url":"http://www.prnewswire.com/news-releases/wells-fargo-earns-national-honor-for-best-in-class-volunteer-program-149992975.html",
+                                "accessType":0,
+                                "matchedContentTypes":[
+                                    {
+                                        "name":"Press Releases",
+                                        "id":"C:276204",
+                                        "searchToken":"F:PressReleases"
+                                    }
+                                ],
+                                "clipped":false,
+                                "favicon":"http://10.10.10.45/imagerepository/3/477/46/a1/46a1e0f0-8dd5-11e1-add4-0019b9cc211d.ico"
+                            },
+                            {
+                                "id":"D:526481054",
+                                "date":1336050741000,
+                                "source":{
+                                    "name":"Yahoo! Finance",
+                                    "id":"SRC:22384",
+                                    "searchToken":"S:YahooFinance"
+                                },
+                                "title":"M/I Homes Presentation at the Wells Fargo Securities Industrial and Construction Conference to be Webcast Live",
+                                "groupId":316098414,
+                                "url":"http://finance.yahoo.com/news/m-homes-presentation-wells-fargo-130000566.html",
+                                "accessType":0,
+                                "matchedContentTypes":[
+                                    {
+                                        "name":"Press Releases",
+                                        "id":"C:276204",
+                                        "searchToken":"F:PressReleases"
+                                    }
+                                ],
+                                "clipped":false,
+                                "favicon":"http://10.10.10.45/imagerepository/3/477/bb/ed/bbed5830-8dd5-11e1-add4-0019b9cc211d.ico"
+                            },
+                            {
+                                "id":"D:526460694",
+                                "date":1336046902000,
+                                "source":{
+                                    "name":"SYS-CON Media",
+                                    "id":"SRC:445",
+                                    "searchToken":"S:SYSCONMedia"
+                                },
+                                "title":"TICC Capital Corp. to Participate at Wells Fargo Specialty Finance Symposium",
+                                "groupId":316081661,
+                                "url":"http://www.sys-con.com/node/2269263",
+                                "accessType":0,
+                                "matchedContentTypes":[
+                                    {
+                                        "name":"Press Releases",
+                                        "id":"C:276204",
+                                        "searchToken":"F:PressReleases"
+                                    },
+                                    {
+                                        "name":"Industry Sources",
+                                        "id":"C:288557",
+                                        "searchToken":"F:IndustrySources"
+                                    }
+                                ],
+                                "clipped":false,
+                                "favicon":"http://10.10.10.45/imagerepository/3/478/29/17/29174290-8ddb-11e1-add4-0019b9cc211d.ico"
+                            },
+                            {
+                                "id":"D:526460609",
+                                "date":1336046860000,
+                                "source":{
+                                    "name":"SYS-CON Media",
+                                    "id":"SRC:445",
+                                    "searchToken":"S:SYSCONMedia"
+                                },
+                                "title":"Oxford Lane Capital Corp. to Participate at Wells Fargo Specialty Finance Symposium",
+                                "groupId":316081582,
+                                "url":"http://www.sys-con.com/node/2269266",
+                                "accessType":0,
+                                "matchedContentTypes":[
+                                    {
+                                        "name":"Press Releases",
+                                        "id":"C:276204",
+                                        "searchToken":"F:PressReleases"
+                                    },
+                                    {
+                                        "name":"Industry Sources",
+                                        "id":"C:288557",
+                                        "searchToken":"F:IndustrySources"
+                                    }
+                                ],
+                                "clipped":false,
+                                "favicon":"http://10.10.10.45/imagerepository/3/478/29/17/29174290-8ddb-11e1-add4-0019b9cc211d.ico"
+                            },
+                            {
+                                "id":"D:526454831",
+                                "date":1336044898000,
+                                "source":{
+                                    "name":"KTVU",
+                                    "id":"SRC:38177",
+                                    "searchToken":"S:KTVU"
+                                },
+                                "title":"Wells Fargo gives $25,000 to Mission District businesses damaged by vandals",
+                                "groupId":316076680,
+                                "url":"http://www.ktvu.com/news/news/crime-law/wells-fargo-gives-25000-mission-district-businesse/nNPxz/",
+                                "accessType":0,
+                                "matchedContentTypes":[
+                                    {
+                                        "name":"News and Web",
+                                        "id":"C:500840",
+                                        "searchToken":"F:NewsandWeb"
+                                    }
+                                ],
+                                "clipped":false,
+                                "image":"http://10.10.10.45/imagerepository/1/487/55/c8/55c8d5f0-9516-11e1-a8a5-0019b9cc211d.jpg",
+                                "favicon":"http://10.10.10.45/imagerepository/3/477/29/da/29da7d70-8dd9-11e1-add4-0019b9cc211d.ico"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+}, "status":"SUCCESS"}

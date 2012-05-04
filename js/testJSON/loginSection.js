@@ -1,6 +1,5 @@
-URL = "http://10.10.10.134:9999"
-userID = "";
 $("#signinButton").live("click", validateUser);
+$("#signInLoading").attr("style", "visibility:true");
 
 function validateUser() {
     var url = URL + "/DataProvider/validateUser?username=vandana&password=firstrain";
@@ -8,23 +7,13 @@ function validateUser() {
     landingPage();
 }
 
-function searchResults() {
-    //This uses bookmarks part (look at it later)
-    var url = URL + "/UserCollaboration/searchResults?type=share&count=true&actorId=U:83&rows=500&start=0&absoluteId=true";
-    callAJAX(url, "searchResults");
-}
-
 function landingPage() {
-    var url = URL + "/DataProvider/landingPage?userId=U:99&count=10&rows=40";
+    var url = URL + "/DataProvider/landingPage?userId="+localStorage.userID+"&count=10&rows=40";
     callAJAX(url, "landingPage");
 }
 
-function recentHistory() {
-    var url = URL + "/DataProvider/recentHistory?userId=U:99";
-    callAJAX(url, "recentHistory");
-}
 
-function inserFirstReads(data) {
+function insertFirstReads(data) {
     var docList = data.data.docList;
     var docCount = data.data.docList.length;
     getCurrentNode = 0;
@@ -74,10 +63,11 @@ function getFirstReads(docList, docCount, swipeDirection) {
 }
 
 function getMonitorDetails(monitorID) {
+    var checkURL = URL + "/DataProvider/searchResults?userId="+localStorage.userID+"&type=monitor&itemcount=30&id="+monitorID+"&subq=mt,docs,events,tweets";
+    callAJAX(checkURL, "getMonitorSearchResults")
     alert(">>>>>> Called from : " + monitorID)
-    localStorage.monitorID = monitorID
-    $.mobile.changePage("monitorDetails.html")
-
+//    localStorage.monitorID = monitorID
+//    window.location.href = "monitorDetails.html";
 }
 
 function insertActiveMonitor(data) {
@@ -94,51 +84,3 @@ function insertActiveMonitor(data) {
     $("#activeMonitorList").html(monitorNames)
 }
 
-
-function callAJAX(url, callingFunction) {
-    try {
-        $.ajax({
-            url:url,
-            type:"GET",
-            dataType:"JSON",
-            async:true,
-            success:function (data) {
-                if (data.status != "SUCCESS") {
-                    var alertMsg = (callingFunction == "validateUser") ? "Login Password do not match : " : "Data is not in Successfull state : ";
-                    alert(alertMsg + data.status)
-                }
-                else {
-                    methodToCall(callingFunction, data)
-                    $.mobile.changePage("#homePage", { transtion:"fade"});
-                }
-            },
-            error:function (e) {
-                alert("Unable to get the data : " + e.status + ", from " + callingFunction)
-            }
-        });
-    }
-    catch (e) {
-        alert("Unable to get into ajax function : " + e)
-    }
-}
-
-function methodToCall(callingFunction, data) {
-    switch (callingFunction) {
-        case "validateUser":
-            console.log(">>>>>>>>>>> Response from validate user : " + JSON.stringify(data));
-            break;
-        case "searchResults":
-            console.log(">>>>>>>>>>> Response from searchResults user : " + JSON.stringify(data));
-            break;
-        case "landingPage":
-//            console.log(">>>>>>>>>>> Response from landingPage user : " + JSON.stringify(data));
-            insertActiveMonitor(data)
-            inserFirstReads(data)
-            break;
-        case "recentHistory":
-            console.log(">>>>>>>>>>> Response from recentHistory user : " + JSON.stringify(data));
-            break;
-        default :
-            console.log("Nothing to show here ...")
-    }
-}
