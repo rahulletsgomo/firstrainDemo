@@ -32,27 +32,32 @@ function inserFirstReads(data) {
 
     getFirstReads(docList, docCount);
 
-    $("#docArea").bind("click", function () {
-        getFirstReads(docList, docCount, true)
+    $("#docArea").bind("swipeleft", function () {
+        getFirstReads(docList, docCount, "left")
     })
 
-    $("#docArea").bind("swipeLeft", function () {
-        alert(">>>>> Swiped Left ...");
-    })
-
-    $("#docArea").bind("swipeRight", function () {
-        alert(">>>>> Swiped Right ...");
+    $("#docArea").bind("swiperight", function () {
+        getFirstReads(docList, docCount, "right")
     })
 
 }
 
-function getFirstReads(docList, docCount, changeContent) {
+function getFirstReads(docList, docCount, swipeDirection) {
 
-
-    if (changeContent) {
-        getCurrentNode = getCurrentNode + 1;
+    if (swipeDirection == "left") {
+        if (getCurrentNode == (docCount - 1)) {
+            getFirstReads(docList, docCount, "right")
+        }
+        getCurrentNode++;
         getCurrentNodeNumber++;
-        console.log(">>>>getCurrentNode : " + getCurrentNode + ", getCurrentNodeNumber : " + getCurrentNodeNumber)
+    }
+
+    if (swipeDirection == "right") {
+        if (getCurrentNode == 0) {
+            getFirstReads(docList, docCount, "left")
+        }
+        getCurrentNode--;
+        getCurrentNodeNumber--;
     }
 
     $("#currentDoc").html(getCurrentNodeNumber)
@@ -65,6 +70,7 @@ function getFirstReads(docList, docCount, changeContent) {
     $("#docSourceName").html(docSourceName)
     $("#docIcon").attr("src", docIcon)
     $("#docSummary").html(docSummary)
+
 }
 
 function insertActiveMonitor(data) {
