@@ -42,7 +42,11 @@ function methodToCall(callingFunction, data) {
             $.mobile.changePage("#homePage", { transtion:"fade"});
             break;
         case "getMonitorSearchResults":
-            console.log(">>>>>>>>>>> Response from getMonitorSearchResults user : " + JSON.stringify(data));
+//            console.log(">>>>>>>>>>>_______________ Response from getMonitorSearchResults user : " + JSON.stringify(data));
+            monitorSearchResults = data;
+            console.log(">>>>>>>>>>>_______________ Response from getMonitorSearchResults user : " + JSON.stringify(monitorSearchResults));
+            //window.location.href = "monitorDetails.html";
+            $.mobile.changePage("monitorDetails.html");
             break;
         default :
             console.log("Nothing to show here ...")

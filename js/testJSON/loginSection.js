@@ -67,7 +67,6 @@ function getMonitorDetails(monitorID) {
     callAJAX(checkURL, "getMonitorSearchResults")
     alert(">>>>>> Called from : " + monitorID)
 //    localStorage.monitorID = monitorID
-//    window.location.href = "monitorDetails.html";
 }
 
 function insertActiveMonitor(data) {

@@ -47,6 +47,78 @@
                         "title":"Yesterday",
                         "docList":[
                             {
+                                "id":"D:526735897",
+                                "date":1336109810000,
+                                "source":{
+                                    "name":"Wells Fargo & Company",
+                                    "id":"SRC:7624",
+                                    "searchToken":"S:WellsFargoCompany"
+                                },
+                                "title":"Wells Fargo  Announces $25,000 Grant to Help Mission District Merchants Make Repairs After Recent Wave of Vandalism",
+                                "groupId":316307576,
+                                "url":"https://www.wellsfargo.com/press/2012/20120502_WellsFargoAnnouncesGrant",
+                                "accessType":0,
+                                "matchedContentTypes":[
+                                    {
+                                        "name":"Press Releases",
+                                        "id":"C:276204",
+                                        "searchToken":"F:PressReleases"
+                                    }
+                                ],
+                                "clipped":false,
+                                "favicon":"http://10.10.10.45/imagerepository/3/478/8f/01/8f01d8d0-8ddc-11e1-add4-0019b9cc211d.ico"
+                            },
+                            {
+                                "id":"D:526610954",
+                                "date":1336075280000,
+                                "source":{
+                                    "name":"Bloomberg.com",
+                                    "id":"SRC:10257",
+                                    "searchToken":"S:Bloombergcom"
+                                },
+                                "title":"McClendon Used Wachovia in Personal Sale After Chesapeake",
+                                "groupId":316204734,
+                                "url":"http://www.bloomberg.com/news/2012-05-03/mcclendon-used-wachovia-in-personal-sale-after-chesapeake.html",
+                                "accessType":0,
+                                "matchedContentTypes":[
+                                    {
+                                        "name":"News Wires",
+                                        "id":"C:276205",
+                                        "searchToken":"F:NewsWires"
+                                    }
+                                ],
+                                "clipped":false,
+                                "image":"http://10.10.10.45/imagerepository/1/487/81/8a/818a09b0-955d-11e1-a8a5-0019b9cc211d.jpg",
+                                "favicon":"http://10.10.10.45/imagerepository/3/477/06/e4/06e42bc0-8dd6-11e1-add4-0019b9cc211d.ico"
+                            },
+                            {
+                                "id":"D:526529836",
+                                "date":1336060019000,
+                                "source":{
+                                    "name":"NASDAQ Community",
+                                    "id":"SRC:164715",
+                                    "searchToken":"S:NASDAQCommunity"
+                                },
+                                "title":"Forex Flash: EUR rallies on unchanged key rate at 1% - Wells Fargo",
+                                "groupId":316138510,
+                                "url":"http://community.nasdaq.com/News/2012-05/forex-flash-eur-rallies-on-unchanged-key-rate-at-1-wells-fargo.aspx?storyid=138581",
+                                "accessType":0,
+                                "matchedContentTypes":[
+                                    {
+                                        "name":"News and Web",
+                                        "id":"C:500840",
+                                        "searchToken":"F:NewsandWeb"
+                                    }
+                                ],
+                                "clipped":false,
+                                "favicon":"http://10.10.10.45/imagerepository/3/477/cd/07/cd073e60-8dd5-11e1-add4-0019b9cc211d.ico"
+                            }
+                        ]
+                    },
+                    {
+                        "title":"Wednesday, 02-May",
+                        "docList":[
+                            {
                                 "id":"D:526247003",
                                 "date":1335984041000,
                                 "source":{
@@ -93,77 +165,6 @@
                                 "favicon":"http://10.10.10.45/imagerepository/3/478/35/7a/357a8910-8ddc-11e1-add4-0019b9cc211d.bmp"
                             }
                         ]
-                    },
-                    {
-                        "title":"Tuesday, 01-May",
-                        "docList":[
-                            {
-                                "id":"D:526046405",
-                                "date":1335937463000,
-                                "source":{
-                                    "name":"Wells Fargo & Company",
-                                    "id":"SRC:7624",
-                                    "searchToken":"S:WellsFargoCompany"
-                                },
-                                "title":"Wells Fargo  launches WellsFargoCommunity.com, its new online resource for planning for a college education",
-                                "groupId":315562142,
-                                "url":"https://www.wellsfargo.com/press/2012/20120501_WellsFargolaunches",
-                                "accessType":0,
-                                "matchedContentTypes":[
-                                    {
-                                        "name":"Press Releases",
-                                        "id":"C:276204",
-                                        "searchToken":"F:PressReleases"
-                                    }
-                                ],
-                                "clipped":false,
-                                "favicon":"http://10.10.10.45/imagerepository/3/478/8f/01/8f01d8d0-8ddc-11e1-add4-0019b9cc211d.ico"
-                            },
-                            {
-                                "id":"D:525978601",
-                                "date":1335912416000,
-                                "source":{
-                                    "name":"Winston-Salem Journal",
-                                    "id":"SRC:70419",
-                                    "searchToken":"S:WinstonSalemJournal"
-                                },
-                                "title":"Wells Fargo penalized more than $2.7M for Wachovia-era investment violations",
-                                "groupId":315680466,
-                                "url":"http://www2.journalnow.com/business/2012/may/01/wells-fargo-penalized-more-than-27m-for-wachovia-e-ar-2230441/",
-                                "accessType":0,
-                                "matchedContentTypes":[
-                                    {
-                                        "name":"News and Web",
-                                        "id":"C:500840",
-                                        "searchToken":"F:NewsandWeb"
-                                    }
-                                ],
-                                "clipped":false,
-                                "favicon":"http://10.10.10.45/imagerepository/3/477/31/5d/315d5c80-8dd8-11e1-add4-0019b9cc211d.ico"
-                            },
-                            {
-                                "id":"D:525883955",
-                                "date":1335892247000,
-                                "source":{
-                                    "name":"Bloomberg.com",
-                                    "id":"SRC:10257",
-                                    "searchToken":"S:Bloombergcom"
-                                },
-                                "title":"Finra Fines Wells Fargo, Three Others Over ETF Sales",
-                                "groupId":315590313,
-                                "url":"http://www.bloomberg.com/news/2012-05-01/finra-fines-citigroup-morgan-stanley-over-leveraged-etf-sales.html",
-                                "accessType":0,
-                                "matchedContentTypes":[
-                                    {
-                                        "name":"News Wires",
-                                        "id":"C:276205",
-                                        "searchToken":"F:NewsWires"
-                                    }
-                                ],
-                                "clipped":false,
-                                "favicon":"http://10.10.10.45/imagerepository/3/477/06/e4/06e42bc0-8dd6-11e1-add4-0019b9cc211d.ico"
-                            }
-                        ]
                     }
                 ]
             },
@@ -176,88 +177,88 @@
                 "events":[],
                 "tweets":[
                     {
-                        "name":"Titleist Europe",
-                        "id":"TW:198018597266792448",
-                        "date":1336046280000,
-                        "description":"The official Twitter page for Titleist on the European Tour!!",
-                        "title":"<span class='bold'> <span class='colorBlue'>#TeamTitleist</span> video: <span class='colorBlue'>@TitleistEurope</span> ambassador <span class='colorBlue'>@McIlroyRory</span> updates  <span class='colorBlue'>#TeamTitleist</span> from Quail Hollow range, home of Wells Fargo Championship</span>",
+                        "name":"Sports Betting Index",
+                        "id":"TW:198331952145764352",
+                        "date":1336120980000,
+                        "description":"Free Golf Betting Tips,Articles,Bookmaker Reviews News and Odds",
+                        "title":"<span class='bold'>A hint - who might be worth following at the Wells Fargo at a big price - name the 4 winners at Sedgefield North Carolina</span>",
                         "entity":{
                             "name":"Wells Fargo & Company",
                             "id":"C:289630",
                             "searchToken":"C:WellsFargoCompany",
                             "ticker":"WFC"
                         },
-                        "userImage":"http://a0.twimg.com/profile_images/783218960/Titleist_Europe_normal.jpg",
-                        "screenName":"TitleistEurope",
+                        "userImage":"http://a0.twimg.com/profile_images/1166192926/twitter-pic_normal.gif",
+                        "screenName":"SBIdotcom",
+                        "timeLabel":"5 hours",
+                        "clipped":false
+                    },
+                    {
+                        "name":"Ed Ryan (Editor)",
+                        "id":"TW:198406931726086144",
+                        "date":1336138860000,
+                        "description":"Radio's Premier Marketing and Management Magazine",
+                        "title":"<span class='bold'>Marci Ryvicker of Wells Fargo on Clear Channel earning: \"Today's results are disappointing though not entirely unexpected.\"</span>",
+                        "entity":{
+                            "name":"Wells Fargo & Company",
+                            "id":"C:289630",
+                            "searchToken":"C:WellsFargoCompany",
+                            "ticker":"WFC"
+                        },
+                        "userImage":"http://a0.twimg.com/profile_images/69749440/Twitter_normal.gif",
+                        "screenName":"Radio_Ink",
+                        "timeLabel":"36 mins",
+                        "clipped":false
+                    },
+                    {
+                        "name":"Sky Sports",
+                        "id":"TW:198377225500901376",
+                        "date":1336131780000,
+                        "description":"The official Sky Sports Twitter account. Bringing you the latest sports news, 24-7.",
+                        "title":"<span class='bold'>R2 of the Wells Fargo at Quail Hollow is now under way. Here's the highlights from the opening round.</span> <span class='lightGrey'>http://t.co/NvRNRtEC</span>",
+                        "entity":{
+                            "name":"Wells Fargo & Company",
+                            "id":"C:289630",
+                            "searchToken":"C:WellsFargoCompany",
+                            "ticker":"WFC"
+                        },
+                        "userImage":"http://a0.twimg.com/profile_images/1881220812/512x512_sports_app_icon_normal.png",
+                        "screenName":"SkySports",
                         "timeLabel":"2 hours",
                         "clipped":false
                     },
                     {
-                        "name":"Erik Schatzker",
-                        "id":"TW:198021220032200705",
-                        "date":1336046880000,
-                        "description":"Bloomberg TV anchor, editor-at-large. I host InsideTrack, weekdays 0600-0800 ET.",
-                        "title":"<span class='bold'>Wells Fargo had an astounding 33.9% of the U.S. mortgage market last quarter, more than the next seven banks combined</span>",
+                        "name":"UTV",
+                        "id":"TW:198348915869880320",
+                        "date":1336125000000,
+                        "description":"The latest Northern Irish news, sport and entertainment. *RTs are not endorsements*",
+                        "title":"<span class='bold'>McIlroy five shots off pace: Rory McIlroy opened the Wells Fargo Championship in the United States with a round</span> ... <span class='lightGrey'>http://t.co/2f3lRLGV</span>",
                         "entity":{
                             "name":"Wells Fargo & Company",
                             "id":"C:289630",
                             "searchToken":"C:WellsFargoCompany",
                             "ticker":"WFC"
                         },
-                        "userImage":"http://a0.twimg.com/profile_images/1214997948/ehs2_normal.png",
-                        "screenName":"ErikSchatzker",
-                        "timeLabel":"2 hours",
+                        "userImage":"http://a0.twimg.com/profile_images/1554462834/utv-sq1_normal.jpg",
+                        "screenName":"utv",
+                        "timeLabel":"4 hours",
                         "clipped":false
                     },
                     {
-                        "name":"Natasha Kulkarni",
-                        "id":"TW:198052327020695554",
-                        "date":1336054320000,
-                        "description":"From Trading to TV. When I'm not reporting breaking business news, I'm  dishing celebrity gossip! Tweets are my own, not Bloomberg's. RTs are not endorsements.",
-                        "title":"<span class='bold'> <span class='colorBlue'>#WellsFargo</span> won the biggest market share in home lending ever recorded as rivals pulled back after suffering $65B+ in total mortgage losses.</span>",
+                        "name":"Jamie Smith Hopkins",
+                        "id":"TW:198415444598726657",
+                        "date":1336140900000,
+                        "description":"Baltimore Sun housing reporter (and wonk). Links and RTs are not endorsements -- just things that seem interesting. Contact me at jhopkins(at)baltsun.com.",
+                        "title":"<span class='bold'>Md. atty general says Wells Fargo has mailed letters to borrowers potentially eligible for rate reduction thru mortgage settlement.</span>",
                         "entity":{
                             "name":"Wells Fargo & Company",
                             "id":"C:289630",
                             "searchToken":"C:WellsFargoCompany",
                             "ticker":"WFC"
                         },
-                        "userImage":"http://a0.twimg.com/profile_images/1638597361/peuf_20111114_6_normal.jpg",
-                        "screenName":"ReporterNatasha",
-                        "timeLabel":"19 mins",
-                        "clipped":false
-                    },
-                    {
-                        "name":"Charlotte Saulter",
-                        "id":"TW:198055156053577729",
-                        "date":1336054980000,
-                        "description":"HIgh Volume REO Broker. I sold 155 Bank Owned Homes in 2010.\n866-847-1407",
-                        "title":"<span class='bold'>Wells Fargo pushes home lending dominance: Wells Fargo &amp; Co. has won the largest-ever market share in the U.S.</span> h... <span class='lightGrey'>http://t.co/PMg4azRY</span>",
-                        "entity":{
-                            "name":"Wells Fargo & Company",
-                            "id":"C:289630",
-                            "searchToken":"C:WellsFargoCompany",
-                            "ticker":"WFC"
-                        },
-                        "userImage":"http://a0.twimg.com/profile_images/1278535977/20090915110956_premier_proof_normal.jpg",
-                        "screenName":"PinoleREOBroker",
-                        "timeLabel":"8 mins",
-                        "clipped":false
-                    },
-                    {
-                        "name":"Andy Brooks",
-                        "id":"TW:198028718818598914",
-                        "date":1336048680000,
-                        "description":"I live to inspire and empower men to reach their full potential. Thanks to incredible grace, I get to wake up every day to pursue my calling.",
-                        "title":"<span class='bold'>Our team running the driving range at the Wells Fargo Championship has been first class. They've been phenomenal from sun up to sun down!</span>",
-                        "entity":{
-                            "name":"Wells Fargo & Company",
-                            "id":"C:289630",
-                            "searchToken":"C:WellsFargoCompany",
-                            "ticker":"WFC"
-                        },
-                        "userImage":"http://a0.twimg.com/profile_images/2129123361/Screen_shot_2012-04-15_at_1.44.56_PM_normal.png",
-                        "screenName":"andyalexbrooks",
-                        "timeLabel":"1 hour",
+                        "userImage":"http://a0.twimg.com/profile_images/213625282/Realestatewonk_normal.jpg",
+                        "screenName":"RealEstateWonk",
+                        "timeLabel":"2 mins",
                         "clipped":false
                     }
                 ],
@@ -641,114 +642,16 @@
                         "title":"Today",
                         "docList":[
                             {
-                                "id":"D:526486498",
-                                "date":1336051288000,
+                                "id":"D:526769259",
+                                "date":1336121410000,
                                 "source":{
-                                    "name":"PR Newswire",
-                                    "id":"SRC:146",
-                                    "searchToken":"S:PRNewswire"
+                                    "name":"GSA Business",
+                                    "id":"SRC:35479",
+                                    "searchToken":"S:GSABusiness"
                                 },
-                                "title":"Wells Fargo earns national honor for best-in-class volunteer program",
-                                "groupId":316102860,
-                                "url":"http://www.prnewswire.com/news-releases/wells-fargo-earns-national-honor-for-best-in-class-volunteer-program-149992975.html",
-                                "accessType":0,
-                                "matchedContentTypes":[
-                                    {
-                                        "name":"Press Releases",
-                                        "id":"C:276204",
-                                        "searchToken":"F:PressReleases"
-                                    }
-                                ],
-                                "clipped":false,
-                                "favicon":"http://10.10.10.45/imagerepository/3/477/46/a1/46a1e0f0-8dd5-11e1-add4-0019b9cc211d.ico"
-                            },
-                            {
-                                "id":"D:526481054",
-                                "date":1336050741000,
-                                "source":{
-                                    "name":"Yahoo! Finance",
-                                    "id":"SRC:22384",
-                                    "searchToken":"S:YahooFinance"
-                                },
-                                "title":"M/I Homes Presentation at the Wells Fargo Securities Industrial and Construction Conference to be Webcast Live",
-                                "groupId":316098414,
-                                "url":"http://finance.yahoo.com/news/m-homes-presentation-wells-fargo-130000566.html",
-                                "accessType":0,
-                                "matchedContentTypes":[
-                                    {
-                                        "name":"Press Releases",
-                                        "id":"C:276204",
-                                        "searchToken":"F:PressReleases"
-                                    }
-                                ],
-                                "clipped":false,
-                                "favicon":"http://10.10.10.45/imagerepository/3/477/bb/ed/bbed5830-8dd5-11e1-add4-0019b9cc211d.ico"
-                            },
-                            {
-                                "id":"D:526460694",
-                                "date":1336046902000,
-                                "source":{
-                                    "name":"SYS-CON Media",
-                                    "id":"SRC:445",
-                                    "searchToken":"S:SYSCONMedia"
-                                },
-                                "title":"TICC Capital Corp. to Participate at Wells Fargo Specialty Finance Symposium",
-                                "groupId":316081661,
-                                "url":"http://www.sys-con.com/node/2269263",
-                                "accessType":0,
-                                "matchedContentTypes":[
-                                    {
-                                        "name":"Press Releases",
-                                        "id":"C:276204",
-                                        "searchToken":"F:PressReleases"
-                                    },
-                                    {
-                                        "name":"Industry Sources",
-                                        "id":"C:288557",
-                                        "searchToken":"F:IndustrySources"
-                                    }
-                                ],
-                                "clipped":false,
-                                "favicon":"http://10.10.10.45/imagerepository/3/478/29/17/29174290-8ddb-11e1-add4-0019b9cc211d.ico"
-                            },
-                            {
-                                "id":"D:526460609",
-                                "date":1336046860000,
-                                "source":{
-                                    "name":"SYS-CON Media",
-                                    "id":"SRC:445",
-                                    "searchToken":"S:SYSCONMedia"
-                                },
-                                "title":"Oxford Lane Capital Corp. to Participate at Wells Fargo Specialty Finance Symposium",
-                                "groupId":316081582,
-                                "url":"http://www.sys-con.com/node/2269266",
-                                "accessType":0,
-                                "matchedContentTypes":[
-                                    {
-                                        "name":"Press Releases",
-                                        "id":"C:276204",
-                                        "searchToken":"F:PressReleases"
-                                    },
-                                    {
-                                        "name":"Industry Sources",
-                                        "id":"C:288557",
-                                        "searchToken":"F:IndustrySources"
-                                    }
-                                ],
-                                "clipped":false,
-                                "favicon":"http://10.10.10.45/imagerepository/3/478/29/17/29174290-8ddb-11e1-add4-0019b9cc211d.ico"
-                            },
-                            {
-                                "id":"D:526454831",
-                                "date":1336044898000,
-                                "source":{
-                                    "name":"KTVU",
-                                    "id":"SRC:38177",
-                                    "searchToken":"S:KTVU"
-                                },
-                                "title":"Wells Fargo gives $25,000 to Mission District businesses damaged by vandals",
-                                "groupId":316076680,
-                                "url":"http://www.ktvu.com/news/news/crime-law/wells-fargo-gives-25000-mission-district-businesse/nNPxz/",
+                                "title":"Wells Fargo grant to support entrepreneurs",
+                                "groupId":316336631,
+                                "url":"http://www.gsabusiness.com/news/43714-wells-fargo-grant-to-support-entrepreneurs",
                                 "accessType":0,
                                 "matchedContentTypes":[
                                     {
@@ -758,8 +661,101 @@
                                     }
                                 ],
                                 "clipped":false,
-                                "image":"http://10.10.10.45/imagerepository/1/487/55/c8/55c8d5f0-9516-11e1-a8a5-0019b9cc211d.jpg",
-                                "favicon":"http://10.10.10.45/imagerepository/3/477/29/da/29da7d70-8dd9-11e1-add4-0019b9cc211d.ico"
+                                "favicon":"http://10.10.10.45/imagerepository/3/477/6d/79/6d7959e0-8dd7-11e1-add4-0019b9cc211d.ico"
+                            },
+                            {
+                                "id":"D:526745398",
+                                "date":1336114922000,
+                                "source":{
+                                    "name":"AdvisorOne",
+                                    "id":"SRC:89595",
+                                    "searchToken":"S:AdvisorOne"
+                                },
+                                "title":"John Peluso: The 2012 IA 25 Extended Profile",
+                                "groupId":316315910,
+                                "url":"http://www.advisorone.com/2012/05/04/john-peluso-the-2012-ia-25-extended-profile?ref=hp",
+                                "accessType":0,
+                                "matchedContentTypes":[
+                                    {
+                                        "name":"News and Web",
+                                        "id":"C:500840",
+                                        "searchToken":"F:NewsandWeb"
+                                    }
+                                ],
+                                "clipped":false,
+                                "image":"http://10.10.10.45/imagerepository/1/488/9e/7e/9e7e47f0-95b9-11e1-a8a5-0019b9cc211d.jpg",
+                                "favicon":"http://10.10.10.45/imagerepository/3/477/82/cf/82cf26f0-8dd5-11e1-add4-0019b9cc211d.png"
+                            }
+                        ]
+                    },
+                    {
+                        "title":"Yesterday",
+                        "docList":[
+                            {
+                                "id":"D:526741603",
+                                "date":1336112507000,
+                                "source":{
+                                    "name":"The Wall Street Journal",
+                                    "id":"SRC:20722",
+                                    "searchToken":"S:TheWallStreetJournal"
+                                },
+                                "title":"Health Net Inc Cut To Mkt Perform From Outperform By Wells Fargo",
+                                "groupId":316312577,
+                                "url":"http://online.wsj.com/article/BT-CO-20120504-700217.html",
+                                "accessType":0,
+                                "matchedContentTypes":[
+                                    {
+                                        "name":"News and Web",
+                                        "id":"C:500840",
+                                        "searchToken":"F:NewsandWeb"
+                                    }
+                                ],
+                                "clipped":false,
+                                "favicon":"http://10.10.10.45/imagerepository/3/477/0b/ac/0bac3090-8dd5-11e1-add4-0019b9cc211d.ico"
+                            },
+                            {
+                                "id":"D:526735897",
+                                "date":1336109810000,
+                                "source":{
+                                    "name":"Wells Fargo & Company",
+                                    "id":"SRC:7624",
+                                    "searchToken":"S:WellsFargoCompany"
+                                },
+                                "title":"Wells Fargo  Announces $25,000 Grant to Help Mission District Merchants Make Repairs After Recent Wave of Vandalism",
+                                "groupId":316307576,
+                                "url":"https://www.wellsfargo.com/press/2012/20120502_WellsFargoAnnouncesGrant",
+                                "accessType":0,
+                                "matchedContentTypes":[
+                                    {
+                                        "name":"Press Releases",
+                                        "id":"C:276204",
+                                        "searchToken":"F:PressReleases"
+                                    }
+                                ],
+                                "clipped":false,
+                                "favicon":"http://10.10.10.45/imagerepository/3/478/8f/01/8f01d8d0-8ddc-11e1-add4-0019b9cc211d.ico"
+                            },
+                            {
+                                "id":"D:526723295",
+                                "date":1336105986000,
+                                "source":{
+                                    "name":"Winston-Salem Journal",
+                                    "id":"SRC:70419",
+                                    "searchToken":"S:WinstonSalemJournal"
+                                },
+                                "title":"Editorial: Wachovia violations underscore need for Wells Fargo to do better than old bank",
+                                "groupId":316296874,
+                                "url":"http://www2.journalnow.com/news/opinion/2012/may/04/wsopin01-editorial-wachovia-violations-underscore--ar-2240705/",
+                                "accessType":0,
+                                "matchedContentTypes":[
+                                    {
+                                        "name":"News and Web",
+                                        "id":"C:500840",
+                                        "searchToken":"F:NewsandWeb"
+                                    }
+                                ],
+                                "clipped":false,
+                                "favicon":"http://10.10.10.45/imagerepository/3/477/31/5d/315d5c80-8dd8-11e1-add4-0019b9cc211d.ico"
                             }
                         ]
                     }
