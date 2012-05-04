@@ -73,11 +73,18 @@ function getFirstReads(docList, docCount, swipeDirection) {
 
 }
 
+function getMonitorDetails(monitorID) {
+    alert(">>>>>> Called from : " + monitorID)
+    localStorage.monitorID = monitorID
+    $.mobile.changePage("monitorDetails.html")
+
+}
+
 function insertActiveMonitor(data) {
     var monitorList = data.data.topMonitorList;
     var monitorNames = "";
     for (var i = 0; i < monitorList.length; i++) {
-        monitorNames += '<li class="ui-li ui-li-static ui-body-d" style="padding:2px 0 0 2px;">';
+        monitorNames += '<li class="ui-li ui-li-static ui-body-d" style="padding:2px 0 0 2px;" onclick = "getMonitorDetails(\'' + monitorList[i].monitorId + '\')">';
         monitorNames += '<div style="padding:10px;">';
         monitorNames += '<label style="font-size:14px;text-shadow:none;">' + monitorList[i].monitorName + '</label>';
         monitorNames += '<label style="float:right;">';
