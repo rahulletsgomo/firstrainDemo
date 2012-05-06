@@ -8,7 +8,7 @@ function validateUser() {
 }
 
 function landingPage() {
-    var url = URL + "/DataProvider/landingPage?userId="+localStorage.userID+"&count=10&rows=40";
+    var url = URL + "/DataProvider/landingPage?userId=" + localStorage.userID + "&count=10&rows=40";
     callAJAX(url, "landingPage");
 }
 
@@ -48,22 +48,35 @@ function getFirstReads(docList, docCount, swipeDirection) {
         getCurrentNode--;
         getCurrentNodeNumber--;
     }
-
     $("#currentDoc").html(getCurrentNodeNumber)
     $("#docLength").html(docCount)
     var docTitle = docList[getCurrentNode].title
     var docSourceName = docList[getCurrentNode].source.name
     var docIcon = docList[getCurrentNode].favicon
     var docSummary = docList[getCurrentNode].summary
-    $("#docTitle").html(docTitle)
-    $("#docSourceName").html(docSourceName)
-    $("#docIcon").attr("src", docIcon)
-    $("#docSummary").html(docSummary)
+
+    var docContent = "";
+    docContent += '<li style="padding:2px 0 0 2px;" class="ui-li ui-li-static ui-body-d documentContent">';
+    docContent += '<div style="padding:10px;">';
+    docContent += '<div style="font-size:20px;" id="docTitle">';
+    docContent += docTitle;
+    docContent += '</div>';
+    docContent += '<div style="color:#5a91bb;height:30px;line-height:30px">';
+    docContent += '<img id="docIcon" src="' + docIcon + '" style="height:15px"/>';
+    docContent += '<span id="docSourceName">' + docSourceName + '</span>';
+    docContent += '</div>';
+    docContent += '<div style="padding-bottom:10px" id="docSummary">';
+    docContent += docSummary;
+    docContent += '</div>';
+    docContent += '</div>';
+    docContent += '</li>';
+
+    $("#thelist").html(docContent);
 
 }
 
 function getMonitorDetails(monitorID) {
-    var checkURL = URL + "/DataProvider/searchResults?userId="+localStorage.userID+"&type=monitor&itemcount=30&id="+monitorID+"&subq=mt,docs,events,tweets";
+    var checkURL = URL + "/DataProvider/searchResults?userId=" + localStorage.userID + "&type=monitor&itemcount=30&id=" + monitorID + "&subq=mt,docs,events,tweets";
     callAJAX(checkURL, "getMonitorSearchResults")
     alert(">>>>>> Called from : " + monitorID)
 //    localStorage.monitorID = monitorID

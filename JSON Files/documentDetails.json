@@ -1,0 +1,48 @@
+{"message":"Document Details populated Successfully...", "data":[
+    {
+        "id":527187263,
+        "type":"DOCUMENT",
+        "date":1336292409000,
+        "source":{
+            "name":"Bismarck Tribune Online",
+            "searchToken":"S:BismarckTribuneOnline",
+            "band":0,
+            "relevance":0,
+            "detailId":"24582"
+        },
+        "title":"Health system merger offers possibilities",
+        "groupId":316688782,
+        "url":"http://bismarcktribune.com/news/opinion/editorial/health-system-merger-offers-possibilities/article_1bb47736-95e6-11e1-b708-001a4bcf887a.html",
+        "summary":"Will the intended merger of Medcenter One and Sanford Health improve the quality of health care and help control the rise of health care costs here? Those are the questions people are asking after the public signing of a letter of intent and memorandum of understanding between the two nonprofit health care systems. \n\nIncreasing size can create operating efficiencies. And increasing",
+        "accessType":0,
+        "matchedContentTypes":[
+            {
+                "name":"News and Web",
+                "searchToken":"F:NewsandWeb",
+                "band":3,
+                "relevance":100,
+                "detailId":"500840"
+            }
+        ],
+        "matchedCompanies":[],
+        "matchedTopics":[
+            {
+                "name":"M&A and Spin-offs",
+                "searchToken":"T:MAandSpinoffs",
+                "band":3,
+                "relevance":60,
+                "detailId":"254884"
+            },
+            {
+                "name":"Healthcare Costs",
+                "searchToken":"T:HealthcareCosts",
+                "band":2,
+                "relevance":50,
+                "detailId":"275841"
+            }
+        ],
+        "itemId":0,
+        "clipped":false,
+        "matchedPeople":[]
+    }
+], "status":"SUCCESS"}
