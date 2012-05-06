@@ -15,7 +15,7 @@
     <script type="text/javascript" src="js/globalVars.js"></script>
     <script type="text/javascript" src="js/ajaxFunctions.js"></script>
     <script type="text/javascript" src="js/testJSON/loginSection.js"></script>
-    <script type="text/javascript" src="js/monitorDetails.js"></script>
+    <!--<script type="text/javascript" src="js/monitorDetails.js"></script>-->
 </head>
 
 <body>
@@ -40,7 +40,8 @@
             </li>
         </ul>
         <div data-role="none" id="signinButton" class="buttonRegular">Sign in</div>
-        <div class='loadingProgressMessage' id="signInLoading" style="text-align:center;text-shadow:none;visibility: hidden;font-weight:bold; color: #f0f0f0;">
+        <div class='loadingProgressMessage' id="signInLoading"
+             style="text-align:center;text-shadow:none;visibility: hidden;font-weight:bold; color: #f0f0f0;">
             LOADING <img src='img/Loading.gif' width="16" height="16"/></div>
         <div style="height:30px;text-align:center;line-height:30px">
             <div style="text-shadow:none;display:none;font-weight:bold;" id="loginFailedMessage">SIGN IN FAILED. PLEASE
@@ -69,21 +70,25 @@
         <div class='monitorTeaser' id="docArea" style="padding-bottom:10px;">
             <h3 class="screenSubHeader bgred">FirstReads<label style="float:right;"><span id="currentDoc"></span> to
                 <span id="docLength"></span> </label></h3>
-            <ul data-role="listview" data-theme="d"
-                style="padding:0px;margin:0;-webkit-box-shadow: 0px 4px 5px #999;">
-                <li style="padding:2px 0 0 2px;">
-                    <div style="padding:10px;">
-                        <div style="font-size:20px;" id="docTitle">Google Challenge Oracle Copyright Claim</div>
-                        <div style="color:#5a91bb;height:30px;line-height:30px">
-                            <img id="docIcon" src='img/jw.png' style="height:15px"/>
-                            <span id="docSourceName"></span>
-                        </div>
-                        <div style="padding-bottom:10px" id="docSummary">This is a dummy content
-                        </div>
-                    </div>
-                </li>
-            </ul>
 
+            <div id="wrapper">
+                <div id="scroller">
+                    <ul id="thelist" data-role="listview" data-theme="d"
+                        style="padding:0px;margin:0;-webkit-box-shadow: 0px 4px 5px #999;">
+                        <li style="padding:2px 0 0 2px;" class="documentContent">
+                            <div style="padding:10px;">
+                                <div style="font-size:20px;" id="docTitle">Google Challenge Oracle Copyright Claim</div>
+                                <div style="color:#5a91bb;height:30px;line-height:30px">
+                                    <img id="docIcon" src='img/jw.png' style="height:15px"/>
+                                    <span id="docSourceName"></span>
+                                </div>
+                                <div style="padding-bottom:10px" id="docSummary">This is a dummy content
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
         </div>
 
         <div class='monitorTeaser' style="padding-bottom:2px;">
