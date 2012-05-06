@@ -54,9 +54,10 @@ function getFirstReads(docList, docCount, swipeDirection) {
     var docSourceName = docList[getCurrentNode].source.name
     var docIcon = docList[getCurrentNode].favicon
     var docSummary = docList[getCurrentNode].summary
+    var docID = docList[getCurrentNode].id
 
     var docContent = "";
-    docContent += '<li style="padding:2px 0 0 2px;" class="ui-li ui-li-static ui-body-d documentContent">';
+    docContent += '<li style="padding:2px 0 0 2px;" id="' + docID + '" class="ui-li ui-li-static ui-body-d documentContent">';
     docContent += '<div style="padding:10px;">';
     docContent += '<div style="font-size:20px;" id="docTitle">';
     docContent += docTitle;
@@ -72,7 +73,13 @@ function getFirstReads(docList, docCount, swipeDirection) {
     docContent += '</li>';
 
     $("#thelist").html(docContent);
+    $(".documentContent").bind("taphold", function () {
+        getDocumentDetails(docID)
+    })
+}
 
+function getDocumentDetails(docID) {
+alert(docID)
 }
 
 function getMonitorDetails(monitorID) {
