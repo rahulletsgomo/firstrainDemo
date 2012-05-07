@@ -1,5 +1,13 @@
-$("#signinButton").live("click", validateUser);
-$("#signInLoading").attr("style", "visibility:true");
+$(function () {
+    if (environment == "test") {
+        $("#signinButton").live("click", validateUser);
+        $("#signInLoading").attr("style", "visibility:true");
+    }
+    else if (environment == "dev") {
+        $.mobile.changePage("#homePage", {transition:"fade"})
+        landingPage()
+    }
+})
 
 function validateUser() {
     var url = URL + "/DataProvider/validateUser?username=vandana&password=firstrain";
@@ -8,8 +16,14 @@ function validateUser() {
 }
 
 function landingPage() {
-    var url = URL + "/DataProvider/landingPage?userId=" + localStorage.userID + "&count=10&rows=40";
-    callAJAX(url, "landingPage");
+    if (environment == "test") {
+        var url = URL + "/DataProvider/landingPage?userId=" + localStorage.userID + "&count=10&rows=40";
+        callAJAX(url, "landingPage");
+    }
+    else if (environment == "dev") {
+        insertFirstReads(landingPageJSON)
+        insertActiveMonitor(landingPageJSON)
+    }
 }
 
 
@@ -79,7 +93,7 @@ function getFirstReads(docList, docCount, swipeDirection) {
 }
 
 function getDocumentDetails(docID) {
-alert(docID)
+    alert(docID)
 }
 
 function getMonitorDetails(monitorID) {
