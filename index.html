@@ -11,11 +11,12 @@
     <link rel="stylesheet" href="css/monitorDetails.css" type="text/css"/>
     <link rel="stylesheet" href="css/documentDetails.css" type="text/css"/>
     <style type="text/css">
-        ul#thelist li{
+        ul#thelist li {
             float: left;
         }
-        #wrapper{
-            height: 100px;
+
+        #wrapper {
+            height: 200px;
         }
     </style>
     <script type="text/javascript" charset="utf-8" src="phonegap-1.4.1.js"></script>
@@ -29,18 +30,17 @@
     <script type="text/javascript">
         var myScroll;
         function loaded() {
-            var get
-            alert($("#thelist li").css("width"))
             var liLength = $("#thelist").children().length
             $("#docLength").html(liLength)
-            $("#scroller").css("width", ($("ul#thelist").children().length * 1800) + "px");
+            $("#scroller").css("width", ($("ul#thelist").children().length * 300) + "px");
             myScroll = new iScroll('wrapper', {
                 snap:true,
                 momentum:false,
                 hScrollbar:true,
-                snapThreshold:100,
+                snapThreshold:1,
                 onScrollEnd:function () {
-                    $("#currentDoc").html(this.currPageX + 1)
+                    var getCurrentPage = this.currPageX
+                    $("#currentDoc").html(getCurrentPage + 1)
                 }
             });
         }

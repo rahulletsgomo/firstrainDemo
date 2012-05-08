@@ -1,9 +1,12 @@
 $(function () {
     if (environment == "test") {
-        $("#signinButton").live("click", validateUser);
-        $("#signInLoading").attr("style", "visibility:true");
+        $("#signinButton").live("click", function () {
+            validateUser();
+            $("#signInLoading").attr("style", "visibility:true");
+        });
     }
     else if (environment == "dev") {
+        console.log("Dev Environment Started")
         $.mobile.changePage("#homePage", {transition:"fade"})
         landingPage()
     }
@@ -35,14 +38,15 @@ function insertFirstReads(data) {
 
     getFirstReads(docList, docCount);
 
-    $("#docArea").bind("swipeleft", function () {
-        getFirstReads(docList, docCount, "left")
-    })
+    if (environment != "dev") {
+        $("#docArea").bind("swipeleft", function () {
+            getFirstReads(docList, docCount, "left")
+        })
 
-    $("#docArea").bind("swiperight", function () {
-        getFirstReads(docList, docCount, "right")
-    })
-
+        $("#docArea").bind("swiperight", function () {
+            getFirstReads(docList, docCount, "right")
+        })
+    }
 }
 
 function getFirstReads(docList, docCount, swipeDirection) {
@@ -100,41 +104,45 @@ function getFirstReads(docList, docCount, swipeDirection) {
             docSummary = docList[i].summary
             docID = docList[i].id
 
-            docContent += '<li style="padding:2px 0 0 2px;" id="' + docID + '" class="ui-li ui-li-static ui-body-d documentContent">';
+            docContent += '<li style="padding:2px 0 0 2px; height: 300px" id="' + docID + '" class="ui-li ui-li-static ui-body-d documentContent">';
             docContent += '<div style="padding:10px;">';
-            docContent += '<div style="font-size:20px;" id="docTitle">';
+            docContent += '<div style="font-size:20px; width: 280px" id="docTitle">';
             docContent += docTitle;
             docContent += '</div>';
             docContent += '<div style="color:#5a91bb;height:30px;line-height:30px">';
             docContent += '<img id="docIcon" src="' + docIcon + '" style="height:15px"/>';
             docContent += '<span id="docSourceName">' + docSourceName + '</span>';
             docContent += '</div>';
-            docContent += '<div style="padding-bottom:10px" id="docSummary">';
+            docContent += '<div style="padding-bottom:10px; width: 250px; height: 20px; overflow: hidden;" id="docSummary">';
             docContent += docSummary;
             docContent += '</div>';
             docContent += '</div>';
             docContent += '</li>';
+            //console.log(i + " done !");
         }
     }
     $("#thelist").html(docContent);
+    $.mobile.changePage("#homePage");
+
     $(".documentContent").bind("taphold", function () {
-//        getDocumentDetails(docID)
+        getDocumentDetails(docID)
     })
 }
 
 function getDocumentDetails(docID) {
     alert(">>>>>> This is the document ID : " + docID)
-    $.mobile.changePage("documentDetails.html", {transition:"fade"})
+//    $.mobile.changePage("documentDetails.html", {transition:"fade"})
 }
 
 function getMonitorDetails(monitorID) {
     var checkURL = URL + "/DataProvider/searchResults?userId=" + localStorage.userID + "&type=monitor&itemcount=30&id=" + monitorID + "&subq=mt,docs,events,tweets";
     callAJAX(checkURL, "getMonitorSearchResults")
-    alert(">>>>>> Called from : " + monitorID)
+    console.log(">>>>>> Called from : " + monitorID)
 //    localStorage.monitorID = monitorID
 }
 
 function insertActiveMonitor(data) {
+    console.log("Inside Active Monitors")
     var monitorList = data.data.topMonitorList;
     var monitorNames = "";
     for (var i = 0; i < monitorList.length; i++) {

@@ -1,7 +1,5 @@
 function callAJAX(url, callingFunction) {
-    if(callingFunction == "getMonitorSearchResults"){
-        alert(">>>> URL : "+url)
-    }
+    alert("URL : "+url)
     try {
         $.ajax({
             url:url,
@@ -14,7 +12,7 @@ function callAJAX(url, callingFunction) {
                     alert(alertMsg + data.status)
                 }
                 else {
-                    if(callingFunction == "getMonitorSearchResults"){
+                    if (callingFunction == "getMonitorSearchResults") {
                         console.log(">>>>>>>>> Inside the success state of getMonitorSearchResults !!!")
                     }
                     methodToCall(callingFunction, data)
@@ -34,7 +32,7 @@ function methodToCall(callingFunction, data) {
     switch (callingFunction) {
         case "validateUser":
             localStorage.userID = data.data.user.id;
-            console.log("User id : "+localStorage.userID)
+            console.log("User id : " + localStorage.userID)
             break;
         case "landingPage":
             insertActiveMonitor(data)
