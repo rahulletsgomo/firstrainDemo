@@ -1,4 +1,4 @@
-{"message":"Document Details populated Successfully...", "data":[
+var documentDetailsJSON = {"message":"Document Details populated Successfully...", "data":[
     {
         "id":526125655,
         "type":"DOCUMENT",

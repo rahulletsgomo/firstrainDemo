@@ -8,7 +8,7 @@
 
     <link href="jquery.mobile-1.0.1.min.css" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="css/style.css" type="text/css"/>
-    <link rel="stylesheet" href="css/monitorDetails.css" type="text/css"/>
+    <!--<link rel="stylesheet" href="css/monitorDetails.css" type="text/css"/>-->
     <link rel="stylesheet" href="css/documentDetails.css" type="text/css"/>
     <style type="text/css">
         ul#thelist li {
@@ -27,18 +27,20 @@
     <script type="text/javascript" src="js/ajaxFunctions.js"></script>
     <script type="text/javascript" src="js/testJSON/loginSection.js"></script>
     <script type="text/javascript" src="js/testJSON/landingPageJSON.js"></script>
+    <script type="text/javascript" src="js/testJSON/documentDetailsJSON.js"></script>
     <script type="text/javascript">
         var myScroll;
         function loaded() {
             var liLength = $("#thelist").children().length
             $("#docLength").html(liLength)
-            $("#scroller").css("width", ($("ul#thelist").children().length * 100) + "px");
+            $("#scroller").css("width", ($("ul#thelist").children().length * 300) + "px");
             myScroll = new iScroll('wrapper', {
                 snap:true,
                 momentum:false,
                 hScrollbar:true,
                 snapThreshold:100,
                 onScrollEnd:function () {
+                    console.log(">>>> X : " + this.x + ">>>>> Y : " + this.y)
                     var getCurrentPage = this.currPageX
                     $("#currentDoc").html(getCurrentPage + 1)
                 }
@@ -104,45 +106,11 @@
             <div id="wrapper">
                 <div id="scroller">
                     <ul id="thelist">
-                        <li><strong>1.</strong> <em>A robot may not injure a human being or, through inaction, allow a
-                            human being
-                            to come to harm.</em></li>
-                        <li><strong>2.</strong> <em>A robot must obey any orders given to it by human beings, except
-                            where such
-                            orders would conflict with the First Law.</em></li>
-                        <li><strong>3.</strong> <em>A robot must protect its own existence as long as such protection
-                            does not
-                            conflict with the First or Second Law.</em></li>
-                        <li><strong>4.</strong> <em>A robot may not injure a human being or, through inaction, allow a
-                            human being
-                            to come to harm.</em></li>
-                        <li><strong>5.</strong> <em>A robot must obey any orders given to it by human beings, except
-                            where such
-                            orders would conflict with the First Law.</em></li>
+
                     </ul>
                 </div>
             </div>
 
-
-            <!--
-                        <div id="wrapper">
-                            <div id="scroller">
-                                <ul id="thelist" style="padding:0px;margin:0;-webkit-box-shadow: 0px 4px 5px #999;">
-                                    <li style="padding:2px 0 0 2px;" class="documentContent">
-                                        <div style="padding:10px;">
-                                            <div style="font-size:20px;" id="docTitle">Google Challenge Oracle Copyright Claim</div>
-                                            <div style="color:#5a91bb;height:30px;line-height:30px">
-                                                <img id="docIcon" src='img/jw.png' style="height:15px"/>
-                                                <span id="docSourceName"></span>
-                                            </div>
-                                            <div style="padding-bottom:10px" id="docSummary">This is a dummy content
-                                            </div>
-                                        </div>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-            -->
         </div>
 
         <div class='monitorTeaser' style="padding-bottom:2px;">
@@ -166,6 +134,70 @@
     </div>
 
 </div>
+
+<!--Document Details page starts -->
+<div data-role="page" id="documentDetailsPage"
+     style="background:-webkit-gradient(linear, center top, center bottom, from(#008BBA), to(#003198));">
+
+    <div data-role="header" class="customheader" data-position="fixed">
+        <h1>FirstRain</h1>
+    </div>
+    <div class="online_info_container">
+
+
+        <div class="bg_red">First Reads</div>
+        <div class="newscontainer" style="height:350px; overflow-y:scroll;">
+            <div class="news_content">
+                <div class="news_heading" id="documentTitle">Online Information &#38; Content Service Trends</div>
+                <div class="source_container">
+
+                    <div class="source_name" id="documentSourceName">
+                        Mashable
+                    </div>
+                    <div class="date">Wed, May 2</div>
+                </div>
+            </div>
+            <div class="news_info" id="documentSummary">Uploaded by First Rain Business Web
+                Get the FirstRain for iPad App today from the iTunes store or at http://firstra.in/ ipadApp, and get the
+                customer
+            </div>
+            <div class="related_item_container">
+                <div class="title_red">RELATED CONTENT</div>
+                <ul id="documentRelatedContent"></ul>
+            </div>
+
+            <div class="related_item_container">
+                <div class="title_red">RELATED TWEETS</div>
+                <div class="tweet">
+                    <div class="tweet_img"><img src="breaking_news.jpg"></div>
+                    <div class="tweet_info">Get the FirstRain for iPad App today from the iTunes store or at <a
+                            href="#">http://firstra.in/</a>
+                        ipadApp, and get the customer<br/>
+                        <span class="tweet_source">http://t.co/YKJC#gPc</span>
+                    </div>
+                </div>
+
+            </div>
+            <div class="related_item_container">
+                <div class="title_red">COMPANIES MENTIONED</div>
+                <ul id="documentMentionedCompanies"></ul>
+
+            </div>
+            <div class="related_item_container">
+                <div class="title_red">TOPICS MENTIONED</div>
+                <ul id="documentMentionedTopics"></ul>
+            </div>
+
+
+        </div>
+        <div class="bottom_action_button">
+            <div class="grey_btn_left">Email</div>
+            <div class="grey_btn_right">Open</div>
+
+        </div>
+    </div>
+</div>
+
 
 <!-- Modal Box Page Start -->
 <div id="forgotModalPage">

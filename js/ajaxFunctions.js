@@ -1,5 +1,4 @@
 function callAJAX(url, callingFunction) {
-    alert("URL : "+url)
     try {
         $.ajax({
             url:url,
@@ -38,6 +37,10 @@ function methodToCall(callingFunction, data) {
             insertActiveMonitor(data)
             insertFirstReads(data)
             $.mobile.changePage("#homePage", { transtion:"fade"});
+            break;
+        case "getDocumentDetails":
+            setDocumentInfo(data, docIcon)
+            $.mobile.changePage("#documentDetailsPage", { transtion:"fade"});
             break;
         case "getMonitorSearchResults":
 //            console.log(">>>>>>>>>>>_______________ Response from getMonitorSearchResults user : " + JSON.stringify(data));

@@ -54,41 +54,76 @@ function getFirstReads(docList, docCount) {
     var docSummary = "";
     var docID = "";
     var docContent = "";
-        for (var i = 0; i < docCount; i++) {
-            docTitle = docList[i].title
-            docSourceName = docList[i].source.name
-            docIcon = docList[i].favicon
-            docSummary = docList[i].summary
-            docID = docList[i].id
+    for (var i = 0; i < docCount; i++) {
+        docTitle = docList[i].title
+        docSourceName = docList[i].source.name
+        docIcon = docList[i].favicon
+        docSummary = docList[i].summary
+        docID = docList[i].id
 
-            docContent += '<li style="padding:2px 0 0 2px; height: 300px" id="' + docID + '" class="ui-li ui-li-static ui-body-d documentContent">';
-            docContent += '<div style="padding:10px;">';
-            docContent += '<div style="font-size:20px; width: 280px" id="docTitle">';
-            docContent += docTitle;
-            docContent += '</div>';
-            docContent += '<div style="color:#5a91bb;height:30px;line-height:30px">';
-            docContent += '<img id="docIcon" src="' + docIcon + '" style="height:15px"/>';
-            docContent += '<span id="docSourceName">' + docSourceName + '</span>';
-            docContent += '</div>';
-            docContent += '<div style="padding-bottom:10px; width: 250px; height: 20px; overflow: hidden;" id="docSummary">';
-            docContent += docSummary;
-            docContent += '</div>';
-            docContent += '</div>';
-            docContent += '</li>';
-            console.log(i + " done !");
-        }
+        docContent += '<li style="padding:2px 0 0 2px; height: 300px" id="' + docID + '" class="ui-li ui-li-static ui-body-d documentContent">';
+        docContent += '<div style="padding:10px;">';
+        docContent += '<div style="font-size:20px; width: 280px" id="docTitle">';
+        docContent += docTitle;
+        docContent += '</div>';
+        docContent += '<div style="color:#5a91bb;height:30px;line-height:30px">';
+        docContent += '<img id="docIcon" src="' + docIcon + '" style="height:15px"/>';
+        docContent += '<span id="docSourceName">' + docSourceName + '</span>';
+        docContent += '</div>';
+        docContent += '<div style="padding-bottom:10px; width: 250px; height: 20px; overflow: hidden;" id="docSummary">';
+        docContent += docSummary;
+        docContent += '</div>';
+        docContent += '</div>';
+        docContent += '</li>';
+        console.log(i + " done !");
+    }
     $("#thelist").html(docContent);
     $.mobile.changePage("#homePage");
 
     $(".documentContent").bind("taphold", function () {
-        getDocumentDetails(docID)
+        getDocumentDetails(docID, docIcon)
     })
 }
 
-function getDocumentDetails(docID) {
-    alert(">>>>>> This is the document ID : " + docID)
-//    $.mobile.changePage("documentDetails.html", {transition:"fade"})
+function getDocumentDetails(docID, docIcon) {
+    if (environment == "test") {
+        var url = URL + "/DataProvider/docDetails?userId=" + localStorage.userID + "&docids=" + docID
+        callAJAX(url, "getDocumentDetails")
+    }
+    else if (environment == "dev") {
+        alert("Event Fired")
+        setDocumentInfo(documentDetailsJSON, docIcon)
+        $.mobile.changePage("#documentDetailsPage", {transition:"fade"})
+    }
 }
+
+function setDocumentInfo(documentDetails, docIcon) {
+    console.log(">>>>>>>>> DocumentDetails : " + JSON.stringify(documentDetails))
+    var documentTitle = documentDetails.data[0].title;
+    var documentSource = documentDetails.data[0].source.name;
+    var documentSummary = documentDetails.data[0].summary;
+    var documentMatchedContent = documentDetails.data[0].matchedContentTypes;
+    var documentMatchedCompanies = documentDetails.data[0].matchedCompanies;
+    var documentMatchedTopics = documentDetails.data[0].matchedTopics;
+
+    alert(documentMatchedTopics.length)
+    $("#documentTitle").html(documentTitle)
+    $("#documentSourceName").html(documentSource)
+    $("#documentSummary").html(documentSummary)
+    $("#documentIcon").attr("src", docIcon)
+    iterateItems(documentMatchedContent, "documentRelatedContent");
+    iterateItems(documentMatchedCompanies, "documentMentionedCompanies");
+    iterateItems(documentMatchedTopics, "documentMentionedTopics");
+
+    function iterateItems(documentType, documentContainer) {
+        for (var i = 0; i < documentType.length; i++) {
+            $("#"+documentContainer).append('<li class="related_item">' + documentType[i].name + '</li>');
+        }
+    }
+
+
+}
+
 
 function getMonitorDetails(monitorID) {
     var checkURL = URL + "/DataProvider/searchResults?userId=" + localStorage.userID + "&type=monitor&itemcount=30&id=" + monitorID + "&subq=mt,docs,events,tweets";
