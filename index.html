@@ -9,13 +9,43 @@
     <link href="jquery.mobile-1.0.1.min.css" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="css/style.css" type="text/css"/>
     <link rel="stylesheet" href="css/monitorDetails.css" type="text/css"/>
+    <link rel="stylesheet" href="css/documentDetails.css" type="text/css"/>
+    <style type="text/css">
+        ul#thelist li{
+            float: left;
+        }
+        #wrapper{
+            height: 100px;
+        }
+    </style>
     <script type="text/javascript" charset="utf-8" src="phonegap-1.4.1.js"></script>
     <script type="text/javascript" charset="utf-8" src="jquery-1.6.4.min.js"></script>
     <script type="text/javascript" charset="utf-8" src="jquery.mobile-1.0.1.min.js"></script>
+    <script type="text/javascript" charset="utf-8" src="js/iscroll.js"></script>
     <script type="text/javascript" src="js/globalVars.js"></script>
     <script type="text/javascript" src="js/ajaxFunctions.js"></script>
     <script type="text/javascript" src="js/testJSON/loginSection.js"></script>
     <script type="text/javascript" src="js/testJSON/landingPageJSON.js"></script>
+    <script type="text/javascript">
+        var myScroll;
+        function loaded() {
+            var get
+            alert($("#thelist li").css("width"))
+            var liLength = $("#thelist").children().length
+            $("#docLength").html(liLength)
+            $("#scroller").css("width", ($("ul#thelist").children().length * 1800) + "px");
+            myScroll = new iScroll('wrapper', {
+                snap:true,
+                momentum:false,
+                hScrollbar:true,
+                snapThreshold:100,
+                onScrollEnd:function () {
+                    $("#currentDoc").html(this.currPageX + 1)
+                }
+            });
+        }
+        document.addEventListener('DOMContentLoaded', loaded, false);
+    </script>
 </head>
 
 <body>
@@ -68,27 +98,51 @@
 
     <div data-role="content">
         <div class='monitorTeaser' id="docArea" style="padding-bottom:10px;">
-            <h3 class="screenSubHeader bgred">FirstReads<label style="float:right;"><span id="currentDoc"></span> to
-                <span id="docLength"></span> </label></h3>
+            <h3 class="screenSubHeader bgred">FirstReads<label style="float:right;"><span id="currentDoc">1</span> to
+                <span id="docLength">40</span> </label></h3>
 
             <div id="wrapper">
                 <div id="scroller">
-                    <ul id="thelist" data-role="listview" data-theme="d"
-                        style="padding:0px;margin:0;-webkit-box-shadow: 0px 4px 5px #999;">
-                        <li style="padding:2px 0 0 2px;" class="documentContent">
-                            <div style="padding:10px;">
-                                <div style="font-size:20px;" id="docTitle">Google Challenge Oracle Copyright Claim</div>
-                                <div style="color:#5a91bb;height:30px;line-height:30px">
-                                    <img id="docIcon" src='img/jw.png' style="height:15px"/>
-                                    <span id="docSourceName"></span>
-                                </div>
-                                <div style="padding-bottom:10px" id="docSummary">This is a dummy content
-                                </div>
-                            </div>
-                        </li>
+                    <ul id="thelist">
+                        <li><strong>1.</strong> <em>A robot may not injure a human being or, through inaction, allow a
+                            human being
+                            to come to harm.</em></li>
+                        <li><strong>2.</strong> <em>A robot must obey any orders given to it by human beings, except
+                            where such
+                            orders would conflict with the First Law.</em></li>
+                        <li><strong>3.</strong> <em>A robot must protect its own existence as long as such protection
+                            does not
+                            conflict with the First or Second Law.</em></li>
+                        <li><strong>4.</strong> <em>A robot may not injure a human being or, through inaction, allow a
+                            human being
+                            to come to harm.</em></li>
+                        <li><strong>5.</strong> <em>A robot must obey any orders given to it by human beings, except
+                            where such
+                            orders would conflict with the First Law.</em></li>
                     </ul>
                 </div>
             </div>
+
+
+            <!--
+                        <div id="wrapper">
+                            <div id="scroller">
+                                <ul id="thelist" style="padding:0px;margin:0;-webkit-box-shadow: 0px 4px 5px #999;">
+                                    <li style="padding:2px 0 0 2px;" class="documentContent">
+                                        <div style="padding:10px;">
+                                            <div style="font-size:20px;" id="docTitle">Google Challenge Oracle Copyright Claim</div>
+                                            <div style="color:#5a91bb;height:30px;line-height:30px">
+                                                <img id="docIcon" src='img/jw.png' style="height:15px"/>
+                                                <span id="docSourceName"></span>
+                                            </div>
+                                            <div style="padding-bottom:10px" id="docSummary">This is a dummy content
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+            -->
         </div>
 
         <div class='monitorTeaser' style="padding-bottom:2px;">

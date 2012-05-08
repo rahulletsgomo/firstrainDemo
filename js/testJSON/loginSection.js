@@ -46,54 +46,85 @@ function insertFirstReads(data) {
 }
 
 function getFirstReads(docList, docCount, swipeDirection) {
-
-    if (swipeDirection == "left") {
-        if (getCurrentNode == (docCount - 1)) {
-            getFirstReads(docList, docCount, "right")
-        }
-        getCurrentNode++;
-        getCurrentNodeNumber++;
-    }
-
-    if (swipeDirection == "right") {
-        if (getCurrentNode == 0) {
-            getFirstReads(docList, docCount, "left")
-        }
-        getCurrentNode--;
-        getCurrentNodeNumber--;
-    }
-    $("#currentDoc").html(getCurrentNodeNumber)
-    $("#docLength").html(docCount)
-    var docTitle = docList[getCurrentNode].title
-    var docSourceName = docList[getCurrentNode].source.name
-    var docIcon = docList[getCurrentNode].favicon
-    var docSummary = docList[getCurrentNode].summary
-    var docID = docList[getCurrentNode].id
-
+    var docTitle = "";
+    var docSourceName = "";
+    var docIcon = "";
+    var docSummary = "";
+    var docID = "";
     var docContent = "";
-    docContent += '<li style="padding:2px 0 0 2px;" id="' + docID + '" class="ui-li ui-li-static ui-body-d documentContent">';
-    docContent += '<div style="padding:10px;">';
-    docContent += '<div style="font-size:20px;" id="docTitle">';
-    docContent += docTitle;
-    docContent += '</div>';
-    docContent += '<div style="color:#5a91bb;height:30px;line-height:30px">';
-    docContent += '<img id="docIcon" src="' + docIcon + '" style="height:15px"/>';
-    docContent += '<span id="docSourceName">' + docSourceName + '</span>';
-    docContent += '</div>';
-    docContent += '<div style="padding-bottom:10px" id="docSummary">';
-    docContent += docSummary;
-    docContent += '</div>';
-    docContent += '</div>';
-    docContent += '</li>';
 
+    if (environment != "dev") {
+        if (swipeDirection == "left") {
+            if (getCurrentNode == (docCount - 1)) {
+                getFirstReads(docList, docCount, "right")
+            }
+            getCurrentNode++;
+            getCurrentNodeNumber++;
+        }
+
+        if (swipeDirection == "right") {
+            if (getCurrentNode == 0) {
+                getFirstReads(docList, docCount, "left")
+            }
+            getCurrentNode--;
+            getCurrentNodeNumber--;
+        }
+        $("#currentDoc").html(getCurrentNodeNumber)
+        $("#docLength").html(docCount)
+        docTitle = docList[getCurrentNode].title
+        docSourceName = docList[getCurrentNode].source.name
+        docIcon = docList[getCurrentNode].favicon
+        docSummary = docList[getCurrentNode].summary
+        docID = docList[getCurrentNode].id
+
+        docContent += '<li style="padding:2px 0 0 2px;" id="' + docID + '" class="ui-li ui-li-static ui-body-d documentContent">';
+        docContent += '<div style="padding:10px;">';
+        docContent += '<div style="font-size:20px;" id="docTitle">';
+        docContent += docTitle;
+        docContent += '</div>';
+        docContent += '<div style="color:#5a91bb;height:30px;line-height:30px">';
+        docContent += '<img id="docIcon" src="' + docIcon + '" style="height:15px"/>';
+        docContent += '<span id="docSourceName">' + docSourceName + '</span>';
+        docContent += '</div>';
+        docContent += '<div style="padding-bottom:10px" id="docSummary">';
+        docContent += docSummary;
+        docContent += '</div>';
+        docContent += '</div>';
+        docContent += '</li>';
+    }
+    else if (environment == "dev") {
+        for (var i = 0; i < 40; i++) {
+            docTitle = docList[i].title
+            docSourceName = docList[i].source.name
+            docIcon = docList[i].favicon
+            docSummary = docList[i].summary
+            docID = docList[i].id
+
+            docContent += '<li style="padding:2px 0 0 2px;" id="' + docID + '" class="ui-li ui-li-static ui-body-d documentContent">';
+            docContent += '<div style="padding:10px;">';
+            docContent += '<div style="font-size:20px;" id="docTitle">';
+            docContent += docTitle;
+            docContent += '</div>';
+            docContent += '<div style="color:#5a91bb;height:30px;line-height:30px">';
+            docContent += '<img id="docIcon" src="' + docIcon + '" style="height:15px"/>';
+            docContent += '<span id="docSourceName">' + docSourceName + '</span>';
+            docContent += '</div>';
+            docContent += '<div style="padding-bottom:10px" id="docSummary">';
+            docContent += docSummary;
+            docContent += '</div>';
+            docContent += '</div>';
+            docContent += '</li>';
+        }
+    }
     $("#thelist").html(docContent);
     $(".documentContent").bind("taphold", function () {
-        getDocumentDetails(docID)
+//        getDocumentDetails(docID)
     })
 }
 
 function getDocumentDetails(docID) {
-    alert(docID)
+    alert(">>>>>> This is the document ID : " + docID)
+    $.mobile.changePage("documentDetails.html", {transition:"fade"})
 }
 
 function getMonitorDetails(monitorID) {
