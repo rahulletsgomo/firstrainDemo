@@ -1,4 +1,16 @@
 $(function () {
+//    $("#signinButton").live("click", function () {
+//        if (environment == "test") {
+//            validateUser();
+//        }
+//        else if (environment == "dev") {
+//            $.mobile.changePage("#homePage", {transition:"fade"})
+//            landingPage();
+//        }
+//        $("#signInLoading").attr("style", "visibility:true");
+//
+//    });
+
     if (environment == "test") {
         $("#signinButton").live("click", function () {
             validateUser();
@@ -6,7 +18,6 @@ $(function () {
         });
     }
     else if (environment == "dev") {
-        console.log("Dev Environment Started")
         $.mobile.changePage("#homePage", {transition:"fade"})
         landingPage()
     }
@@ -33,71 +44,17 @@ function landingPage() {
 function insertFirstReads(data) {
     var docList = data.data.docList;
     var docCount = data.data.docList.length;
-    getCurrentNode = 0;
-    getCurrentNodeNumber = getCurrentNode + 1;
-
     getFirstReads(docList, docCount);
-
-    if (environment != "dev") {
-        $("#docArea").bind("swipeleft", function () {
-            getFirstReads(docList, docCount, "left")
-        })
-
-        $("#docArea").bind("swiperight", function () {
-            getFirstReads(docList, docCount, "right")
-        })
-    }
 }
 
-function getFirstReads(docList, docCount, swipeDirection) {
+function getFirstReads(docList, docCount) {
     var docTitle = "";
     var docSourceName = "";
     var docIcon = "";
     var docSummary = "";
     var docID = "";
     var docContent = "";
-
-    if (environment != "dev") {
-        if (swipeDirection == "left") {
-            if (getCurrentNode == (docCount - 1)) {
-                getFirstReads(docList, docCount, "right")
-            }
-            getCurrentNode++;
-            getCurrentNodeNumber++;
-        }
-
-        if (swipeDirection == "right") {
-            if (getCurrentNode == 0) {
-                getFirstReads(docList, docCount, "left")
-            }
-            getCurrentNode--;
-            getCurrentNodeNumber--;
-        }
-        $("#currentDoc").html(getCurrentNodeNumber)
-        $("#docLength").html(docCount)
-        docTitle = docList[getCurrentNode].title
-        docSourceName = docList[getCurrentNode].source.name
-        docIcon = docList[getCurrentNode].favicon
-        docSummary = docList[getCurrentNode].summary
-        docID = docList[getCurrentNode].id
-
-        docContent += '<li style="padding:2px 0 0 2px;" id="' + docID + '" class="ui-li ui-li-static ui-body-d documentContent">';
-        docContent += '<div style="padding:10px;">';
-        docContent += '<div style="font-size:20px;" id="docTitle">';
-        docContent += docTitle;
-        docContent += '</div>';
-        docContent += '<div style="color:#5a91bb;height:30px;line-height:30px">';
-        docContent += '<img id="docIcon" src="' + docIcon + '" style="height:15px"/>';
-        docContent += '<span id="docSourceName">' + docSourceName + '</span>';
-        docContent += '</div>';
-        docContent += '<div style="padding-bottom:10px" id="docSummary">';
-        docContent += docSummary;
-        docContent += '</div>';
-        docContent += '</div>';
-        docContent += '</li>';
-    }
-    else if (environment == "dev") {
-        for (var i = 0; i < 40; i++) {
+        for (var i = 0; i < docCount; i++) {
             docTitle = docList[i].title
             docSourceName = docList[i].source.name
             docIcon = docList[i].favicon
@@ -118,9 +75,8 @@ function getFirstReads(docList, docCount, swipeDirection) {
             docContent += '</div>';
             docContent += '</div>';
             docContent += '</li>';
-            //console.log(i + " done !");
+            console.log(i + " done !");
         }
-    }
     $("#thelist").html(docContent);
     $.mobile.changePage("#homePage");
 

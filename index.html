@@ -32,12 +32,12 @@
         function loaded() {
             var liLength = $("#thelist").children().length
             $("#docLength").html(liLength)
-            $("#scroller").css("width", ($("ul#thelist").children().length * 300) + "px");
+            $("#scroller").css("width", ($("ul#thelist").children().length * 100) + "px");
             myScroll = new iScroll('wrapper', {
                 snap:true,
                 momentum:false,
                 hScrollbar:true,
-                snapThreshold:1,
+                snapThreshold:100,
                 onScrollEnd:function () {
                     var getCurrentPage = this.currPageX
                     $("#currentDoc").html(getCurrentPage + 1)
