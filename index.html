@@ -17,6 +17,7 @@
 
         #wrapper {
             height: 200px;
+            margin-top: -15px;
         }
     </style>
     <script type="text/javascript" charset="utf-8" src="phonegap-1.4.1.js"></script>
@@ -39,7 +40,7 @@
                 hScrollbar:true,
                 snapThreshold:100,
                 onScrollEnd:function () {
-                    //console.log(">>>> X : " + this.x + ">>>>> Y : " + this.y)
+                    console.log(">>>> X : " + this.x + ">>>>> Y : " + this.y)
                     getCurrentPage = this.currPageX
                     $("#currentDoc").html(getCurrentPage + 1)
                 }
