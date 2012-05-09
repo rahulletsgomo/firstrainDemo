@@ -20,7 +20,10 @@ $(function () {
 
 function validateUser() {
     if (environment == "test") {
-        var url = URL + "/DataProvider/validateUser?username=vandana&password=firstrain";
+        var userName = $("#usernameInput").val();
+        var password = $("#truePWInput").val();
+        alert("Username : " +userName+", Password : "+password)
+        var url = URL + "/DataProvider/validateUser?username="+userName+"&password="+password;
         callAJAX(url, "validateUser")
     }
     landingPage();
@@ -136,6 +139,7 @@ function getMonitorDetails(monitorID) {
 
 function insertActiveMonitor(data) {
     var monitorList = data.data.topMonitorList;
+    console.log("Monitor List Length : " +monitorList.length)
     var monitorNames = "";
     for (var i = 0; i < monitorList.length; i++) {
         monitorNames += '<li class="ui-li ui-li-static ui-body-d" style="padding:2px 0 0 2px;" onclick = "getMonitorDetails(\'' + monitorList[i].monitorId + '\')">';
