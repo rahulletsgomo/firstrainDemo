@@ -10,22 +10,19 @@ $(function () {
 //        $("#signInLoading").attr("style", "visibility:true");
 //
 //    });
+    $("#signinButton").live("click", function () {
+        $("#signInLoading").attr("style", "visibility:true");
+        $("#signInLoading").attr("disabled", true);
+        validateUser();
+    });
 
-    if (environment == "test") {
-        $("#signinButton").live("click", function () {
-            validateUser();
-            $("#signInLoading").attr("style", "visibility:true");
-        });
-    }
-    else if (environment == "dev") {
-        $.mobile.changePage("#homePage", {transition:"fade"})
-        landingPage()
-    }
 })
 
 function validateUser() {
-    var url = URL + "/DataProvider/validateUser?username=vandana&password=firstrain";
-    callAJAX(url, "validateUser")
+    if (environment == "test") {
+        var url = URL + "/DataProvider/validateUser?username=vandana&password=firstrain";
+        callAJAX(url, "validateUser")
+    }
     landingPage();
 }
 
@@ -37,6 +34,7 @@ function landingPage() {
     else if (environment == "dev") {
         insertFirstReads(landingPageJSON)
         insertActiveMonitor(landingPageJSON)
+        loaded();
     }
 }
 
@@ -44,6 +42,7 @@ function landingPage() {
 function insertFirstReads(data) {
     var docList = data.data.docList;
     var docCount = data.data.docList.length;
+    $("#docLength").html(docCount)
     getFirstReads(docList, docCount);
 }
 
@@ -61,7 +60,7 @@ function getFirstReads(docList, docCount) {
         docSummary = docList[i].summary
         docID = docList[i].id
 
-        docContent += '<li style="padding:2px 0 0 2px; height: 300px" id="' + docID + '" class="ui-li ui-li-static ui-body-d documentContent">';
+        docContent += '<li style="padding:2px 0 0 2px; height: 300px" id="' + docID + '" class="ui-body-d documentContent">';
         docContent += '<div style="padding:10px;">';
         docContent += '<div style="font-size:20px; width: 280px" id="docTitle">';
         docContent += docTitle;
@@ -75,20 +74,23 @@ function getFirstReads(docList, docCount) {
         docContent += '</div>';
         docContent += '</div>';
         docContent += '</li>';
-        console.log(i + " done !");
+        console.log(i + " : " + docID);
     }
     $("#thelist").html(docContent);
     $.mobile.changePage("#homePage");
 
     $(".documentContent").bind("taphold", function () {
-        getDocumentDetails(docID, docIcon)
+        var getID = $(".documentContent").attr("id")
+//        alert("Doc ID : " + getID)
+//        getDocumentDetails(docID, docIcon)
     })
 }
 
 function getDocumentDetails(docID, docIcon) {
     if (environment == "test") {
         var url = URL + "/DataProvider/docDetails?userId=" + localStorage.userID + "&docids=" + docID
-        callAJAX(url, "getDocumentDetails")
+//        callAJAX(url, "getDocumentDetails")
+        alert(">> URL : " + url)
     }
     else if (environment == "dev") {
         alert("Event Fired")
@@ -117,7 +119,7 @@ function setDocumentInfo(documentDetails, docIcon) {
 
     function iterateItems(documentType, documentContainer) {
         for (var i = 0; i < documentType.length; i++) {
-            $("#"+documentContainer).append('<li class="related_item">' + documentType[i].name + '</li>');
+            $("#" + documentContainer).append('<li class="related_item">' + documentType[i].name + '</li>');
         }
     }
 
@@ -133,7 +135,6 @@ function getMonitorDetails(monitorID) {
 }
 
 function insertActiveMonitor(data) {
-    console.log("Inside Active Monitors")
     var monitorList = data.data.topMonitorList;
     var monitorNames = "";
     for (var i = 0; i < monitorList.length; i++) {

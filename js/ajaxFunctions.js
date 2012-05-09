@@ -34,9 +34,11 @@ function methodToCall(callingFunction, data) {
             console.log("User id : " + localStorage.userID)
             break;
         case "landingPage":
+            console.log(">>>>> Inside the switch Statement for landing page ...")
             insertActiveMonitor(data)
             insertFirstReads(data)
             $.mobile.changePage("#homePage", { transtion:"fade"});
+            loaded();
             break;
         case "getDocumentDetails":
             setDocumentInfo(data, docIcon)

@@ -353,3 +353,8 @@ Landing Page
     height: 10px;
     overflow: hidden;
 }
+
+/*Loading Messages*/
+.loadingProgressMessage{
+    margin: 10px 0px 0px 130px;
+}

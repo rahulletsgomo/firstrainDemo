@@ -31,8 +31,7 @@
     <script type="text/javascript">
         var myScroll;
         function loaded() {
-            var liLength = $("#thelist").children().length
-            $("#docLength").html(liLength)
+            var getCurrentPage = "";
             $("#scroller").css("width", ($("ul#thelist").children().length * 300) + "px");
             myScroll = new iScroll('wrapper', {
                 snap:true,
@@ -40,13 +39,14 @@
                 hScrollbar:true,
                 snapThreshold:100,
                 onScrollEnd:function () {
-                    console.log(">>>> X : " + this.x + ">>>>> Y : " + this.y)
-                    var getCurrentPage = this.currPageX
+                    //console.log(">>>> X : " + this.x + ">>>>> Y : " + this.y)
+                    getCurrentPage = this.currPageX
                     $("#currentDoc").html(getCurrentPage + 1)
                 }
             });
         }
-        document.addEventListener('DOMContentLoaded', loaded, false);
+//        document.addEventListener('DOMContentLoaded', loaded, false);
+
     </script>
 </head>
 
@@ -73,8 +73,8 @@
         </ul>
         <div data-role="none" id="signinButton" class="buttonRegular">Sign in</div>
         <div class='loadingProgressMessage' id="signInLoading"
-             style="text-align:center;text-shadow:none;visibility: hidden;font-weight:bold; color: #f0f0f0;">
-            LOADING <img src='img/Loading.gif' width="16" height="16"/></div>
+             style="text-align:center;text-shadow:none;visibility: hidden; font-weight:bold; color: #f0f0f0;">
+            <img src='images/ajax-loader.gif'/></div>
         <div style="height:30px;text-align:center;line-height:30px">
             <div style="text-shadow:none;display:none;font-weight:bold;" id="loginFailedMessage">SIGN IN FAILED. PLEASE
                 TRY AGAIN.
@@ -140,6 +140,7 @@
      style="background:-webkit-gradient(linear, center top, center bottom, from(#008BBA), to(#003198));">
 
     <div data-role="header" class="customheader" data-position="fixed">
+        <button onclick="history.go(-1); return true;">Back</button>
         <h1>FirstRain</h1>
     </div>
     <div class="online_info_container">
