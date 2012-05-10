@@ -129,9 +129,16 @@ function insertActiveMonitor(data) {
     for (var i = 0; i < monitorList.length; i++) {
         monitorNames += '<li class="ui-li ui-li-static ui-body-d" style="padding:2px 0 0 2px;" onclick = "getMonitorDetails(\'' + monitorList[i].monitorId + '\')">';
         monitorNames += '<div style="padding:10px;">';
+        monitorNames += '<div style="float:right;>';
+        monitorNames += '<label">';
+        if (monitorList[i].mailBadge) {
+            monitorNames += '<img src = "./img/mail_icon_red.png" style = "height:24px;margin-right: 12px;" />';
+        }
+        monitorNames += '<img src = "./img/r-icon_carrot.png" style = "height:24px" /></label>';
+        monitorNames += '</div>';
+        monitorNames += '<div style="width: 180px;">';
         monitorNames += '<label style="font-size:14px;text-shadow:none;">' + monitorList[i].monitorName + '</label>';
-        monitorNames += '<label style="float:right;">';
-        monitorNames += '<img src = "../../img/r-icon_carrot.png" style = "height:24px" /></label>';
+        monitorNames += '</div>';
         monitorNames += '</div></li>';
     }
     $("#activeMonitorList").html(monitorNames)
