@@ -46,7 +46,7 @@
                 }
             });
         }
-//        document.addEventListener('DOMContentLoaded', loaded, false);
+        //        document.addEventListener('DOMContentLoaded', loaded, false);
 
     </script>
 </head>
@@ -140,10 +140,17 @@
 <div data-role="page" id="documentDetailsPage"
      style="background:-webkit-gradient(linear, center top, center bottom, from(#008BBA), to(#003198));">
 
+    <!--<div data-role="header" class="customheader" data-position="fixed">-->
+    <!--&lt;!&ndash;<button onclick="history.go(-1); return true;">Back</button>&ndash;&gt;-->
+    <!--<a href="javascript:void(0)" data-role="none" class="custom-button" onclick="goBack()">Back</a>-->
+    <!--<h1>FirstRain</h1>-->
+    <!--</div>-->
     <div data-role="header" class="customheader" data-position="fixed">
-        <button onclick="history.go(-1); return true;">Back</button>
+        <a href="javascript:void(0)" data-role="none" class="custom-button" onclick="history.go(-1)">Back</a>
+
         <h1>FirstRain</h1>
     </div>
+
     <div class="online_info_container">
 
 
@@ -151,11 +158,13 @@
         <div class="newscontainer" style="height:350px; overflow-y:scroll;">
             <div class="news_content">
                 <div class="news_heading" id="documentTitle">Online Information &#38; Content Service Trends</div>
-                <div class="source_container">
 
+                <div class="source_container">
+                    <img src="" id="documentIcon" style="float:left" alt="Icon"/>
                     <div class="source_name" id="documentSourceName">
                         Mashable
                     </div>
+
                     <div class="date">Wed, May 2</div>
                 </div>
             </div>
@@ -163,7 +172,7 @@
                 Get the FirstRain for iPad App today from the iTunes store or at http://firstra.in/ ipadApp, and get the
                 customer
             </div>
-            <div class="related_item_container">
+            <div class="related_item_container documentRelatedContent">
                 <div class="title_red">RELATED CONTENT</div>
                 <ul id="documentRelatedContent"></ul>
             </div>
@@ -180,12 +189,12 @@
                 </div>
 
             </div>
-            <div class="related_item_container">
+            <div class="related_item_container documentMentionedCompanies">
                 <div class="title_red">COMPANIES MENTIONED</div>
                 <ul id="documentMentionedCompanies"></ul>
 
             </div>
-            <div class="related_item_container">
+            <div class="related_item_container documentMentionedTopics">
                 <div class="title_red">TOPICS MENTIONED</div>
                 <ul id="documentMentionedTopics"></ul>
             </div>

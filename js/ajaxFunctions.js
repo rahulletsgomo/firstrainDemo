@@ -1,4 +1,5 @@
-function callAJAX(url, callingFunction) {
+function callAJAX(url, callingFunction, docIcon) {
+    console.log(">>>>>> DocIcon : " +docIcon)
     try {
         $.ajax({
             url:url,
@@ -14,7 +15,7 @@ function callAJAX(url, callingFunction) {
                     if (callingFunction == "getMonitorSearchResults") {
                         console.log(">>>>>>>>> Inside the success state of getMonitorSearchResults !!!")
                     }
-                    methodToCall(callingFunction, data)
+                    methodToCall(callingFunction, data, docIcon)
                 }
             },
             error:function (e) {
@@ -27,22 +28,24 @@ function callAJAX(url, callingFunction) {
     }
 }
 
-function methodToCall(callingFunction, data) {
+function methodToCall(callingFunction, data, docIcon) {
     switch (callingFunction) {
         case "validateUser":
-            localStorage.userID = data.data.user.id;
-            console.log("User id : " + localStorage.userID)
+            userID = data.data.user.id;
+            console.log(">>>>>> User Id : " + userID)
+            landingPage();
             break;
         case "landingPage":
-            console.log(">>>>> Inside the switch Statement for landing page ...")
             insertActiveMonitor(data)
             insertFirstReads(data)
             $.mobile.changePage("#homePage", { transtion:"fade"});
             loaded();
             break;
         case "getDocumentDetails":
-            setDocumentInfo(data, docIcon)
-            $.mobile.changePage("#documentDetailsPage", { transtion:"fade"});
+            setDocumentInfo(data, docIcon);
+            console.log("Inside case getDocumentDetails !!!")
+            console.log("Data : " +data+", DocIcon : " +docIcon)
+            $.mobile.changePage("#documentDetailsPage", {transition:"fade"})
             break;
         case "getMonitorSearchResults":
 //            console.log(">>>>>>>>>>>_______________ Response from getMonitorSearchResults user : " + JSON.stringify(data));

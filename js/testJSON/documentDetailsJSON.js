@@ -1,28 +1,21 @@
 var documentDetailsJSON = {"message":"Document Details populated Successfully...", "data":[
     {
-        "id":526125655,
+        "id":528320586,
         "type":"DOCUMENT",
-        "date":1335963037000,
+        "date":1336640087000,
         "source":{
-            "name":"Insurance Journal",
-            "searchToken":"S:InsuranceJournal",
+            "name":"ProActive Investors - United Kingdom",
+            "searchToken":"S:ProActiveInvestorsUnitedKingdom",
             "band":0,
             "relevance":0,
-            "detailId":"850"
+            "detailId":"68789"
         },
-        "title":"The completion of the transaction sets Nationwide apart from the competition as a top independent agency partner in the United States.  ",
-        "groupId":315803180,
-        "url":"http://www.insurancejournal.com/news/national/2012/05/01/245490.htm?click=quote",
-        "summary":"Nationwide Mutual Insurance Co. said that the company completed its previously announced $834 million merger deal with Harleysville Mutual Insurance Co.  The deal was  first announced in September 2011 . Nationwide Mutual policyholders voted to approve the merger on April 9, 2012. Harleysville Mutual policyholders and Harleysville Group stockholders approved it on April 24, 2012.",
+        "title":"London Mining increases Q1 iron ore production by over 1,000 pct compared to previous quarter",
+        "groupId":317621446,
+        "url":"http://www.proactiveinvestors.co.uk/companies/news/42596/london-mining-increases-q1-iron-ore-production-by-over-1000-pct-compared-to-previous-quarter--42596.html",
+        "summary":"London Mining  ( LON:LOND ) increased iron ore production in the first quarter of 2012 from the Marampa mine by more than 1,000 per cent compared to the fourth quarter last year, when operations there began. The company produced 315,000 wet metric tonnes from the mine in Sierra Leone, compared to 20,000 wmt in the previous quarter -  an increase of 1,473 per cent, it said.",
         "accessType":0,
         "matchedContentTypes":[
-            {
-                "name":"Industry Sources",
-                "searchToken":"F:IndustrySources",
-                "band":3,
-                "relevance":1000,
-                "detailId":"288557"
-            },
             {
                 "name":"News and Web",
                 "searchToken":"F:NewsandWeb",
@@ -33,68 +26,64 @@ var documentDetailsJSON = {"message":"Document Details populated Successfully...
         ],
         "matchedCompanies":[
             {
-                "name":"Nationwide Financial Services, Inc.",
-                "searchToken":"C:NationwideFinancialServicesInc",
-                "band":1,
-                "relevance":180,
-                "detailId":"288609"
-            },
-            {
-                "name":"Nationwide Mutual Insurance Company",
-                "searchToken":"C:NationwideMutualInsuranceCompany",
-                "band":1,
-                "relevance":50,
-                "detailId":"288610"
-            },
-            {
-                "name":"Harleysville Group Inc.",
-                "searchToken":"C:HarleysvilleGroupInc",
-                "primaryTicker":"HGIC",
-                "band":1,
-                "relevance":120,
-                "detailId":"310628"
-            },
-            {
-                "name":"Nationwide Corporation",
-                "searchToken":"C:NationwideCorporation",
-                "band":1,
-                "relevance":180,
-                "detailId":"943616"
-            },
-            {
-                "name":"Harleysville Mutual Insurance Company Inc.",
-                "searchToken":"C:HarleysvilleMutualInsuranceCompanyInc",
-                "band":1,
-                "relevance":50,
-                "detailId":"968103"
+                "name":"London Mining PLC",
+                "searchToken":"C:LondonMiningPLC",
+                "primaryTicker":"LOND.OB",
+                "band":3,
+                "relevance":150,
+                "detailId":"572242"
             }
         ],
         "matchedTopics":[
             {
-                "name":"M&A and Spin-offs",
-                "searchToken":"T:MAandSpinoffs",
-                "band":1,
-                "relevance":360,
-                "detailId":"254884"
+                "name":"Operating Activities",
+                "searchToken":"T:OperatingActivities",
+                "band":3,
+                "relevance":30,
+                "detailId":"254888"
             },
             {
                 "name":"Management Quotes",
                 "searchToken":"T:ManagementQuotes",
-                "band":1,
-                "relevance":10,
+                "band":3,
+                "relevance":30,
                 "detailId":"254895"
+            },
+            {
+                "name":"Iron Ore Industry",
+                "searchToken":"T:IronOreIndustry",
+                "band":2,
+                "relevance":100,
+                "detailId":"276960"
+            },
+            {
+                "name":"Raw Materials - Steel Production",
+                "searchToken":"T:RawMaterialsSteelProduction",
+                "band":2,
+                "relevance":100,
+                "detailId":"320993"
+            },
+            {
+                "name":"Base Metals Industry Trends",
+                "searchToken":"T:BaseMetalsIndustryTrends",
+                "band":3,
+                "relevance":50,
+                "detailId":"531766"
+            },
+            {
+                "name":"Mining Output",
+                "searchToken":"T:MiningOutput",
+                "band":3,
+                "relevance":130,
+                "detailId":"543776"
             }
         ],
         "itemId":0,
         "clipped":false,
-        "matchedPeople":[
-            {
-                "name":"Michael L Browne",
-                "searchToken":"P:MichaelLBrowne",
-                "band":3,
-                "relevance":85,
-                "detailId":"992720"
-            }
-        ]
+        "matchedPeople":[],
+        "quote":{
+            "text":"\"Over the quarter we have successfully processed the Marampa tailings and weathered ore and shipped consistent high quality product to both European and Chinese steel mills.   \n\n ▪ \"The logistics from mine to ship have been proven to work as designed and we have now sent seven ships to our customers to date. \n\n ▪  ▫ \"Our pricing reflects our premium quality product and we expect to increase margins following the commissioning of our transhipment platform in Q2 2012.\" ▫  \n\n ▪ London also highlighted today, the appointment post period end of Renato Almeida as its chief marketing officer and said that coking production had started in Colombia. ",
+            "person":""
+        }
     }
 ], "status":"SUCCESS"}

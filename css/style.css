@@ -354,6 +354,24 @@ Landing Page
     overflow: hidden;
 }
 
+/*Back Button*/
+.custom-button {
+    background:url('../images/back-btn-up.png') no-repeat;
+    background-size:61px 30px;
+    width:61px;
+    height:30px;
+    font-size:14px;
+    color:#fff;
+    text-decoration:none;
+    padding:6px 0 0 5px;
+    font-weight:600;
+}
+
+.custom-button:active {
+    background:url('../images/back-btn-down.png') no-repeat;
+}
+
+
 /*Loading Messages*/
 .loadingProgressMessage{
     margin: 10px 0px 0px 130px;
