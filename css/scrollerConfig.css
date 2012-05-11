@@ -21,12 +21,12 @@ ul#thelist li {
     box-sizing: border-box;
     display: block;
     float: left;
-    width: 290px;
+    /*width: 290px;*/
     padding: 2px;
 }
 
 #wrapper {
-    width: 290px;
+    /*width: 290px;*/
     height: 200px;
     position: relative;
 }

@@ -1,7 +1,9 @@
 var myScroll;
 function loaded() {
-    var getCurrentPage = "";
-    $("#scroller").css("width", ($("ul#thelist").children().length * 290) + "px");
+    var wrapperWidth = $("#homePage").css("width").split("px", 1);
+    wrapperWidth -= 30;
+    $("#scroller").css("width", ($("ul#thelist").children().length * wrapperWidth) + "px");
+    configureIScroll(wrapperWidth)
     myScroll = new iScroll('wrapper', {
         snap:true,
         momentum:false,
@@ -16,3 +18,8 @@ function loaded() {
 }
 //        document.addEventListener('DOMContentLoaded', loaded, false);
 
+function configureIScroll(wrapperWidth){
+    $("#scroller li").css("width",wrapperWidth+"px");
+    $("#wrapper").css("width",wrapperWidth+"px");
+
+}
