@@ -1,7 +1,6 @@
 $(function () {
     $("#signinButton").live("click", function () {
         $("#signInLoading").attr("style", "visibility:true");
-        $("#signInLoading").attr("disabled", true);
         validateUser();
     });
 })
@@ -54,7 +53,7 @@ function getFirstReads(docList, docCount) {
 
         docContent += '<li style="padding:2px 0 0 2px; height: 300px" rel="' + docIcon + '" id="' + docID + '" class="ui-body-d documentContent">';
         docContent += '<div style="padding:10px;">';
-        docContent += '<div style="font-size:20px; width: 280px" id="docTitle">';
+        docContent += '<div style="font-size:20px; width: 260px" id="docTitle">';
         docContent += docTitle;
         docContent += '</div>';
         docContent += '<div style="color:#5a91bb;height:30px;line-height:30px">';
@@ -127,7 +126,7 @@ function insertActiveMonitor(data) {
     console.log("Monitor List Length : " + monitorList.length)
     var monitorNames = "";
     for (var i = 0; i < monitorList.length; i++) {
-        monitorNames += '<li class="ui-li ui-li-static ui-body-d" style="padding:2px 0 0 2px;" onclick = "getMonitorDetails(\'' + monitorList[i].monitorId + '\')">';
+        monitorNames += '<li class="ui-li ui-li-static ui-body-d" style="padding:2px 0 0 2px;">';
         monitorNames += '<div style="padding:10px;">';
         monitorNames += '<div style="float:right;>';
         monitorNames += '<label">';

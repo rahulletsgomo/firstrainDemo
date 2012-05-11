@@ -1,49 +1,32 @@
-#wrapper {
-    width: 200px;
-    height: 160px;
-
+ul#thelist li {
     float: left;
-    position: relative; /* On older OS versions "position" and "z-index" must be defined, */
-    z-index: 1; /* it seems that recent webkit is less picky and works anyway. */
-    overflow: hidden;
-
-    background: #aaa;
-    -webkit-border-radius: 10px;
-    -moz-border-radius: 10px;
-    -o-border-radius: 10px;
-    border-radius: 10px;
-    background: #e3e3e3;
+    margin: 0;
+    padding: 10px;
 }
 
-#scroller {
-    width: 2100px;
-    height: 100%;
+#scroller{
     float: left;
     padding: 0;
 }
 
-#scroller ul {
-    list-style: none;
+#scroller ul{
     display: block;
     float: left;
-    width: 100%;
-    height: 100%;
     padding: 0;
     margin: 0;
     text-align: left;
 }
 
-#scroller li {
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    -o-box-sizing: border-box;
+#scroller li{
     box-sizing: border-box;
     display: block;
     float: left;
-    width: 300px;
-    height: 160px;
-    text-align: center;
-    font-family: georgia;
-    font-size: 18px;
-    line-height: 140%;
+    width: 290px;
+    padding: 2px;
+}
+
+#wrapper {
+    width: 290px;
+    height: 200px;
+    position: relative;
 }

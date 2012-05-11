@@ -9,39 +9,8 @@
     <link href="jquery.mobile-1.0.1.min.css" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="css/style.css" type="text/css"/>
     <link rel="stylesheet" href="css/documentDetails.css" type="text/css"/>
-    <style type="text/css">
-        ul#thelist li {
-            float: left;
-            margin: 0;
-            padding: 10px;
-        }
+    <link rel="stylesheet" href="css/scrollerConfig.css" type="text/css"/>
 
-        #scroller{
-            float: left;
-            padding: 0;
-        }
-
-        #scroller ul{
-            display: block;
-            float: left;
-            padding: 0;
-            margin: 0;
-            text-align: left;
-        }
-
-        #scroller li{
-            box-sizing: border-box;
-            display: block;
-            float: left;
-            width: 290px;
-        }
-
-        #wrapper {
-            width: 290px;
-            height: 200px;
-            position: relative;
-        }
-    </style>
     <script type="text/javascript" charset="utf-8" src="phonegap-1.4.1.js"></script>
     <script type="text/javascript" charset="utf-8" src="jquery-1.6.4.min.js"></script>
     <script type="text/javascript" charset="utf-8" src="jquery.mobile-1.0.1.min.js"></script>
@@ -51,27 +20,8 @@
     <script type="text/javascript" src="js/testJSON/loginSection.js"></script>
     <script type="text/javascript" src="js/testJSON/landingPageJSON.js"></script>
     <script type="text/javascript" src="js/testJSON/documentDetailsJSON.js"></script>
-    <script type="text/javascript">
-        var myScroll;
-        function loaded() {
-            var getCurrentPage = "";
-            $("#scroller").css("width", ($("ul#thelist").children().length * 290) + "px");
-            myScroll = new iScroll('wrapper', {
-                snap:true,
-                momentum:false,
-                hScrollbar:false,
-                vScroll:false,
-                snapThreshold:100,
-                onScrollEnd:function () {
-                    console.log(">>>> X : " + this.x + ">>>>> Y : " + this.y)
-                    getCurrentPage = this.currPageX
-                    $("#currentDoc").html(getCurrentPage + 1)
-                }
-            });
-        }
-        //        document.addEventListener('DOMContentLoaded', loaded, false);
-
-    </script>
+    <script type="text/javascript" src="js/scrollerConfig.js"></script>
+    <script type="text/javascript" src="js/menuOptions.js"></script>
 </head>
 
 <body>
@@ -119,7 +69,8 @@
 
     <div data-role="header" class="customheader" data-position="fixed">
         <h1>FirstRain</h1>
-        <input type="button" id="login-button" class="header_bt ui-btn-right" value="Menu" data-role="none">
+        <input type="button" onclick="goBack()" id="login-button" class="header_bt ui-btn-right" value="Menu"
+               data-role="none">
     </div>
 
     <div data-role="content">
@@ -184,6 +135,7 @@
 
                 <div class="source_container">
                     <img src="" id="documentIcon" style="float:left" alt="Icon"/>
+
                     <div class="source_name" id="documentSourceName">
                         Mashable
                     </div>

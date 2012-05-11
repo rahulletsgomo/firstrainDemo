@@ -1,5 +1,4 @@
 function callAJAX(url, callingFunction, docIcon) {
-    console.log(">>>>>> DocIcon : " +docIcon)
     try {
         $.ajax({
             url:url,
