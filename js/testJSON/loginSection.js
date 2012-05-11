@@ -53,14 +53,14 @@ function getFirstReads(docList, docCount) {
 
         docContent += '<li style="padding:2px 0 0 2px; height: 300px" rel="' + docIcon + '" id="' + docID + '" class="ui-body-d documentContent">';
         docContent += '<div style="padding:10px;">';
-        docContent += '<div style="font-size:20px; width: 260px" id="docTitle">';
+        docContent += '<div style="font-size:20px; " id="docTitle">';
         docContent += docTitle;
         docContent += '</div>';
         docContent += '<div style="color:#5a91bb;height:30px;line-height:30px">';
         docContent += '<img id="docIcon" src="' + docIcon + '" style="height:15px"/>';
         docContent += '<span style="margin-left: 5px" id="docSourceName">' + docSourceName + '</span>';
         docContent += '</div>';
-        docContent += '<div style="padding-bottom:10px; width: 250px; height: 20px; overflow: hidden;" id="docSummary">';
+        docContent += '<div style="padding-bottom:10px; height: 20px; overflow: hidden;" id="docSummary">';
         docContent += docSummary;
         docContent += '</div>';
         docContent += '</div>';
@@ -143,3 +143,20 @@ function insertActiveMonitor(data) {
     $("#activeMonitorList").html(monitorNames)
 }
 
+$(":jqmData(role='page')").live("pageshow", function (event) {
+    var activePage = $(".ui-page-active").attr("id");
+    switch (activePage) {
+        case "firstrainLoginPage":
+        {
+            event.preventDefault();
+            break;
+        }
+        case "homePage":
+        {
+            event.preventDefault();
+            break;
+        }
+        default:
+            console.log("Prevent Default not working")
+    }
+});

@@ -22,6 +22,15 @@
     <script type="text/javascript" src="js/testJSON/documentDetailsJSON.js"></script>
     <script type="text/javascript" src="js/scrollerConfig.js"></script>
     <script type="text/javascript" src="js/menuOptions.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            $(".customheader").bind("click", function () {
+                history.go(-1);
+                $("#signInLoading").css("visibility", "hidden");
+                userID="";
+            })
+        })
+    </script>
 </head>
 
 <body>
@@ -29,10 +38,12 @@
 <div data-role="page" id="firstrainLoginPage"
      style="background:-webkit-gradient(linear, center top, center bottom, from(#008BBA), to(#003198));">
 
-    <div data-role="header" class="customheader" data-position="fixed">
-        <h1>FirstRain</h1>
+    <!--<div data-role="header" class="customheader" data-position="fixed">-->
+    <!--<h1>FirstRain</h1>-->
+    <div class="customheader">
+        <div class="headerName">FirstRain</div>
     </div>
-    <div class='splashHeader'><h1>FirstRain</h1></div>
+    <div class='splashHeader' style="margin: 50px 0px 0px 0px"><h1>FirstRain</h1></div>
 
     <div data-role="content">
         <ul data-role="listview" data-inset="true" id="userPasslistview" data-theme="d">
@@ -67,13 +78,15 @@
 
 <div data-role="page" id="homePage">
 
-    <div data-role="header" class="customheader" data-position="fixed">
-        <h1>FirstRain</h1>
-        <input type="button" onclick="goBack()" id="login-button" class="header_bt ui-btn-right" value="Menu"
-               data-role="none">
+    <div class="customheader">
+        <!--<div style="float: right">-->
+        <!--<input type="button" onclick="goBack()" style="width: 60px" id="login-button" class="header_bt ui-btn-right" value="Menu"-->
+        <!--data-role="none">-->
+        <!--</div>-->
+        <div class="headerName">FirstRain</div>
     </div>
 
-    <div data-role="content">
+    <div data-role="content" style="margin: 40px 0px 0px 0px">
         <div class='monitorTeaser' id="docArea" style="padding-bottom:10px;">
             <h3 class="screenSubHeader bg_red">FirstReads<label style="float:right;"><span id="currentDoc">1</span> to
                 <span id="docLength">40</span> </label></h3>

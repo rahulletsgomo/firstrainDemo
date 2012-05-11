@@ -29,12 +29,21 @@ input::-webkit-input-placeholder {
 }
 .customheader
 {	
-	padding-top: 5px;	
 	text-align: center;
 	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#1e5799), color-stop(50%,#2989d8), color-stop(51%,#207cca), color-stop(100%,#7db9e8));	
-	opacity: 0.95;
-	font-size: 18px;
-	font-weight: bold;
+	border-bottom:1px solid #000;
+    /*opacity: 0.95;*/
+	font-size: 17px;
+	/*font-weight: bold;*/
+    position: fixed;
+    z-index: 100;
+    width: 100%;
+    color: #fff;
+    height: 40px;
+}
+
+.headerName{
+    margin-top: 6px;
 }
 
 .inputBox-class { border:0px; padding:8px; width:93%; font-size:16px;-webkit-appearance:none; color:#000; }

@@ -21,5 +21,9 @@ function loaded() {
 function configureIScroll(wrapperWidth){
     $("#scroller li").css("width",wrapperWidth+"px");
     $("#wrapper").css("width",wrapperWidth+"px");
+    var docTitleWidth = wrapperWidth - 50;
+    $("#docTitle").css("width",docTitleWidth+"px");
+    var docSummary = wrapperWidth - 40;
+    $("#docSummary").css("width",docSummary+"px");
 
 }
