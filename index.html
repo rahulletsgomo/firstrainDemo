@@ -23,13 +23,10 @@
     <script type="text/javascript" src="js/scrollerConfig.js"></script>
     <script type="text/javascript" src="js/menuOptions.js"></script>
     <script type="text/javascript">
-        $(function () {
-            $(".customheader").bind("click", function () {
-                history.go(-1);
-                $("#signInLoading").css("visibility", "hidden");
-                userID = "";
-            })
-        })
+        function goToLogin() {
+            $.mobile.changePage("#firstrainLoginPage")
+            $("#signInLoading").css("visibility", "hidden");
+        }
     </script>
 </head>
 
@@ -78,6 +75,7 @@
 
 <div data-role="page" id="homePage">
 
+
     <div class="customheader">
         <!--<div style="float: right">-->
         <!--<input type="button" onclick="goBack()" style="width: 60px" id="login-button" class="header_bt ui-btn-right" value="Menu"-->
@@ -86,7 +84,6 @@
 
         <div class="headerName">FirstRain</div>
     </div>
-
     <div data-role="content" style="margin: 35px 0px 0px 0px">
         <div class='monitorTeaser' id="docArea" style="padding-bottom:10px;">
             <h3 class="screenSubHeader bg_red">FirstReads<label style="float:right;"><span id="currentDoc">1</span> to
@@ -136,7 +133,12 @@
         <!--<a href="javascript:void(0)" data-role="none" class="custom-button" onclick="history.go(-1)">Back</a>-->
 
         <!--<h1>FirstRain</h1>-->
-        <div class="headerName">FirstRain</div>
+        <div class="headerName">
+            <div style="margin: 0px">FirstRain</div>
+            <div style="float: left; padding: 0px 0px 0px 10px; margin: -22px 0px 0px 0px" onclick='$.mobile.changePage("#homePage")'>
+                <img src="images/backButton.png" alt="Go Back"/>
+            </div>
+        </div>
 
     </div>
 
@@ -144,7 +146,7 @@
 
 
         <div class="bg_red">First Reads</div>
-        <div class="newscontainer" style="height:350px; overflow-y:scroll;">
+        <div class="newscontainer" style="height:320px; overflow-y:scroll;">
             <div class="news_content">
                 <div class="news_heading" id="documentTitle">Online Information &#38; Content Service Trends</div>
 

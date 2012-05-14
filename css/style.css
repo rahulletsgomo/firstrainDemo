@@ -10,6 +10,14 @@ body {
     height: 100%;
 }
 
+/*Menu [HEADER]*/
+#menu{
+    border: 1px solid #000;
+    width: 120px;
+    height: 100%;
+    margin: 0px 0px 0px 40px;
+}
+
 /* shared elements */
 
 ul {
@@ -47,6 +55,7 @@ input::-webkit-input-placeholder {
 
 .headerName {
     margin-top: 6px;
+    text-align: center;
 }
 
 .landingPageContentArea {
