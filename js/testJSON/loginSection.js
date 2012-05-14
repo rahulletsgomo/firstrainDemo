@@ -10,6 +10,7 @@ function validateUser() {
         var userName = $("#usernameInput").val();
         var password = $("#truePWInput").val();
         var url = URL + "/DataProvider/validateUser?username=" + userName + "&password=" + password;
+        console.log(url)
         callAJAX(url, "validateUser")
     }
     else if (environment == "dev") {
@@ -53,14 +54,14 @@ function getFirstReads(docList, docCount) {
 
         docContent += '<li style="padding:2px 0 0 2px; height: 300px" rel="' + docIcon + '" id="' + docID + '" class="ui-body-d documentContent">';
         docContent += '<div style="padding:10px;">';
-        docContent += '<div style="font-size:20px; " id="docTitle">';
+        docContent += '<div style="font-size:16px;font-weight: bold; " id="docTitle">';
         docContent += docTitle;
         docContent += '</div>';
         docContent += '<div style="color:#5a91bb;height:30px;line-height:30px">';
         docContent += '<img id="docIcon" src="' + docIcon + '" style="height:15px"/>';
         docContent += '<span style="margin-left: 5px" id="docSourceName">' + docSourceName + '</span>';
         docContent += '</div>';
-        docContent += '<div style="padding-bottom:10px; height: 20px; overflow: hidden;" id="docSummary">';
+        docContent += '<div style="padding-bottom:10px; height: 50px; overflow: hidden;" id="docSummary">';
         docContent += docSummary;
         docContent += '</div>';
         docContent += '</div>';
@@ -69,11 +70,12 @@ function getFirstReads(docList, docCount) {
     $("#thelist").html(docContent);
     $.mobile.changePage("#homePage");
 
-//    $(".documentContent").bind("taphold", function () {
-//        var getCurrentDocID = this.id;
-//        var getCurrentDocIcon = $(this).attr("rel");
-//        getDocumentDetails(getCurrentDocID, getCurrentDocIcon)
-//    })
+    $(".documentContent").bind("taphold", function () {
+        var getCurrentDocID = this.id;
+        var getCurrentDocIcon = $(this).attr("rel");
+//        alert(getCurrentDocID + ", " +getCurrentDocIcon)
+        getDocumentDetails(getCurrentDocID, getCurrentDocIcon)
+    })
 }
 
 function getDocumentDetails(docID, docIcon) {

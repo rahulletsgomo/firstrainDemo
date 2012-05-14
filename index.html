@@ -27,7 +27,7 @@
             $(".customheader").bind("click", function () {
                 history.go(-1);
                 $("#signInLoading").css("visibility", "hidden");
-                userID="";
+                userID = "";
             })
         })
     </script>
@@ -83,15 +83,16 @@
         <!--<input type="button" onclick="goBack()" style="width: 60px" id="login-button" class="header_bt ui-btn-right" value="Menu"-->
         <!--data-role="none">-->
         <!--</div>-->
+
         <div class="headerName">FirstRain</div>
     </div>
 
-    <div data-role="content" style="margin: 40px 0px 0px 0px">
+    <div data-role="content" style="margin: 35px 0px 0px 0px">
         <div class='monitorTeaser' id="docArea" style="padding-bottom:10px;">
             <h3 class="screenSubHeader bg_red">FirstReads<label style="float:right;"><span id="currentDoc">1</span> to
                 <span id="docLength">40</span> </label></h3>
 
-            <div id="wrapper">
+            <div id="wrapper" class="landingPageContentArea">
                 <div id="scroller">
                     <ul id="thelist">
 
@@ -103,8 +104,7 @@
 
         <div class='monitorTeaser' style="padding-bottom:2px;">
             <h3 class="screenSubHeader">Recently Active Monitors</h3>
-            <ul data-role="listview" id="activeMonitorList" data-theme="d"
-                style="padding:0px;margin:0;-webkit-box-shadow: 0px 4px 5px #999;">
+            <ul id="activeMonitorList" class="landingPageContentArea">
                 <li style="padding:2px 0 0 2px;">
                     <div style="padding:10px;"><label style="font-size:14px;text-shadow:none;">Tech</label><label
                             style="float:right;"><img src='img/mail_icon_red.png' style="height:24px"/><img
@@ -132,13 +132,15 @@
     <!--<a href="javascript:void(0)" data-role="none" class="custom-button" onclick="goBack()">Back</a>-->
     <!--<h1>FirstRain</h1>-->
     <!--</div>-->
-    <div data-role="header" class="customheader" data-position="fixed">
-        <a href="javascript:void(0)" data-role="none" class="custom-button" onclick="history.go(-1)">Back</a>
+    <div class="customheader">
+        <!--<a href="javascript:void(0)" data-role="none" class="custom-button" onclick="history.go(-1)">Back</a>-->
 
-        <h1>FirstRain</h1>
+        <!--<h1>FirstRain</h1>-->
+        <div class="headerName">FirstRain</div>
+
     </div>
 
-    <div class="online_info_container">
+    <div class="online_info_container" style="margin: 35px 0px 0px 0px">
 
 
         <div class="bg_red">First Reads</div>
