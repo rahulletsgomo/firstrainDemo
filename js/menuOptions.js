@@ -17,10 +17,10 @@ function showMenu() {
         visibility:"visible",
         height:menuHeight
     });
-    $("#landingPage").animate({
+    $("#landingPage").css({
         position:"absolute",
         left:"150px"
-    }, 100);
+    });
 }
 
 function hideMenu() {
