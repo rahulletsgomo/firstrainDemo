@@ -1,10 +1,10 @@
-var myScroll;
+var landingPageScroll;
 function loaded() {
     var wrapperWidth = $("#homePage").css("width").split("px", 1);
     wrapperWidth -= 30;
     $("#scroller").css("width", ($("ul#thelist").children().length * wrapperWidth) + "px");
     configureIScroll(wrapperWidth)
-    myScroll = new iScroll('wrapper', {
+    landingPageScroll = new iScroll('wrapper', {
         snap:true,
         momentum:false,
         hScrollbar:false,
