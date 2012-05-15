@@ -23,6 +23,9 @@
     <script type="text/javascript" src="js/scrollerConfig.js"></script>
     <script type="text/javascript" src="js/menuOptions.js"></script>
     <script type="text/javascript">
+        $(function () {
+            manipulateMenu();
+        })
         function goToLogin() {
             $.mobile.changePage("#firstrainLoginPage")
             $("#signInLoading").css("visibility", "hidden");
@@ -82,42 +85,77 @@
         <!--data-role="none">-->
         <!--</div>-->
 
-        <div class="headerName">FirstRain</div>
+        <div class="headerName">
+            <div id="openMenu"><img src="images/menu.png" alt="Menu" height="30" /></div>
+            FirstRain
+        </div>
     </div>
-    <div data-role="content" style="margin: 35px 0px 0px 0px">
-        <div class='monitorTeaser' id="docArea" style="padding-bottom:10px;">
-            <h3 class="screenSubHeader bg_red">FirstReads<label style="float:right;"><span id="currentDoc">1</span> to
-                <span id="docLength">40</span> </label></h3>
+    <div id="menu">
+        <ul id="menuItems" class="landingPageContentArea">
+            <li class="menuItems">
+                <div style="padding:10px;"><label style="font-size:14px;text-shadow:none;">Home</label><label
+                        style="float:right;"><img
+                        src="img/r-icon_carrot.png" style="height:24px"/></label></div>
+            </li>
+            <li class="menuItems">
+                <div style="padding:10px;"><label style="font-size:14px;text-shadow:none;">Monitors</label><label
+                        style="float:right;"><img
+                        src="img/r-icon_carrot.png" style="height:24px"/></label></div>
+            </li>
+            <li class="menuItems">
+                <div style="padding:10px;"><label style="font-size:14px;text-shadow:none;">Search</label><label
+                        style="float:right;"><img
+                        src="img/r-icon_carrot.png" style="height:24px"/></label></div>
+            </li>
+            <li class="menuItems">
+                <div style="padding:10px;"><label style="font-size:14px;text-shadow:none;">BookMarks</label><label
+                        style="float:right;"><img
+                        src="img/r-icon_carrot.png" style="height:24px"/></label></div>
+            </li>
+            <li class="menuItems">
+                <div style="padding:10px;"><label style="font-size:14px;text-shadow:none;">Account</label><label
+                        style="float:right;"><img
+                        src="img/r-icon_carrot.png" style="height:24px"/></label></div>
+            </li>
+        </ul>
+    </div>
+    <div id="landingPage">
+        <div data-role="content" style="margin: 35px 0px 0px 0px">
+            <div class='monitorTeaser' id="docArea" style="padding-bottom:10px;">
+                <h3 class="screenSubHeader bg_red">FirstReads<label style="float:right;"><span id="currentDoc">1</span>
+                    to
+                    <span id="docLength">40</span> </label></h3>
 
-            <div id="wrapper" class="landingPageContentArea">
-                <div id="scroller">
-                    <ul id="thelist">
+                <div id="wrapper" class="landingPageContentArea">
+                    <div id="scroller">
+                        <ul id="thelist">
 
-                    </ul>
+                        </ul>
+                    </div>
                 </div>
+
             </div>
 
-        </div>
+            <div class='monitorTeaser' style="padding-bottom:2px;">
+                <div class='touchable showAllMonitorsButton'>All Monitors</div>
+                <h3 class="screenSubHeader">Recently Active Monitors</h3>
+                <ul id="activeMonitorList" class="landingPageContentArea">
+                    <li style="padding:2px 0 0 2px;">
+                        <div style="padding:10px;"><label style="font-size:14px;text-shadow:none;">Tech</label><label
+                                style="float:right;"><img src='img/mail_icon_red.png' style="height:24px"/><img
+                                src="img/r-icon_carrot.png" style="height:24px"/></label></div>
+                    </li>
+                    <li style="padding:2px 0 0 2px;">
+                        <div style="padding:10px;"><label style="font-size:14px;text-shadow:none;">Tech</label><label
+                                style="float:right;"><img src='img/mail_icon_red.png' style="height:24px"/><img
+                                src="img/r-icon_carrot.png" style="height:24px"/></label></div>
+                    </li>
+                </ul>
 
-        <div class='monitorTeaser' style="padding-bottom:2px;">
-            <h3 class="screenSubHeader">Recently Active Monitors</h3>
-            <ul id="activeMonitorList" class="landingPageContentArea">
-                <li style="padding:2px 0 0 2px;">
-                    <div style="padding:10px;"><label style="font-size:14px;text-shadow:none;">Tech</label><label
-                            style="float:right;"><img src='img/mail_icon_red.png' style="height:24px"/><img
-                            src="img/r-icon_carrot.png" style="height:24px"/></label></div>
-                </li>
-                <li style="padding:2px 0 0 2px;">
-                    <div style="padding:10px;"><label style="font-size:14px;text-shadow:none;">Tech</label><label
-                            style="float:right;"><img src='img/mail_icon_red.png' style="height:24px"/><img
-                            src="img/r-icon_carrot.png" style="height:24px"/></label></div>
-                </li>
-            </ul>
-
+            </div>
+            <!--<div class='touchable showAllMonitorsButton'>All Monitors</div>-->
         </div>
-        <div class='touchable showAllMonitorsButton'>All Monitors</div>
     </div>
-
 </div>
 
 <!--Document Details page starts -->
@@ -135,7 +173,8 @@
         <!--<h1>FirstRain</h1>-->
         <div class="headerName">
             <div style="margin: 0px">FirstRain</div>
-            <div style="float: left; padding: 0px 0px 0px 10px; margin: -22px 0px 0px 0px" onclick='$.mobile.changePage("#homePage")'>
+            <div style="float: left; padding: 0px 0px 0px 10px; margin: -22px 0px 0px 0px"
+                 onclick='$.mobile.changePage("#homePage")'>
                 <img src="images/backButton.png" alt="Go Back"/>
             </div>
         </div>

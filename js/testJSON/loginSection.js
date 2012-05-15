@@ -21,7 +21,7 @@ function validateUser() {
 function landingPage() {
     if (environment == "test") {
         var url = URL + "/DataProvider/landingPage?userId=" + userID + "&count=10&rows=40";
-        console.log(">>>>> URL : " +url)
+        console.log(">>>>> URL : " + url)
         callAJAX(url, "landingPage");
     }
     else if (environment == "dev") {
@@ -71,7 +71,7 @@ function getFirstReads(docList, docCount) {
     $("#thelist").html(docContent);
     $.mobile.changePage("#homePage");
 
-    $(".documentContent").bind("taphold", function () {
+    $(".documentContent").bind("click", function () {
         var getCurrentDocID = this.id;
         var getCurrentDocIcon = $(this).attr("rel");
 //        alert(getCurrentDocID + ", " +getCurrentDocIcon)
@@ -82,7 +82,7 @@ function getFirstReads(docList, docCount) {
 function getDocumentDetails(docID, docIcon) {
     if (environment == "test") {
         var url = URL + "/DataProvider/docDetails?userId=" + userID + "&docids=" + docID;
-        console.log(url)
+        console.log(">>>>>> Document Details : " + url)
         callAJAX(url, "getDocumentDetails", docIcon)
     }
     else if (environment == "dev") {
