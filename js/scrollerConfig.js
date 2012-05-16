@@ -1,4 +1,6 @@
 var landingPageScroll;
+var documentDetailsScroller;
+
 function loaded() {
     var wrapperWidth = $("#homePage").css("width").split("px", 1);
     wrapperWidth -= 30;
@@ -18,12 +20,32 @@ function loaded() {
 }
 //        document.addEventListener('DOMContentLoaded', loaded, false);
 
-function configureIScroll(wrapperWidth){
-    $("#scroller li").css("width",wrapperWidth+"px");
-    $("#wrapper").css("width",wrapperWidth+"px");
+function configureIScroll(wrapperWidth) {
+    $("#scroller li").css("width", wrapperWidth + "px");
+    $("#wrapper").css("width", wrapperWidth + "px");
     var docTitleWidth = wrapperWidth - 50;
-    $("#docTitle").css("width",docTitleWidth+"px");
+    $("#docTitle").css("width", docTitleWidth + "px");
     var docSummary = wrapperWidth - 40;
-    $("#docSummary").css("width",docSummary+"px");
-
+    $("#docSummary").css("width", docSummary + "px");
 }
+
+
+function documentDetailsScroll() {
+    var containerWidth = $(".newscontainer").css("width");
+    var containerHeight = $(".newscontainer").css("height");
+    $("#documentDetailsWrapper").css("width", containerWidth)
+    $("#documentDetailsScroller").css("width", containerWidth)
+    $("#documentDetailsWrapper").css("height", containerHeight)
+
+    documentDetailsScroller = new iScroll('documentDetailsWrapper', {
+        vScrollbar:true,
+        hScroll:false,
+        momentum:true
+    });
+}
+
+document.addEventListener('touchmove', function (e) {
+    e.preventDefault();
+}, false);
+
+
