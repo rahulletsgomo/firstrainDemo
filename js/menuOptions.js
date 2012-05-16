@@ -32,5 +32,10 @@ function hideMenu() {
     $("#menu").css({
         visibility:"hidden"
     })
+}
 
+function changePage(changePageTo) {
+    documentDetailsScroll.destroy();
+    documentDetailsScroll = null;
+    $.mobile.changePage("#" + changePageTo)
 }

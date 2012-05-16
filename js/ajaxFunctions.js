@@ -45,6 +45,7 @@ function methodToCall(callingFunction, data, docIcon) {
             console.log("Inside case getDocumentDetails !!!")
             console.log("Data : " +data+", DocIcon : " +docIcon)
             $.mobile.changePage("#documentDetailsPage", {transition:"fade"})
+            scrollDocumentDetails();
             break;
         case "getMonitorSearchResults":
 //            console.log(">>>>>>>>>>>_______________ Response from getMonitorSearchResults user : " + JSON.stringify(data));

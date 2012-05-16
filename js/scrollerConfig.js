@@ -1,5 +1,5 @@
 var landingPageScroll;
-var documentDetailsScroller;
+var documentDetailsScroll;
 
 function loaded() {
     var wrapperWidth = $("#homePage").css("width").split("px", 1);
@@ -30,22 +30,22 @@ function configureIScroll(wrapperWidth) {
 }
 
 
-function documentDetailsScroll() {
+function scrollDocumentDetails() {
     var containerWidth = $(".newscontainer").css("width");
     var containerHeight = $(".newscontainer").css("height");
     $("#documentDetailsWrapper").css("width", containerWidth)
     $("#documentDetailsScroller").css("width", containerWidth)
     $("#documentDetailsWrapper").css("height", containerHeight)
 
-    documentDetailsScroller = new iScroll('documentDetailsWrapper', {
+    documentDetailsScroll = new iScroll('documentDetailsWrapper', {
         vScrollbar:true,
         hScroll:false,
         momentum:true
     });
 }
 
-document.addEventListener('touchmove', function (e) {
-    e.preventDefault();
-}, false);
+//document.addEventListener('touchmove', function (e) {
+//    e.preventDefault();
+//}, false);
 
 
