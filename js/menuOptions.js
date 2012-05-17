@@ -37,5 +37,5 @@ function hideMenu() {
 function changePage(changePageTo) {
     documentDetailsScroll.destroy();
     documentDetailsScroll = null;
-    $.mobile.changePage("#" + changePageTo)
+//    $.mobile.changePage("#" + changePageTo)
 }

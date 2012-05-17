@@ -70,7 +70,6 @@ function getFirstReads(docList, docCount) {
     }
     $("#thelist").html(docContent);
     $.mobile.changePage("#homePage");
-
     $(".documentContent").bind("click", function () {
         var getCurrentDocID = this.id;
         var getCurrentDocIcon = $(this).attr("rel");

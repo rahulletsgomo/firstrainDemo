@@ -3,6 +3,7 @@ var documentDetailsScroll;
 
 function loaded() {
     var wrapperWidth = $("#homePage").css("width").split("px", 1);
+    console.log("Total Width : " + wrapperWidth)
     wrapperWidth -= 30;
     $("#scroller").css("width", ($("ul#thelist").children().length * wrapperWidth) + "px");
     configureIScroll(wrapperWidth)
@@ -43,9 +44,5 @@ function scrollDocumentDetails() {
         momentum:true
     });
 }
-
-//document.addEventListener('touchmove', function (e) {
-//    e.preventDefault();
-//}, false);
 
 

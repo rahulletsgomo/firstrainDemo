@@ -34,7 +34,9 @@
 </head>
 
 <body>
-
+<div id="testDiv">
+    Rahul Meghlan
+</div>
 <div data-role="page" id="firstrainLoginPage"
      style="background:-webkit-gradient(linear, center top, center bottom, from(#008BBA), to(#003198));">
 
@@ -173,128 +175,77 @@
         <!--<h1>FirstRain</h1>-->
         <div class="headerName">
             <div style="margin: 0px">FirstRain</div>
-            <div style="float: left; padding: 0px 0px 0px 10px; margin: -22px 0px 0px 0px"
-                 onclick='changePage("homePage")'>
-                <img src="images/backButton.png" alt="Go Back"/>
+            <div style="float: left; padding: 0px 0px 0px 10px; margin: -22px 0px 0px 0px">
+                <a href="" data-rel="back" onclick='changePage("homePage")'>
+                    <img src="images/backButton.png" alt="Go Back"/>
+                </a>
             </div>
         </div>
 
     </div>
 
-    <div class="online_info_container" style="margin: 35px 0px 0px 0px;">
+    <div class="online_info_container" style="margin: 39px 0px 0px 0px;">
 
 
         <div class="bg_red">First Reads</div>
         <div class="newscontainer" style="height:320px;">
             <div id="documentDetailsWrapper">
-            <div id="documentDetailsScroller">
-            <div class="news_content">
-                <div class="news_heading" id="documentTitle">Online Information &#38; Content Service Trends</div>
+                <div id="documentDetailsScroller">
+                    <div class="news_content">
+                        <div class="news_heading" id="documentTitle">Online Information &#38; Content Service Trends
+                        </div>
 
-                <div class="source_container">
-                    <img src="" id="documentIcon" style="float:left" alt="Icon"/>
+                        <div class="source_container">
+                            <img src="" id="documentIcon" style="float:left" alt="Icon"/>
 
-                    <div class="source_name" id="documentSourceName">
-                        Mashable
+                            <div class="source_name" id="documentSourceName">
+                                Mashable
+                            </div>
+
+                            <div class="date">Wed, May 2</div>
+                        </div>
+                    </div>
+                    <div class="news_info" id="documentSummary">Uploaded by First Rain Business Web
+                        Get the FirstRain for iPad App today from the iTunes store or at http://firstra.in/ ipadApp, and
+                        get the
+                        customer
+                    </div>
+                    <div class="related_item_container documentRelatedContent">
+                        <div class="title_red">RELATED CONTENT</div>
+                        <ul id="documentRelatedContent"></ul>
                     </div>
 
-                    <div class="date">Wed, May 2</div>
-                </div>
-            </div>
-            <div class="news_info" id="documentSummary">Uploaded by First Rain Business Web
-                Get the FirstRain for iPad App today from the iTunes store or at http://firstra.in/ ipadApp, and get the
-                customer
-            </div>
-            <div class="related_item_container documentRelatedContent">
-                <div class="title_red">RELATED CONTENT</div>
-                <ul id="documentRelatedContent"></ul>
-            </div>
+                    <div class="related_item_container">
+                        <div class="title_red">RELATED TWEETS</div>
+                        <div class="tweet">
+                            <div class="tweet_img"><img src="breaking_news.jpg"></div>
+                            <div class="tweet_info">Get the FirstRain for iPad App today from the iTunes store or at <a
+                                    href="#">http://firstra.in/</a>
+                                ipadApp, and get the customer<br/>
+                                <span class="tweet_source">http://t.co/YKJC#gPc</span>
+                            </div>
+                        </div>
 
-            <div class="related_item_container">
-                <div class="title_red">RELATED TWEETS</div>
-                <div class="tweet">
-                    <div class="tweet_img"><img src="breaking_news.jpg"></div>
-                    <div class="tweet_info">Get the FirstRain for iPad App today from the iTunes store or at <a
-                            href="#">http://firstra.in/</a>
-                        ipadApp, and get the customer<br/>
-                        <span class="tweet_source">http://t.co/YKJC#gPc</span>
+                    </div>
+                    <div class="related_item_container documentMentionedCompanies">
+                        <div class="title_red">COMPANIES MENTIONED</div>
+                        <ul id="documentMentionedCompanies"></ul>
+
+                    </div>
+                    <div class="related_item_container documentMentionedTopics">
+                        <div class="title_red">TOPICS MENTIONED</div>
+                        <ul id="documentMentionedTopics"></ul>
                     </div>
                 </div>
+            </div>
 
-            </div>
-            <div class="related_item_container documentMentionedCompanies">
-                <div class="title_red">COMPANIES MENTIONED</div>
-                <ul id="documentMentionedCompanies"></ul>
+        </div>
+        <div class="bottom_action_button">
+            <div class="grey_btn_left">Email</div>
+            <div class="grey_btn_right">Open</div>
 
-            </div>
-            <div class="related_item_container documentMentionedTopics">
-                <div class="title_red">TOPICS MENTIONED</div>
-                <ul id="documentMentionedTopics"></ul>
-            </div>
         </div>
     </div>
-
-</div>
-<div class="bottom_action_button">
-    <div class="grey_btn_left">Email</div>
-    <div class="grey_btn_right">Open</div>
-
-</div>
-</div>
-</div>
-
-
-<!-- Modal Box Page Start -->
-<div id="forgotModalPage">
-
-    <a class="close" href="javascript:void(0)" st><img src="img/close.png" width="32" onclick="modalclose()"/></a>
-
-    <div class="accountFormHeader">Did you forget your user name or password?</div>
-    <div align="center" style="width:100%;margin:auto">
-        <div style="text-align:center;color:#fff;text-shadow:none;padding-top:20px;width:80%;margin:auto;font-size:14px">
-            Request a reminder by entering your email address:
-        </div>
-    </div>
-    <div style="padding:0 10px 0 10px">
-        <div style="height:20px;text-align:center;"></div>
-        <input type="text" value="" placeholder="Your email address" class="inputBox-class" style="width:95%"/>
-
-        <div style="height:20px;text-align:center;"></div>
-        <div data-role="none" class="buttonRegular">Send request</div>
-        <div style="height:20px;text-align:center;"></div>
-        <div data-role="none" class="modalboxCloseButton" onclick="modalclose()">close</div>
-    </div>
-</div>
-
-<div id="mask">
-</div>
-<!-- Modal Box Page End -->
-
-<div class="popupScreen gridMenu" id='optionsPopover'>
-    <div class="gridHeader">
-        <div class="PopUpMenuClose" id="closeSearch">X</div>
-    </div>
-
-    <div class='gridOfButtons'>
-        <div class='gridButton touchable gridButtonMonitors'><span>Monitors</span></div>
-        <div class='gridButton touchable gridButtonSearch'>
-            <span class="icon"></span>
-            <span class="label">Search</span></div>
-        <div class='gridButton touchable gridButtonMarked'>
-            <span class="icon"></span>
-            <span class="label">Bookmarks</span></div>
-        <div class='gridButton touchable gridButtonHome'>
-            <span class="icon"></span>
-            <span class="label">Home</span></div>
-        <div class='gridButton touchable gridButtonAccount'>
-            <span class="icon"></span>
-            <span class="label">Account</span></div>
-        <div class="clear"></div>
-    </div>
-    <!--end gridOfButtons -->
-
-</div>
-<div id="maskmenu">
 </div>
 </body>
 </html>

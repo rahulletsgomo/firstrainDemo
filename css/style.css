@@ -244,239 +244,6 @@ input::-webkit-input-placeholder {
     /*background:-webkit-gradient(linear,left 63,left top,color-stop(0.7, #656a70),color-stop(0.75,  #3e444d));*/
 }
 
-.gridMenu,
-.folderMenu,
-.slices,
-.search {
-    display: none;
-    z-index: 300;
-    position: absolute;
-    top: 30px;
-    left: 20px;
-    background: #FFF;
-    padding: 0;
-    margin: 0;
-    color: #333;
-    -webkit-box-shadow: 0 3px 3px rgba(0, 0, 0, 0.3);
-    -moz-border-radius: 5px;
-    -webkit-border-radius: 5px;
-    border-radius: 5px;
-}
-
-.gridMenu {
-    z-index: 300;
-    /*position:absolute;*/
-    top: 30px;
-    left: 20px;
-    width: 90% !important;
-    background: #333;
-    padding: 0px;
-    margin: 0 auto;
-    color: #333;
-    -webkit-border-radius: 10px;
-    -webkit-box-shadow: 0 0px 10px rgba(0, 0, 0, 0.9);
-}
-
-.gridButton {
-    padding: 10px;
-    display: block;
-    cursor: pointer;
-    font-size: 16px;
-    font-weight: bold;
-    font-family: Helvetica, Arial, sans-serif;
-    color: #FFFFFF;
-    text-shadow: 0px 1px 0px rgba(0, 0, 0, 0.4);
-    background-image: -moz-linear-gradient(-90deg, #333333, #000000);
-    background-image: -webkit-gradient(linear, left top, left bottom, from(#333333), to(#000000));
-}
-
-.gridButton.glowing {
-    background-image: -webkit-gradient(linear, left top, left bottom, from(#666666), to(#000000));
-}
-
-.gridButtonMonitors {
-    padding-top: 30px;
-    padding-bottom: 30px;
-    -moz-border-radius: 5px 5px 0px 0px;
-    -webkit-border-radius: 5px 5px 0px 0px;
-    border-top: 1px solid #CCCCCC;
-    border-left: 1px solid #CCCCCC;
-    border-right: 1px solid #CCCCCC;
-    border-bottom: 1px solid #333333;
-}
-
-.gridButtonSearch,
-.gridButtonMarked,
-.gridButtonHome,
-.gridButtonAccount {
-    float: left;
-    width: 50%;
-    margin: 0;
-    padding: 20px 0;
-    border-top: 1px solid #000000;
-}
-
-.gridButtonSearch,
-.gridButtonMarked {
-    border-bottom: 1px solid #333333;
-}
-
-.gridButtonSearch {
-    border-left: 1px solid #CCCCCC;
-    margin-right: -2px;
-}
-
-.gridButtonMarked {
-    border-right: 1px solid #CCCCCC;
-}
-
-.gridButtonHome {
-    -moz-border-radius: 0px 0px 0px 5px;
-    -webkit-border-radius: 0px 0px 0px 5px;
-    border-bottom: 1px solid #CCCCCC;
-    border-left: 1px solid #CCCCCC;
-    margin-right: -2px;
-}
-
-.gridButtonAccount {
-    -moz-border-radius: 0px 0px 5px 0px;
-    -webkit-border-radius: 0px 0px 5px 0px;
-    border-bottom: 1px solid #CCCCCC;
-    border-right: 1px solid #CCCCCC;
-}
-
-.gridButtonSearch span.label,
-.gridButtonMarked span.label,
-.gridButtonHome span.label,
-.gridButtonAccount span.label {
-    display: block;
-    text-align: center;
-    width: 100px;
-    margin: 0 auto;
-}
-
-.gridButtonSearch span.icon,
-.gridButtonMarked span.icon,
-.gridButtonHome span.icon,
-.gridButtonAccount span.icon {
-    display: block;
-    padding: 0px;
-    text-align: center;
-    width: 35px;
-    height: 30px;
-    margin: 0 auto 5px;
-}
-
-.gridButtonMonitors span {
-    display: block;
-    padding-left: 55px;
-    background: url('../img/menu_icon_monitors.png') no-repeat top left;
-    line-height: 31px;
-    width: 100px;
-    margin: 0 auto;
-    background-size: 45px 31px;
-}
-
-.gridButtonMonitors.glowing span {
-    background: url('../img/menu_icon_monitors_p.png') no-repeat top left;
-    background-size: 45px 31px;
-}
-
-.gridButtonSearch span.icon {
-    background: url('../img/menu_icon_search.png') no-repeat top center;
-    background-size: 28px 28px;
-}
-
-.gridButtonSearch.glowing span.icon {
-    background: url('../img/menu_icon_search_p.png') no-repeat top center;
-}
-
-.gridButtonMarked span.icon {
-    background: url('../img/menu_icon_bookmark.png') no-repeat top center;
-    background-size: 17px 30px;
-    width: 17px;
-}
-
-.gridButtonMarked.glowing span.icon {
-    background: url('../img/menu_icon_bookmark_p.png') no-repeat top center;
-}
-
-.gridButtonHome span.icon {
-    background: url('../img/menu_icon_home.png') no-repeat top center;
-    background-size: 30px 30px;
-}
-
-.gridButtonHome.glowing span.icon {
-    background: url('../img/menu_icon_home_p.png') no-repeat top center;
-}
-
-.gridButtonAccount span.icon {
-    background: url('../img/menu_icon_account-v2.png') no-repeat top center;
-    /*background-size:35px 30px;*/
-    background-size: 30px 30px;
-}
-
-.gridButtonAccount.glowing span.icon {
-    background: url('../img/menu_icon_account-v2-p.png') no-repeat top center;
-}
-
-.PopUpMenuClose {
-    cursor: pointer;
-    width: 40px !important;
-    height: 40px;
-    background-color: #333333;
-    position: absolute;
-    top: -11px;
-    right: -11px;
-    z-index: 700;
-    display: block;
-    text-indent: -9999px;
-    background: url('../img/button_close.png') no-repeat center center;
-    width: 30px;
-    height: 30px;
-    background-size: 30px 30px;
-}
-
-.PopUpMenuClose.glowing {
-    background: url('../img/button_close_p.png') no-repeat center center;
-    width: 30px;
-    height: 30px;
-    background-size: 30px 30px;
-}
-
-/*
-* Modal Box class
-*
-*/
-#forgotModalPage {
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    width: 280px;
-    height: 300px;
-    z-index: 9999;
-    background: -webkit-gradient(linear, left top, left bottom, from(#0089b9), to(#0050a4));
-    background-color: #ffffff;
-    display: none;
-    -webkit-border-radius: 5px;
-    padding: 0px 0px 0px 0px;
-}
-
-#mask {
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    z-index: 9000;
-    background-color: #000000;
-    display: none;
-}
-
-.close {
-    position: absolute;
-    right: -15px;
-    top: -13px;
-}
-
 /*
 Landing Page
 */
@@ -505,4 +272,19 @@ Landing Page
 /*Loading Messages*/
 .loadingProgressMessage {
     margin: 10px 0px 0px 130px;
+}
+
+/*Test Area*/
+#testDiv {
+    width: 100px;
+    height: 50px;
+    position: absolute;
+    top: 50px;
+    left: 50px;
+    background: #efefef;
+}
+
+/*Header Area*/
+.marginFromHeader {
+    margin: 35px 0px 0px 0px;
 }
