@@ -34,7 +34,8 @@ function hideMenu() {
     })
 }
 
-function changePage(changePageTo) {
+function clearDocumentScroll() {
+    console.log("Inside change page ...")
     documentDetailsScroll.destroy();
     documentDetailsScroll = null;
 //    $.mobile.changePage("#" + changePageTo)

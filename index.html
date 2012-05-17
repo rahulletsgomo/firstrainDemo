@@ -12,7 +12,8 @@
     <link rel="stylesheet" href="css/scrollerConfig.css" type="text/css"/>
 
     <script type="text/javascript" charset="utf-8" src="phonegap-1.4.1.js"></script>
-    <script type="text/javascript" charset="utf-8" src="jquery-1.6.4.min.js"></script>
+    <!--<script type="text/javascript" charset="utf-8" src="jquery-1.6.4.min.js"></script>-->
+    <script type="text/javascript" src="js/libraries/jquery-1.6.js"></script>
     <script type="text/javascript" charset="utf-8" src="jquery.mobile-1.0.1.min.js"></script>
     <script type="text/javascript" charset="utf-8" src="js/iscroll.js"></script>
     <script type="text/javascript" src="js/globalVars.js"></script>
@@ -39,9 +40,6 @@
 </div>
 <div data-role="page" id="firstrainLoginPage"
      style="background:-webkit-gradient(linear, center top, center bottom, from(#008BBA), to(#003198));">
-
-    <!--<div data-role="header" class="customheader" data-position="fixed">-->
-    <!--<h1>FirstRain</h1>-->
     <div class="customheader">
         <div class="headerName">FirstRain</div>
     </div>
@@ -79,14 +77,7 @@
 </div>
 
 <div data-role="page" id="homePage">
-
-
     <div class="customheader">
-        <!--<div style="float: right">-->
-        <!--<input type="button" onclick="goBack()" style="width: 60px" id="login-button" class="header_bt ui-btn-right" value="Menu"-->
-        <!--data-role="none">-->
-        <!--</div>-->
-
         <div class="headerName">
             <div id="openMenu"><img src="images/menu.png" alt="Menu" height="30"/></div>
             FirstRain
@@ -155,7 +146,6 @@
                 </ul>
 
             </div>
-            <!--<div class='touchable showAllMonitorsButton'>All Monitors</div>-->
         </div>
     </div>
 </div>
@@ -163,20 +153,11 @@
 <!--Document Details page starts -->
 <div data-role="page" id="documentDetailsPage"
      style="background:-webkit-gradient(linear, center top, center bottom, from(#008BBA), to(#003198));">
-
-    <!--<div data-role="header" class="customheader" data-position="fixed">-->
-    <!--&lt;!&ndash;<button onclick="history.go(-1); return true;">Back</button>&ndash;&gt;-->
-    <!--<a href="javascript:void(0)" data-role="none" class="custom-button" onclick="goBack()">Back</a>-->
-    <!--<h1>FirstRain</h1>-->
-    <!--</div>-->
     <div class="customheader">
-        <!--<a href="javascript:void(0)" data-role="none" class="custom-button" onclick="history.go(-1)">Back</a>-->
-
-        <!--<h1>FirstRain</h1>-->
         <div class="headerName">
             <div style="margin: 0px">FirstRain</div>
             <div style="float: left; padding: 0px 0px 0px 10px; margin: -22px 0px 0px 0px">
-                <a href="" data-rel="back" onclick='changePage("homePage")'>
+                <a href="" data-rel="back" onclick='clearDocumentScroll()'>
                     <img src="images/backButton.png" alt="Go Back"/>
                 </a>
             </div>
