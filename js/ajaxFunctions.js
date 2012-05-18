@@ -38,12 +38,14 @@ function methodToCall(callingFunction, data, docIcon) {
             insertActiveMonitor(data)
             insertFirstReads(data)
             $.mobile.changePage("#homePage");
+            changeHeader("homePage")
             loaded();
             break;
         case "getDocumentDetails":
             setDocumentInfo(data, docIcon);
             console.log("Inside case getDocumentDetails !!!")
-            console.log("Data : " +data+", DocIcon : " +docIcon)
+            console.log("Data : " + data + ", DocIcon : " + docIcon)
+            changeHeader("documentDetailsPage")
             $.mobile.changePage("#documentDetailsPage")
             scrollDocumentDetails();
             break;

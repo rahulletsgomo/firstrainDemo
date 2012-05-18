@@ -5,8 +5,10 @@ function goBack() {
 
 function manipulateMenu() {
     $("#openMenu").toggle(function () {
+        console.log("Inside the first condition !!!!")
         showMenu()
     }, function () {
+        console.log("Inside the second condition !!!!")
         hideMenu()
     })
 }
@@ -24,8 +26,9 @@ function showMenu() {
 }
 
 function hideMenu() {
+    console.log("Inside hideMenu function ...")
+    console.log("Landing Page left position : " + $("#landingPage").css("left"))
     $("#landingPage").css({
-        border:"0px",
         position:"absolute",
         left:"0px"
     });
@@ -35,8 +38,29 @@ function hideMenu() {
 }
 
 function clearDocumentScroll() {
-    console.log("Inside change page ...")
+    changeHeader("homePage")
     documentDetailsScroll.destroy();
     documentDetailsScroll = null;
 //    $.mobile.changePage("#" + changePageTo)
+}
+
+function changeHeader(targetLocation) {
+    var headerContent = "";
+    switch (targetLocation) {
+        case "homePage" :
+            headerContent += '<div id="openMenu"><img src="images/menu.png" alt="Menu" height="30"/></div>';
+            $(".menuArea").html(headerContent);
+            manipulateMenu();
+            break;
+
+        case "documentDetailsPage":
+            headerContent += '<a href="" data-rel="back" onclick="clearDocumentScroll()">';
+            headerContent += '<img src="images/backButton.png" alt="Go Back"/>';
+            headerContent += '</a>';
+            $(".menuArea").html(headerContent);
+            break;
+
+        default:
+            console.log("Nowhere to go :(")
+    }
 }

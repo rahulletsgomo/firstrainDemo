@@ -23,26 +23,18 @@
     <script type="text/javascript" src="js/testJSON/documentDetailsJSON.js"></script>
     <script type="text/javascript" src="js/scrollerConfig.js"></script>
     <script type="text/javascript" src="js/menuOptions.js"></script>
-    <script type="text/javascript">
-        $(function () {
-            manipulateMenu();
-        })
-        function goToLogin() {
-            $.mobile.changePage("#firstrainLoginPage")
-            $("#signInLoading").css("visibility", "hidden");
-        }
-    </script>
 </head>
 
 <body>
 <!--Main Header-->
 <div class="customheader">
     <div class="headerName">
-        <div style="margin: 8px 0px 0px 0px; font-weight: bold;">FirstRain</div>
-        <div style="float: left; padding: 0px 0px 0px 10px; margin: -25px 0px 0px 0px">
-            <a href="" data-rel="back" onclick='clearDocumentScroll()'>
-                <img src="images/backButton.png" alt="Go Back"/>
-            </a>
+        <div class="companyNameHeader">FirstRain</div>
+        <div class="menuArea">
+            <!--<div id="openMenu"><img src="images/menu.png" alt="Menu" height="30"/></div>-->
+            <!--<a href="" data-rel="back" onclick='clearDocumentScroll()'>-->
+            <!--<img src="images/backButton.png" alt="Go Back"/>-->
+            <!--</a>-->
         </div>
     </div>
 </div>

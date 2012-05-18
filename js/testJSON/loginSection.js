@@ -70,6 +70,7 @@ function getFirstReads(docList, docCount) {
     }
     $("#thelist").html(docContent);
     $.mobile.changePage("#homePage");
+    changeHeader("homePage")
     $(".documentContent").bind("click", function () {
         var getCurrentDocID = this.id;
         var getCurrentDocIcon = $(this).attr("rel");
@@ -86,7 +87,8 @@ function getDocumentDetails(docID, docIcon) {
     }
     else if (environment == "dev") {
         setDocumentInfo(documentDetailsJSON, docIcon)
-        $.mobile.changePage("#documentDetailsPage")
+        changeHeader("documentDetailsPage")
+        $.mobile.changePage("#documentDetailsPage");
         scrollDocumentDetails();
     }
 }
@@ -107,7 +109,6 @@ function setDocumentInfo(documentDetails, docIcon) {
     iterateItems(documentMatchedCompanies, "documentMentionedCompanies");
     iterateItems(documentMatchedTopics, "documentMentionedTopics");
     function iterateItems(documentType, documentContainer) {
-        console.log("Loop for : " + documentContainer)
         for (var i = 0; i < documentType.length; i++) {
             $("#" + documentContainer).append('<li class="related_item">' + documentType[i].name + '</li>');
         }
@@ -126,7 +127,6 @@ function getMonitorDetails(monitorID) {
 
 function insertActiveMonitor(data) {
     var monitorList = data.data.topMonitorList;
-    console.log("Monitor List Length : " + monitorList.length)
     var monitorNames = "";
     for (var i = 0; i < monitorList.length; i++) {
         monitorNames += '<li class="ui-li ui-li-static ui-body-d" style="padding:2px 0 0 2px;">';
@@ -145,21 +145,3 @@ function insertActiveMonitor(data) {
     }
     $("#activeMonitorList").html(monitorNames)
 }
-
-$(":jqmData(role='page')").live("pageshow", function (event) {
-    var activePage = $(".ui-page-active").attr("id");
-    switch (activePage) {
-        case "firstrainLoginPage":
-        {
-            event.preventDefault();
-            break;
-        }
-        case "homePage":
-        {
-            event.preventDefault();
-            break;
-        }
-        default:
-            console.log("Prevent Default not working")
-    }
-});

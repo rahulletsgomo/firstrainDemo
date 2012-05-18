@@ -288,3 +288,14 @@ Landing Page
 .marginFromHeader {
     margin: 35px 0px 0px 0px;
 }
+
+.companyNameHeader {
+    margin: 8px 0px 0px 0px;
+    font-weight: bold;
+}
+
+.menuArea {
+    float: left;
+    padding: 0px 0px 0px 10px;
+    margin: -25px 0px 0px 0px
+}
