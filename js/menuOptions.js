@@ -41,7 +41,6 @@ function clearDocumentScroll() {
     changeHeader("homePage")
     documentDetailsScroll.destroy();
     documentDetailsScroll = null;
-//    $.mobile.changePage("#" + changePageTo)
 }
 
 function changeHeader(targetLocation) {

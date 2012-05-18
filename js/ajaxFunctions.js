@@ -43,8 +43,6 @@ function methodToCall(callingFunction, data, docIcon) {
             break;
         case "getDocumentDetails":
             setDocumentInfo(data, docIcon);
-            console.log("Inside case getDocumentDetails !!!")
-            console.log("Data : " + data + ", DocIcon : " + docIcon)
             changeHeader("documentDetailsPage")
             $.mobile.changePage("#documentDetailsPage")
             scrollDocumentDetails();
