@@ -37,14 +37,14 @@ function methodToCall(callingFunction, data, docIcon) {
         case "landingPage":
             insertActiveMonitor(data)
             insertFirstReads(data)
-            $.mobile.changePage("#homePage", { transtion:"fade"});
+            $.mobile.changePage("#homePage");
             loaded();
             break;
         case "getDocumentDetails":
             setDocumentInfo(data, docIcon);
             console.log("Inside case getDocumentDetails !!!")
             console.log("Data : " +data+", DocIcon : " +docIcon)
-            $.mobile.changePage("#documentDetailsPage", {transition:"fade"})
+            $.mobile.changePage("#documentDetailsPage")
             scrollDocumentDetails();
             break;
         case "getMonitorSearchResults":

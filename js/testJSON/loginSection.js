@@ -86,7 +86,7 @@ function getDocumentDetails(docID, docIcon) {
     }
     else if (environment == "dev") {
         setDocumentInfo(documentDetailsJSON, docIcon)
-        $.mobile.changePage("#documentDetailsPage", {transition:"fade"})
+        $.mobile.changePage("#documentDetailsPage")
         scrollDocumentDetails();
     }
 }
