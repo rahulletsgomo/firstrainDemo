@@ -38,6 +38,12 @@ function hideMenu() {
 }
 
 function clearDocumentScroll() {
+    if (version == "desktopWidget") {
+        $.mobile.changePage("#homePage");
+    }
+    else{
+        $()
+    }
     changeHeader("homePage")
     documentDetailsScroll.destroy();
     documentDetailsScroll = null;
@@ -53,7 +59,7 @@ function changeHeader(targetLocation) {
             break;
 
         case "documentDetailsPage":
-            headerContent += '<a href="" data-rel="back" onclick="clearDocumentScroll()">';
+            headerContent += '<a id href="" onclick="clearDocumentScroll()">';
             headerContent += '<img src="images/backButton.png" alt="Go Back"/>';
             headerContent += '</a>';
             $(".menuArea").html(headerContent);
