@@ -5,10 +5,8 @@ function goBack() {
 
 function manipulateMenu() {
     $("#openMenu").toggle(function () {
-        console.log("Inside the first condition !!!!")
         showMenu()
     }, function () {
-        console.log("Inside the second condition !!!!")
         hideMenu()
     })
 }
@@ -26,8 +24,6 @@ function showMenu() {
 }
 
 function hideMenu() {
-    console.log("Inside hideMenu function ...")
-    console.log("Landing Page left position : " + $("#landingPage").css("left"))
     $("#landingPage").css({
         position:"absolute",
         left:"0px"
@@ -42,7 +38,7 @@ function clearDocumentScroll() {
         $.mobile.changePage("#homePage");
     }
     else{
-        $()
+        $("#headerButton").attr("data-rel", "back")
     }
     changeHeader("homePage")
     documentDetailsScroll.destroy();
@@ -59,7 +55,7 @@ function changeHeader(targetLocation) {
             break;
 
         case "documentDetailsPage":
-            headerContent += '<a id href="" onclick="clearDocumentScroll()">';
+            headerContent += '<a id="headerButton" href="" onclick="clearDocumentScroll()">';
             headerContent += '<img src="images/backButton.png" alt="Go Back"/>';
             headerContent += '</a>';
             $(".menuArea").html(headerContent);
