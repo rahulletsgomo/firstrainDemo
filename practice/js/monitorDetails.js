@@ -37,6 +37,8 @@ function secondVersion(data) {
     var monitorSectionLength = data.data.sections.length;
     var monitorSection = data.data.sections;
     var monitorSectionResult = data.data.results;
+    var monitorType = "";
+    var monitorId = "";
     var referResultID = 0;
     var liOption = "";
     var docSource;
@@ -46,9 +48,10 @@ function secondVersion(data) {
     var docTitle;
     var docIcon;
     var isDocTweet = false;
-    var frContent;
+    var frContent = "";
+
     for (var i = 0; i < monitorSectionLength; i++) {
-        frContent += '<ul type="I"><b>[' + i + ']' + monitorSection[i].title + '</b>'
+        frContent += '<ul><b>[' + i + ']' + monitorSection[i].title + '</b>'
         var sectionBaseResultsLength = monitorSection[i].baseResults.length
         frContent += '<ol>'
         for (var j = 0; j < sectionBaseResultsLength; j++) {
@@ -80,8 +83,14 @@ function secondVersion(data) {
             liOption = ""
             referResultID++;
         }
-        frContent += '</ol>'
+        if (monitorSection[i].hasMore) {
+            monitorType = monitorSection[i].type;
+            monitorId = monitorSection[i].id;
+            frContent += '<br /><button type="' + monitorType + '" id="' + monitorId + '">Has More</button>'
+        }
         frContent += '</ul>'
+        frContent += '</ol>'
     }
+
     $("#container").html(frContent)
 }
