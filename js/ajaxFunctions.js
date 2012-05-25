@@ -30,8 +30,12 @@ function callAJAX(url, callingFunction, docIcon) {
 function methodToCall(callingFunction, data, docIcon) {
     switch (callingFunction) {
         case "validateUser":
-            userID = data.data.user.id;
+            console.log(">>>>>> Data : " + data)
+            userID += "U:";
+            userID += data.data.userID;
             console.log(">>>>>> User Id : " + userID)
+            code = data.data.code;
+            console.log(">>>>>> Code : " + code)
             landingPage();
             break;
         case "landingPage":

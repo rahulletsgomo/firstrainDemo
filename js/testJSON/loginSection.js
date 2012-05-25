@@ -9,7 +9,7 @@ function validateUser() {
     if (environment == "test") {
         var userName = $("#usernameInput").val();
         var password = $("#truePWInput").val();
-        var url = URL + "/DataProvider/validateUser?username=" + userName + "&password=" + password;
+        var url = URL + "/FRMobileService/authentication.jsp?fn=getAuthentication&username=" + userName + "&password=" + password
         console.log(url)
         callAJAX(url, "validateUser")
     }
