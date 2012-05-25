@@ -92,11 +92,27 @@ function monitorDetails(data) {
         if (monitorSection[i].hasMore) {
             monitorSectionType = monitorSection[i].type;
             monitorSectionId = monitorSection[i].id;
-            frContent += '<br /><button type="' + monitorSectionType + '" monitorId="' + monitorId + '"sectionId = "' + monitorSectionId + '">Has More</button>'
+            frContent += '<br /><button id="monitorDetails" type="' + monitorSectionType + '" monitorId="' + monitorId + '"sectionId = "' + monitorSectionId + '">Has More</button>'
         }
         frContent += '</ul>'
         frContent += '</ol>'
     }
 
     $("#container").html(frContent)
+}
+
+function searchResults(data) {
+    var searchResultSection = data.data.sections
+    var searchResultSectionsLength = searchResultSection.length
+    var searchResultBucketLength = ""
+    var searchResultBucketBaseResult = ""
+    for (var i = 0; i < searchResultSectionsLength; i++) {
+        searchResultBucketLength = searchResultSection[i].buckets.length;
+        for (var j = 0; j < searchResultBucketLength; j++) {
+            searchResultBucketBaseResult = searchResultSection[i].buckets[j].baseResults
+            console.log(">>>> Base Results Length : " + searchResultBucketBaseResult.length)
+        }
+    }
+//    console.log(">>>>>> Total number of buckets : " + searchResultSectionsLength)
+
 }
