@@ -37,8 +37,9 @@ function secondVersion(data) {
     var monitorSectionLength = data.data.sections.length;
     var monitorSection = data.data.sections;
     var monitorSectionResult = data.data.results;
-    var monitorType = "";
-    var monitorId = "";
+    var monitorSectionType = "";
+    var monitorSectionId = "";
+    var monitorId = data.data.monitor.id;
     var referResultID = 0;
     var liOption = "";
     var docSource;
@@ -51,11 +52,12 @@ function secondVersion(data) {
     var frContent = "";
 
     for (var i = 0; i < monitorSectionLength; i++) {
-        frContent += '<ul><b>[' + i + ']' + monitorSection[i].title + '</b>'
+        frContent += '<ul><b>[' + i + '] ' + monitorSection[i].title + '</b>'
         var sectionBaseResultsLength = monitorSection[i].baseResults.length
         frContent += '<ol>'
         for (var j = 0; j < sectionBaseResultsLength; j++) {
             sectionResult = monitorSectionResult[referResultID];
+
             docSource = (sectionResult.source) ? sectionResult.source : "";
             docTitle = (sectionResult.title) ? sectionResult.title : "";
             docIcon = (sectionResult.favicon) ? sectionResult.favicon : "";
@@ -66,6 +68,7 @@ function secondVersion(data) {
                 isDocTweet = true;
                 tweeterImage = '<img src="' + sectionResult.extra.userImage + '" alt="Tweeter Image" />';
             }
+
             liOption += '<div class="liDiv">';
             liOption += isDocTweet ? '<div class="image">' + tweeterImage + '</div>' : "<div></div>"
             isDocTweet = false;
@@ -81,12 +84,15 @@ function secondVersion(data) {
             docTitle = ""
             docIcon = ""
             liOption = ""
-            referResultID++;
+
+            referResultID++; //Move to the next result
         }
+
+        //This will check for whether a has more button is required or not
         if (monitorSection[i].hasMore) {
-            monitorType = monitorSection[i].type;
-            monitorId = monitorSection[i].id;
-            frContent += '<br /><button type="' + monitorType + '" id="' + monitorId + '">Has More</button>'
+            monitorSectionType = monitorSection[i].type;
+            monitorSectionId = monitorSection[i].id;
+            frContent += '<br /><button type="' + monitorSectionType + '" monitorId="' + monitorId + '"sectionId = "' + monitorSectionId + '">Has More</button>'
         }
         frContent += '</ul>'
         frContent += '</ol>'

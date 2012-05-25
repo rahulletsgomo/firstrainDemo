@@ -9,10 +9,22 @@
     <script type="text/javascript" src="js/monitorDetails.js"></script>
     <script type="text/javascript">
         $(function () {
+            var linkId = "";
 //            firstVersion()
             secondVersion(monitorResults)
             $("button").click(function () {
-                alert(this.id)
+                switch ($(this).attr("type")) {
+                    case "TWEETS":
+                        linkId = $(this).attr("monitorId")
+                        alert("You will be redirected to the tweet link : " + linkId);
+                        break;
+                    case "SEARCH":
+                        linkId = $(this).attr("sectionId")
+                        alert("You will be redirected to the search page : " + linkId);
+                        break;
+                    default:
+                        console.log("Nowhere to go :(")
+                }
             })
         })
     </script>
