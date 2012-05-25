@@ -39,48 +39,39 @@ function secondVersion(data) {
     var monitorSectionResult = data.data.results;
     var referResultID = 0;
     var liOption = "";
-    var fieldInfo = ""
-    var resultID;
     var docSource;
+    var docDate;
     var sectionResult;
     var tweeterImage;
     var docTitle;
     var docIcon;
     var isDocTweet = false;
-    var monitorContent;
+    var frContent;
     for (var i = 0; i < monitorSectionLength; i++) {
-        monitorContent += '<ul type="I"><b>[' + i + ']' + monitorSection[i].title + '</b>'
+        frContent += '<ul type="I"><b>[' + i + ']' + monitorSection[i].title + '</b>'
         var sectionBaseResultsLength = monitorSection[i].baseResults.length
-        monitorContent += '<ol>'
+        frContent += '<ol>'
         for (var j = 0; j < sectionBaseResultsLength; j++) {
-//            resultID = monitorSection[i].baseResults[j];
             sectionResult = monitorSectionResult[referResultID];
-            docSource = sectionResult.source;
-            docTitle = sectionResult.title;
-            if (sectionResult.favicon) {
-                docIcon = sectionResult.favicon
-            }
-//            if (docSource) {
-//                fieldInfo = docSource;
-////                liOption = "[" + referResultID + "] " + resultID + " : " + monitorSectionResult[referResultID].source
-//            }
-            else if (sectionResult.type == "TWEETS") {
-                console.log(">>>> This is the area for tweets !!!")
+            docSource = (sectionResult.source) ? sectionResult.source : "";
+            docTitle = (sectionResult.title) ? sectionResult.title : "";
+            docIcon = (sectionResult.favicon) ? sectionResult.favicon : "";
+            docDate = (sectionResult.timestamp) ? sectionResult.timestamp : "";
+            docDate = (docDate != "") ? docDate.split(201, 1) : docDate;
+
+            if (sectionResult.type == "TWEETS") {
                 isDocTweet = true;
                 tweeterImage = '<img src="' + sectionResult.extra.userImage + '" alt="Tweeter Image" />';
             }
             liOption += '<div class="liDiv">';
             liOption += isDocTweet ? '<div class="image">' + tweeterImage + '</div>' : "<div></div>"
             isDocTweet = false;
-//            liOption += '<div class="image">' + tweeterImage + '</div>';
             liOption += docTitle ? '<div class="title">' + docTitle + '</div>' : '<div></div>';
-            liOption += '<div class="date">' + referResultID + '</div>';
-            liOption += docSource ? '<div class="source"><img src="' + docIcon + '" alt="Source Image" />&nbsp;&nbsp;' + docSource + '</div>' : '<div></div>';
+            liOption += '<div class="date">' + referResultID + '<br />' + docDate + '</div>';
+            liOption += docSource ? '<div class="source"><img src="' + docIcon + '" alt="Source Image" width=16 height=16 />&nbsp;&nbsp;' + docSource + '</div>' : '<div></div>';
             liOption += '</div>';
 
-//            liOption = "[" + referResultID + "] " + resultID + " : " + fieldInfo
-//            fieldInfo = "";
-            monitorContent += '<li>' + liOption + '</li>'
+            frContent += '<li>' + liOption + '</li>'
 
             //Clear the previous variables before going to the next result
             docSource = ""
@@ -89,8 +80,8 @@ function secondVersion(data) {
             liOption = ""
             referResultID++;
         }
-        monitorContent += '</ol>'
-        monitorContent += '</ul>'
+        frContent += '</ol>'
+        frContent += '</ul>'
     }
-    $("#container").html(monitorContent)
+    $("#container").html(frContent)
 }
