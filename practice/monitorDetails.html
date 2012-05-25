@@ -6,12 +6,13 @@
     <link rel="stylesheet" type="text/css" href="css/monitorDetails.css"/>
     <script type="text/javascript" src="js/monitorDetailsJSON.js"></script>
     <script type="text/javascript" src="js/jquery-1.6.4.min.js"></script>
-    <script type="text/javascript" src="js/monitorDetails.js"></script>
+    <script type="text/javascript" src="js/fillContent.js"></script>
+    <script type="text/javascript" src="js/searchPageJSON.js.js"></script>
     <script type="text/javascript">
         $(function () {
             var linkId = "";
 //            firstVersion()
-            secondVersion(monitorResults)
+            monitorDetails(monitorResults)
             $("button").click(function () {
                 switch ($(this).attr("type")) {
                     case "TWEETS":
@@ -25,6 +26,7 @@
                     default:
                         console.log("Nowhere to go :(")
                 }
+                console.log(">>>>> linkID : " + linkId)
             })
         })
     </script>
