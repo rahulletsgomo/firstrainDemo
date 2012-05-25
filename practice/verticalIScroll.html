@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <title>iScroll demo: simple</title>
+    <link rel="stylesheet" type="text/css" href="css/scrollerConfig.css"/>
+    <link rel="stylesheet" type="text/css" href="css/documentDetails.css"/>
+    <link rel="stylesheet" type="text/css" href="css/style.css"/>
+
+    <script type="text/javascript" src="js/iScroll.js"></script>
+    <script type="text/javascript" src="js/jquery-1.6.4.min.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            var containerWidth = $(".newscontainer").css("width");
+            var containerHeight = $(".newscontainer").css("height");
+//            alert("Width : " + )
+            $("#documentDetailsWrapper").css("width", containerWidth)
+            $("#documentDetailsScroller").css("width", containerWidth)
+            $("#documentDetailsWrapper").css("height", containerHeight)
+        })
+
+        var documentDetailsScroller;
+        function documentDetailsScroll() {
+            documentDetailsScroller = new iScroll('documentDetailsWrapper', {
+                vScrollbar:true,
+                hScroll:false
+            });
+        }
+
+        document.addEventListener('touchmove', function (e) {
+            e.preventDefault();
+        }, false);
+
+        document.addEventListener('DOMContentLoaded', function () {
+            setTimeout(documentDetailsScroll, 200);
+        }, false);
+
+        $(function () {
+            var documentMentionedTopics = ""
+            for (var i = 0; i < 500; i++) {
+                documentMentionedTopics += i + " : This is a test content <br />";
+            }
+            $("#documentMentionedTopics").html(documentMentionedTopics)
+        })
+    </script>
+</head>
+<body>
+<div class="customheader">
+    <!--<a href="javascript:void(0)" data-role="none" class="custom-button" onclick="history.go(-1)">Back</a>-->
+
+    <!--<h1>FirstRain</h1>-->
+    <div class="headerName">
+        <div style="margin: 0px">FirstRain</div>
+    </div>
+
+</div>
+<div class="online_info_container" style="margin: 35px 0px 0px 0px;">
+    <div class="bg_red">First Reads</div>
+
+    <div class="newscontainer" style="height:320px; overflow-y:scroll;">
+        <div id="documentDetailsWrapper">
+            <div id="documentDetailsScroller">
+
+                <div class="news_content">
+                    <div class="news_heading" id="documentTitle">Online Information &#38; Content Service Trends
+                    </div>
+                    <div class="source_container">
+                        <img src="" id="documentIcon" style="float:left" alt="Icon"/>
+
+                        <div class="source_name" id="documentSourceName">
+                            Mashable
+                        </div>
+
+                        <div class="date">Wed, May 2</div>
+                    </div>
+                </div>
+                <div class="news_info" id="documentSummary">Uploaded by First Rain Business Web
+                    Get the FirstRain for iPad App today from the iTunes store or at http://firstra.in/ ipadApp, and get
+                    the
+                    customer
+                </div>
+                <div class="related_item_container documentRelatedContent">
+                    <div class="title_red">RELATED CONTENT</div>
+                    <ul id="documentRelatedContent"></ul>
+                </div>
+                <div class="related_item_container">
+                    <div class="title_red">RELATED TWEETS</div>
+                    <div class="tweet">
+                        <div class="tweet_img"><img src="breaking_news.jpg"></div>
+                        <div class="tweet_info">Get the FirstRain for iPad App today from the iTunes store or at <a
+                                href="#">http://firstra.in/</a>
+                            ipadApp, and get the customer<br/>
+                            <span class="tweet_source">http://t.co/YKJC#gPc</span>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="related_item_container documentMentionedCompanies">
+                    <div class="title_red">COMPANIES MENTIONED</div>
+                    <ul id="documentMentionedCompanies"></ul>
+
+                </div>
+                <div class="related_item_container documentMentionedTopics">
+                    <div class="title_red">TOPICS MENTIONED</div>
+                    <ul id="documentMentionedTopics"></ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="footer"></div>
+
+</body>
+</html>

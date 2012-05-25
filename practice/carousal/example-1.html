@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <link href="/favicon.ico" type="image/x-icon" rel="shortcut icon"/>
+    <title>jQuery Carousel Plugin - Richard Scarrott</title>
+    <link rel="stylesheet" type="text/css" href="style.css"/>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+    <script type="text/javascript" src="jquery.carousel.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            var childLi = "";
+            for (var i = 0; i < 40; i++) {
+                childLi += '<li class="color-1">' + i + '</li>';
+            }
+            $("ul").html(childLi)
+            $('#my-carousel-1').carousel({
+                pagination:false,
+                speed:500
+            });
+        });
+    </script>
+</head>
+<body>
+<div id="my-carousel-1" class="carousel module">
+    <ul>
+    </ul>
+</div>
+</body>
+</html>

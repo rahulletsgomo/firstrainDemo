@@ -1,0 +1,147 @@
+<html>
+<head>
+    <title>Menu First Rain</title>
+    <style type="text/css">
+        #menuRegion {
+            overflow: hidden;
+            margin-left: 0;
+            min-height: 1px;
+            float: left;
+            height: 100%;
+            position: absolute;
+        }
+
+        #menuRegion {
+            width: 200px;
+            position: absolute;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+        }
+
+    </style>
+    <script type="text/javascript" src="js/jquery-1.6.4.min.js"></script>
+    <script type="text/javascript">
+        // force true closes the menu
+        toggleMenu : function (force) {
+
+
+            console.log('toggleMenu');
+
+
+            var force = force || false;
+
+            if (force) {
+
+// block navigation here
+
+                if ($(force.target).parent().parent().hasClass("disabled_menu_item")) {
+
+                    console.log("parent has class")
+
+                    force.preventDefault();
+
+                }
+
+            }
+
+
+            if (this.$menuRegion.open || force) {
+
+                this.$menuRegion.animate({
+
+                    'margin-left':'-200px',
+
+                    'margin-right':'0'
+
+                }, 250);
+
+                this.$bodyContentRegion.animate({
+
+                    'left':'0',
+
+                    'margin-right':0
+
+                }, 250);
+
+                this.$menuRegion.open = false;
+
+            } else {
+
+                try {
+                    if (App.user.isExpert()) this.scroll.scrollToElement(this.$el.find("ul")[0], 0);
+                } catch (e) {
+                }
+
+                this.$menuRegion.animate({
+
+                    'margin-left':'0',
+
+                    'margin-right':'-5%'
+
+                }, 250);
+
+                this.$bodyContentRegion.animate({
+
+                    'left':'195px',
+
+                    'margin-right':'-200px'
+
+                }, 250);
+
+                this.$menuRegion.open = true;
+    </script>
+</head>
+<body>
+<div id="menuRegion" style="margin-left: -200px; margin-right: 0px; " class="">
+    <div id="mainMenu">
+        <div id="mainMenuViewScoll" style="height: 540px; overflow-x: hidden; overflow-y: hidden; ">
+            <div class="scroller"
+                 style="-webkit-transition-property: -webkit-transform; -webkit-transform-origin-x: 0px; -webkit-transform-origin-y: 0px; -webkit-transform: translate3d(0px, 0px, 0px); -webkit-transition-duration: 0ms; ">
+                <ul>
+
+                    <li>
+                        <a href="#activity_feed" class="menu_link menu_home"><span>Feed</span></a>
+                    </li>
+                    <li>
+                        <a href="#top_doctors" class="menu_link menu_doctor"><span>Doctors</span></a>
+                    </li>
+                    <li>
+                        <a href="#member_health_profile/" class="menu_link menu_profile"><span
+                                class="left">Profile</span>
+
+                            <div class="progress_bar"></div>
+                            <p class="clear"></p></a>
+                    </li>
+                    <li>
+                        <a href="#member_game_score" class="menu_link menu_score"><span>Health Score</span></a>
+                    </li>
+                    <li>
+                        <a href="#member_health_history/10060136/"
+                           class="menu_link menu_history"><span>Health History</span></a>
+                    </li>
+                    <li>
+                        <a href="#member/files" class="menu_link menu_files"><span>Health Files<div
+                                class="red_count_bubble new_file_count_h"></div><p class="clear"></p></span></a>
+                    </li>
+                    <li>
+                        <a href="#member_settings" class="menu_link menu_settings"><span>Settings</span></a>
+                    </li>
+                    <li>
+                        <a id="about" class="menu_link menu_ht"><span>About Healthtap</span></a>
+                    </li>
+                    <li>
+                        <a href="#logout" class="menu_link menu_logout"><span>Logout</span></a>
+                    </li>
+
+                    <p class="clear" style="height:60px">
+                        &nbsp;
+                    </p>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

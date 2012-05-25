@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <title>iScroll demo: simple</title>
+    <link rel="stylesheet" type="text/css" href="css/scrollerConfig.css"/>
+    <link rel="stylesheet" type="text/css" href="css/documentDetails.css"/>
+    <link rel="stylesheet" type="text/css" href="css/style.css"/>
+
+    <script type="text/javascript" src="js/iScroll.js"></script>
+    <script type="text/javascript" src="js/jquery-1.6.4.min.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            var containerWidth = $(".online_info_container").css("width");
+            var containerHeight = $(".online_info_container").css("height");
+            console.log(containerWidth)
+//            alert("Width : " + )
+            $("#documentDetailsWrapper").css("width", containerWidth)
+            $("#documentDetailsScroller").css("width", containerWidth)
+            $("#documentDetailsWrapper").css("height", containerHeight)
+        })
+
+        var documentDetailsScroller;
+        function documentDetailsScroll() {
+            documentDetailsScroller = new iScroll('documentDetailsWrapper', {
+                vScrollbar:true,
+                hScroll:false
+            });
+        }
+
+        document.addEventListener('touchmove', function (e) {
+            e.preventDefault();
+        }, false);
+
+        document.addEventListener('DOMContentLoaded', function () {
+            setTimeout(documentDetailsScroll, 200);
+        }, false);
+
+        $(function () {
+            var documentMentionedTopics = ""
+            for (var i = 0; i < 500; i++) {
+                documentMentionedTopics += i + " : This is a test content <br />";
+            }
+            $("#activeMonitorList").html(documentMentionedTopics)
+        })
+    </script>
+</head>
+<body>
+<div class="customheader">
+    <!--<a href="javascript:void(0)" data-role="none" class="custom-button" onclick="history.go(-1)">Back</a>-->
+
+    <!--<h1>FirstRain</h1>-->
+    <div class="headerName">
+        <div style="margin: 0px">FirstRain</div>
+    </div>
+
+</div>
+<div class="online_info_container" style="margin: 35px 0px 0px 0px;">
+
+    <!--<div class="newscontainer" style="height:320px; overflow-y:scroll;">-->
+        <div id="documentDetailsWrapper">
+            <div id="documentDetailsScroller">
+                <div class='monitorTeaser' id="docArea" style="padding-bottom:10px;">
+                    <h3 class="screenSubHeader bg_red">FirstReads<label style="float:right;"><span
+                            id="currentDoc">1</span>
+                        to
+                        <span id="docLength">40</span> </label></h3>
+
+                    <div id="wrapper" class="landingPageContentArea">
+                        <div id="scroller">
+                            <ul id="thelist">
+
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class='monitorTeaser' style="padding-bottom:2px;">
+                    <div class='touchable showAllMonitorsButton'>All Monitors</div>
+                    <h3 class="screenSubHeader">Recently Active Monitors</h3>
+                    <ul id="activeMonitorList" class="landingPageContentArea">
+                        <li style="padding:2px 0 0 2px;">
+                            <div style="padding:10px;"><label
+                                    style="font-size:14px;text-shadow:none;">Tech</label><label
+                                    style="float:right;"><img src='img/mail_icon_red.png' style="height:24px"/><img
+                                    src="img/r-icon_carrot.png" style="height:24px"/></label></div>
+                        </li>
+                        <li style="padding:2px 0 0 2px;">
+                            <div style="padding:10px;"><label
+                                    style="font-size:14px;text-shadow:none;">Tech</label><label
+                                    style="float:right;"><img src='img/mail_icon_red.png' style="height:24px"/><img
+                                    src="img/r-icon_carrot.png" style="height:24px"/></label></div>
+                        </li>
+                    </ul>
+
+                </div>
+
+            </div>
+        </div>
+    <!--</div>-->
+</div>
+<div id="footer"></div>
+
+</body>
+</html>
