@@ -102,17 +102,24 @@ function monitorDetails(data) {
 }
 
 function searchResults(data) {
-    var searchResultSection = data.data.sections
-    var searchResultSectionsLength = searchResultSection.length
-    var searchResultBucketLength = ""
-    var searchResultBucketBaseResult = ""
-    for (var i = 0; i < searchResultSectionsLength; i++) {
-        searchResultBucketLength = searchResultSection[i].buckets.length;
-        for (var j = 0; j < searchResultBucketLength; j++) {
-            searchResultBucketBaseResult = searchResultSection[i].buckets[j].baseResults
-            console.log(">>>> Base Results Length : " + searchResultBucketBaseResult.length)
+    var searchSection = data.data.sections
+    var searchSectionResult = data.data.results;
+    var searchSectionsLength = searchSection.length
+    var searchBucketLength = 0
+    var searchBucket = ""
+    var referSearchResult = 0;
+    for (var i = 0; i < searchSectionsLength; i++) {
+        searchBucketLength = searchSection[i].buckets.length;
+        for (var j = 0; j < searchBucketLength; j++) {
+            searchBucket = searchSection[i].buckets[j]
+            for (var k = 0; k < searchBucket.baseResults.length; k++) {
+                console.log(">>>>> " + referSearchResult + " - " + searchSectionResult[referSearchResult].title)
+                referSearchResult++;
+            }
+//            console.log(">>>> : " + searchBucket.title + " : " + searchBucket.baseResults.length)
         }
     }
+    console.log(">>>> Total Search Results : " + referSearchResult)
 //    console.log(">>>>>> Total number of buckets : " + searchResultSectionsLength)
 
 }
