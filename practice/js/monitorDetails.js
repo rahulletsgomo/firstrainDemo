@@ -47,11 +47,11 @@ function secondVersion(data) {
     var docTitle;
     var docIcon;
     var isDocTweet = false;
-    var frContent;
+    var monitorContent;
     for (var i = 0; i < monitorSectionLength; i++) {
-        frContent += '<ul type="I"><b>[' + i + ']' + monitorSection[i].title + '</b>'
+        monitorContent += '<ul type="I"><b>[' + i + ']' + monitorSection[i].title + '</b>'
         var sectionBaseResultsLength = monitorSection[i].baseResults.length
-        frContent += '<ol>'
+        monitorContent += '<ol>'
         for (var j = 0; j < sectionBaseResultsLength; j++) {
 //            resultID = monitorSection[i].baseResults[j];
             sectionResult = monitorSectionResult[referResultID];
@@ -73,19 +73,24 @@ function secondVersion(data) {
             liOption += isDocTweet ? '<div class="image">' + tweeterImage + '</div>' : "<div></div>"
             isDocTweet = false;
 //            liOption += '<div class="image">' + tweeterImage + '</div>';
-            liOption += '<div class="title">' + docTitle + '</div>';
+            liOption += docTitle ? '<div class="title">' + docTitle + '</div>' : '<div></div>';
             liOption += '<div class="date">' + referResultID + '</div>';
-            liOption += '<div class="source"><img src="' + docIcon + '" alt="Source Image" /></div>';
+            liOption += docSource ? '<div class="source"><img src="' + docIcon + '" alt="Source Image" />&nbsp;&nbsp;' + docSource + '</div>' : '<div></div>';
             liOption += '</div>';
 
 //            liOption = "[" + referResultID + "] " + resultID + " : " + fieldInfo
 //            fieldInfo = "";
-            frContent += '<li>' + liOption + '</li>'
+            monitorContent += '<li>' + liOption + '</li>'
+
+            //Clear the previous variables before going to the next result
+            docSource = ""
+            docTitle = ""
+            docIcon = ""
             liOption = ""
             referResultID++;
         }
-        frContent += '</ol>'
-        frContent += '</ul>'
+        monitorContent += '</ol>'
+        monitorContent += '</ul>'
     }
-    $("#container").html(frContent)
+    $("#container").html(monitorContent)
 }
