@@ -1,4 +1,5 @@
 function callAJAX(url, callingFunction, docIcon) {
+    console.log(">>>>> Calling Function : " + callingFunction)
     try {
         $.ajax({
             url:url,
@@ -51,12 +52,13 @@ function methodToCall(callingFunction, data, docIcon) {
             $.mobile.changePage("#documentDetailsPage")
             scrollDocumentDetails();
             break;
-        case "getMonitorSearchResults":
+        case "getMonitorDetails":
 //            console.log(">>>>>>>>>>>_______________ Response from getMonitorSearchResults user : " + JSON.stringify(data));
-            monitorSearchResults = data;
-            console.log(">>>>>>>>>>>_______________ Response from getMonitorSearchResults user : " + JSON.stringify(monitorSearchResults));
+//            monitorSearchResults = data;
+            console.log(">>>>>>>>>>>_______________ Response from getMonitorResults user : " + JSON.stringify(data));
             //window.location.href = "monitorDetails.html";
-            $.mobile.changePage("monitorDetails.html");
+            $.mobile.changePage("#monitorDetailsPage");
+            monitorDetails(data);
             break;
         default :
             console.log("Nothing to show here ...")

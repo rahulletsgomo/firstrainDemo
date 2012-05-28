@@ -123,10 +123,22 @@ function getMonitorDetails(monitorID) {
 //    alert(">>>>> Monitor Id : " + monitorID)
 //    var checkURL = URL + "/DataProvider/searchResults?userId=" + userID + "&type=monitor&itemcount=30&id=" + monitorID + "&subq=mt,docs,events,tweets";
 //    callAJAX(checkURL, "getMonitorSearchResults")
-    $.mobile.changePage("#monitorDetailsPage");
+//    $.mobile.changePage("#monitorDetailsPage");
 //    $("span").removeClass('ui-btn-corner-all')
-    monitorDetails(monitorResults);
+
+//    monitorDetails(monitorResults);
     console.log(">>>>>> Called from : " + monitorID)
+
+    if (environment == "test") {
+        var url = URL + "/FRMobileService/authentication.jsp?fn=getMonitorResults&id=" + monitorID + "&code=" + code;
+        console.log(">>>>>> Monitor Details : " + url)
+        callAJAX(url, "getMonitorDetails")
+    }
+    else if (environment == "dev") {
+        $.mobile.changePage("#monitorDetailsPage");
+        monitorDetails(monitorResults);
+    }
+
 }
 
 function insertActiveMonitor(data) {

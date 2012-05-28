@@ -1,5 +1,5 @@
 function monitorDetails(data) {
-//    alert(">>>>>> Inside monitorDetails")
+    alert(">>>>>> Inside monitorDetails")
 //    alert(">>>>> Container HTML : " + $(".container").html())
     var monitorSectionLength = data.data.sections.length;
     var monitorSection = data.data.sections;
