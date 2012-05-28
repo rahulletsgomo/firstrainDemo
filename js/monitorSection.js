@@ -11,20 +11,24 @@ function monitorDetails(data) {
     var docSource;
     var docDate;
     var sectionResult;
-    var tweeterImage;
+    var sectionResultClass;
     var docTitle;
     var docIcon;
-    var isDocTweet = false;
     var frContent = "";
+    var tweeterImage = "";
 
     for (var i = 0; i < monitorSectionLength; i++) {
         monitorSectionType = monitorSection[i].type
-        monitorSectionHeader = getMonitorHeaderType(monitorSectionType);
-        frContent += '<div class="item_header ' + monitorSectionHeader + '"><span>' + monitorSection[i].title + '</span></div>'
+        monitorSectionHeader = setMonitorHeaderType(monitorSectionType);
+        if (monitorSectionType == "TWEETS") {
+            frContent += '<div class="item_header tweet"><span class="tweeticon_bird"></span><span>FirstTweets</span></div>'
+        }
+        else {
+            frContent += '<div class="item_header ' + monitorSectionHeader + '"><span>' + monitorSection[i].title + '</span></div>'
+        }
         frContent += '<div class="outer">'
 
         var sectionBaseResultsLength = monitorSection[i].baseResults.length
-        console.log(">>>>>>>Type : " + monitorSection[i].type)
 
         frContent += '<div class="search_item">'
         for (var j = 0; j < sectionBaseResultsLength; j++) {
@@ -37,28 +41,32 @@ function monitorDetails(data) {
             docDate = (docDate != "") ? docDate.split(201, 1) : docDate;
 
 
-            if (sectionResult.type == "TWEETS") {
-                isDocTweet = true;
-                tweeterImage = '<img src="' + sectionResult.extra.userImage + '" alt="Tweeter Image" />';
-            }
+            sectionResultClass = (sectionResult.type == "TWEETS") ? "search_item_tweet" : "search_item"
+            liOption += '<div class=' + sectionResultClass + '>'
 
-            liOption += '<div class="search_item">'
+
             if ((monitorSectionType == "HIGHLIGHTS") || (monitorSectionType == "SEARCH")) {
                 liOption += '<div class="bookmark">&nbsp;</div>'
             }
-            liOption += '<div class="titlearea">'
-            liOption += '<div class="title">' + docTitle + '</div>'
-            if (docIcon == "") {
-                liOption += '<div class="source">'
 
+            if (sectionResult.type == "TWEETS") {
+                tweeterImage = sectionResult.extra.userImage;
+                liOption += '<div class="tweet_img"><img src="' + tweeterImage + '"></div>'
+                liOption += '<div>' + docTitle + '</div>'
             }
+
             else {
-                liOption += '<div class="source"><span class="favicon"><img src="' + docIcon + '" alt="Source Image" width=16 height=16 />&nbsp;&nbsp;</span>'
+                liOption += '<div class="titlearea">'
+                liOption += '<div class="title">' + docTitle + '</div>'
+                liOption += '<div class="source">'
+                if (docIcon != "") {
+                    liOption += '<span class="favicon"><img src="' + docIcon + '" alt="Source Image" width=16 height=16 />&nbsp;&nbsp;</span>'
+                }
+                liOption += docSource
+                liOption += '<span class="date">' + docDate + '</span>'
+                liOption += '</div>'
+                liOption += '</div>'
             }
-            liOption += docSource
-            liOption += '<span class="date">' + docDate + '</span>'
-            liOption += '</div>'
-            liOption += '</div>'
             liOption += '</div>'
 
             frContent += liOption
@@ -88,12 +96,9 @@ function monitorDetails(data) {
     $(".container").html(frContent)
 }
 
-function getMonitorHeaderType(monitorSectionType) {
+function setMonitorHeaderType(monitorSectionType) {
     var monitorSectionHeader;
     switch (monitorSectionType) {
-        case 'TWEETS' :
-            monitorSectionHeader = "tweet";
-            break;
         case 'MANAGEMENT_TURNOVER':
             monitorSectionHeader = "green";
             break;
@@ -107,3 +112,7 @@ function getMonitorHeaderType(monitorSectionType) {
 
     return monitorSectionHeader;
 }
+
+
+
+
