@@ -61,6 +61,13 @@ function changeHeader(targetLocation) {
             $(".menuArea").html(headerContent);
             break;
 
+        case "getMonitorDetails":
+            headerContent += '<a id="headerButton" href="" data-rel="back">';
+            headerContent += '<img src="images/backButton.png" alt="Go Back"/>';
+            headerContent += '</a>';
+            $(".menuArea").html(headerContent);
+            break;
+
         default:
             console.log("Nowhere to go :(")
     }

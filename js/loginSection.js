@@ -135,6 +135,7 @@ function getMonitorDetails(monitorID) {
         callAJAX(url, "getMonitorDetails")
     }
     else if (environment == "dev") {
+        changeHeader("getMonitorDetails")
         $.mobile.changePage("#monitorDetailsPage");
         monitorDetails(monitorResults);
     }

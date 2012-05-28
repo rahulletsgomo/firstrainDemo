@@ -53,10 +53,7 @@ function methodToCall(callingFunction, data, docIcon) {
             scrollDocumentDetails();
             break;
         case "getMonitorDetails":
-//            console.log(">>>>>>>>>>>_______________ Response from getMonitorSearchResults user : " + JSON.stringify(data));
-//            monitorSearchResults = data;
-            console.log(">>>>>>>>>>>_______________ Response from getMonitorResults user : " + JSON.stringify(data));
-            //window.location.href = "monitorDetails.html";
+            changeHeader("getMonitorDetails")
             $.mobile.changePage("#monitorDetailsPage");
             monitorDetails(data);
             break;
