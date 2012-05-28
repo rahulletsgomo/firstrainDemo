@@ -138,6 +138,20 @@ function getMonitorDetails(monitorID) {
         changeHeader("getMonitorDetails")
         $.mobile.changePage("#monitorDetailsPage");
         monitorDetails(monitorResults);
+        $(".monitorDetails_h").click(function () {
+            var sectionType = $(this).attr("sectionType");
+            switch (sectionType) {
+                case 'SEARCH':
+                    break;
+                case '':
+                    break;
+                default:
+                    break;
+            }
+//            var monitorDetailsTweetsInfo = {"monitorId" : $(this).attr("monitorId"), "sectionId" : $(this).attr("sectionId"), "monitorSectionType" : $(this).attr("sectionType")}
+            monitorDetailsTweets($(this).attr("monitorId"), $(this).attr("sectionId"), $(this).attr("sectionType"));
+//            alert("monitorId : " + $(this).attr("monitorId") + ", sectionId : " + $(this).attr("sectionId") + ", monitorSectionType : " + $(this).attr("sectionType"))
+        })
     }
 
 }
