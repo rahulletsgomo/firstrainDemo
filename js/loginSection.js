@@ -1,4 +1,5 @@
 $(function () {
+//    $.mobile.changePage("#monitorDetailsPage")
     $("#signinButton").live("click", function () {
         $("#signInLoading").attr("style", "visibility:true");
         validateUser();
@@ -119,9 +120,11 @@ function setDocumentInfo(documentDetails, docIcon) {
 
 
 function getMonitorDetails(monitorID) {
-    alert(">>>>> Monitor Id : " + monitorID)
+//    alert(">>>>> Monitor Id : " + monitorID)
 //    var checkURL = URL + "/DataProvider/searchResults?userId=" + userID + "&type=monitor&itemcount=30&id=" + monitorID + "&subq=mt,docs,events,tweets";
 //    callAJAX(checkURL, "getMonitorSearchResults")
+    $.mobile.changePage("#monitorDetailsPage");
+    monitorDetails(monitorResults);
     console.log(">>>>>> Called from : " + monitorID)
 }
 
