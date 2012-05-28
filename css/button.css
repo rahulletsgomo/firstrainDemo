@@ -1,0 +1,86 @@
+
+
+.btn
+{
+  padding: 10px;
+  text-align: center;
+  font: bold 14px/14px Arial,Helvetica,sans-serif;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border:0px;
+}
+
+/* css for blue botton */
+
+.btn.blue
+{
+ background-color: #00509B;
+ background-image: -webkit-gradient(linear, left top, left bottom, from(#009FD1), to(#00509B));
+ text-shadow: 0px 1px 0px rgba(0, 0, 0, 0.4);
+ box-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+ -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+ color:#fff;
+ width:100%;
+}
+
+
+.btn.blue:active, input[type="button"].blue:active
+{
+
+  color: #FFF;
+  text-shadow: 0px 1px 1px #000000;
+  background-color:#8A8A8A;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#8a8a8a), to(#535353));
+
+}
+.btn.blue_active, input[type="button"].blue_active
+{
+
+  color: #FFF;
+  text-shadow: 0px 1px 1px #000000;
+  background-color:#8A8A8A;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#8a8a8a), to(#535353));
+
+}
+.btn.blue.monitor
+ {
+   padding:20px;
+   
+ }
+ /* css for blue botton End*/
+ 
+ /* css for grey botton */
+ 
+ .btn.grey
+{
+   background-color: #C9C9C9;
+   background-image: -webkit-gradient(linear, left top, left bottom, from(#FBFBFB), to(#C9C9C9));
+   text-shadow: 0px 1px 0px rgba(255, 255, 255, 0.4);
+   box-shadow: 0 1px 0px rgba(0, 0, 0, 0.4);
+  -webkit-box-shadow: 0 1px 0px rgba(0, 0, 0, 0.4);
+  color: #666;
+   width:100%;
+}
+
+ .btn.grey.document
+ {
+  width: 46%;
+  margin-right: 2%;
+ 
+ }
+.btn.grey:active
+{
+  color: #FFFFFF!important;
+	text-shadow: 0px 1px 1px #000000;
+	-webkit-box-shadow: inset 0 0px 3px rgba(0,0,0,0.5);
+   background-color: #00509b;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#8a8a8a), to(#535353));
+}
+.btn.grey_active
+{
+  color: #FFFFFF!important;
+	text-shadow: 0px 1px 1px #000000;
+	-webkit-box-shadow: inset 0 0px 3px rgba(0,0,0,0.5);
+   background-color: #00509b;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#8a8a8a), to(#535353));
+}

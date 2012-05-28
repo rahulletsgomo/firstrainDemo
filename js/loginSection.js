@@ -124,6 +124,7 @@ function getMonitorDetails(monitorID) {
 //    var checkURL = URL + "/DataProvider/searchResults?userId=" + userID + "&type=monitor&itemcount=30&id=" + monitorID + "&subq=mt,docs,events,tweets";
 //    callAJAX(checkURL, "getMonitorSearchResults")
     $.mobile.changePage("#monitorDetailsPage");
+//    $("span").removeClass('ui-btn-corner-all')
     monitorDetails(monitorResults);
     console.log(">>>>>> Called from : " + monitorID)
 }
