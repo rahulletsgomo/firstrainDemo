@@ -1,0 +1,39 @@
+ul#thelist li {
+    float: left;
+    margin: 0;
+    padding: 10px;
+}
+
+#scroller{
+    float: left;
+    padding: 0;
+}
+
+#scroller ul{
+    display: block;
+    float: left;
+    padding: 0;
+    margin: 0;
+    text-align: left;
+}
+
+#scroller li{
+    box-sizing: border-box;
+    display: block;
+    float: left;
+    /*width: 290px;*/
+    padding: 2px;
+}
+
+#wrapper {
+    /*width: 290px;*/
+    height: 150px;
+    position: relative;
+}
+
+#documentDetailsWrapper {
+    position: relative;
+    top: 0px;
+    left: 0px;
+}
+

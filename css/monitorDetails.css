@@ -110,3 +110,36 @@
     float: right;
     font-weight: bold;
 }
+
+/*Test Area*/
+div.liDiv {
+    border: 1px solid red;
+    width: 500px;
+    height: 150px;
+}
+
+.title {
+    border: 1px solid blue;
+    width: 400px;
+    height: 100px;
+}
+
+.source {
+    border: 1px solid green;
+    width: 360px;
+    height: 48px;
+}
+
+.date {
+    border: 1px solid #000000;
+    width: 120px;
+    height: 48px;
+    float: right;
+}
+
+.image {
+    border: 1px solid #000000;
+    width: 90px;
+    height: 80px;
+    float: right;
+}

@@ -6,28 +6,36 @@
     <meta name="format-detection" content="telephone=no">
     <meta charset="utf-8">
 
-    <link href="jquery.mobile-1.0.1.min.css" rel="stylesheet" type="text/css">
+    <!--Library Files-->
+    <link href="libraries/jquery.mobile-1.0.1.min.css" rel="stylesheet" type="text/css">
+    <script type="text/javascript" charset="utf-8" src="libraries/phonegap-1.4.1.js"></script>
+    <script type="text/javascript" src="libraries/jquery-1.6.js"></script>
+    <script type="text/javascript" charset="utf-8" src="libraries/jquery.mobile-1.0.1.min.js"></script>
+    <script type="text/javascript" charset="utf-8" src="libraries/iScroll.js"></script>
+
+    <!--JSON Files-->
+    <script type="text/javascript" src="js/JSONFiles/landingPageJSON.js"></script>
+    <script type="text/javascript" src="js/JSONFiles/documentDetailsJSON.js"></script>
+
+    <!--Project StyleSheets-->
     <link rel="stylesheet" href="css/style.css" type="text/css"/>
     <link rel="stylesheet" href="css/documentDetails.css" type="text/css"/>
-    <link rel="stylesheet" href="css/scrollerConfig.css" type="text/css"/>
+    <link rel="stylesheet" href="css/testMonitorDetails.css" type="text/css"/>
+    <link rel="stylesheet" href="css/scrollConfig.css" type="text/css"/>
 
-    <script type="text/javascript" charset="utf-8" src="phonegap-1.4.1.js"></script>
-    <!--<script type="text/javascript" charset="utf-8" src="jquery-1.6.4.min.js"></script>-->
-    <script type="text/javascript" src="js/libraries/jquery-1.6.js"></script>
-    <script type="text/javascript" charset="utf-8" src="jquery.mobile-1.0.1.min.js"></script>
-    <script type="text/javascript" charset="utf-8" src="js/iscroll.js"></script>
+   <!--Project Functions-->
     <script type="text/javascript" src="js/globalVars.js"></script>
     <script type="text/javascript" src="js/ajaxFunctions.js"></script>
-    <script type="text/javascript" src="js/testJSON/loginSection.js"></script>
-    <script type="text/javascript" src="js/testJSON/landingPageJSON.js"></script>
-    <script type="text/javascript" src="js/testJSON/documentDetailsJSON.js"></script>
-    <script type="text/javascript" src="js/scrollerConfig.js"></script>
+    <script type="text/javascript" src="js/monitorSection.js"></script>
+    <script type="text/javascript" src="js/loginSection.js"></script>
+    <script type="text/javascript" src="js/scrollConfig.js"></script>
     <script type="text/javascript" src="js/menuOptions.js"></script>
+
 </head>
 
 <body>
 <!--Main Header-->
-<div class="customheader">
+<div class="customHeader">
     <div class="headerName">
         <div class="companyNameHeader">FirstRain</div>
         <div class="menuArea">
@@ -200,6 +208,17 @@
             <div class="grey_btn_left">Email</div>
             <div class="grey_btn_right">Open</div>
 
+        </div>
+    </div>
+</div>
+
+<div data-role="page" id="monitorDetailsPage">
+    <div id="container">
+        <div class="liDiv">
+            <div class="image"></div>
+            <div class="title"></div>
+            <div class="date"></div>
+            <div class="source"></div>
         </div>
     </div>
 </div>
