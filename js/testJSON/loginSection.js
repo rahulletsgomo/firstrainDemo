@@ -119,17 +119,17 @@ function setDocumentInfo(documentDetails, docIcon) {
 
 
 function getMonitorDetails(monitorID) {
-    var checkURL = URL + "/DataProvider/searchResults?userId=" + userID + "&type=monitor&itemcount=30&id=" + monitorID + "&subq=mt,docs,events,tweets";
-    callAJAX(checkURL, "getMonitorSearchResults")
+    alert(">>>>> Monitor Id : " + monitorID)
+//    var checkURL = URL + "/DataProvider/searchResults?userId=" + userID + "&type=monitor&itemcount=30&id=" + monitorID + "&subq=mt,docs,events,tweets";
+//    callAJAX(checkURL, "getMonitorSearchResults")
     console.log(">>>>>> Called from : " + monitorID)
-//    localStorage.monitorID = monitorID
 }
 
 function insertActiveMonitor(data) {
     var monitorList = data.data.topMonitorList;
     var monitorNames = "";
     for (var i = 0; i < monitorList.length; i++) {
-        monitorNames += '<li class="ui-li ui-li-static ui-body-d" style="padding:2px 0 0 2px;">';
+        monitorNames += '<li class="ui-li ui-li-static ui-body-d" style="padding:2px 0 0 2px;" id = "' + monitorList[i].monitorId + '" onclick = "getMonitorDetails(this.id)">';
         monitorNames += '<div style="padding:10px;">';
         monitorNames += '<div style="float:right;>';
         monitorNames += '<label">';
