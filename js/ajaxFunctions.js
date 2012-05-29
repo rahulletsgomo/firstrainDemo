@@ -56,6 +56,12 @@ function methodToCall(callingFunction, data, docIcon) {
             changeHeader("getMonitorDetails")
             $.mobile.changePage("#monitorDetailsPage");
             monitorDetails(data);
+            getMonitorDetailsSectionsPage();
+            break;
+        case "monitorDetailsSearchResults":
+            changeHeader("getMonitorDetails")
+            $.mobile.changePage("#monitorDetailsSections");
+            searchResults(data);
             break;
         default :
             console.log("Nothing to show here ...")

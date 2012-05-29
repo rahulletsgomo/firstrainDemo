@@ -127,11 +127,14 @@ function monitorDetailsTweets(monitorId, sectionId, sectionType) {
 }
 
 function monitorDetailsSearchResults(searchID) {
+    console.log("Inside monitorDetailsSearchResults ....")
     if (environment == "test") {
         var url = URL + "/FRMobileService/authentication.jsp?fn=getSearchResults&id=" + searchID + "&subq=docs&start=0&rows=30&code=" + code
+        console.log(">>>>>>>> monitorSearchResults URL : " + url)
+        callAJAX(url, "monitorDetailsSearchResults")
     }
     else if (environment == "dev") {
-        $.mobile.changePage("#monitorDetailsTweets");
+        $.mobile.changePage("#monitorDetailsSections");
         searchResults(searchPageJSON)
     }
 }
@@ -150,8 +153,6 @@ function searchResults(data) {
     var searchBucketFavIcon = ""
     var searchBucketDate = ""
     var referSearchResult = 0;
-    console.log(searchTopic + " : " + $(".menuHeader_h").html())
-    $(".menuHeader_h").html(searchTopic)
     for (var i = 0; i < searchSectionsLength; i++) {
         searchBucketLength = searchSection[i].buckets.length;
         for (var j = 0; j < searchBucketLength; j++) {

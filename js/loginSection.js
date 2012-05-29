@@ -120,13 +120,6 @@ function setDocumentInfo(documentDetails, docIcon) {
 
 
 function getMonitorDetails(monitorID) {
-//    alert(">>>>> Monitor Id : " + monitorID)
-//    var checkURL = URL + "/DataProvider/searchResults?userId=" + userID + "&type=monitor&itemcount=30&id=" + monitorID + "&subq=mt,docs,events,tweets";
-//    callAJAX(checkURL, "getMonitorSearchResults")
-//    $.mobile.changePage("#monitorDetailsPage");
-//    $("span").removeClass('ui-btn-corner-all')
-
-//    monitorDetails(monitorResults);
     console.log(">>>>>> Called from : " + monitorID)
 
     if (environment == "test") {
@@ -138,24 +131,27 @@ function getMonitorDetails(monitorID) {
         changeHeader("getMonitorDetails")
         $.mobile.changePage("#monitorDetailsPage");
         monitorDetails(monitorResults);
-        $(".monitorDetails_h").click(function () {
-            var sectionType = $(this).attr("sectionType");
-            var monitorID = $(this).attr("monitorId");
-            var sectionID = $(this).attr("sectionId");
-            switch (sectionType) {
-                case 'SEARCH':
-                    monitorDetailsSearchResults(sectionID)
-                    break;
-                case '':
-                    break;
-                default:
-                    break;
-            }
-//            var monitorDetailsTweetsInfo = {"monitorId" : $(this).attr("monitorId"), "sectionId" : $(this).attr("sectionId"), "monitorSectionType" : $(this).attr("sectionType")}
-//            monitorDetailsTweets($(this).attr("monitorId"), $(this).attr("sectionId"), $(this).attr("sectionType"));
-//            alert("monitorId : " + $(this).attr("monitorId") + ", sectionId : " + $(this).attr("sectionId") + ", monitorSectionType : " + $(this).attr("sectionType"))
-        })
+        getMonitorDetailsSectionsPage();
     }
+
+}
+
+function getMonitorDetailsSectionsPage(){
+    $(".monitorDetails_h").click(function () {
+        var sectionType = $(this).attr("sectionType");
+        var monitorID = $(this).attr("monitorId");
+        var sectionID = $(this).attr("sectionId");
+        console.log(">>>>>>> Called From section type = " + sectionType)
+        switch (sectionType) {
+            case 'SEARCH':
+                monitorDetailsSearchResults(sectionID)
+                break;
+            case '':
+                break;
+            default:
+                break;
+        }
+    })
 
 }
 
