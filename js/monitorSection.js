@@ -16,6 +16,7 @@ function monitorDetails(data) {
     var sectionResultClass;
     var docTitle;
     var docIcon;
+    var docID;
     var frContent = "";
     var tweeterImage = "";
     allSectionMenu("#monitorDetailsPage")
@@ -39,6 +40,7 @@ function monitorDetails(data) {
         for (var j = 0; j < sectionBaseResultsLength; j++) {
             sectionResult = monitorSectionResult[referResultID];
 
+            docID = (sectionResult.id) ? sectionResult.id : "";
             docSource = (sectionResult.source) ? sectionResult.source : "";
             docTitle = (sectionResult.title) ? sectionResult.title : "";
             docIcon = (sectionResult.favicon) ? sectionResult.favicon : "";
@@ -62,7 +64,7 @@ function monitorDetails(data) {
             }
 
             else {
-                liOption += '<div class="titlearea">'
+                liOption += '<div class="titlearea" onclick=\'alert("' + docID + '")\'>'
                 liOption += '<div class="title">' + docTitle + '</div>'
                 liOption += '<div class="source">'
                 if (docIcon != "") {
@@ -89,7 +91,6 @@ function monitorDetails(data) {
 
 //        This will check for whether a has more button is required or not
         if (monitorSection[i].hasMore) {
-            console.log("Has true sections : " + monitorSectionType)
             monitorSectionType = monitorSection[i].type;
             monitorSectionTitle = monitorSection[i].title;
             monitorSectionId = monitorSection[i].id;
