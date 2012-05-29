@@ -18,6 +18,8 @@ function monitorDetails(data) {
     var docIcon;
     var frContent = "";
     var tweeterImage = "";
+    allSectionMenu("#monitorDetailsPage")
+
 
 //    $(".current_monitor").html(monitorTitle)
     for (var i = 0; i < monitorSectionLength; i++) {
@@ -150,6 +152,9 @@ function searchResults(data) {
     var searchBucketFavIcon = ""
     var searchBucketDate = ""
     var referSearchResult = 0;
+
+    allSectionMenu("#monitorDetailsSections")
+
     for (var i = 0; i < searchSectionsLength; i++) {
         searchBucketLength = searchSection[i].buckets.length;
         for (var j = 0; j < searchBucketLength; j++) {
@@ -204,6 +209,9 @@ function tweetResults(data) {
     var tweeterImage = ""
     var tweetTitle = ""
     var tweetDate = ""
+
+    allSectionMenu("#monitorDetailsSections")
+
     frContent += '<div class="item_header tweet" style="margin-bottom: 0px"><span class="tweeticon_bird"></span><span>' + headerTitle + '</span></div>'
     frContent += '<div class="outer">'
     for (var i = 0; i < resultsLength; i++) {
@@ -238,11 +246,7 @@ function monitorDetailsMT_EventsResults(monitorID, calledFrom) {
 
 function mt_eventsResults(data) {
     $.mobile.changePage("#monitorDetailsSections")
-    var baseArea = ""
-    baseArea += '<div class="all_selection" style="margin: 37px 0px 0px 0px"><input type="button" class="btn blue" value="All Selections"> </div>'
-    baseArea += '<div class="container">'
-    baseArea += '</div>'
-    $("#monitorDetailsSections").html(baseArea)
+    allSectionMenu()
     var sectionsTotal = data.data.results.length
     var sectionResult = data.data
     var sectionTitle = ""
@@ -267,6 +271,14 @@ function mt_eventsResults(data) {
     $(".container").html(frContent)
     console.log("Length of the results : " + resultsLength)
 
+}
+
+function allSectionMenu(sectionID) {
+    var baseArea = ""
+    baseArea += '<div class="all_selection" style="margin: 37px 0px 0px 0px"><input type="button" class="btn blue" value="All Selections"> </div>'
+    baseArea += '<div class="container">'
+    baseArea += '</div>'
+    $(sectionID).html(baseArea)
 }
 
 
