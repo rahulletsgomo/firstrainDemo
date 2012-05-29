@@ -306,8 +306,9 @@ function monitorArticleDetails_document(data) {
     var articleFavIcon = data.data.results[0].favicon
     var articleSummary = data.data.results[0].summary
     var articleTweet = data.data.results[0].extra.tweetList
-    var articleTweetsTotal = data.data.results[0].extra.tweetList.length
-    var articleMatchedContentTypesTotal = data.data.results[0].extra.matchedContentTypes.length
+    var articleTweetsTotal = articleTweet.length
+    var articleMatchedContent = data.data.results[0].extra.matchedContentTypes
+    var articleMatchedContentTypesTotal = articleMatchedContent.length
     var articleMatchedCompaniesTotal = data.data.results[0].matchedCompanies.length
     var articleMatchedTopicsTotal = data.data.results[0].matchedTopics.length
     var tweetArea = ""
@@ -328,9 +329,10 @@ function monitorArticleDetails_document(data) {
     }
     frContent += articleSummary
     frContent += '</div>'
-    var tweetImg
-    var tweetTitle
+
     if (articleTweetsTotal > 0) {
+        var tweetImg
+        var tweetTitle
         frContent += '<div class="relatedtweet">'
         frContent += '<div class="title">Related Tweet:</div>'
         for (var i = 0; i < articleTweetsTotal; i++) {
@@ -347,9 +349,18 @@ function monitorArticleDetails_document(data) {
     }
 
     if (articleMatchedContentTypesTotal > 0) {
-
+        var contentName = ""
+        frContent += '<div class="relatedTopics">'
+        frContent += '<div class="title">Related Content:</div>'
+        for (var articleMatchedContentType = 0; articleMatchedContentType < articleMatchedContentTypesTotal; articleMatchedContentType++) {
+            contentName = articleMatchedContent[articleMatchedContentType].name
+            frContent += '<div class="topic">'
+            frContent += contentName
+            frContent += '</div>'
+        }
+        frContent += '</div>'
     }
-
+    frContent += '</div>'
     frContent += '<div class="documentActionButtons">'
     frContent += '<span><input type="button" class="btn grey document" value="Email"></span>'
     frContent += '<span><input type="button" class="btn grey document" value="Open"></span>'
@@ -359,6 +370,8 @@ function monitorArticleDetails_document(data) {
     $(".container").html(frContent)
 
 }
+
+
 
 
 
