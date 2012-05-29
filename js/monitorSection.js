@@ -49,7 +49,7 @@ function monitorDetails(data) {
 
 
             sectionResultClass = (sectionResult.type == "TWEETS") ? "search_item_tweet" : "search_item"
-            liOption += '<div class=' + sectionResultClass + '>'
+            liOption += '<div onclick=\'monitorArticleSection("' + docID + '")\' class=' + sectionResultClass + '>'
 
 
             if ((monitorSectionType == "HIGHLIGHTS") || (monitorSectionType == "SEARCH")) {
@@ -64,7 +64,7 @@ function monitorDetails(data) {
             }
 
             else {
-                liOption += '<div class="titlearea" onclick=\'alert("' + docID + '")\'>'
+                liOption += '<div class="titlearea">'
                 liOption += '<div class="title">' + docTitle + '</div>'
                 liOption += '<div class="source">'
                 if (docIcon != "") {
@@ -280,6 +280,84 @@ function allSectionMenu(sectionID) {
     baseArea += '<div class="container">'
     baseArea += '</div>'
     $(sectionID).html(baseArea)
+}
+
+function monitorArticleSection(articleID) {
+    $.mobile.changePage("#articleDetails")
+    console.log(">>>>>> Article ID : " + articleID)
+    if (environment == "test") {
+        var url = URL + "/FRMobileService/authentication.jsp?fn=getDetails&ids=" + articleID + "&code=" + code
+    }
+    else if (environment == "dev") {
+        monitorArticleDetails_document(articleDetails_document)
+    }
+}
+
+function monitorArticleDetails_document(data) {
+    console.log(">>>>>>> Inside monitorArticleDetails_document")
+    $(".container").html("")
+
+    var articleTitle = data.data.results[0].title
+    var articleUrl = data.data.results[0].url
+    var articleSource = data.data.results[0].source
+    var articleDate = data.data.results[0].timestamp
+    articleDate = articleDate.split(201, 1)
+    var articleImage = data.data.results[0].image
+    var articleFavIcon = data.data.results[0].favicon
+    var articleSummary = data.data.results[0].summary
+    var articleTweet = data.data.results[0].extra.tweetList
+    var articleTweetsTotal = data.data.results[0].extra.tweetList.length
+    var articleMatchedContentTypesTotal = data.data.results[0].extra.matchedContentTypes.length
+    var articleMatchedCompaniesTotal = data.data.results[0].matchedCompanies.length
+    var articleMatchedTopicsTotal = data.data.results[0].matchedTopics.length
+    var tweetArea = ""
+
+    var frContent = ""
+    frContent += '<div class="item_header red"><span class="itemcounter">3 0f 40</span><span>FirstReads</span></div>'
+    frContent += '<div class="outer">'
+    frContent += '<div class="doc_content">'
+    frContent += '<div class="doc_title">'
+    frContent += '<div class="bookmark">&nbsp;</div>'
+    frContent += '<div class="titlearea">'
+    frContent += '<div class="title">' + articleTitle + '</div>'
+    frContent += '<div class="source"><span class="favicon"><img src="' + articleFavIcon + '" alt=""></span>' + articleSource + '<span class="date">' + articleDate + '</span></div>'
+    frContent += '</div>'
+    frContent += '<div class="doc_summery">'
+    if (articleImage != "") {
+        frContent += '<span><img src="imgs/demoimage.jpeg"/></span>'
+    }
+    frContent += articleSummary
+    frContent += '</div>'
+    var tweetImg
+    var tweetTitle
+    if (articleTweetsTotal > 0) {
+        frContent += '<div class="relatedtweet">'
+        frContent += '<div class="title">Related Tweet:</div>'
+        for (var i = 0; i < articleTweetsTotal; i++) {
+            tweetImg = articleTweet[i].extra.userImage
+            tweetTitle = articleTweet[i].title
+            frContent += '<div class="tweet">'
+            frContent += '<span class="tweet_img"><img src="' + tweetImg + '"></span>'
+            frContent += '<span>'
+            frContent += tweetTitle
+            frContent += '</span>'
+            frContent += '</div>'
+            frContent += '</div>'
+        }
+    }
+
+    if (articleMatchedContentTypesTotal > 0) {
+
+    }
+
+    frContent += '<div class="documentActionButtons">'
+    frContent += '<span><input type="button" class="btn grey document" value="Email"></span>'
+    frContent += '<span><input type="button" class="btn grey document" value="Open"></span>'
+    frContent += '</div>'
+    frContent += '</div>'
+
+    $(".container").html(frContent)
+
 }
 
 
