@@ -224,17 +224,19 @@ function tweetResults(data) {
     $(".container").html(frContent)
 }
 
-function monitorDetailsMTResults(monitorID) {
+function monitorDetailsMT_EventsResults(monitorID, calledFrom) {
     if (environment == "test") {
-        var url = URL + "/FRMobileService/authentication.jsp?fn=getMonitorResults&id=" + monitorID + "&subq=mt&start=0&rows=30&code=" + code
-        callAJAX(url, "monitorDetailsMTResults")
+        var subqField = (calledFrom == "events") ? "events" : "mt"
+        var url = URL + "/FRMobileService/authentication.jsp?fn=getMonitorResults&id=" + monitorID + "&subq=" + subqField + "&start=0&rows=30&code=" + code
+        callAJAX(url, "monitorDetailsMT_EventsResults")
     }
     else if (environment == "dev") {
-        mtResults(monitorDetailsMT)
+        var jsonToUse = (calledFrom == "events") ? monitorEvents : monitorDetailsMT
+        mt_eventsResults(jsonToUse)
     }
 }
 
-function mtResults(data) {
+function mt_eventsResults(data) {
     $.mobile.changePage("#monitorDetailsSections")
     var baseArea = ""
     baseArea += '<div class="all_selection" style="margin: 37px 0px 0px 0px"><input type="button" class="btn blue" value="All Selections"> </div>'

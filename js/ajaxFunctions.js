@@ -67,9 +67,9 @@ function methodToCall(callingFunction, data, docIcon) {
             changeHeader("getMonitorDetails")
             tweetResults(data);
             break;
-        case "monitorDetailsMTResults":
+        case "monitorDetailsMT_EventsResults":
             changeHeader("getMonitorDetails")
-            mtResults(data);
+            mt_eventsResults(data);
             break;
         default :
             console.log("Nothing to show here ...")

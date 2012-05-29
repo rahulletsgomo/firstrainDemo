@@ -144,14 +144,17 @@ function getMonitorDetailsSectionsPage() {
         console.log(">>>>>>> Called From section type = " + sectionType)
         switch (sectionType) {
             case 'SEARCH':
-                monitorDetailsSearchResults(sectionID)
-//                monitorDetailsMTResults(monitorID) This is for testing purpose
+//                monitorDetailsSearchResults(sectionID)
+                monitorDetailsMT_EventsResults(monitorID, "mt") //This is for testing purpose
                 break;
             case 'TWEETS':
                 monitorDetailsTweetResults(monitorID)
                 break;
             case 'MANAGEMENT_TURNOVER':
-                monitorDetailsMTResults(monitorID)
+                monitorDetailsMT_EventsResults(monitorID, "mt")
+                break;
+            case 'EVENTS':
+                monitorDetailsMT_EventsResults(monitorID, "events")
                 break;
             default:
                 break;
