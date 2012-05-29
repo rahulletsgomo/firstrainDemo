@@ -153,7 +153,7 @@ function searchResults(data) {
         searchBucketLength = searchSection[i].buckets.length;
         for (var j = 0; j < searchBucketLength; j++) {
             searchBucket = searchSection[i].buckets[j]
-            frContent += '<div class="item_header red"><span>' + searchBucket.title + '</span></div>'
+            frContent += '<div class="item_header blue"><span>' + searchBucket.title + '</span></div>'
             frContent += '<div class="outer">'
             for (var k = 0; k < searchBucket.baseResults.length; k++) {
                 searchBucketTitle = searchSectionResult[referSearchResult].title
