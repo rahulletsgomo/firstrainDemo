@@ -136,7 +136,7 @@ function getMonitorDetails(monitorID) {
 
 }
 
-function getMonitorDetailsSectionsPage(){
+function getMonitorDetailsSectionsPage() {
     $(".monitorDetails_h").click(function () {
         var sectionType = $(this).attr("sectionType");
         var monitorID = $(this).attr("monitorId");
@@ -145,9 +145,13 @@ function getMonitorDetailsSectionsPage(){
         switch (sectionType) {
             case 'SEARCH':
                 monitorDetailsSearchResults(sectionID)
+//                monitorDetailsMTResults(monitorID) This is for testing purpose
                 break;
             case 'TWEETS':
                 monitorDetailsTweetResults(monitorID)
+                break;
+            case 'MANAGEMENT_TURNOVER':
+                monitorDetailsMTResults(monitorID)
                 break;
             default:
                 break;

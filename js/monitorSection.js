@@ -87,6 +87,7 @@ function monitorDetails(data) {
 
 //        This will check for whether a has more button is required or not
         if (monitorSection[i].hasMore) {
+            console.log("Has true sections : " + monitorSectionType)
             monitorSectionType = monitorSection[i].type;
             monitorSectionTitle = monitorSection[i].title;
             monitorSectionId = monitorSection[i].id;
@@ -184,7 +185,6 @@ function searchResults(data) {
 }
 
 function monitorDetailsTweetResults(monitorID) {
-    console.log(">>>>>> Tweets to search for : " + monitorID)
     if (environment == "test") {
         var url = URL + "/FRMobileService/authentication.jsp?fn=getMonitorResults&id=" + monitorID + "&subq=tweets&start=0&rows=30&code=" + code
         callAJAX(url, "monitorDetailsTweetResults")
@@ -222,7 +222,49 @@ function tweetResults(data) {
     }
     frContent += '</div>'
     $(".container").html(frContent)
-    console.log(tweeterName)
+}
+
+function monitorDetailsMTResults(monitorID) {
+    if (environment == "test") {
+        var url = URL + "/FRMobileService/authentication.jsp?fn=getMonitorResults&id=" + monitorID + "&subq=mt&start=0&rows=30&code=" + code
+        callAJAX(url, "monitorDetailsMTResults")
+    }
+    else if (environment == "dev") {
+        mtResults(monitorDetailsMT)
+    }
+}
+
+function mtResults(data) {
+    $.mobile.changePage("#monitorDetailsSections")
+    var baseArea = ""
+    baseArea += '<div class="all_selection" style="margin: 37px 0px 0px 0px"><input type="button" class="btn blue" value="All Selections"> </div>'
+    baseArea += '<div class="container">'
+    baseArea += '</div>'
+    $("#monitorDetailsSections").html(baseArea)
+    var sectionsTotal = data.data.results.length
+    var sectionResult = data.data
+    var sectionTitle = ""
+    var sectionDate = ""
+    var mtTitle = data.data.sections[0].title
+    var frContent = ""
+    frContent += '<div class="item_header green"><span>' + mtTitle + '</span></div>'
+    frContent += '<div class="outer">'
+    for (var i = 0; i < sectionsTotal; i++) {
+        sectionTitle = sectionResult.results[i].title
+        sectionDate = sectionResult.results[i].timestamp
+        sectionDate = sectionDate.split(201, 1)
+
+        frContent += '<div class="search_item">'
+        frContent += '<div>'
+        frContent += sectionTitle
+        frContent += '</div>'
+        frContent += '<div class="source"><span class="date">' + sectionDate + '</span></div>'
+        frContent += '</div>'
+    }
+    frContent += '</div>'
+    $(".container").html(frContent)
+    console.log("Length of the results : " + resultsLength)
+
 }
 
 
