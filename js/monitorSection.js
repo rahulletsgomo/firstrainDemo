@@ -121,16 +121,12 @@ function setMonitorHeaderType(monitorSectionType) {
 
 function monitorDetailsTweets(monitorId, sectionId, sectionType) {
     $.mobile.changePage("#monitorDetailsTweets");
-    console.log("Monitor ID : " + monitorId)
-    console.log("Section ID : " + sectionId)
-    console.log("Section Type : " + sectionType)
 }
 
 function monitorDetailsSearchResults(searchID) {
     console.log("Inside monitorDetailsSearchResults ....")
     if (environment == "test") {
         var url = URL + "/FRMobileService/authentication.jsp?fn=getSearchResults&id=" + searchID + "&subq=docs&start=0&rows=30&code=" + code
-        console.log(">>>>>>>> monitorSearchResults URL : " + url)
         callAJAX(url, "monitorDetailsSearchResults")
     }
     else if (environment == "dev") {
@@ -181,7 +177,7 @@ function searchResults(data) {
 //            console.log(">>>> : " + searchBucket.title + " : " + searchBucket.baseResults.length)
         }
     }
-    $("#container").html(frContent)
+    $(".container").html(frContent)
     console.log(">>>> Total Search Results : " + referSearchResult)
 //    console.log(">>>>>> Total number of buckets : " + searchResultSectionsLength)
 
