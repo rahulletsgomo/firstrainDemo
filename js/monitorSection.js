@@ -126,6 +126,66 @@ function monitorDetailsTweets(monitorId, sectionId, sectionType) {
     console.log("Section Type : " + sectionType)
 }
 
+function monitorDetailsSearchResults(searchID) {
+    if (environment == "test") {
+        var url = URL + "/FRMobileService/authentication.jsp?fn=getSearchResults&id=" + searchID + "&subq=docs&start=0&rows=30&code=" + code
+    }
+    else if (environment == "dev") {
+        $.mobile.changePage("#monitorDetailsTweets");
+        searchResults(searchPageJSON)
+    }
+}
+
+//This function will process the results of search
+function searchResults(data) {
+    var frContent = ''
+    var searchTopic = data.data.searches[0].title
+    var searchSection = data.data.sections
+    var searchSectionResult = data.data.results;
+    var searchSectionsLength = searchSection.length
+    var searchBucketLength = 0
+    var searchBucket = ""
+    var searchBucketTitle = ""
+    var searchBucketSource = ""
+    var searchBucketFavIcon = ""
+    var searchBucketDate = ""
+    var referSearchResult = 0;
+    console.log(searchTopic + " : " + $(".menuHeader_h").html())
+    $(".menuHeader_h").html(searchTopic)
+    for (var i = 0; i < searchSectionsLength; i++) {
+        searchBucketLength = searchSection[i].buckets.length;
+        for (var j = 0; j < searchBucketLength; j++) {
+            searchBucket = searchSection[i].buckets[j]
+            frContent += '<div class="item_header red"><span>' + searchBucket.title + '</span></div>'
+            frContent += '<div class="outer">'
+            for (var k = 0; k < searchBucket.baseResults.length; k++) {
+                searchBucketTitle = searchSectionResult[referSearchResult].title
+                searchBucketFavIcon = searchSectionResult[referSearchResult].favicon
+                searchBucketSource = searchSectionResult[referSearchResult].source
+                searchBucketDate = searchSectionResult[referSearchResult].timestamp
+                searchBucketDate = searchBucketDate.split(201, 1)
+                frContent += '<div class="search_item">'
+                frContent += '<div class="bookmark">&nbsp;</div>'
+                frContent += '<div class="titlearea">'
+                frContent += '<div class="title">' + searchBucketTitle + '</div>'
+                frContent += '<div class="source"><span class="favicon"><img src ="' + searchBucketFavIcon + '" width=16 height=16 /></span>' + searchBucketSource + '<span class="date">' + searchBucketDate + '</span></div>'
+                frContent += '</div>'
+                frContent += '</div>'
+//                frContent += '</div>'
+//                console.log(">>>>> " + referSearchResult + " - " + searchSectionResult[referSearchResult].title)
+                referSearchResult++;
+            }
+            frContent += '</div>'
+//            frContent += '</div>'
+//            console.log(">>>> : " + searchBucket.title + " : " + searchBucket.baseResults.length)
+        }
+    }
+    $("#container").html(frContent)
+    console.log(">>>> Total Search Results : " + referSearchResult)
+//    console.log(">>>>>> Total number of buckets : " + searchResultSectionsLength)
+
+}
+
 
 
 

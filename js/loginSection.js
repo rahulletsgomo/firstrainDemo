@@ -140,8 +140,11 @@ function getMonitorDetails(monitorID) {
         monitorDetails(monitorResults);
         $(".monitorDetails_h").click(function () {
             var sectionType = $(this).attr("sectionType");
+            var monitorID = $(this).attr("monitorId");
+            var sectionID = $(this).attr("sectionId");
             switch (sectionType) {
                 case 'SEARCH':
+                    monitorDetailsSearchResults(sectionID)
                     break;
                 case '':
                     break;
@@ -149,7 +152,7 @@ function getMonitorDetails(monitorID) {
                     break;
             }
 //            var monitorDetailsTweetsInfo = {"monitorId" : $(this).attr("monitorId"), "sectionId" : $(this).attr("sectionId"), "monitorSectionType" : $(this).attr("sectionType")}
-            monitorDetailsTweets($(this).attr("monitorId"), $(this).attr("sectionId"), $(this).attr("sectionType"));
+//            monitorDetailsTweets($(this).attr("monitorId"), $(this).attr("sectionId"), $(this).attr("sectionType"));
 //            alert("monitorId : " + $(this).attr("monitorId") + ", sectionId : " + $(this).attr("sectionId") + ", monitorSectionType : " + $(this).attr("sectionType"))
         })
     }
