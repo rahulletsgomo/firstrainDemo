@@ -62,6 +62,13 @@ function changeHeader(targetLocation) {
             break;
 
         case "getMonitorDetails":
+            headerContent += '<a id="headerButton" href="" data-rel="back" onclick=\'changeHeader("homePage")\'>';
+            headerContent += '<img src="images/backButton.png" alt="Go Back"/>';
+            headerContent += '</a>';
+            $(".menuArea").html(headerContent);
+            break;
+
+        case "goBack":
             headerContent += '<a id="headerButton" href="" data-rel="back">';
             headerContent += '<img src="images/backButton.png" alt="Go Back"/>';
             headerContent += '</a>';

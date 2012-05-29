@@ -103,7 +103,7 @@ function monitorDetails(data) {
         frContent += '</div>'
     }
 
-    $(".container").html(frContent)
+    $("#monitorDetailsPage .container").html(frContent)
 }
 
 function setMonitorHeaderType(monitorSectionType) {
@@ -122,10 +122,10 @@ function setMonitorHeaderType(monitorSectionType) {
 
     return monitorSectionHeader;
 }
-
-function monitorDetailsTweets(monitorId, sectionId, sectionType) {
-    $.mobile.changePage("#monitorDetailsTweets");
-}
+//
+//function monitorDetailsTweets(monitorId, sectionId, sectionType) {
+//    $.mobile.changePage("#monitorDetailsTweets");
+//}
 
 function monitorDetailsSearchResults(searchID) {
     console.log("Inside monitorDetailsSearchResults ....")
@@ -134,6 +134,7 @@ function monitorDetailsSearchResults(searchID) {
         callAJAX(url, "monitorDetailsSearchResults")
     }
     else if (environment == "dev") {
+        changeHeader("goBack")
         $.mobile.changePage("#monitorDetailsSections");
         searchResults(searchPageJSON)
     }
@@ -184,7 +185,7 @@ function searchResults(data) {
 //            console.log(">>>> : " + searchBucket.title + " : " + searchBucket.baseResults.length)
         }
     }
-    $(".container").html(frContent)
+    $("#monitorDetailsSections .container").html(frContent)
     console.log(">>>> Total Search Results : " + referSearchResult)
 //    console.log(">>>>>> Total number of buckets : " + searchResultSectionsLength)
 
@@ -201,6 +202,7 @@ function monitorDetailsTweetResults(monitorID) {
 }
 
 function tweetResults(data) {
+    changeHeader("goBack")
     $.mobile.changePage("#monitorDetailsSections")
     var frContent = ""
     var headerTitle = data.data.sections[0].title
@@ -230,7 +232,7 @@ function tweetResults(data) {
 
     }
     frContent += '</div>'
-    $(".container").html(frContent)
+    $("#monitorDetailsSections .container").html(frContent)
 }
 
 function monitorDetailsMT_EventsResults(monitorID, calledFrom) {
@@ -246,6 +248,7 @@ function monitorDetailsMT_EventsResults(monitorID, calledFrom) {
 }
 
 function mt_eventsResults(data) {
+    changeHeader("goBack")
     $.mobile.changePage("#monitorDetailsSections")
     allSectionMenu()
     var sectionsTotal = data.data.results.length
@@ -269,7 +272,7 @@ function mt_eventsResults(data) {
         frContent += '</div>'
     }
     frContent += '</div>'
-    $(".container").html(frContent)
+    $("#monitorDetailsSections .container").html(frContent)
     console.log("Length of the results : " + resultsLength)
 
 }
@@ -283,19 +286,50 @@ function allSectionMenu(sectionID) {
 }
 
 function monitorArticleSection(articleID) {
+    changeHeader("goBack")
     $.mobile.changePage("#articleDetails")
     console.log(">>>>>> Article ID : " + articleID)
     if (environment == "test") {
         var url = URL + "/FRMobileService/authentication.jsp?fn=getDetails&ids=" + articleID + "&code=" + code
+        callAJAX(url, "monitorArticleSection")
     }
     else if (environment == "dev") {
         monitorArticleDetails_document(articleDetails_document)
     }
 }
 
+function articleMatchedCompanyInfo(articleMatchedCompaniesTotal, frContent, articleMatchedCompany, calledFrom) {
+    if (articleMatchedCompaniesTotal > 0) {
+        var companyName = ""
+        var articleTitle = ""
+        switch (calledFrom) {
+            case 'matchedTopic':
+                articleTitle = "Topics MENTIONED:"
+                break;
+            case 'matchedContent':
+                articleTitle = "RELATED CONTENT:"
+                break;
+            case 'matchedCompany':
+                articleTitle = " COMPANIES:"
+                break;
+            default :
+                console.log("No operation for this event :(")
+        }
+        frContent += '<div class="relatedCompanies">'
+        frContent += '<div class="title">' + articleTitle + '</div>'
+        for (var articleMatchedCompanyType = 0; articleMatchedCompanyType < articleMatchedCompaniesTotal; articleMatchedCompanyType++) {
+            companyName = (calledFrom == "matchedContent") ? articleMatchedCompany[articleMatchedCompanyType].name : articleMatchedCompany[articleMatchedCompanyType].title
+            frContent += '<div class="company">'
+            frContent += companyName
+            frContent += '</div>'
+        }
+        frContent += '</div>'
+    }
+    return frContent;
+}
+
 function monitorArticleDetails_document(data) {
     console.log(">>>>>>> Inside monitorArticleDetails_document")
-    $(".container").html("")
 
     var articleTitle = data.data.results[0].title
     var articleUrl = data.data.results[0].url
@@ -309,8 +343,10 @@ function monitorArticleDetails_document(data) {
     var articleTweetsTotal = articleTweet.length
     var articleMatchedContent = data.data.results[0].extra.matchedContentTypes
     var articleMatchedContentTypesTotal = articleMatchedContent.length
-    var articleMatchedCompaniesTotal = data.data.results[0].matchedCompanies.length
-    var articleMatchedTopicsTotal = data.data.results[0].matchedTopics.length
+    var articleMatchedCompany = data.data.results[0].matchedCompanies
+    var articleMatchedCompaniesTotal = articleMatchedCompany.length
+    var articleMatchedTopic = data.data.results[0].matchedTopics
+    var articleMatchedTopicsTotal = articleMatchedTopic.length
     var tweetArea = ""
 
     var frContent = ""
@@ -348,18 +384,10 @@ function monitorArticleDetails_document(data) {
         }
     }
 
-    if (articleMatchedContentTypesTotal > 0) {
-        var contentName = ""
-        frContent += '<div class="relatedTopics">'
-        frContent += '<div class="title">Related Content:</div>'
-        for (var articleMatchedContentType = 0; articleMatchedContentType < articleMatchedContentTypesTotal; articleMatchedContentType++) {
-            contentName = articleMatchedContent[articleMatchedContentType].name
-            frContent += '<div class="topic">'
-            frContent += contentName
-            frContent += '</div>'
-        }
-        frContent += '</div>'
-    }
+
+    frContent = articleMatchedCompanyInfo(articleMatchedTopicsTotal, frContent, articleMatchedTopic, "matchedTopic");
+    frContent = articleMatchedCompanyInfo(articleMatchedContentTypesTotal, frContent, articleMatchedContent, "matchedContent");
+    frContent = articleMatchedCompanyInfo(articleMatchedCompaniesTotal, frContent, articleMatchedCompany, "matchedCompany");
     frContent += '</div>'
     frContent += '<div class="documentActionButtons">'
     frContent += '<span><input type="button" class="btn grey document" value="Email"></span>'
@@ -367,7 +395,7 @@ function monitorArticleDetails_document(data) {
     frContent += '</div>'
     frContent += '</div>'
 
-    $(".container").html(frContent)
+    $("#articleDetails .container").html(frContent)
 
 }
 
