@@ -146,7 +146,8 @@ function getMonitorDetailsSectionsPage(){
             case 'SEARCH':
                 monitorDetailsSearchResults(sectionID)
                 break;
-            case '':
+            case 'TWEETS':
+                monitorDetailsTweetResults(monitorID)
                 break;
             default:
                 break;

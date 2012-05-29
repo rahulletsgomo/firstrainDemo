@@ -183,6 +183,48 @@ function searchResults(data) {
 
 }
 
+function monitorDetailsTweetResults(monitorID) {
+    console.log(">>>>>> Tweets to search for : " + monitorID)
+    if (environment == "test") {
+        var url = URL + "/FRMobileService/authentication.jsp?fn=getMonitorResults&id=" + monitorID + "&subq=tweets&start=0&rows=30&code=" + code
+        callAJAX(url, "monitorDetailsTweetResults")
+    }
+    else if (environment == "dev") {
+        tweetResults(monitorTweetsJSON)
+    }
+}
+
+function tweetResults(data) {
+    $.mobile.changePage("#monitorDetailsSections")
+    var frContent = ""
+    var headerTitle = data.data.sections[0].title
+    var resultsLength = data.data.results.length
+    var resultID = data.data;
+    var tweeterName = ""
+    var tweeterImage = ""
+    var tweetTitle = ""
+    var tweetDate = ""
+    frContent += '<div class="item_header tweet" style="margin-bottom: 0px"><span class="tweeticon_bird"></span><span>' + headerTitle + '</span></div>'
+    frContent += '<div class="outer">'
+    for (var i = 0; i < resultsLength; i++) {
+        tweeterName = resultID.results[i].extra.name;
+        tweeterImage = resultID.results[i].extra.userImage;
+        tweetTitle = resultID.results[i].title;
+        tweetDate = resultID.results[i].timestamp;
+        tweetDate = tweetDate.split(201, 1);
+
+        frContent += '<div class="search_item_tweet">'
+        frContent += '<div class="tweet_img"><img src="' + tweeterImage + '"></div>'
+        frContent += '<div>' + tweetTitle + '</div>'
+        frContent += '<div class="source">' + tweeterName + '<span class="date">' + tweetDate + '</span></div>'
+        frContent += '</div>'
+
+    }
+    frContent += '</div>'
+    $(".container").html(frContent)
+    console.log(tweeterName)
+}
+
 
 
 
