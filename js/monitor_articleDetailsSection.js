@@ -60,18 +60,13 @@ function monitorArticleDetails_document(data) {
     frContent = articleMatchedCompanyInfo(articleMatchedContentTypesTotal, frContent, articleMatchedContent, "matchedContent");
     frContent = articleMatchedCompanyInfo(articleMatchedCompaniesTotal, frContent, articleMatchedCompany, "matchedCompany");
     frContent += '</div>'
-    frContent += '</div>'
     frContent += '<div class="documentActionButtons">'
     frContent += '<span><input type="button" class="btn grey document" value="Email"></span>'
     frContent += '<span><input type="button" class="btn grey document" value="Open"></span>'
     frContent += '</div>'
     frContent += '</div>'
 
-//    console.log(">>>>> Article Details Content : " + frContent)
-//    console.log(">>>>>> Data inside articleDetails container : " + $("#articleDetails .container").html())
-    console.log(">>>>>>>> FRContent : " + frContent)
     $("#articleDetails .container").html(frContent)
-//    console.log(">>>>>> Data inside articleDetails container : " + $("#articleDetails .container").html())
 
 }
 
@@ -105,3 +100,15 @@ function articleMatchedCompanyInfo(articleMatchedCompaniesTotal, frContent, arti
     return frContent;
 }
 
+function monitorArticleDetails_tweet(data) {
+    console.log(">>>>>>>>> monitorArticleDetails_tweet data : " + data)
+}
+
+
+function monitorArticleDetails_MT(data) {
+    console.log(">>>>>>>>> monitorArticleDetails_MT data : " + data)
+}
+
+function monitorArticleDetails_events(data) {
+    console.log(">>>>>>>>> monitorArticleDetails_events data : " + data)
+}

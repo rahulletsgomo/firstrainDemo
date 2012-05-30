@@ -299,7 +299,26 @@ function monitorArticleSection(articleID, sectionType) {
         callAJAX(url, "monitorArticleSection", "", sectionType)
     }
     else if (environment == "dev") {
-        monitorArticleDetails(articleDetails_document, sectionType)
+        var articleDetails_json = "";
+
+        switch(sectionType){
+            case 'ARTICLE' :
+                articleDetails_json = articleDetails_document;
+                break;
+            case 'TWEETS' :
+                articleDetails_json = articleDetails_tweet;
+                break;
+            case 'MT' :
+                articleDetails_json = articleDetails_MT;
+                break;
+            case 'EVENT' :
+                articleDetails_json = articleDetails_events;
+                break;
+            default:
+                console.log("No Operation for this event :(")
+        }
+
+        monitorArticleDetails(articleDetails_json, sectionType)
     }
 }
 
@@ -310,14 +329,15 @@ function monitorArticleDetails(data, sectionType) {
             monitorArticleDetails_document(data)
             break;
         case 'TWEETS' :
+            monitorArticleDetails_tweet(data)
             console.log("Work in progress")
-//            monitorArticleDetails_document(articleDetails_document)
             break;
         case 'MT' :
+            monitorArticleDetails_MT(data)
             console.log("Work in progress")
-//            monitorArticleDetails_document(articleDetails_document)
             break;
         case 'EVENT' :
+            monitorArticleDetails_events(data)
             console.log("Work in progress")
 //            monitorArticleDetails_document(articleDetails_document)
             break;
