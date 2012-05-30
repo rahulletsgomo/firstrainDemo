@@ -40,7 +40,6 @@ function methodToCall(callingFunction, data, docIcon) {
             landingPage();
             break;
         case "landingPage":
-            console.log(JSON.stringify(data))
             insertActiveMonitor(data)
             insertFirstReads(data)
             $.mobile.changePage("#homePage");

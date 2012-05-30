@@ -288,6 +288,8 @@ function allSectionMenu(sectionID) {
 function monitorArticleSection(articleID) {
     changeHeader("goBack")
     $.mobile.changePage("#articleDetails")
+    $("#articleDetails .container").html(loading)
+//    setTimeout($("#articleDetails .container").html("Loading ..."), 10000)
     console.log(">>>>>> Article ID : " + articleID)
     if (environment == "test") {
         var url = URL + "/FRMobileService/authentication.jsp?fn=getDetails&ids=" + articleID + "&code=" + code
@@ -395,7 +397,10 @@ function monitorArticleDetails_document(data) {
     frContent += '</div>'
     frContent += '</div>'
 
+//    console.log(">>>>> Article Details Content : " + frContent)
+//    console.log(">>>>>> Data inside articleDetails container : " + $("#articleDetails .container").html())
     $("#articleDetails .container").html(frContent)
+//    console.log(">>>>>> Data inside articleDetails container : " + $("#articleDetails .container").html())
 
 }
 
