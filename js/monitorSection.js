@@ -128,6 +128,9 @@ function setMonitorHeaderType(monitorSectionType) {
 //}
 
 function monitorDetailsSearchResults(searchID) {
+    $.mobile.changePage("#monitorDetailsSections");
+    allSectionMenu("#monitorDetailsSections")
+    $("#monitorDetailsSections .container").html(loading)
     console.log("Inside monitorDetailsSearchResults ....")
     if (environment == "test") {
         var url = URL + "/FRMobileService/authentication.jsp?fn=getSearchResults&id=" + searchID + "&subq=docs&start=0&rows=30&code=" + code
@@ -135,13 +138,13 @@ function monitorDetailsSearchResults(searchID) {
     }
     else if (environment == "dev") {
         changeHeader("goBack")
-        $.mobile.changePage("#monitorDetailsSections");
         searchResults(searchPageJSON)
     }
 }
 
 //This function will process the results of search
 function searchResults(data) {
+
     var frContent = ''
     var searchTopic = data.data.searches[0].title
     var searchSection = data.data.sections
@@ -155,7 +158,6 @@ function searchResults(data) {
     var searchBucketDate = ""
     var referSearchResult = 0;
 
-    allSectionMenu("#monitorDetailsSections")
 
     for (var i = 0; i < searchSectionsLength; i++) {
         searchBucketLength = searchSection[i].buckets.length;

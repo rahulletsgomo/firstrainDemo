@@ -60,7 +60,7 @@ function methodToCall(callingFunction, data, docIcon) {
             break;
         case "monitorDetailsSearchResults":
             changeHeader("goBack")
-            $.mobile.changePage("#monitorDetailsSections");
+//            $.mobile.changePage("#monitorDetailsSections");
             searchResults(data);
             break;
         case "monitorDetailsTweetResults":
