@@ -32,7 +32,7 @@ function monitorArticleDetails_document(data) {
     frContent += '</div>'
     frContent += '<div class="doc_summery">'
     if (articleImage != "") {
-        frContent += '<span><img src="imgs/demoimage.jpeg"/></span>'
+        frContent += '<span><img width="64" height="64" src="' + articleImage + '"/></span>'
     }
     frContent += articleSummary
     frContent += '</div>'
@@ -101,7 +101,66 @@ function articleMatchedCompanyInfo(articleMatchedCompaniesTotal, frContent, arti
 }
 
 function monitorArticleDetails_tweet(data) {
-    console.log(">>>>>>>>> monitorArticleDetails_tweet data : " + data)
+    var tweetInfo = data.data.results[0]
+    var relatedDoc = (tweetInfo.relatedDocs) ? (tweetInfo.relatedDocs) : ""
+    var relatedDocsTotal = (relatedDoc != "") ? relatedDoc.length : 0
+    var tweetTitle = (tweetInfo.title) ? (tweetInfo.title) : ""
+    var includedLink = (tweetInfo.url) ? (tweetInfo.url) : ""
+    var userImage = (tweetInfo.extra.userImage) ? (tweetInfo.extra.userImage) : ""
+    var screenName = (tweetInfo.extra.screenName) ? (tweetInfo.extra.screenName) : ""
+    var timeLabel = (tweetInfo.extra.timeLabel) ? (tweetInfo.extra.timeLabel) : ""
+    var documentInfo = (tweetInfo.extra.document) ? (tweetInfo.extra.document) : ""
+    var documentTitle = (documentInfo.title) ? (documentInfo.title) : ""
+    var documentSource = (documentInfo.source) ? (documentInfo.source) : ""
+    var documentFavIcon = (documentInfo.favicon) ? (documentInfo.favicon) : ""
+    var documentFavImage = (documentInfo.image) ? (documentInfo.image) : ""
+    var documentFavSummary = (documentInfo.summary) ? (documentInfo.summary) : ""
+    var tweetedBy = (tweetInfo.extra.description) ? (tweetInfo.extra.description) : ""
+
+    var frContent = ""
+    frContent += '<div class="item_header tweet"><span class="itemcounter"></span><span>FirstTweets</span></div>';
+    frContent += '<div class="outer">';
+    frContent += '<div class="doc_content">';
+    frContent += '<div class="search_item_tweet no_bg">';
+    frContent += '<div>';
+    frContent += '<div class="tweet_img"><img src="' + userImage + '"></div>';
+    frContent += '<div>';
+    frContent += tweetTitle;
+    frContent += '</div>';
+    frContent += '</div>';
+    frContent += '<div class="source">';
+    frContent += '<span class="floatright"><span class="favicon"></span>' + screenName + '</span>';
+    frContent += timeLabel;
+    frContent += '</div>';
+    frContent += '</div>';
+    if (includedLink != "") {
+        frContent += '<div class="includedlink">';
+        frContent += '<div class="title">included link:</div>';
+        frContent += '<div><a href="' + includedLink + '">' + includedLink + '</a></div>';
+        frContent += '</div>';
+    }
+    if (documentInfo != "") {
+        frContent += '<div class="doc_summery">'
+        frContent += '<div class="title">' + documentTitle + '</div>'
+        frContent += '<div class="source"><span class="favicon"><img src="' + documentFavIcon + '" alt="source" /></span>' + documentSource + '</div>'
+        frContent += '<div>'
+        frContent += documentFavSummary
+        frContent += '</div>'
+    }
+    if (relatedDocsTotal > 0) {
+        frContent += '<div class="relateddocuments ">'
+        frContent += '<div class="title">related documents:</div>'
+        for (var relatedDoc = 0; relatedDoc < relatedDocsTotal; relatedDoc++) {
+            frContent += '<div>'
+            frContent += '<div class="bold"><a href="#">Windows 7 and Google Android: The Safer OS</a></div>'
+            frContent += '<div> <img src=""> <span class="attribution">A little about</span></div>'
+            frContent += '</div>'
+            frContent += '</div>'
+        }
+    }
+    frContent += '</div>'
+    console.log(frContent)
+
 }
 
 
