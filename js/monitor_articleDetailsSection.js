@@ -1,21 +1,22 @@
 function monitorArticleDetails_document(data) {
     console.log(">>>>>>> Inside monitorArticleDetails_document")
+    $("#articleDetails .container").html(processing)
 
-    var articleTitle = data.data.results[0].title
-    var articleUrl = data.data.results[0].url
-    var articleSource = data.data.results[0].source
-    var articleDate = data.data.results[0].timestamp
+    var articleTitle = (data.data.results[0].title) ? (data.data.results[0].title) : ""
+    var articleUrl = (data.data.results[0].url) ? (data.data.results[0].url) : ""
+    var articleSource = (data.data.results[0].source) ? (data.data.results[0].source) : ""
+    var articleDate = (data.data.results[0].timestamp) ? (data.data.results[0].timestamp) : ""
     articleDate = articleDate.split(201, 1)
-    var articleImage = data.data.results[0].image
-    var articleFavIcon = data.data.results[0].favicon
-    var articleSummary = data.data.results[0].summary
-    var articleTweet = data.data.results[0].extra.tweetList
+    var articleImage = (data.data.results[0].image) ? (data.data.results[0].image) : ""
+    var articleFavIcon = (data.data.results[0].favicon) ? (data.data.results[0].favicon) : ""
+    var articleSummary = (data.data.results[0].summary) ? (data.data.results[0].summary) : ""
+    var articleTweet = (data.data.results[0].extra.tweetList) ? (data.data.results[0].extra.tweetList) : ""
     var articleTweetsTotal = articleTweet.length
-    var articleMatchedContent = data.data.results[0].extra.matchedContentTypes
+    var articleMatchedContent = (data.data.results[0].extra.matchedContentTypes) ? (data.data.results[0].extra.matchedContentTypes) : ""
     var articleMatchedContentTypesTotal = articleMatchedContent.length
-    var articleMatchedCompany = data.data.results[0].matchedCompanies
+    var articleMatchedCompany = (data.data.results[0].matchedCompanies) ? (data.data.results[0].matchedCompanies) : ""
     var articleMatchedCompaniesTotal = articleMatchedCompany.length
-    var articleMatchedTopic = data.data.results[0].matchedTopics
+    var articleMatchedTopic = (data.data.results[0].matchedTopics) ? (data.data.results[0].matchedTopics) : ""
     var articleMatchedTopicsTotal = articleMatchedTopic.length
     var tweetArea = ""
 
@@ -42,8 +43,8 @@ function monitorArticleDetails_document(data) {
         frContent += '<div class="relatedtweet">'
         frContent += '<div class="title">Related Tweet:</div>'
         for (var i = 0; i < articleTweetsTotal; i++) {
-            tweetImg = articleTweet[i].extra.userImage
-            tweetTitle = articleTweet[i].title
+            tweetImg = (articleTweet[i].extra.userImage) ? (articleTweet[i].extra.userImage) : ""
+            tweetTitle = (articleTweet[i].title) ? (articleTweet[i].title) : ""
             frContent += '<div class="tweet">'
             frContent += '<span class="tweet_img"><img src="' + tweetImg + '"></span>'
             frContent += '<span>'
@@ -59,6 +60,7 @@ function monitorArticleDetails_document(data) {
     frContent = articleMatchedCompanyInfo(articleMatchedContentTypesTotal, frContent, articleMatchedContent, "matchedContent");
     frContent = articleMatchedCompanyInfo(articleMatchedCompaniesTotal, frContent, articleMatchedCompany, "matchedCompany");
     frContent += '</div>'
+    frContent += '</div>'
     frContent += '<div class="documentActionButtons">'
     frContent += '<span><input type="button" class="btn grey document" value="Email"></span>'
     frContent += '<span><input type="button" class="btn grey document" value="Open"></span>'
@@ -67,6 +69,7 @@ function monitorArticleDetails_document(data) {
 
 //    console.log(">>>>> Article Details Content : " + frContent)
 //    console.log(">>>>>> Data inside articleDetails container : " + $("#articleDetails .container").html())
+    console.log(">>>>>>>> FRContent : " + frContent)
     $("#articleDetails .container").html(frContent)
 //    console.log(">>>>>> Data inside articleDetails container : " + $("#articleDetails .container").html())
 

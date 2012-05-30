@@ -1,5 +1,6 @@
-function callAJAX(url, callingFunction, docIcon) {
+function callAJAX(url, callingFunction, docIcon, sectionType) {
     console.log(">>>>> Calling Function : " + callingFunction)
+    console.log(">>>>> Section Type : " + sectionType)
     try {
         $.ajax({
             url:url,
@@ -15,7 +16,7 @@ function callAJAX(url, callingFunction, docIcon) {
                     if (callingFunction == "getMonitorSearchResults") {
                         console.log(">>>>>>>>> Inside the success state of getMonitorSearchResults !!!")
                     }
-                    methodToCall(callingFunction, data, docIcon)
+                    methodToCall(callingFunction, data, docIcon, sectionType)
                 }
             },
             error:function (e) {
@@ -28,7 +29,7 @@ function callAJAX(url, callingFunction, docIcon) {
     }
 }
 
-function methodToCall(callingFunction, data, docIcon) {
+function methodToCall(callingFunction, data, docIcon, sectionType) {
     switch (callingFunction) {
         case "validateUser":
             console.log(">>>>>> Data : " + data)
@@ -73,7 +74,7 @@ function methodToCall(callingFunction, data, docIcon) {
             break;
         case "monitorArticleSection":
             changeHeader("goBack")
-            monitorArticleDetails_document(data);
+            monitorArticleDetails(data, sectionType);
             break;
         default :
             console.log("Nothing to show here ...")

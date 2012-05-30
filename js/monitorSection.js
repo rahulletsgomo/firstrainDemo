@@ -49,7 +49,7 @@ function monitorDetails(data) {
 
 
             sectionResultClass = (sectionResult.type == "TWEETS") ? "search_item_tweet" : "search_item"
-            liOption += '<div onclick=\'monitorArticleSection("' + docID + '")\' class=' + sectionResultClass + '>'
+            liOption += '<div onclick=\'monitorArticleSection("' + docID + '", "' + sectionResult.type + '")\' class=' + sectionResultClass + '>'
 
 
             if ((monitorSectionType == "HIGHLIGHTS") || (monitorSectionType == "SEARCH")) {
@@ -287,19 +287,44 @@ function allSectionMenu(sectionID) {
     $(sectionID).html(baseArea)
 }
 
-function monitorArticleSection(articleID) {
+function monitorArticleSection(articleID, sectionType) {
     changeHeader("goBack")
     $.mobile.changePage("#articleDetails")
     $("#articleDetails .container").html(loading)
-//    setTimeout($("#articleDetails .container").html("Loading ..."), 10000)
     console.log(">>>>>> Article ID : " + articleID)
+    console.log(">>>>>> Section Type : " + sectionType)
+
     if (environment == "test") {
         var url = URL + "/FRMobileService/authentication.jsp?fn=getDetails&ids=" + articleID + "&code=" + code
-        callAJAX(url, "monitorArticleSection")
+        callAJAX(url, "monitorArticleSection", "", sectionType)
     }
     else if (environment == "dev") {
-        monitorArticleDetails_document(articleDetails_document)
+        monitorArticleDetails(articleDetails_document, sectionType)
     }
+}
+
+function monitorArticleDetails(data, sectionType) {
+    console.log(">>>>>> Section Type : " + sectionType)
+    switch (sectionType) {
+        case 'ARTICLE' :
+            monitorArticleDetails_document(data)
+            break;
+        case 'TWEETS' :
+            console.log("Work in progress")
+//            monitorArticleDetails_document(articleDetails_document)
+            break;
+        case 'MT' :
+            console.log("Work in progress")
+//            monitorArticleDetails_document(articleDetails_document)
+            break;
+        case 'EVENT' :
+            console.log("Work in progress")
+//            monitorArticleDetails_document(articleDetails_document)
+            break;
+        default:
+            console.log("No Operation for this event :(")
+    }
+
 }
 
 
