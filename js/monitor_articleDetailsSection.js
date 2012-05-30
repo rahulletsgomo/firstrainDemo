@@ -72,7 +72,8 @@ function monitorArticleDetails_document(data) {
 
 function articleMatchedCompanyInfo(articleMatchedCompaniesTotal, frContent, articleMatchedCompany, calledFrom) {
     if (articleMatchedCompaniesTotal > 0) {
-        var companyName = ""
+        var linkName = ""
+        var linkID = ""
         var articleTitle = ""
         switch (calledFrom) {
             case 'matchedTopic':
@@ -90,9 +91,10 @@ function articleMatchedCompanyInfo(articleMatchedCompaniesTotal, frContent, arti
         frContent += '<div class="relatedCompanies">'
         frContent += '<div class="title">' + articleTitle + '</div>'
         for (var articleMatchedCompanyType = 0; articleMatchedCompanyType < articleMatchedCompaniesTotal; articleMatchedCompanyType++) {
-            companyName = (calledFrom == "matchedContent") ? articleMatchedCompany[articleMatchedCompanyType].name : articleMatchedCompany[articleMatchedCompanyType].title
-            frContent += '<div class="company">'
-            frContent += companyName
+            linkName = (calledFrom == "matchedContent") ? articleMatchedCompany[articleMatchedCompanyType].name : articleMatchedCompany[articleMatchedCompanyType].title
+            linkID = articleMatchedCompany[articleMatchedCompanyType].id
+            frContent += '<div class="company" onclick=\'searchPage("' + linkName + '")\'>'
+            frContent += linkName
             frContent += '</div>'
         }
         frContent += '</div>'
@@ -165,9 +167,19 @@ function monitorArticleDetails_tweet(data) {
 
 
 function monitorArticleDetails_MT(data) {
+    var mtInfo = json.data.results[0];
+    var mtTitle = mtInfo.title;
+    var mtTimeStamp = mtInfo.timestamp;
     console.log(">>>>>>>>> monitorArticleDetails_MT data : " + data)
 }
 
 function monitorArticleDetails_events(data) {
+    var eventInfo = data.data.results[0]
+    var eventTitle = eventInfo.title
     console.log(">>>>>>>>> monitorArticleDetails_events data : " + data)
+}
+
+function searchPage(searchKeyword) {
+    var url = URL + "/FRMobileService/authentication.jsp?fn=getSearchResults&q=" + searchKeyword + "&code=" + code
+    console.log(">>>>> Search using : " + url)
 }

@@ -1,0 +1,294 @@
+/* common css */
+body
+{
+
+  font-family: Arial,Helvetica,sans-serif;
+  font-size: 13px;
+  background: #DDD;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+
+}
+
+.container
+{
+ 
+  padding:10px 3%;
+  margin:0px;
+  
+
+}
+.outer
+ {
+  margin-bottom: 10px;
+  background-color: #fff;
+  width:100%;
+  float:left;
+  -webkit-box-shadow: 0 3px 3px rgba(0, 0, 0, 0.3);
+}
+
+
+
+
+.heading
+{
+font: bold 18px/20px Arial,Helvetica,sans-serif;
+}
+.title
+{
+ font: bold 14px/16px Arial,Helvetica,sans-serif;
+}
+.itemcounter
+{
+  float:right;
+}
+.selected_item
+{
+  width:94%;
+  padding:10px 3%;
+}
+.summery
+{
+  font-size: 14px;
+ line-height: 18px;
+}
+.source
+{
+  font: bold 14px/16px Arial,Helvetica,sans-serif;
+  font-weight: normal;
+  color: #005596;
+  margin: 4px 0px;
+  float:left;
+  width:100%;
+}
+
+}
+.favicon
+{
+  width:16px;
+  height:16px;
+  margin-right:5px;
+}
+.favicon_name
+{
+  
+}
+.date
+{ 
+  color:#666;
+  float:right;
+}
+
+.titlearea
+{
+ float:left;
+ margin-left:10px;
+ width:90%
+}
+ .bold 
+{
+ font-weight: bold;
+}
+ .p20
+ {
+   padding:20px!important;
+   
+ }
+  .p15
+ {
+   padding:15px!important;
+   
+ }
+ .floatleft
+ { float:left;
+ }
+ .floatright
+ { float:right;
+ }
+ .no_bg {background:none!important}
+ 
+ .cb10
+ {
+  margin:10px;
+  clear:both;
+ 
+ }
+ .pb5
+ {
+ padding-bottom:5px!important;
+ }
+/* common css End*/
+
+
+
+/*landing page > Active Monitor css*/
+
+.active_monitor 
+{
+  background: white;
+  background: url(../imgs/r-icon_carrot.png) no-repeat scroll 98% 50%, -webkit-gradient(linear, left top, left bottom, from(#F7F7F7), to(white));
+  font: bold 14px/15px Arial,Helvetica,sans-serif;
+  padding: 15px 6% 15px 3%;
+  background-size: 9px 14px, 100%;
+ 
+}
+.active_monitor.unread
+{
+  background: url(../imgs/r-icon_carrot.png) no-repeat scroll 98% 50%, url(../imgs/mail_icon_red.png) no-repeat 88% 50%,-webkit-gradient(linear, left top, left bottom, from(#F7F7F7), to(white));
+  background-size: 9px 14px,39px 28px, 100%;
+  padding: 15px 25% 15px 3%;
+}
+.active_monitor:active,.active_monitor_active
+{
+	
+	background: url(../imgs/r-icon_carrot.png) no-repeat scroll 98% 50% ,-webkit-gradient(linear, left top, left bottom, from(#EEEEEE), to(#CCCCCC));
+	text-shadow: 0 1px 0 #FFFFFF;
+  background-size: 9px 14px, 100%;
+}
+.active_monitor.unread:active, .active_monitor.unread_active
+{
+  background: url(../imgs/r-icon_carrot.png) no-repeat scroll 98% 50%, url(../imgs/mail_icon_red.png) no-repeat 88% 50%,-webkit-gradient(linear, left top, left bottom, from(#EEEEEE), to(#CCCCCC));
+    background-size: 9px 14px,39px 28px, 100%;
+  padding: 15px 25% 15px 3%;
+}
+
+/* Active Monitor css End*/
+
+
+
+ 
+/* Bookmark Css*/
+
+.bookmark {
+  background: url(../imgs/icon_bookmark.png) no-repeat left top;
+  display: block; 
+  width: 18px;
+  height:39px;  
+  float:left;
+  background-size:18px 39px;
+  width:5%
+}
+.bookmark:active{
+	background: url(../imgs/icon_bookmark_a.png) no-repeat left top;
+	width: 18px; 
+	height: 39px;
+	background-size:18px 39px;
+   width:5%;
+}
+.bookmark_active{
+	background: url(../imgs/icon_bookmark_a.png) no-repeat left top;
+	width: 18px; 
+	height: 39px;
+	background-size:18px 39px;
+}
+
+/* Bookmark Css End*/
+
+/* Monitor Css*/
+  .all_selection
+   {
+      width: 50%;
+      padding: 5px 25%;
+      border-bottom: 1px solid  #999;
+      background-color: #EEE;
+      background-image: -webkit-gradient(linear, left top, left bottom, from(white), to(#CCC));
+   
+   }
+  .current_monitor, .current_search
+  {
+  text-shadow: 0px 2px 1px #fff;
+  margin:10px 0px;
+  color: #666;
+
+  }
+   .search_item
+   {
+    width:91%;
+    float: left;
+    background: #fff;
+    background: url(../imgs/r-icon_carrot.png) no-repeat 98% 50%, -webkit-gradient(linear, left top, left bottom, from(#F7F7F7), to(#FFFFFF));
+    background-size: 9px 14px, 100%;
+    font: 200 14px/15px Arial,Helvetica,sans-serif;
+    padding: 15px 6% 15px 3%;
+   }
+ 
+  .search_item:active
+  {
+    background: url(../imgs/r-icon_carrot.png) no-repeat 98% 50%, -webkit-gradient(linear, left top, left bottom, from(#EEEEEE), to(#CCCCCC));
+     background-size: 9px 14px, 100%;
+    text-shadow: 0 1px 0 #FFFFFF;
+  } 
+  .search_item_active
+  {
+    background: url(../imgs/r-icon_carrot.png) no-repeat 98% 50%, -webkit-gradient(linear, left top, left bottom, from(#EEEEEE), to(#CCCCCC));
+     background-size: 9px 14px, 100%;
+    text-shadow: 0 1px 0 #FFFFFF;
+  } 
+
+.search_item_tweet
+   {
+    width:91%;
+    float: left;
+    background: #fff;
+    background: -webkit-gradient(linear, left top, left bottom, from(#F7F7F7), to(#FFFFFF));
+    background-size: 100%;
+    font: 200 14px/15px Arial,Helvetica,sans-serif;
+    padding: 15px 6% 15px 3%;
+   }
+ .search_item_tweet:active
+  {
+    background: url(../imgs/r-icon_carrot.png) no-repeat 98% 50%, -webkit-gradient(linear, left top, left bottom, from(#EEEEEE), to(#CCCCCC));
+     background-size: 9px 14px, 100%;
+    text-shadow: 0 1px 0 #FFFFFF;
+  } 
+  .tweeticon_bird
+  {
+   float:right;
+   width: 12px;
+  height: 12px;
+  background: url(../imgs/tweets-header-icon.png) no-repeat top left;
+  background-size: 12px 12px;
+  }
+
+ 
+ .colorOrange
+ {
+   color: #CD660B;
+   font-weight: bold;
+ }
+ .colorRed 
+ {
+  color: #980F08;
+ }
+ .colorGreen
+ {
+  color: #659A1F;
+ }
+ .colorBlue
+ {
+ color: #005596;
+ }
+ .lightGrey, .lightGrey a 
+ {
+  color: #666;
+ }
+
+
+.moresearch
+{
+  width: 92%;
+  float: left;
+  padding: 15px 4%;
+  background: white;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#F7F7F7), to(white));
+  font-size: 16px;
+
+
+}
+
+
+
+
+/* Monitor Css End*/

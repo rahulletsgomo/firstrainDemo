@@ -115,6 +115,9 @@ function setMonitorHeaderType(monitorSectionType) {
         case 'EVENTS':
             monitorSectionHeader = "green";
             break;
+        case 'SEARCH':
+            monitorSectionHeader = "blue";
+            break;
         default:
             monitorSectionHeader = "red";
             break;

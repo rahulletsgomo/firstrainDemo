@@ -1,5 +1,5 @@
 $(function () {
-//    $.mobile.changePage("#monitorDetailsPage")
+//    $.mobile.changePage("#testPage")
     $("#signinButton").live("click", function () {
         $("#signInLoading").attr("style", "visibility:true");
         validateUser();
