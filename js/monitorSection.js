@@ -312,8 +312,7 @@ function monitorArticleSection(articleID, sectionType) {
 
         switch (sectionType) {
             case 'ARTICLE' :
-                articleDetails_json = articleDetails_MT;
-//                articleDetails_json = articleDetails_document;
+                articleDetails_json = articleDetails_document;
                 break;
             case 'TWEETS' :
                 articleDetails_json = articleDetails_tweet;
@@ -336,21 +335,16 @@ function monitorArticleDetails(data, sectionType) {
     console.log(">>>>>> Section Type inside monitorArticleDetails: " + sectionType)
     switch (sectionType) {
         case 'ARTICLE' :
-            monitorArticleDetails_MT(data)
-
-//            monitorArticleDetails_document(data)
+            monitorArticleDetails_document(data)
             break;
         case 'TWEETS' :
             monitorArticleDetails_tweet(data)
             break;
         case 'MT' :
             monitorArticleDetails_MT(data)
-            console.log("Work in progress")
             break;
         case 'EVENT' :
             monitorArticleDetails_events(data)
-            console.log("Work in progress")
-//            monitorArticleDetails_document(articleDetails_document)
             break;
         default:
             console.log("No Operation for this event :(")

@@ -254,6 +254,60 @@ function monitorArticleDetails_MT(data) {
 function monitorArticleDetails_events(data) {
     var eventInfo = data.data.results[0]
     var eventTitle = eventInfo.title
+    var eventDate = eventInfo.timestamp
+    eventDate = eventDate.split(201, 1)
+    var eventClosingPrice = eventInfo.extra.closingPrice
+    var eventPrevClosingPrice = eventInfo.extra.previousClosingPrice
+    var eventTradingVolume = eventInfo.extra.tradingVolume
+    var eventPercentChange = eventInfo.extra.percentChange
+    var eventMV52Week = eventInfo.extra.avg52Week
+    var eventMV200Day = eventInfo.extra.avg200Day
+    var eventMV100Day = eventInfo.extra.avg100Day
+    var eventMV50Day = eventInfo.extra.avg50Day
+    var frContent = ""
+
+    frContent += '<div class="item_header green"><span class="itemcounter"></span><span>Major Stock and Financial Events</span></div>'
+    frContent += '<div class="outer">'
+    frContent += '<div class="doc_content">'
+    frContent += '<div class="search_item no_bg pb5">'
+    frContent += '<div>'
+    frContent += '<div class="mt_img mtstockup_Image"></div>'
+    frContent += '<div>'
+    frContent += eventTitle
+    frContent += '</div>'
+    frContent += '</div>'
+    frContent += '<div class="cb10"></div>'
+    frContent += '<div class="source"><span class="date">' + eventDate + '</span></div>'
+    frContent += '</div>'
+
+    frContent += '<div class="doc_relateditem_con">'
+    frContent += '<div class="title_red">Moving Averages:</div>'
+    frContent += '<div class="Averages_con">'
+    frContent += '<table CELLPADDING="4" CELLSPACING="0">'
+    frContent += '<tr class="bottomborder">'
+    frContent += '<td class="bottomborder">52 Week</td>'
+    frContent += '<td class="bottomborder">200 day</td>'
+    frContent += '<td class="bottomborder">100 day</td>'
+    frContent += '<td class="bottomborder">50 day</td>'
+    frContent += '</tr>'
+    frContent += '<tr>'
+    frContent += '<td><b>&#36;' + eventMV52Week + '</b></td>'
+    frContent += '<td><b>&#36;' + eventMV200Day + '</b></td>'
+    frContent += '<td><b>&#36;' + eventMV100Day + '</b></td>'
+    frContent += '<td><b>&#36;' + eventMV50Day + '</b></td>'
+    frContent += '</tr>'
+    frContent += '</table>'
+    frContent += '</div>'
+    frContent += '</div>'
+    frContent += '</div>'
+    frContent += '<div class="documentActionButtons">'
+    frContent += '<span><input type="button" class="btn grey document" value="Email"></span>'
+    frContent += '<span><input type="button" class="btn grey document" value="Open"></span>'
+    frContent += '</div>'
+    frContent += '</div>'
+    $("#articleDetails .container").html(frContent)
+
+
     console.log(">>>>>>>>> monitorArticleDetails_events data : " + data)
 }
 
