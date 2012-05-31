@@ -21,7 +21,7 @@ function monitorArticleDetails_document(data) {
     var tweetArea = ""
 
     var frContent = ""
-    frContent += '<div class="item_header red"><span class="itemcounter">3 0f 40</span><span>FirstReads</span></div>'
+    frContent += '<div class="item_header red"><span class="itemcounter"></span><span>FirstReads</span></div>'
     frContent += '<div class="outer">'
     frContent += '<div class="doc_content">'
     frContent += '<div class="doc_title">'
@@ -122,7 +122,7 @@ function monitorArticleDetails_tweet(data) {
     var tweetedBy = (tweetInfo.extra.description) ? (tweetInfo.extra.description) : ""
 
     var frContent = ""
-    frContent += '<div class="item_header tweet"><span class="itemcounter">3 0f 40</span><span>FirstTweets</span></div>';
+    frContent += '<div class="item_header tweet"><span class="itemcounter"></span><span>FirstTweets</span></div>';
     frContent += '<div class="outer">';
     frContent += '<div class="doc_content">';
     frContent += '<div class="search_item_tweet no_bg">';

@@ -76,6 +76,10 @@ function methodToCall(callingFunction, data, docIcon, sectionType) {
             changeHeader("goBack")
             monitorArticleDetails(data, sectionType);
             break;
+        case "search_keyword":
+            changeHeader("goBack")
+            searchResults(data)
+            break;
         default :
             console.log("Nothing to show here ...")
     }

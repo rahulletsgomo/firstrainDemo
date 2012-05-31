@@ -137,9 +137,9 @@ function setMonitorHeaderType(monitorSectionType) {
 //}
 
 function monitorDetailsSearchResults(searchID) {
-    $.mobile.changePage("#monitorDetailsSections");
-    allSectionMenu("#monitorDetailsSections")
-    $("#monitorDetailsSections .container").html(loading)
+//    $.mobile.changePage("#monitorDetailsSections");
+//    allSectionMenu("#monitorDetailsSections")
+//    $("#monitorDetailsSections .container").html(loading)
     console.log("Inside monitorDetailsSearchResults ....")
     if (environment == "test") {
         var url = URL + "/FRMobileService/authentication.jsp?fn=getSearchResults&id=" + searchID + "&subq=docs&start=0&rows=30&code=" + code
@@ -153,11 +153,17 @@ function monitorDetailsSearchResults(searchID) {
 
 //This function will process the results of search
 function searchResults(data) {
+    console.log(">>>>>>>> Inside search Results !!!!")
+    $.mobile.changePage("#monitorDetailsSections");
+    allSectionMenu("#monitorDetailsSections")
+    $("#monitorDetailsSections .container").html(loading)
 
     var frContent = ''
     var searchTopic = data.data.searches[0].title
     var searchSection = data.data.sections
     var searchSectionResult = data.data.results;
+    var searchSectionResultID = "";
+    var searchSectionResultType = "";
     var searchSectionsLength = searchSection.length
     var searchBucketLength = 0
     var searchBucket = ""

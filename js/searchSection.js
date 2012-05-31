@@ -2,9 +2,11 @@ function search_keyword(keyword) {
     if (environment == "test") {
         var url = URL + "/FRMobileService/authentication.jsp?fn=getSearchResults&q=" + keyword + "&code=" + code
         console.log(">>>>> Search using : " + url)
+        callAJAX(url, "search_keyword")
     }
     if (environment == "dev") {
-        setSearchData(searchPage_keyWord)
+        searchResults(searchPage_keyWord)
+//        setSearchData(searchPage_keyWord)
     }
 //    monitorDetails(searchPage_keyWord, "search_keyword")
 }
