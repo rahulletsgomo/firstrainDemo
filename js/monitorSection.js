@@ -1,7 +1,8 @@
 function monitorDetails(data) {
-    var monitorSectionLength = data.data.sections.length;
     var monitorSection = data.data.sections;
-    var monitorTitle = data.data.monitor.title;
+    var monitorSectionLength = monitorSection.length;
+    var monitorInfo = data.data.monitor;
+    var monitorTitle = monitorInfo.title;
     var monitorSectionResult = data.data.results;
     var monitorSectionType = "";
     var monitorSectionTitle = "";
@@ -36,7 +37,7 @@ function monitorDetails(data) {
 
         var sectionBaseResultsLength = monitorSection[i].baseResults.length
 
-        frContent += '<div class="search_item">'
+//        frContent += '<div class="search_item">'
         for (var j = 0; j < sectionBaseResultsLength; j++) {
             sectionResult = monitorSectionResult[referResultID];
 
@@ -49,22 +50,27 @@ function monitorDetails(data) {
 
 
             sectionResultClass = (sectionResult.type == "TWEETS") ? "search_item_tweet" : "search_item"
-            liOption += '<div onclick=\'monitorArticleSection("' + docID + '", "' + sectionResult.type + '")\' class=' + sectionResultClass + '>'
+            liOption += '<div class=' + sectionResultClass + '>'
 
 
             if ((monitorSectionType == "HIGHLIGHTS") || (monitorSectionType == "SEARCH")) {
-                liOption += '<div class="bookmark">&nbsp;</div>'
+                if (sectionResult.isBookmarked) {
+                    liOption += '<div class="bookmark_active" onclick=\'unBookMarkItem("' + docID + '", "' + sectionResult.type + '")\'>&nbsp;</div>'
+                }
+                else {
+                    liOption += '<div class="bookmark" onclick=\'bookMarkItem("' + docID + '", "' + sectionResult.type + '")\'>&nbsp;</div>'
+                }
             }
 
             if (sectionResult.type == "TWEETS") {
                 tweeterImage = sectionResult.extra.userImage;
                 liOption += '<div class="tweet_img"><img src="' + tweeterImage + '"></div>'
-                liOption += '<div>' + docTitle + '</div>'
+                liOption += '<div onclick=\'monitorArticleSection("' + docID + '", "' + sectionResult.type + '", "' + sectionResult.type + '")\'>' + docTitle + '</div>'
                 liOption += '<div class="source"><span class="date">' + docDate + '</span></div>'
             }
 
             else {
-                liOption += '<div class="titlearea">'
+                liOption += '<div class="titlearea" onclick=\'monitorArticleSection("' + docID + '", "' + sectionResult.type + '", "' + sectionResult.type + '")\'>'
                 liOption += '<div class="title">' + docTitle + '</div>'
                 liOption += '<div class="source">'
                 if (docIcon != "") {
@@ -93,18 +99,18 @@ function monitorDetails(data) {
         if (monitorSection[i].hasMore) {
             monitorSectionType = monitorSection[i].type;
             monitorSectionTitle = monitorSection[i].title;
-            monitorSectionId = monitorSection[i].id;
+            monitorSectionId = (monitorSection[i].id) ? (monitorSection[i].id) : "";
 
             frContent += '<div class="moresearch"><input type="button" value="More &#187;' + monitorSectionTitle + '" class="monitorDetails_h btn grey" sectionType="' + monitorSectionType + '" monitorId="' + monitorId + '"sectionId = "' + monitorSectionId + '" /></div>'
         }
 
 
-        frContent += '</div>'
+//        frContent += '</div>'
         frContent += '</div>'
     }
-
     $("#monitorDetailsPage .container").html(frContent)
 }
+
 
 function setMonitorHeaderType(monitorSectionType) {
     var monitorSectionHeader;
@@ -304,9 +310,10 @@ function monitorArticleSection(articleID, sectionType) {
     else if (environment == "dev") {
         var articleDetails_json = "";
 
-        switch(sectionType){
+        switch (sectionType) {
             case 'ARTICLE' :
-                articleDetails_json = articleDetails_document;
+                articleDetails_json = articleDetails_MT;
+//                articleDetails_json = articleDetails_document;
                 break;
             case 'TWEETS' :
                 articleDetails_json = articleDetails_tweet;
@@ -326,14 +333,15 @@ function monitorArticleSection(articleID, sectionType) {
 }
 
 function monitorArticleDetails(data, sectionType) {
-    console.log(">>>>>> Section Type : " + sectionType)
+    console.log(">>>>>> Section Type inside monitorArticleDetails: " + sectionType)
     switch (sectionType) {
         case 'ARTICLE' :
-            monitorArticleDetails_document(data)
+            monitorArticleDetails_MT(data)
+
+//            monitorArticleDetails_document(data)
             break;
         case 'TWEETS' :
             monitorArticleDetails_tweet(data)
-            console.log("Work in progress")
             break;
         case 'MT' :
             monitorArticleDetails_MT(data)

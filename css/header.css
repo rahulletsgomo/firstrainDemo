@@ -1,13 +1,43 @@
 /* app header css */
-.header_con
+
+.header_region
 {
+
+
+    height:30px;
     display: block;
-    padding: 5px;
+    padding: 5px 3%;
     margin: 0px;
     border-top: 1px solid #97B7DB;
     border-bottom: 1px solid #00183A;
     background-image: -webkit-gradient(linear, center top, center bottom, from(#6B99CC), color-stop(49%,#165EAF), color-stop(50%,#0150A8), to(#003C8F));
 }
+
+.back_button
+{
+    float:left;
+    width:44px;
+    height:30px;
+
+}
+.menu_icon
+{
+    width:44px;
+    height:30px;
+    float:right;
+
+
+}
+
+
+.header_con
+{
+
+    width: 60%;
+    float: left;
+    margin: 0px 10px;
+}
+
 
 .header
 {
@@ -17,8 +47,9 @@
     font-family: Helvetica, sans-serif;
     font: normal 20px/20px Arial,Helvetica,sans-serif;
     text-align: center;
-    margin-bottom:5px;
-    
+    margin-bottom:3px;
+    margin-top:4px;
+
 }
 .subheader
 {
@@ -28,8 +59,13 @@
     font-family: Helvetica, sans-serif;
     font: normal 14px/14px Arial,Helvetica,sans-serif;
     text-align: center;
-   
-    
+
+
+}
+.header.search, .header.monitor, .header.doc
+{
+    font: normal 16px/17px Arial,Helvetica,sans-serif;
+    margin-top:0px;
 }
 
 /* app header css end */
@@ -38,31 +74,31 @@
 
 .item_header
 {
-  width:96%;
-  float:left;
-  padding: 3px 2%;
-  font: bold 12px/12px Arial,Helvetica,sans-serif;
-  color:#FFF;
+    width:96%;
+    float:left;
+    padding: 3px 2%;
+    font: bold 12px/12px Arial,Helvetica,sans-serif;
+    color:#FFF;
 }
 
 .item_header.red
 {
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#d30000), to(#7e0000));
-	border-bottom:1px solid #0450000;	
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#d30000), to(#7e0000));
+    border-bottom:1px solid #045000;
 }
 .item_header.blue
 {
-   background-image: -webkit-gradient(linear, left top, left bottom, from(#125790), to(#203f5e));
-   border-bottom:1px solid #030045;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#125790), to(#203f5e));
+    border-bottom:1px solid #030045;
 }
 .item_header.green
 {
-   background-image: -webkit-gradient(linear, left top, left bottom, from(#04A302), to(#026701));
-   border-bottom: 1px solid #014500;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#04A302), to(#026701));
+    border-bottom: 1px solid #014500;
 }
 .item_header.tweet
 {
-   background-image:  -webkit-gradient(linear, left top, left bottom, from(#01ABE3), to(#00759C));
-   border-bottom: 1px solid #014500;
+    background-image:  -webkit-gradient(linear, left top, left bottom, from(#01ABE3), to(#00759C));
+    border-bottom: 1px solid #014500;
 }
 /* Item header css end */

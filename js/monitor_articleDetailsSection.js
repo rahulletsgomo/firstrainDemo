@@ -93,7 +93,7 @@ function articleMatchedCompanyInfo(articleMatchedCompaniesTotal, frContent, arti
         for (var articleMatchedCompanyType = 0; articleMatchedCompanyType < articleMatchedCompaniesTotal; articleMatchedCompanyType++) {
             linkName = (calledFrom == "matchedContent") ? articleMatchedCompany[articleMatchedCompanyType].name : articleMatchedCompany[articleMatchedCompanyType].title
             linkID = articleMatchedCompany[articleMatchedCompanyType].id
-            frContent += '<div class="company" onclick=\'searchPage("' + linkName + '")\'>'
+            frContent += '<div class="company" onclick=\'search_keyword("' + linkName + '")\'>'
             frContent += linkName
             frContent += '</div>'
         }
@@ -109,7 +109,9 @@ function monitorArticleDetails_tweet(data) {
     var tweetTitle = (tweetInfo.title) ? (tweetInfo.title) : ""
     var includedLink = (tweetInfo.url) ? (tweetInfo.url) : ""
     var userImage = (tweetInfo.extra.userImage) ? (tweetInfo.extra.userImage) : ""
+    var tweetedBy = (tweetInfo.extra.description) ? (tweetInfo.extra.description) : ""
     var screenName = (tweetInfo.extra.screenName) ? (tweetInfo.extra.screenName) : ""
+    var tweeterName = (tweetInfo.extra.name) ? (tweetInfo.extra.name) : ""
     var timeLabel = (tweetInfo.extra.timeLabel) ? (tweetInfo.extra.timeLabel) : ""
     var documentInfo = (tweetInfo.extra.document) ? (tweetInfo.extra.document) : ""
     var documentTitle = (documentInfo.title) ? (documentInfo.title) : ""
@@ -120,7 +122,7 @@ function monitorArticleDetails_tweet(data) {
     var tweetedBy = (tweetInfo.extra.description) ? (tweetInfo.extra.description) : ""
 
     var frContent = ""
-    frContent += '<div class="item_header tweet"><span class="itemcounter"></span><span>FirstTweets</span></div>';
+    frContent += '<div class="item_header tweet"><span class="itemcounter">3 0f 40</span><span>FirstTweets</span></div>';
     frContent += '<div class="outer">';
     frContent += '<div class="doc_content">';
     frContent += '<div class="search_item_tweet no_bg">';
@@ -131,8 +133,10 @@ function monitorArticleDetails_tweet(data) {
     frContent += '</div>';
     frContent += '</div>';
     frContent += '<div class="source">';
-    frContent += '<span class="floatright"><span class="favicon"></span>' + screenName + '</span>';
-    frContent += timeLabel;
+    frContent += '<span class="floatright"><span class="favicon"></span>'
+    frContent += '<span class="favicon_name">' + screenName + '</span>'
+    frContent += '</span>'
+    frContent += '<span class="floatleft date">' + timeLabel + '</span>';
     frContent += '</div>';
     frContent += '</div>';
     if (includedLink != "") {
@@ -144,11 +148,24 @@ function monitorArticleDetails_tweet(data) {
     if (documentInfo != "") {
         frContent += '<div class="doc_summery">'
         frContent += '<div class="title">' + documentTitle + '</div>'
-        frContent += '<div class="source"><span class="favicon"><img src="' + documentFavIcon + '" alt="source" /></span>' + documentSource + '</div>'
+        frContent += '<div class="source">'
+        frContent += '<span class="favicon"><img width="16" height="16" src="' + documentFavIcon + '" alt="source" /></span>'
+        frContent += '<span class="favicon_name">' + documentSource + '</span>'
+        frContent += '</div>'
         frContent += '<div>'
         frContent += documentFavSummary
         frContent += '</div>'
+        frContent += '</div>'
     }
+
+    frContent += '<div class="tweetedby">'
+    frContent += '<div class="title">tweetedby:</div>'
+    frContent += '<div>'
+    frContent += tweeterName + '<span class="socialmedia"> @' + screenName + '</span>'
+    frContent += '<span class="lightGrey">' + tweetedBy + '</span>'
+    frContent += '</div>'
+    frContent += '</div>'
+
     if (relatedDocsTotal > 0) {
         frContent += '<div class="relateddocuments ">'
         frContent += '<div class="title">related documents:</div>'
@@ -161,16 +178,77 @@ function monitorArticleDetails_tweet(data) {
         }
     }
     frContent += '</div>'
-    console.log(frContent)
+    frContent += '<div class="documentActionButtons">'
+    frContent += '<span><input type="button" class="btn grey document" value="Email"></span>'
+    frContent += '<span><input type="button" class="btn grey document" value="Open"></span>'
+    frContent += '</div>'
 
+    frContent += '</div>'
+    console.log(frContent)
+    $("#articleDetails .container").html(frContent)
 }
 
 
 function monitorArticleDetails_MT(data) {
-    var mtInfo = json.data.results[0];
-    var mtTitle = mtInfo.title;
-    var mtTimeStamp = mtInfo.timestamp;
-    console.log(">>>>>>>>> monitorArticleDetails_MT data : " + data)
+    var mtInfo = data.data.results[0];
+    var mtTitle = (mtInfo.title) ? (mtInfo.title) : "";
+    var mtRelatedCompaniesInfo = (mtInfo.matchedCompanies) ? (mtInfo.matchedCompanies) : "";
+    var mtRelatedCompaniesTotal = (mtRelatedCompaniesInfo != "") ? mtRelatedCompaniesInfo.length : 0
+    var mtRelatedCompanyTitle = ""
+    var mtTimeStamp = (mtInfo.timestamp) ? (mtInfo.timestamp) : "";
+    var mtDocSummary = "";
+    var mtDocTitle = "";
+    var mtDocSource = "";
+    var frContent = ""
+
+    if (mtTimeStamp != "") {
+        mtTimeStamp = mtTimeStamp.split(201, 1)
+    }
+
+    frContent += '<div class="item_header green"><span class="itemcounter"></span><span>Management Changes</span></div>'
+    frContent += '<div class="outer">'
+    frContent += '<div class="doc_content">'
+    frContent += '<div class="search_item no_bg pb5">'
+    frContent += '<div>'
+    frContent += '<div class="mt_img mtHireImage"></div>'
+    frContent += '<div>'
+    frContent += mtTitle
+    frContent += '</div>'
+    frContent += '</div>'
+    frContent += '<div class="cb10"></div>'
+    frContent += '<div class="source"><span class="date">' + mtTimeStamp + '</span></div>'
+    frContent += '</div>'
+
+    if (mtDocSummary != "") {
+        frContent += '<div class="doc_summery">'
+        frContent += '<div class="title">' + mtDocTitle + '</div>'
+        frContent += '<div class="source"><span class="favicon"></span>' + mtDocSource + '</div>'
+        frContent += '<div>'
+        frContent += mtDocSummary
+        frContent += '</div>'
+        frContent += '</div>'
+    }
+
+    if (mtRelatedCompaniesTotal > 0) {
+        frContent += '<div class="relatedCompanies">'
+        frContent += '<div class="title">related Companies</div>'
+        for (var mtRelatedCompany = 0; mtRelatedCompany < mtRelatedCompaniesTotal; mtRelatedCompany++) {
+            mtRelatedCompanyTitle = mtRelatedCompaniesInfo[mtRelatedCompany].title
+            frContent += '<div class="company">'
+            frContent += mtRelatedCompanyTitle
+            frContent += '</div>'
+        }
+        frContent += '</div>'
+    }
+    frContent += '</div>'
+
+    frContent += '<div class="documentActionButtons">'
+    frContent += '<span><input type="button" class="btn grey document" value="Email"></span>'
+    frContent += '<span><input type="button" class="btn grey document" value="Open"></span>'
+    frContent += '</div>'
+    frContent += '</div>'
+
+    $("#articleDetails .container").html(frContent)
 }
 
 function monitorArticleDetails_events(data) {
@@ -179,7 +257,7 @@ function monitorArticleDetails_events(data) {
     console.log(">>>>>>>>> monitorArticleDetails_events data : " + data)
 }
 
-function searchPage(searchKeyword) {
-    var url = URL + "/FRMobileService/authentication.jsp?fn=getSearchResults&q=" + searchKeyword + "&code=" + code
-    console.log(">>>>> Search using : " + url)
-}
+//function searchPage(searchKeyword) {
+//    var url = URL + "/FRMobileService/authentication.jsp?fn=getSearchResults&q=" + searchKeyword + "&code=" + code
+//    console.log(">>>>> Search using : " + url)
+//}

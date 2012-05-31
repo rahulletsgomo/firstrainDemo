@@ -21,7 +21,7 @@ function validateUser() {
 
 function landingPage() {
     if (environment == "test") {
-        var url = URL + "/DataProvider/landingPage?userId=" + userID + "&count=10&rows=40";
+        var url = URL + "/DataProvider/ipad/landingPage?userId=" + userID + "&count=10&rows=40";
         console.log(">>>>> URL : " + url)
         callAJAX(url, "landingPage");
     }

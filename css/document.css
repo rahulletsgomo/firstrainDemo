@@ -1,7 +1,7 @@
 .doc_content
 {
-  height: 335px;
-  overflow-y: scroll;
+    height: 335px;
+    overflow-y: scroll;
 }
 
 .doc_title
@@ -13,103 +13,113 @@
 }
 .doc_summery
 {
- font: normal 13px/16px Arial,Helvetica,sans-serif;
-   border-top: 1px solid #CCC;
-   padding:20px 3%;
-   float:left;
-   background-image: -webkit-gradient(linear, left top, left bottom, from(#F7F7F7), to(white));
+    font: normal 13px/16px Arial,Helvetica,sans-serif;
+    border-top: 1px solid #CCC;
+    padding:20px 3%;
+    float:left;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#F7F7F7), to(white));
 }
 .doc_summery img
-{ 
- float:right;
- margin:0px 0px 10px 10px;
+{
+    float:right;
+    margin:0px 0px 10px 10px;
 }
 .relatedCompanies, .relatedTopics , .relatedtweet, .includedlink, .tweetedby, .relateddocuments
 {
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#F7F7F7), to(white));
-  border-top: 1px solid #CCC;
-  padding:20px 3%;
-   float:left;
-   width:94%;
-   
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#F7F7F7), to(white));
+    border-top: 1px solid #CCC;
+    padding:20px 3%;
+    float:left;
+    width:94%;
+
 
 }
 .relatedCompanies .title, .relatedTopics .title, .relatedtweet .title, .includedlink .title, .tweetedby .title, .relateddocuments .title,.title_red
 {
-  color: #810501;
-  font: bold 10px/10px Arial,Helvetica,sans-serif;
-  text-transform: uppercase;
-  margin-bottom:10px;
+    color: #810501;
+    font: bold 10px/10px Arial,Helvetica,sans-serif;
+    text-transform: uppercase;
+    margin-bottom:10px;
 
 
 }
 
 .relatedCompanies .company, .relatedTopics .topic
 {
-  padding: 5px 20px 5px 0;
-  margin: 0 0 5px 0;
-  font: normal 14px/14px Arial,Helvetica,sans-serif;
-  background: url(../imgs/r-icon_carrot.png) no-repeat scroll 98% 50%;
-  background-size: 9px 14px;
+    padding: 5px 20px 5px 0;
+    margin: 0 0 5px 0;
+    font: normal 14px/14px Arial,Helvetica,sans-serif;
+    background: url(../img/r-icon_carrot.png) no-repeat scroll 98% 50%;
+    background-size: 9px 14px;
 
 
 }
 .relatedCompanies .company:active, .relatedTopics .topic:active
 {
-  background: url(../imgs/r-icon_carrot_p.png) no-repeat scroll 98% 50%, -webkit-gradient(linear, left top, left bottom, from(#EEEEEE), to(#CCCCCC));
-  background-size:9px 14px, 100%;
+    background: url(../img/r-icon_carrot_p.png) no-repeat scroll 98% 50%, -webkit-gradient(linear, left top, left bottom, from(#EEEEEE), to(#CCCCCC));
+    background-size:9px 14px, 100%;
 }
 
 .relatedCompanies .company_active, .relatedTopics .topic_active
 {
-  background: url(../imgs/r-icon_carrot_p.png) no-repeat scroll 98% 50%, -webkit-gradient(linear, left top, left bottom, from(#EEEEEE), to(#CCCCCC));
-  background-size:9px 14px, 100%;
+    background: url(../img/r-icon_carrot_p.png) no-repeat scroll 98% 50%, -webkit-gradient(linear, left top, left bottom, from(#EEEEEE), to(#CCCCCC));
+    background-size:9px 14px, 100%;
 }
+
+.tweetedby, .relateddocuments
+{
+    font: normal 14px/16px Arial,Helvetica,sans-serif;
+}
+.tweetedby .lightGrey
+{
+    font-style:italic;
+}
+
 .includedlink a
 {
-  color: #005596;
-  word-wrap:break-word;
- }
+    color: #005596;
+    word-wrap:break-word;
+}
 .relateddocuments a
 {
-  font-size: 14px;
-  line-height: 18px;
-  color:black;
-  text-decoration:none;
+    font-size: 14px;
+    line-height: 18px;
+    color:black;
+    text-decoration:none;
 }
 
 .tweet
 {
-  font: bold 14px/14px Arial,Helvetica,sans-serif;
+    font: bold 14px/14px Arial,Helvetica,sans-serif;
 }
 .socialmedia
 {
-  color:#369;
-  font-weight:normal;
+    color:#369;
+    font-weight:normal;
 }
 
 .tweet_img
 {
-  float: right;
-  margin-left: 10px;
-  box-shadow: 1px 1px 3px #888;
+    float: right;
+    margin-left: 10px;
+    box-shadow: 1px 1px 3px #888;
 }
 
 .documentActionButtons {
-  width: 64%;
-  float:left;
-  padding: 10px 18%;
-  border-top: 1px solid #CCC;
-  background: white;
+    width: 64%;
+    float:left;
+    padding: 10px 18%;
+    border-top: 1px solid #CCC;
+    background: white;
 
 }
 .doc_relateditem_con
 {
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#F7F7F7), to(white));
-  border-top: 1px solid #CCC;
-  padding:20px 3%;
-   float:left;
-   width:94%;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#F7F7F7), to(white));
+    border-top: 1px solid #CCC;
+    padding:20px 3%;
+    float:left;
+    width:94%;
 
 
 }
@@ -123,34 +133,53 @@
     margin: 0 0 5px 10px;
     background-size: 32px 32px!important;
 }
-.mtHireImage {background: url(../imgs/title-mt-hire.png) no-repeat top left;}
+.mtHireImage {background: url(../img/title-mt-hire.png) no-repeat top left;}
 
-.mtLeaveImage {background: url(../imgs/title-mt-leave.png) no-repeat top left;}
+.mtLeaveImage {background: url(../img/title-mt-leave.png) no-repeat top left;}
 
-.mtmovedImage {background: url(../imgs/title-mt-lateral.png) no-repeat top left;}
+.mtmovedImage {background: url(../img/title-mt-lateral.png) no-repeat top left;}
 
 /* css for event */
 
+.bottomborder{
+    border-bottom: 2px solid #f2e5cf;
+}
+.Averages_con
+{
+    background: #fff;
+    padding-bottom: 10px;
+    font: normal 14px/18px Arial,Helvetica,sans-serif;
+}
+.Averages_con table
+{
+    width:100%;
+    background:#fdf4e4;
+}
+
 .events_header
 {
-  margin: 5px 0 5px 0;
-  background: url("../../imgs/event-date-bullet-2.png") no-repeat top left;
-  padding: 0 0 0 15px;
-  background-size: 10px 10px;
+    margin: 5px 0 5px 0;
+    background: url("../img/event-date-bullet-2.png") no-repeat top left;
+    padding: 0 0 0 15px;
+    background-size: 10px 10px;
 }
 .event_con
 {
- padding-left: 6px;
+    padding-left: 6px;
 }
-.recent_events 
+.recent_events
 {
-  padding: 0 0 0 21px;
-  border-left: 2px solid #EEE;
-  margin: 5px 0 5px 4px;
-  font: normal 14px/18px Arial,Helvetica,sans-serif;
+    padding: 0 0 0 21px;
+    border-left: 2px solid #EEE;
+    margin: 5px 0 5px 4px;
+    font: normal 14px/18px Arial,Helvetica,sans-serif;
 }
 
 .event
 {
- margin:5px 0px;
+    margin:5px 0px;
 }
+
+.mtstockup_Image {background: url(../img/title-stock-up.png) no-repeat top left;}
+
+.mtstockdown_Image {background: url(../img/title-stock-down.png) no-repeat top left;}
