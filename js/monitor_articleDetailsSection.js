@@ -28,11 +28,12 @@ function monitorArticleDetails_document(data) {
     frContent += '<div class="bookmark">&nbsp;</div>'
     frContent += '<div class="titlearea">'
     frContent += '<div class="title">' + articleTitle + '</div>'
-    frContent += '<div class="source"><span class="favicon"><img src="' + articleFavIcon + '" alt=""></span>' + articleSource + '<span class="date">' + articleDate + '</span></div>'
+    frContent += '<div class="source"><span class="favicon"><img src="' + articleFavIcon + '" alt=""></span><span class="favicon_name">' + articleSource + '</span><span class="date">' + articleDate + '</span></div>'
+    frContent += '</div>'
     frContent += '</div>'
     frContent += '<div class="doc_summery">'
     if (articleImage != "") {
-        frContent += '<span><img width="64" height="64" src="' + articleImage + '"/></span>'
+        frContent += '<span><img src="' + articleImage + '"/></span>'
     }
     frContent += articleSummary
     frContent += '</div>'
@@ -46,13 +47,13 @@ function monitorArticleDetails_document(data) {
             tweetImg = (articleTweet[i].extra.userImage) ? (articleTweet[i].extra.userImage) : ""
             tweetTitle = (articleTweet[i].title) ? (articleTweet[i].title) : ""
             frContent += '<div class="tweet">'
-            frContent += '<span class="tweet_img"><img src="' + tweetImg + '"></span>'
+            frContent += '<span class="tweet_img"><img  src="' + tweetImg + '"></span>'
             frContent += '<span>'
             frContent += tweetTitle
             frContent += '</span>'
             frContent += '</div>'
-            frContent += '</div>'
         }
+        frContent += '</div>'
     }
 
 
@@ -64,7 +65,7 @@ function monitorArticleDetails_document(data) {
     frContent += '<span><input type="button" class="btn grey document" value="Email"></span>'
     frContent += '<span><input type="button" class="btn grey document" value="Open"></span>'
     frContent += '</div>'
-    frContent += '</div>'
+//    frContent += '</div>'
 
     $("#articleDetails .container").html(frContent)
 

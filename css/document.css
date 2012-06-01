@@ -1,185 +1,198 @@
-.doc_content
-{
+.doc_content {
     height: 335px;
     overflow-y: scroll;
 }
 
-.doc_title
-{
+.doc_title {
     padding: 10px 3%;
     background: white;
     float: left;
     width: 94%;
 }
-.doc_summery
-{
-    font: normal 13px/16px Arial,Helvetica,sans-serif;
+
+.doc_summery {
+    font: normal 13px/16px Arial, Helvetica, sans-serif;
     border-top: 1px solid #CCC;
-    padding:20px 3%;
-    float:left;
+    padding: 20px 3%;
+    float: left;
     background-image: -webkit-gradient(linear, left top, left bottom, from(#F7F7F7), to(white));
 }
+
 .doc_summery img
 {
-    float:right;
-    margin:0px 0px 10px 10px;
+    max-width: 128px;
+    min-width: 32px;
+    float: right;
+    border: 3px solid white;
+    padding: 0;
+    margin: 0 0 10px 10px;
+    box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.4);
+    -webkit-box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.4);
 }
-.relatedCompanies, .relatedTopics , .relatedtweet, .includedlink, .tweetedby, .relateddocuments
-{
+.relatedCompanies, .relatedTopics, .relatedtweet, .includedlink, .tweetedby, .relateddocuments {
     background-image: -webkit-gradient(linear, left top, left bottom, from(#F7F7F7), to(white));
     border-top: 1px solid #CCC;
-    padding:20px 3%;
-    float:left;
-    width:94%;
-
+    padding: 20px 3%;
+    float: left;
+    width: 94%;
 
 }
-.relatedCompanies .title, .relatedTopics .title, .relatedtweet .title, .includedlink .title, .tweetedby .title, .relateddocuments .title,.title_red
-{
+
+.relatedCompanies .title, .relatedTopics .title, .relatedtweet .title, .includedlink .title, .tweetedby .title, .relateddocuments .title, .title_red {
     color: #810501;
-    font: bold 10px/10px Arial,Helvetica,sans-serif;
+    font: bold 10px/10px Arial, Helvetica, sans-serif;
     text-transform: uppercase;
-    margin-bottom:10px;
-
+    margin-bottom: 10px;
 
 }
 
-.relatedCompanies .company, .relatedTopics .topic
-{
+.relatedCompanies .company, .relatedTopics .topic {
     padding: 5px 20px 5px 0;
     margin: 0 0 5px 0;
-    font: normal 14px/14px Arial,Helvetica,sans-serif;
+    font: normal 14px/14px Arial, Helvetica, sans-serif;
     background: url(../img/r-icon_carrot.png) no-repeat scroll 98% 50%;
     background-size: 9px 14px;
 
-
 }
-.relatedCompanies .company:active, .relatedTopics .topic:active
-{
+
+.relatedCompanies .company:active, .relatedTopics .topic:active {
     background: url(../img/r-icon_carrot_p.png) no-repeat scroll 98% 50%, -webkit-gradient(linear, left top, left bottom, from(#EEEEEE), to(#CCCCCC));
-    background-size:9px 14px, 100%;
+    background-size: 9px 14px, 100%;
 }
 
-.relatedCompanies .company_active, .relatedTopics .topic_active
-{
+.relatedCompanies .company_active, .relatedTopics .topic_active {
     background: url(../img/r-icon_carrot_p.png) no-repeat scroll 98% 50%, -webkit-gradient(linear, left top, left bottom, from(#EEEEEE), to(#CCCCCC));
-    background-size:9px 14px, 100%;
+    background-size: 9px 14px, 100%;
 }
 
-.tweetedby, .relateddocuments
-{
-    font: normal 14px/16px Arial,Helvetica,sans-serif;
-}
-.tweetedby .lightGrey
-{
-    font-style:italic;
+.tweetedby, .relateddocuments {
+    font: normal 14px/16px Arial, Helvetica, sans-serif;
 }
 
-.includedlink a
-{
+.tweetedby .lightGrey {
+    font-style: italic;
+}
+
+.includedlink a {
     color: #005596;
-    word-wrap:break-word;
+    word-wrap: break-word;
 }
-.relateddocuments a
-{
+
+.relateddocuments a {
     font-size: 14px;
     line-height: 18px;
-    color:black;
-    text-decoration:none;
+    color: black;
+    text-decoration: none;
 }
 
-.tweet
-{
-    font: bold 14px/14px Arial,Helvetica,sans-serif;
-}
-.socialmedia
-{
-    color:#369;
-    font-weight:normal;
+.tweet {
+    font: bold 14px/14px Arial, Helvetica, sans-serif;
+    margin-bottom: 5px;
 }
 
-.tweet_img
-{
+.socialmedia {
+    color: #369;
+    font-weight: normal;
+}
+
+.tweet_img {
+
     float: right;
-    margin-left: 10px;
-    box-shadow: 1px 1px 3px #888;
+    border: 3px solid #FFF;
+    padding: 0;
+    margin: 0 0 10px 10px;
+    box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.4);
+    -webkit-box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.4);
+}
+.tweet_img img
+{
+    width: 32px;
+    height: 32px;
 }
 
 .documentActionButtons {
     width: 64%;
-    float:left;
+    float: left;
     padding: 10px 18%;
     border-top: 1px solid #CCC;
     background: white;
 
 }
-.doc_relateditem_con
-{
+
+.doc_relateditem_con {
     background-image: -webkit-gradient(linear, left top, left bottom, from(#F7F7F7), to(white));
     border-top: 1px solid #CCC;
-    padding:20px 3%;
-    float:left;
-    width:94%;
-
+    padding: 20px 3%;
+    float: left;
+    width: 94%;
 
 }
+
 /* css for mgt */
 
-.mt_img
-{
+.mt_img {
     float: right;
     width: 32px;
     height: 32px;
     margin: 0 0 5px 10px;
-    background-size: 32px 32px!important;
+    background-size: 32px 32px !important;
 }
-.mtHireImage {background: url(../img/title-mt-hire.png) no-repeat top left;}
 
-.mtLeaveImage {background: url(../img/title-mt-leave.png) no-repeat top left;}
+.mtHireImage {
+    background: url(../img/title-mt-hire.png) no-repeat top left;
+}
 
-.mtmovedImage {background: url(../img/title-mt-lateral.png) no-repeat top left;}
+.mtLeaveImage {
+    background: url(../img/title-mt-leave.png) no-repeat top left;
+}
+
+.mtmovedImage {
+    background: url(../img/title-mt-lateral.png) no-repeat top left;
+}
 
 /* css for event */
 
-.bottomborder{
+.bottomborder {
     border-bottom: 2px solid #f2e5cf;
 }
-.Averages_con
-{
+
+.Averages_con {
     background: #fff;
     padding-bottom: 10px;
-    font: normal 14px/18px Arial,Helvetica,sans-serif;
-}
-.Averages_con table
-{
-    width:100%;
-    background:#fdf4e4;
+    font: normal 14px/18px Arial, Helvetica, sans-serif;
 }
 
-.events_header
-{
+.Averages_con table {
+    width: 100%;
+    background: #fdf4e4;
+}
+
+.events_header {
     margin: 5px 0 5px 0;
     background: url("../img/event-date-bullet-2.png") no-repeat top left;
     padding: 0 0 0 15px;
     background-size: 10px 10px;
 }
-.event_con
-{
+
+.event_con {
     padding-left: 6px;
 }
-.recent_events
-{
+
+.recent_events {
     padding: 0 0 0 21px;
     border-left: 2px solid #EEE;
     margin: 5px 0 5px 4px;
-    font: normal 14px/18px Arial,Helvetica,sans-serif;
+    font: normal 14px/18px Arial, Helvetica, sans-serif;
 }
 
-.event
-{
-    margin:5px 0px;
+.event {
+    margin: 5px 0px;
 }
 
-.mtstockup_Image {background: url(../img/title-stock-up.png) no-repeat top left;}
+.mtstockup_Image {
+    background: url(../img/title-stock-up.png) no-repeat top left;
+}
 
-.mtstockdown_Image {background: url(../img/title-stock-down.png) no-repeat top left;}
+.mtstockdown_Image {
+    background: url(../img/title-stock-down.png) no-repeat top left;
+}
