@@ -1,4 +1,10 @@
 function search_keyword(keyword) {
+    $.mobile.changePage("#monitorDetailsSections");
+//    $("#monitorDetailsSections .container").html(loading)
+
+    $("#monitorDetailsSections").html(loading)
+    allSectionMenu("#monitorDetailsSections")
+
     if (environment == "test") {
         var url = URL + "/FRMobileService/authentication.jsp?fn=getSearchResults&q=" + keyword + "&code=" + code
         console.log(">>>>> Search using : " + url)
@@ -14,9 +20,6 @@ function search_keyword(keyword) {
 //This function will process the results of search
 function searchResults(data) {
     console.log(">>>>>>>> Inside search Results !!!!")
-    $.mobile.changePage("#monitorDetailsSections");
-    allSectionMenu("#monitorDetailsSections")
-    $("#monitorDetailsSections .container").html(loading)
 
     var frContent = ''
     var searchTopic = data.data.searches[0].title

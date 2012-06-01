@@ -121,6 +121,10 @@ function setDocumentInfo(documentDetails, docIcon) {
 
 
 function getMonitorDetails(monitorID) {
+    changeHeader("")
+    $.mobile.changePage("#monitorDetailsPage");
+    $("#monitorDetailsPage").html(loading)
+//    $("#monitorDetailsPage .container").html(frContent)
     console.log(">>>>>> Called from : " + monitorID)
 
     if (environment == "test") {
@@ -129,8 +133,6 @@ function getMonitorDetails(monitorID) {
         callAJAX(url, "getMonitorDetails")
     }
     else if (environment == "dev") {
-        changeHeader("")
-        $.mobile.changePage("#monitorDetailsPage");
         monitorDetails(monitorResults);
         getMonitorHasMoreSectionsPage();
     }

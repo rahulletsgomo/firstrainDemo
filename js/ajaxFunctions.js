@@ -49,36 +49,34 @@ function methodToCall(callingFunction, data, docIcon, sectionType, sectionTitle)
             break;
         case "getDocumentDetails":
             setDocumentInfo(data, docIcon);
-            changeHeader("documentDetailsPage")
+            changeHeader("")
             $.mobile.changePage("#documentDetailsPage")
             scrollDocumentDetails(".newscontainer", "#documentDetailsWrapper", "#documentDetailsScroller");
 //            scrollDocumentDetails();
             break;
         case "getMonitorDetails":
-            changeHeader("getMonitorDetails")
-            $.mobile.changePage("#monitorDetailsPage");
             monitorDetails(data);
             getMonitorHasMoreSectionsPage();
             break;
         case "monitorDetailsSearchResults":
-            changeHeader("goBack")
+            changeHeader("")
 //            $.mobile.changePage("#monitorDetailsSections");
             searchResults(data);
             break;
         case "monitorDetailsTweetResults":
-            changeHeader("goBack")
+            changeHeader("")
             tweetResults(data);
             break;
         case "monitorDetailsMT_EventsResults":
-            changeHeader("goBack")
+            changeHeader("")
             mt_eventsResults(data);
             break;
         case "monitorArticleSection":
-            changeHeader("goBack")
+            changeHeader("")
             monitorArticleDetails(data, sectionType, sectionTitle);
             break;
         case "search_keyword":
-            changeHeader("goBack")
+            changeHeader("")
             searchResults(data)
             break;
         default :
