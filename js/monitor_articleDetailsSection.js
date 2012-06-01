@@ -46,7 +46,7 @@ function monitorArticleDetails_document(data) {
         for (var i = 0; i < articleTweetsTotal; i++) {
             tweetImg = (articleTweet[i].extra.userImage) ? (articleTweet[i].extra.userImage) : ""
             tweetTitle = (articleTweet[i].title) ? (articleTweet[i].title) : ""
-            frContent += '<div class="tweet">'
+            frContent += '<div class="tweet floatleft">'
             frContent += '<span class="tweet_img"><img  src="' + tweetImg + '"></span>'
             frContent += '<span>'
             frContent += tweetTitle

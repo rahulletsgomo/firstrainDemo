@@ -166,20 +166,12 @@ function getMonitorDetailsSectionsPage() {
 function insertActiveMonitor(data) {
     var monitorList = data.data.topMonitorList;
     var monitorNames = "";
+    monitorNames += '<div class="outer">'
     for (var i = 0; i < monitorList.length; i++) {
-        monitorNames += '<li class="ui-li ui-li-static ui-body-d" style="padding:2px 0 0 2px;" id = "' + monitorList[i].monitorId + '" onclick = "getMonitorDetails(this.id)">';
-        monitorNames += '<div style="padding:10px;">';
-        monitorNames += '<div style="float:right;>';
-        monitorNames += '<label">';
-        if (monitorList[i].mailBadge) {
-            monitorNames += '<img src = "./img/mail_icon_red.png" style = "height:24px;margin-right: 12px;" />';
-        }
-        monitorNames += '<img src = "./img/r-icon_carrot.png" style = "height:24px" /></label>';
-        monitorNames += '</div>';
-        monitorNames += '<div style="width: 180px;">';
-        monitorNames += '<label style="font-size:14px;text-shadow:none;">' + monitorList[i].monitorName + '</label>';
-        monitorNames += '</div>';
-        monitorNames += '</div></li>';
+        var monitorClass = (monitorList[i].mailBadge) ? "active_monitor unread" : "active_monitor"
+        monitorNames += '<div class="' + monitorClass + '" id = "' + monitorList[i].monitorId + '" onclick = "getMonitorDetails(this.id)">' + monitorList[i].monitorName + '</div>'
     }
+    monitorNames += '</div>'
+    monitorNames += '<div><input type="button" class="btn blue p20"  value="All Monitors"></div>'
     $("#activeMonitorList").html(monitorNames)
 }

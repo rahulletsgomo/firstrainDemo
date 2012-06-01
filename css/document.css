@@ -87,7 +87,8 @@
 
 .tweet {
     font: bold 14px/14px Arial, Helvetica, sans-serif;
-    margin-bottom: 5px;
+    margin-bottom: 10px;
+    width:100%;
 }
 
 .socialmedia {
