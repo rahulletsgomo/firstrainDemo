@@ -36,12 +36,13 @@ function configureIScroll(wrapperWidth) {
 }
 
 
-function scrollDocumentDetails() {
-    var containerWidth = $(".newscontainer").css("width");
-    var containerHeight = $(".newscontainer").css("height");
-    $("#documentDetailsWrapper").css("width", containerWidth)
-    $("#documentDetailsScroller").css("width", containerWidth)
-    $("#documentDetailsWrapper").css("height", containerHeight)
+function scrollDocumentDetails(container, wrapper, scroller) {
+    console.log(">>>>> Inside scroll Document Details")
+    var containerWidth = $(container).css("width");
+    var containerHeight = $(container).css("height");
+    $(wrapper).css("width", containerWidth)
+    $(scroller).css("width", containerWidth)
+    $(wrapper).css("height", containerHeight)
 
     documentDetailsScroll = new iScroll('documentDetailsWrapper', {
         vScrollbar:true,

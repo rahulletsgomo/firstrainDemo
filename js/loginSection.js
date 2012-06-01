@@ -90,7 +90,7 @@ function getDocumentDetails(docID, docIcon) {
         setDocumentInfo(documentDetailsJSON, docIcon)
         changeHeader("documentDetailsPage")
         $.mobile.changePage("#documentDetailsPage");
-        scrollDocumentDetails();
+        scrollDocumentDetails(".newscontainer", "#documentDetailsWrapper", "#documentDetailsScroller");
     }
 }
 
@@ -131,12 +131,12 @@ function getMonitorDetails(monitorID) {
         changeHeader("getMonitorDetails")
         $.mobile.changePage("#monitorDetailsPage");
         monitorDetails(monitorResults);
-        getMonitorDetailsSectionsPage();
+        getMonitorHasMoreSectionsPage();
     }
 
 }
 
-function getMonitorDetailsSectionsPage() {
+function getMonitorHasMoreSectionsPage() {
     $(".monitorDetails_h").click(function () {
         var sectionType = $(this).attr("sectionType");
         var monitorID = $(this).attr("monitorId");
@@ -172,6 +172,6 @@ function insertActiveMonitor(data) {
         monitorNames += '<div class="' + monitorClass + '" id = "' + monitorList[i].monitorId + '" onclick = "getMonitorDetails(this.id)">' + monitorList[i].monitorName + '</div>'
     }
     monitorNames += '</div>'
-    monitorNames += '<div><input type="button" class="btn blue p20"  value="All Monitors"></div>'
+    // monitorNames += '<div><input type="button" class="btn blue p20"  value="All Monitors"></div>'
     $("#activeMonitorList").html(monitorNames)
 }

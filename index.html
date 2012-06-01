@@ -12,6 +12,7 @@
     <script type="text/javascript" src="libraries/jquery-1.6.js"></script>
     <script type="text/javascript" charset="utf-8" src="libraries/jquery.mobile-1.0.1.min.js"></script>
     <script type="text/javascript" charset="utf-8" src="libraries/iScroll.js"></script>
+    <script type="text/javascript" charset="utf-8" src="libraries/ChildBrowser.js"></script>
 
     <!--Project JSON Files-->
     <script type="text/javascript" src="js/JSONFiles/landingPageJSON.js"></script>
@@ -46,6 +47,7 @@
     <script type="text/javascript" src="js/scrollConfig.js"></script>
     <script type="text/javascript" src="js/menuOptions.js"></script>
     <script type="text/javascript" src="js/searchSection.js"></script>
+    <script type="text/javascript" src="js/child_browser_helper.js"></script>
 
 </head>
 
@@ -174,7 +176,7 @@
 
         <div class="bg_red">First Reads</div>
         <div class="newscontainer" style="height:320px;">
-            <div id="documentDetailsWrapper">
+            <div id="documentDetailsWrapper" style="position: relative;">
                 <div id="documentDetailsScroller">
                     <div class="news_content">
                         <div class="news_heading" id="documentTitle">Online Information &#38; Content Service Trends
@@ -281,54 +283,68 @@
 
     <div class="container">
         <div class="item_header red"><span class="itemcounter">3 0f 40</span><span>FirstReads</span></div>
+        <div class="articleContainer" style="height:320px;">
+            <div id="articleDetailsWrapper" position="relative">
+                <div id="articleDetailsScroller">
 
-        <div class="outer">
 
-            <div class="doc_content">
-                <div class="doc_title">
-                    <div class="bookmark">&nbsp;</div>
-                    <div class="titlearea">
-                        <div class="title">Test Reid toughens stance on spending cuts, raising taxes</div>
-                        <div class="source"><span class="favicon"></span>GTNews<span class="date">Fri, May 25</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="doc_summery">
-                    <span><img src="imgs/demoimage.jpeg"/></span>
-                    A federal jury awarded plaintiffs $64.1 million in compensatory and punitive damages in a suit that
-                    contended VictoryLand owner Milton McGregor conspired with Macon County Sheriff David Warren to
-                    prevent potential competitor Lucky Palace casino from acquiring a license to operate charity bingo
-                    in Macon County. Attorneys for McGregor, who found himself back in court after walking away
-                </div>
-                <div class="relatedtweet">
-                    <div class="title">Related Tweet:</div>
-                    <div class="tweet">
-                        <span class="tweet_img"><img src="../../imgs/breaking_news.jpg"></span>
+                    <div class="outer">
+
+                        <div class="doc_content">
+                            <div class="doc_title">
+                                <div class="bookmark">&nbsp;</div>
+                                <div class="titlearea">
+                                    <div class="title">Test Reid toughens stance on spending cuts, raising taxes</div>
+                                    <div class="source"><span class="favicon"></span>GTNews<span class="date">Fri, May 25</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="doc_summery">
+                                <span><img src="imgs/demoimage.jpeg"/></span>
+                                A federal jury awarded plaintiffs $64.1 million in compensatory and punitive damages in
+                                a suit that
+                                contended VictoryLand owner Milton McGregor conspired with Macon County Sheriff David
+                                Warren to
+                                prevent potential competitor Lucky Palace casino from acquiring a license to operate
+                                charity bingo
+                                in Macon County. Attorneys for McGregor, who found himself back in court after walking
+                                away
+                            </div>
+                            <div class="relatedtweet">
+                                <div class="title">Related Tweet:</div>
+                                <div class="tweet">
+                                    <span class="tweet_img"><img src="../../imgs/breaking_news.jpg"></span>
                   <span>
                      Get the FirstRain for iPad App today from the iTunes <span
                           class="socialmedia">@Computer World</span> store or at <span class="socialmedia_link">http://firstra.in/</span> ipadApp, and get the customer
                   </span>
-                    </div>
-                </div>
+                                </div>
+                            </div>
 
-                <div class="relatedCompanies">
-                    <div class="title">COMPANIES MENTIONED:</div>
-                    <div class="company">Freshfields Bruckhaus Deringer LLP</div>
-                    <div class="company">Clifford Chance LLP</div>
-                    <div class="company">Allen &amp; Overy LLP</div>
+                            <div class="relatedCompanies">
+                                <div class="title">COMPANIES MENTIONED:</div>
+                                <div class="company">Freshfields Bruckhaus Deringer LLP</div>
+                                <div class="company">Clifford Chance LLP</div>
+                                <div class="company">Allen &amp; Overy LLP</div>
+                            </div>
+                            <div class="relatedTopics">
+                                <div class="title">Topics MENTIONED:</div>
+                                <div class="topic">Non-performing Loans</div>
+                                <div class="topic">Non-performing Loans</div>
+                                <div class="topic">Non-performing Loans</div>
+                            </div>
+                        </div>
+                        <div class="documentActionButtons">
+                            <span><input type="button" class="btn grey document" value="Email"></span>
+                            <span><input type="button" class="btn grey document" value="Open"></span>
+                        </div>
+                    </div>
+
                 </div>
-                <div class="relatedTopics">
-                    <div class="title">Topics MENTIONED:</div>
-                    <div class="topic">Non-performing Loans</div>
-                    <div class="topic">Non-performing Loans</div>
-                    <div class="topic">Non-performing Loans</div>
-                </div>
-            </div>
-            <div class="documentActionButtons">
-                <span><input type="button" class="btn grey document" value="Email"></span>
-                <span><input type="button" class="btn grey document" value="Open"></span>
             </div>
         </div>
+
+
     </div>
 
 </div>

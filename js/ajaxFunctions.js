@@ -1,4 +1,4 @@
-function callAJAX(url, callingFunction, docIcon, sectionType) {
+function callAJAX(url, callingFunction, docIcon, sectionType, sectionTitle) {
     console.log(">>>>> Calling Function : " + callingFunction)
     console.log(">>>>> Section Type : " + sectionType)
     try {
@@ -16,7 +16,7 @@ function callAJAX(url, callingFunction, docIcon, sectionType) {
                     if (callingFunction == "getMonitorSearchResults") {
                         console.log(">>>>>>>>> Inside the success state of getMonitorSearchResults !!!")
                     }
-                    methodToCall(callingFunction, data, docIcon, sectionType)
+                    methodToCall(callingFunction, data, docIcon, sectionType, sectionTitle)
                 }
             },
             error:function (e) {
@@ -29,7 +29,7 @@ function callAJAX(url, callingFunction, docIcon, sectionType) {
     }
 }
 
-function methodToCall(callingFunction, data, docIcon, sectionType) {
+function methodToCall(callingFunction, data, docIcon, sectionType, sectionTitle) {
     switch (callingFunction) {
         case "validateUser":
             console.log(">>>>>> Data : " + data)
@@ -51,13 +51,14 @@ function methodToCall(callingFunction, data, docIcon, sectionType) {
             setDocumentInfo(data, docIcon);
             changeHeader("documentDetailsPage")
             $.mobile.changePage("#documentDetailsPage")
-            scrollDocumentDetails();
+            scrollDocumentDetails(".newscontainer", "#documentDetailsWrapper", "#documentDetailsScroller");
+//            scrollDocumentDetails();
             break;
         case "getMonitorDetails":
             changeHeader("getMonitorDetails")
             $.mobile.changePage("#monitorDetailsPage");
             monitorDetails(data);
-            getMonitorDetailsSectionsPage();
+            getMonitorHasMoreSectionsPage();
             break;
         case "monitorDetailsSearchResults":
             changeHeader("goBack")
@@ -74,7 +75,7 @@ function methodToCall(callingFunction, data, docIcon, sectionType) {
             break;
         case "monitorArticleSection":
             changeHeader("goBack")
-            monitorArticleDetails(data, sectionType);
+            monitorArticleDetails(data, sectionType, sectionTitle);
             break;
         case "search_keyword":
             changeHeader("goBack")

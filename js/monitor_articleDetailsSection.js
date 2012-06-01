@@ -1,4 +1,4 @@
-function monitorArticleDetails_document(data) {
+function monitorArticleDetails_document(data, sectionTitle) {
     console.log(">>>>>>> Inside monitorArticleDetails_document")
     $("#articleDetails .container").html(processing)
 
@@ -21,7 +21,14 @@ function monitorArticleDetails_document(data) {
     var tweetArea = ""
 
     var frContent = ""
-    frContent += '<div class="item_header red"><span class="itemcounter"></span><span>FirstReads</span></div>'
+    console.log(">>>>>>> sectionTitle : " + String(sectionTitle))
+    if (String(sectionTitle) == "undefined") {
+        console.log(">>>>>> Inside undefined state")
+        frContent += '<div class="item_header red"><span class="itemcounter"></span><span>FirstReads</span></div>'
+    }
+    else {
+        frContent += '<div class="item_header blue"><span class="itemcounter"></span><span>' + sectionTitle + '</span></div>'
+    }
     frContent += '<div class="outer">'
     frContent += '<div class="doc_content">'
     frContent += '<div class="doc_title">'
@@ -46,7 +53,7 @@ function monitorArticleDetails_document(data) {
         for (var i = 0; i < articleTweetsTotal; i++) {
             tweetImg = (articleTweet[i].extra.userImage) ? (articleTweet[i].extra.userImage) : ""
             tweetTitle = (articleTweet[i].title) ? (articleTweet[i].title) : ""
-            frContent += '<div class="tweet floatleft">'
+            frContent += '<div class="tweet floatleft" onclick=\'callChildBrowser({url:"www.google.com"})\'>'
             frContent += '<span class="tweet_img"><img  src="' + tweetImg + '"></span>'
             frContent += '<span>'
             frContent += tweetTitle
@@ -67,8 +74,14 @@ function monitorArticleDetails_document(data) {
     frContent += '</div>'
 //    frContent += '</div>'
 
+    scrollDocumentDetails(".articleContainer", "#articleDetailsWrapper", "#articleDetailsScroller");
     $("#articleDetails .container").html(frContent)
 
+}
+
+function callChildBrowser(url) {
+    alert(url.url)
+    PG_childBrowser(url)
 }
 
 function articleMatchedCompanyInfo(articleMatchedCompaniesTotal, frContent, articleMatchedCompany, calledFrom) {

@@ -11,21 +11,63 @@ function search_keyword(keyword) {
 //    monitorDetails(searchPage_keyWord, "search_keyword")
 }
 
-function setSearchData(data) {
-    var sectionsInfo = data.data.sections
-    var sectionsTotal = sectionsInfo.length
-    var sectionType = ""
-    var sectionTitle = ""
-    var sectionBucketsInfo = sectionsInfo.buckets
-    var sectionBucketsTotal = sectionsInfo.buckets.length
-    var sectionBucketsTitle = ""
-    var referenceID = 0
+//This function will process the results of search
+function searchResults(data) {
+    console.log(">>>>>>>> Inside search Results !!!!")
+    $.mobile.changePage("#monitorDetailsSections");
+    allSectionMenu("#monitorDetailsSections")
+    $("#monitorDetailsSections .container").html(loading)
 
-    for (var section = 0; section < sectionsTotal; section++) {
-        sectionType = sectionsInfo[section].type
-        sectionTitle = sectionsInfo[section].title
-        for (var bucket = 0; bucket < sectionBucketsTotal; bucket++) {
-            sectionBucketsTitle = sectionBucketsInfo[bucket].title;
+    var frContent = ''
+    var searchTopic = data.data.searches[0].title
+    var searchSection = data.data.sections
+    var searchSectionTitle = ""
+    var searchSectionResult = data.data.results;
+    var searchSectionResultID = "";
+    var searchSectionResultType = "";
+    var searchSectionsLength = searchSection.length
+    var searchBucketLength = 0
+    var searchBucket = ""
+    var searchBucketTitle = ""
+    var searchBucketSource = ""
+    var searchBucketFavIcon = ""
+    var searchBucketDate = ""
+    var referSearchResult = 0;
+
+
+    for (var i = 0; i < searchSectionsLength; i++) {
+        searchBucketLength = searchSection[i].buckets.length;
+        for (var j = 0; j < searchBucketLength; j++) {
+            searchBucket = searchSection[i].buckets[j]
+            searchSectionTitle = searchBucket.title
+            frContent += '<div class="item_header blue"><span>' + searchSectionTitle + '</span></div>'
+            frContent += '<div class="outer">'
+            for (var k = 0; k < searchBucket.baseResults.length; k++) {
+                searchBucketTitle = searchSectionResult[referSearchResult].title
+                searchSectionResultID = searchSectionResult[referSearchResult].id
+                searchSectionResultType = searchSectionResult[referSearchResult].type
+                searchBucketFavIcon = searchSectionResult[referSearchResult].favicon
+                searchBucketSource = searchSectionResult[referSearchResult].source
+                searchBucketDate = searchSectionResult[referSearchResult].timestamp
+                searchBucketDate = searchBucketDate.split(201, 1)
+                frContent += '<div class="search_item">'
+                frContent += '<div class="bookmark">&nbsp;</div>'
+                frContent += '<div class="titlearea" onclick=\'monitorArticleSection("' + searchSectionResultID + '", "' + searchSectionResultType + '", "' + searchSectionTitle + '")\'>'
+                frContent += '<div class="title">' + searchBucketTitle + '</div>'
+                frContent += '<div class="source"><span class="favicon"><img src ="' + searchBucketFavIcon + '" width=16 height=16 /></span>' + searchBucketSource + '<span class="date">' + searchBucketDate + '</span></div>'
+                frContent += '</div>'
+                frContent += '</div>'
+//                frContent += '</div>'
+//                console.log(">>>>> " + referSearchResult + " - " + searchSectionResult[referSearchResult].title)
+                referSearchResult++;
+            }
+            frContent += '</div>'
+//            frContent += '</div>'
+//            console.log(">>>> : " + searchBucket.title + " : " + searchBucket.baseResults.length)
         }
     }
+    $("#monitorDetailsSections .container").html(frContent)
+    console.log(">>>> Total Search Results : " + referSearchResult)
+//    console.log(">>>>>> Total number of buckets : " + searchResultSectionsLength)
+
 }

@@ -70,7 +70,7 @@ function monitorDetails(data) {
             }
 
             else {
-                liOption += '<div class="titlearea" onclick=\'monitorArticleSection("' + docID + '", "' + sectionResult.type + '", "' + sectionResult.type + '")\'>'
+                liOption += '<div class="titlearea" onclick=\'monitorArticleSection("' + docID + '", "' + sectionResult.type + '")\'>'
                 liOption += '<div class="title">' + docTitle + '</div>'
                 liOption += '<div class="source">'
                 if (docIcon != "") {
@@ -151,62 +151,6 @@ function monitorDetailsSearchResults(searchID) {
     }
 }
 
-//This function will process the results of search
-function searchResults(data) {
-    console.log(">>>>>>>> Inside search Results !!!!")
-    $.mobile.changePage("#monitorDetailsSections");
-    allSectionMenu("#monitorDetailsSections")
-    $("#monitorDetailsSections .container").html(loading)
-
-    var frContent = ''
-    var searchTopic = data.data.searches[0].title
-    var searchSection = data.data.sections
-    var searchSectionResult = data.data.results;
-    var searchSectionResultID = "";
-    var searchSectionResultType = "";
-    var searchSectionsLength = searchSection.length
-    var searchBucketLength = 0
-    var searchBucket = ""
-    var searchBucketTitle = ""
-    var searchBucketSource = ""
-    var searchBucketFavIcon = ""
-    var searchBucketDate = ""
-    var referSearchResult = 0;
-
-
-    for (var i = 0; i < searchSectionsLength; i++) {
-        searchBucketLength = searchSection[i].buckets.length;
-        for (var j = 0; j < searchBucketLength; j++) {
-            searchBucket = searchSection[i].buckets[j]
-            frContent += '<div class="item_header blue"><span>' + searchBucket.title + '</span></div>'
-            frContent += '<div class="outer">'
-            for (var k = 0; k < searchBucket.baseResults.length; k++) {
-                searchBucketTitle = searchSectionResult[referSearchResult].title
-                searchBucketFavIcon = searchSectionResult[referSearchResult].favicon
-                searchBucketSource = searchSectionResult[referSearchResult].source
-                searchBucketDate = searchSectionResult[referSearchResult].timestamp
-                searchBucketDate = searchBucketDate.split(201, 1)
-                frContent += '<div class="search_item">'
-                frContent += '<div class="bookmark">&nbsp;</div>'
-                frContent += '<div class="titlearea">'
-                frContent += '<div class="title">' + searchBucketTitle + '</div>'
-                frContent += '<div class="source"><span class="favicon"><img src ="' + searchBucketFavIcon + '" width=16 height=16 /></span>' + searchBucketSource + '<span class="date">' + searchBucketDate + '</span></div>'
-                frContent += '</div>'
-                frContent += '</div>'
-//                frContent += '</div>'
-//                console.log(">>>>> " + referSearchResult + " - " + searchSectionResult[referSearchResult].title)
-                referSearchResult++;
-            }
-            frContent += '</div>'
-//            frContent += '</div>'
-//            console.log(">>>> : " + searchBucket.title + " : " + searchBucket.baseResults.length)
-        }
-    }
-    $("#monitorDetailsSections .container").html(frContent)
-    console.log(">>>> Total Search Results : " + referSearchResult)
-//    console.log(">>>>>> Total number of buckets : " + searchResultSectionsLength)
-
-}
 
 function monitorDetailsTweetResults(monitorID) {
     if (environment == "test") {
@@ -302,7 +246,7 @@ function allSectionMenu(sectionID) {
     $(sectionID).html(baseArea)
 }
 
-function monitorArticleSection(articleID, sectionType) {
+function monitorArticleSection(articleID, sectionType, sectionTitle) {
     changeHeader("goBack")
     $.mobile.changePage("#articleDetails")
     $("#articleDetails .container").html(loading)
@@ -311,7 +255,7 @@ function monitorArticleSection(articleID, sectionType) {
 
     if (environment == "test") {
         var url = URL + "/FRMobileService/authentication.jsp?fn=getDetails&ids=" + articleID + "&code=" + code
-        callAJAX(url, "monitorArticleSection", "", sectionType)
+        callAJAX(url, "monitorArticleSection", "", sectionType, sectionTitle)
     }
     else if (environment == "dev") {
         var articleDetails_json = "";
@@ -333,15 +277,15 @@ function monitorArticleSection(articleID, sectionType) {
                 console.log("No Operation for this event :(")
         }
 
-        monitorArticleDetails(articleDetails_json, sectionType)
+        monitorArticleDetails(articleDetails_json, sectionType, sectionTitle)
     }
 }
 
-function monitorArticleDetails(data, sectionType) {
+function monitorArticleDetails(data, sectionType, sectionTitle) {
     console.log(">>>>>> Section Type inside monitorArticleDetails: " + sectionType)
     switch (sectionType) {
         case 'ARTICLE' :
-            monitorArticleDetails_document(data)
+            monitorArticleDetails_document(data, sectionTitle)
             break;
         case 'TWEETS' :
             monitorArticleDetails_tweet(data)
