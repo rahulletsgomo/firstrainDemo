@@ -1,104 +1,92 @@
 /* app header css */
 
-.header_region
-{
-
-
-    height:30px;
+.header_region {
+    height: 30px;
     display: block;
     padding: 5px 3%;
     margin: 0px;
     border-top: 1px solid #97B7DB;
     border-bottom: 1px solid #00183A;
-    background-image: -webkit-gradient(linear, center top, center bottom, from(#6B99CC), color-stop(49%,#165EAF), color-stop(50%,#0150A8), to(#003C8F));
+    background-image: -webkit-gradient(linear, center top, center bottom, from(#6B99CC), color-stop(49%, #165EAF), color-stop(50%, #0150A8), to(#003C8F));
+    z-index: 100;
+    position: fixed;
+    width: 94.5%;
 }
 
-.back_button
-{
-    float:left;
-    width:44px;
-    height:30px;
-
-}
-.menu_icon
-{
-    width:44px;
-    height:30px;
-    float:right;
-
-
-}
-
-
-.header_con
-{
-
-    width: 60%;
+.back_button {
     float: left;
-    margin: 0px 10px;
+    width: 44px;
+    height: 30px;
+
 }
 
+.menu_icon {
+    width: 44px;
+    height: 30px;
+    float: right;
 
-.header
-{
+}
+
+.header {
     display: block;
     color: white;
     text-shadow: 0px -1px 1px rgba(0, 0, 0, 0.3);
     font-family: Helvetica, sans-serif;
-    font: normal 20px/20px Arial,Helvetica,sans-serif;
+    font: normal 20px/20px Arial, Helvetica, sans-serif;
     text-align: center;
-    margin-bottom:3px;
-    margin-top:4px;
+    width: 30%;
+    margin: 4px auto 3px auto;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
 
 }
-.subheader
-{
+
+.subheader {
     display: block;
     color: white;
     text-shadow: 0px -1px 1px rgba(0, 0, 0, 0.3);
     font-family: Helvetica, sans-serif;
-    font: normal 14px/14px Arial,Helvetica,sans-serif;
+    font: normal 14px/14px Arial, Helvetica, sans-serif;
     text-align: center;
-
-
+    margin: 0px auto;
 }
-.header.search, .header.monitor, .header.doc
-{
-    font: normal 16px/17px Arial,Helvetica,sans-serif;
-    margin-top:0px;
+
+.header.search, .header.monitor, .header.doc {
+    font: normal 16px/17px Arial, Helvetica, sans-serif;
+    margin-top: 0px;
 }
 
 /* app header css end */
 
 /* Item header css */
 
-.item_header
-{
-    width:96%;
-    float:left;
+.item_header {
+    width: 96%;
+    float: left;
     padding: 3px 2%;
-    font: bold 12px/12px Arial,Helvetica,sans-serif;
-    color:#FFF;
+    font: bold 12px/12px Arial, Helvetica, sans-serif;
+    color: #FFF;
 }
 
-.item_header.red
-{
+.item_header.red {
     background-image: -webkit-gradient(linear, left top, left bottom, from(#d30000), to(#7e0000));
-    border-bottom:1px solid #045000;
+    border-bottom: 1px solid #045000;
 }
-.item_header.blue
-{
+
+.item_header.blue {
     background-image: -webkit-gradient(linear, left top, left bottom, from(#125790), to(#203f5e));
-    border-bottom:1px solid #030045;
+    border-bottom: 1px solid #030045;
 }
-.item_header.green
-{
+
+.item_header.green {
     background-image: -webkit-gradient(linear, left top, left bottom, from(#04A302), to(#026701));
     border-bottom: 1px solid #014500;
 }
-.item_header.tweet
-{
-    background-image:  -webkit-gradient(linear, left top, left bottom, from(#01ABE3), to(#00759C));
+
+.item_header.tweet {
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#01ABE3), to(#00759C));
     border-bottom: 1px solid #014500;
 }
+
 /* Item header css end */

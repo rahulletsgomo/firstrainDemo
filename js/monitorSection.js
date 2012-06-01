@@ -146,7 +146,7 @@ function monitorDetailsSearchResults(searchID) {
         callAJAX(url, "monitorDetailsSearchResults")
     }
     else if (environment == "dev") {
-        changeHeader("goBack")
+        changeHeader("")
         searchResults(searchPageJSON)
     }
 }
@@ -163,7 +163,7 @@ function monitorDetailsTweetResults(monitorID) {
 }
 
 function tweetResults(data) {
-    changeHeader("goBack")
+    changeHeader("")
     $.mobile.changePage("#monitorDetailsSections")
     var frContent = ""
     var headerTitle = data.data.sections[0].title
@@ -209,7 +209,7 @@ function monitorDetailsMT_EventsResults(monitorID, calledFrom) {
 }
 
 function mt_eventsResults(data) {
-    changeHeader("goBack")
+    changeHeader("")
     $.mobile.changePage("#monitorDetailsSections")
     allSectionMenu()
     var sectionsTotal = data.data.results.length
@@ -247,7 +247,7 @@ function allSectionMenu(sectionID) {
 }
 
 function monitorArticleSection(articleID, sectionType, sectionTitle) {
-    changeHeader("goBack")
+    changeHeader("")
     $.mobile.changePage("#articleDetails")
     $("#articleDetails .container").html(loading)
     console.log(">>>>>> Article ID : " + articleID)

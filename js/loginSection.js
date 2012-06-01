@@ -71,6 +71,7 @@ function getFirstReads(docList, docCount) {
     }
     $("#thelist").html(docContent);
     $.mobile.changePage("#homePage");
+    currentPage = "homePage"
     changeHeader("homePage")
     $(".documentContent").bind("click", function () {
         var getCurrentDocID = this.id;
@@ -88,7 +89,7 @@ function getDocumentDetails(docID, docIcon) {
     }
     else if (environment == "dev") {
         setDocumentInfo(documentDetailsJSON, docIcon)
-        changeHeader("documentDetailsPage")
+        changeHeader("")
         $.mobile.changePage("#documentDetailsPage");
         scrollDocumentDetails(".newscontainer", "#documentDetailsWrapper", "#documentDetailsScroller");
     }
@@ -128,7 +129,7 @@ function getMonitorDetails(monitorID) {
         callAJAX(url, "getMonitorDetails")
     }
     else if (environment == "dev") {
-        changeHeader("getMonitorDetails")
+        changeHeader("")
         $.mobile.changePage("#monitorDetailsPage");
         monitorDetails(monitorResults);
         getMonitorHasMoreSectionsPage();
