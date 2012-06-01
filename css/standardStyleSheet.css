@@ -1,8 +1,7 @@
 /* common css */
-body
-{
+body {
 
-    font-family: Arial,Helvetica,sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
     font-size: 13px;
     background: #DDD;
     margin: 0;
@@ -12,152 +11,144 @@ body
 
 }
 
-.container
-{
+.container {
 
-    padding:10px 3%;
-    margin:0px;
-
+    padding: 10px 3%;
+    margin: 0px;
 
 }
-.outer
-{
+
+.outer {
     margin-bottom: 10px;
     background-color: #fff;
-    width:100%;
-    float:left;
+    width: 100%;
+    float: left;
     -webkit-box-shadow: 0 3px 3px rgba(0, 0, 0, 0.3);
 }
 
+.heading {
+    font: bold 18px/20px Arial, Helvetica, sans-serif;
+}
 
-.heading
-{
-    font: bold 18px/20px Arial,Helvetica,sans-serif;
+.title {
+    font: bold 14px/16px Arial, Helvetica, sans-serif;
 }
-.title
-{
-    font: bold 14px/16px Arial,Helvetica,sans-serif;
+
+.itemcounter {
+    float: right;
 }
-.itemcounter
-{
-    float:right;
+
+.selected_item {
+    width: 94%;
+    padding: 10px 3%;
 }
-.selected_item
-{
-    width:94%;
-    padding:10px 3%;
-}
-.summery
-{
+
+.summery {
     font-size: 14px;
     line-height: 18px;
 }
-.source
-{
-    font: bold 14px/16px Arial,Helvetica,sans-serif;
+
+.source {
+    font: bold 14px/16px Arial, Helvetica, sans-serif;
     font-weight: normal;
     margin: 4px 0px;
-    float:left;
-    width:100%;
+    float: left;
+    width: 100%;
 }
 
-
-.favicon
-{
-    margin-right:5px;
+.favicon {
+    margin-right: 5px;
 }
 
-.favicon img{
+.favicon img {
     width: 16px;
     height: 16px;
 }
-.favicon_name
-{
-    color:#005596;
-}
-.date
-{
-    color:#666;
-    float:right;
+
+.favicon_name {
+    color: #005596;
 }
 
-.titlearea
-{
-    float:left;
-    margin-left:10px;
-    width:90%
+.date {
+    color: #666;
+    float: right;
 }
-.bold
-{
+
+.titlearea {
+    float: left;
+    margin-left: 10px;
+    width: 90%
+}
+
+.bold {
     font-weight: bold;
 }
-.p20
-{
-    padding:20px!important;
+
+.p20 {
+    padding: 20px !important;
 
 }
-.p15
-{
-    padding:15px!important;
+
+.p15 {
+    padding: 15px !important;
 
 }
-.floatleft
-{ float:left;
-}
-.floatright
-{ float:right;
-}
-.no_bg {background:none!important}
 
-.cb10
-{
-    margin:10px;
-    clear:both;
+.floatleft {
+    float: left;
+}
+
+.floatright {
+    float: right;
+}
+
+.no_bg {
+    background: none !important
+}
+
+.cb10 {
+    margin: 10px;
+    clear: both;
 
 }
-.pb5
-{
-    padding-bottom:5px!important;
+
+.pb5 {
+    padding-bottom: 5px !important;
 }
+
 /* common css End*/
-
-
 
 /*landing page > Active Monitor css*/
 
-.active_monitor
-{
+.active_monitor {
     background: white;
     background: url(../img/r-icon_carrot.png) no-repeat scroll 98% 50%, -webkit-gradient(linear, left top, left bottom, from(#F7F7F7), to(white));
-    font: bold 14px/15px Arial,Helvetica,sans-serif;
+    font: bold 14px/15px Arial, Helvetica, sans-serif;
     padding: 15px 6% 15px 3%;
     background-size: 9px 14px, 100%;
 
 }
-.active_monitor.unread
-{
-    background: url(../img/r-icon_carrot.png) no-repeat scroll 98% 50%, url(../img/mail_icon_red.png) no-repeat 88% 50%,-webkit-gradient(linear, left top, left bottom, from(#F7F7F7), to(white));
-    background-size: 9px 14px,39px 28px, 100%;
+
+.active_monitor.unread {
+    background: url(../img/r-icon_carrot.png) no-repeat scroll 98% 50%, url(../img/mail_icon_red.png) no-repeat 88% 50%, -webkit-gradient(linear, left top, left bottom, from(#F7F7F7), to(white));
+    background-size: 9px 14px, 39px 28px, 100%;
     padding: 15px 25% 15px 3%;
 }
-.active_monitor:active,.active_monitor_active
-{
 
-    background: url(../img/r-icon_carrot.png) no-repeat scroll 98% 50% ,-webkit-gradient(linear, left top, left bottom, from(#EEEEEE), to(#CCCCCC));
+.active_monitor:active, .active_monitor_active {
+
+    background: url(../img/r-icon_carrot.png) no-repeat scroll 98% 50%, -webkit-gradient(linear, left top, left bottom, from(#EEEEEE), to(#CCCCCC));
     text-shadow: 0 1px 0 #FFFFFF;
     background-size: 9px 14px, 100%;
 }
-.active_monitor.unread:active, .active_monitor.unread_active
-{
-    background: url(../img/r-icon_carrot.png) no-repeat scroll 98% 50%, url(../img/mail_icon_red.png) no-repeat 88% 50%,-webkit-gradient(linear, left top, left bottom, from(#EEEEEE), to(#CCCCCC));
-    background-size: 9px 14px,39px 28px, 100%;
+
+.active_monitor.unread:active, .active_monitor.unread_active {
+    background: url(../img/r-icon_carrot.png) no-repeat scroll 98% 50%, url(../img/mail_icon_red.png) no-repeat 88% 50%, -webkit-gradient(linear, left top, left bottom, from(#EEEEEE), to(#CCCCCC));
+    background-size: 9px 14px, 39px 28px, 100%;
     padding: 15px 25% 15px 3%;
 }
 
 /* Active Monitor css End*/
-
-
-
 
 /* Bookmark Css*/
 
@@ -165,121 +156,115 @@ body
     background: url(../img/icon_bookmark.png) no-repeat left top;
     display: block;
     width: 18px;
-    height:39px;
-    float:left;
-    background-size:18px 39px;
-    width:5%
+    height: 39px;
+    float: left;
+    background-size: 18px 39px;
+    width: 5%
 }
+
 /*.bookmark:active{*/
-    /*background: url(../img/icon_bookmark_a.png) no-repeat left top;*/
-    /*width: 18px;*/
-    /*height: 39px;*/
-    /*background-size:18px 39px;*/
-    /*width:5%;*/
+/*background: url(../img/icon_bookmark_a.png) no-repeat left top;*/
+/*width: 18px;*/
+/*height: 39px;*/
+/*background-size:18px 39px;*/
+/*width:5%;*/
 /*}*/
-.bookmark_active{
+.bookmark_active {
     background: url(../img/icon_bookmark_a.png) no-repeat left top;
     width: 18px;
     height: 39px;
-    background-size:18px 39px;
-    float:left;
-    width:5%
+    background-size: 18px 39px;
+    float: left;
+    width: 5%
 }
 
 /* Bookmark Css End*/
 
 /* Monitor Css*/
-.all_selection
-{
+.all_selection {
     width: 50%;
     padding: 5px 25%;
-    border-bottom: 1px solid  #999;
+    border-bottom: 1px solid #999;
     background-color: #EEE;
     background-image: -webkit-gradient(linear, left top, left bottom, from(white), to(#CCC));
 
 }
-.current_monitor, .current_search
-{
+
+.current_monitor, .current_search {
     text-shadow: 0px 2px 1px #fff;
-    margin:10px 0px;
+    margin: 10px 0px;
     color: #666;
 
 }
-.search_item
-{
-    width:91%;
+
+.search_item {
+    width: 91%;
     float: left;
     background: #fff;
     background: url(../img/r-icon_carrot.png) no-repeat 98% 50%, -webkit-gradient(linear, left top, left bottom, from(#F7F7F7), to(#FFFFFF));
     background-size: 9px 14px, 100%;
-    font: 200 14px/15px Arial,Helvetica,sans-serif;
+    font: 200 14px/15px Arial, Helvetica, sans-serif;
     padding: 15px 6% 15px 3%;
 }
 
-.search_item:active
-{
-    background: url(../img/r-icon_carrot.png) no-repeat 98% 50%, -webkit-gradient(linear, left top, left bottom, from(#EEEEEE), to(#CCCCCC));
-    background-size: 9px 14px, 100%;
-    text-shadow: 0 1px 0 #FFFFFF;
-}
-.search_item_active
-{
+.search_item:active {
     background: url(../img/r-icon_carrot.png) no-repeat 98% 50%, -webkit-gradient(linear, left top, left bottom, from(#EEEEEE), to(#CCCCCC));
     background-size: 9px 14px, 100%;
     text-shadow: 0 1px 0 #FFFFFF;
 }
 
-.search_item_tweet
-{
-    width:91%;
+.search_item_active {
+    background: url(../img/r-icon_carrot.png) no-repeat 98% 50%, -webkit-gradient(linear, left top, left bottom, from(#EEEEEE), to(#CCCCCC));
+    background-size: 9px 14px, 100%;
+    text-shadow: 0 1px 0 #FFFFFF;
+}
+
+.search_item_tweet {
+    width: 91%;
     float: left;
     background: #fff;
     background: -webkit-gradient(linear, left top, left bottom, from(#F7F7F7), to(#FFFFFF));
     background-size: 100%;
-    font: 200 14px/15px Arial,Helvetica,sans-serif;
+    font: 200 14px/15px Arial, Helvetica, sans-serif;
     padding: 15px 6% 15px 3%;
 }
-.search_item_tweet:active
-{
+
+.search_item_tweet:active {
     background: url(../img/r-icon_carrot.png) no-repeat 98% 50%, -webkit-gradient(linear, left top, left bottom, from(#EEEEEE), to(#CCCCCC));
     background-size: 9px 14px, 100%;
     text-shadow: 0 1px 0 #FFFFFF;
 }
-.tweeticon_bird
-{
-    float:right;
+
+.tweeticon_bird {
+    float: right;
     width: 12px;
     height: 12px;
     background: url(../img/tweets-header-icon.png) no-repeat top left;
     background-size: 12px 12px;
 }
 
-
-.colorOrange
-{
+.colorOrange {
     color: #CD660B;
     font-weight: bold;
 }
-.colorRed
-{
+
+.colorRed {
     color: #980F08;
 }
-.colorGreen
-{
+
+.colorGreen {
     color: #659A1F;
 }
-.colorBlue
-{
+
+.colorBlue {
     color: #005596;
 }
-.lightGrey, .lightGrey a
-{
+
+.lightGrey, .lightGrey a {
     color: #666;
 }
 
-
-.moresearch
-{
+.moresearch {
     width: 92%;
     float: left;
     padding: 15px 4%;
@@ -287,10 +272,11 @@ body
     background-image: -webkit-gradient(linear, left top, left bottom, from(#F7F7F7), to(white));
     font-size: 16px;
 
-
 }
 
-
-
+/*Utility Styles*/
+.margin10 {
+    margin-bottom: 10px;
+}
 
 /* Monitor Css End*/

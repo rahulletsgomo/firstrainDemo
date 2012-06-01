@@ -53,7 +53,7 @@ function monitorArticleDetails_document(data, sectionTitle) {
         for (var i = 0; i < articleTweetsTotal; i++) {
             tweetImg = (articleTweet[i].extra.userImage) ? (articleTweet[i].extra.userImage) : ""
             tweetTitle = (articleTweet[i].title) ? (articleTweet[i].title) : ""
-            frContent += '<div class="tweet floatleft" onclick=\'callChildBrowser({url:"www.google.com"})\'>'
+            frContent += '<div class="tweet margin10 floatleft" onclick=\'callChildBrowser({url:"www.google.com"})\'>'
             frContent += '<span class="tweet_img"><img  src="' + tweetImg + '"></span>'
             frContent += '<span>'
             frContent += tweetTitle
