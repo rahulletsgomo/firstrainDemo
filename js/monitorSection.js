@@ -137,9 +137,9 @@ function setMonitorHeaderType(monitorSectionType) {
 //}
 
 function monitorDetailsSearchResults(searchID) {
-//    $.mobile.changePage("#monitorDetailsSections");
-//    allSectionMenu("#monitorDetailsSections")
-//    $("#monitorDetailsSections .container").html(loading)
+    $.mobile.changePage("#monitorDetailsSections");
+    $("#monitorDetailsSections").html(loading)
+
     console.log("Inside monitorDetailsSearchResults ....")
     if (environment == "test") {
         var url = URL + "/FRMobileService/authentication.jsp?fn=getSearchResults&id=" + searchID + "&subq=docs&start=0&rows=30&code=" + code
@@ -238,9 +238,15 @@ function mt_eventsResults(data) {
 
 }
 
-function allSectionMenu(sectionID) {
+function allSectionMenu(sectionID, calledFrom) {
     var baseArea = ""
-    baseArea += '<div class="all_selection" style="margin: 37px 0px 0px 0px"><input type="button" class="btn blue" value="All Selections"> </div>'
+
+    if (calledFrom != "search_keyword") {
+        baseArea += '<div class="all_selection" style="margin: 37px 0px 0px 0px"><input type="button" class="btn blue" value="All Selections"> </div>'
+    }
+    else {
+        baseArea += '<div style="margin: 37px 0px 0px 0px"></div>'
+    }
     baseArea += '<div class="container">'
     baseArea += '</div>'
     $(sectionID).html(baseArea)

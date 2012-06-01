@@ -77,7 +77,7 @@ function methodToCall(callingFunction, data, docIcon, sectionType, sectionTitle)
             break;
         case "search_keyword":
             changeHeader("")
-            searchResults(data)
+            searchResults(data, callingFunction)
             break;
         default :
             console.log("Nothing to show here ...")

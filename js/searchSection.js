@@ -3,7 +3,6 @@ function search_keyword(keyword) {
 //    $("#monitorDetailsSections .container").html(loading)
 
     $("#monitorDetailsSections").html(loading)
-    allSectionMenu("#monitorDetailsSections")
 
     if (environment == "test") {
         var url = URL + "/FRMobileService/authentication.jsp?fn=getSearchResults&q=" + keyword + "&code=" + code
@@ -11,15 +10,16 @@ function search_keyword(keyword) {
         callAJAX(url, "search_keyword")
     }
     if (environment == "dev") {
-        searchResults(searchPage_keyWord)
+        searchResults(searchPage_keyWord, "search_keyword")
 //        setSearchData(searchPage_keyWord)
     }
 //    monitorDetails(searchPage_keyWord, "search_keyword")
 }
 
 //This function will process the results of search
-function searchResults(data) {
+function searchResults(data, calledFrom) {
     console.log(">>>>>>>> Inside search Results !!!!")
+    allSectionMenu("#monitorDetailsSections", calledFrom)
 
     var frContent = ''
     var searchTopic = data.data.searches[0].title

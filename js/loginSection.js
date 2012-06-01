@@ -82,6 +82,10 @@ function getFirstReads(docList, docCount) {
 }
 
 function getDocumentDetails(docID, docIcon) {
+    changeHeader("")
+    $.mobile.changePage("#documentDetailsPage");
+    $("#documentDetailsPage").html(loading)
+
     if (environment == "test") {
         var url = URL + "/DataProvider/docDetails?userId=" + userID + "&docids=" + docID;
         console.log(">>>>>> Document Details : " + url)
@@ -89,13 +93,12 @@ function getDocumentDetails(docID, docIcon) {
     }
     else if (environment == "dev") {
         setDocumentInfo(documentDetailsJSON, docIcon)
-        changeHeader("")
-        $.mobile.changePage("#documentDetailsPage");
-        scrollDocumentDetails(".newscontainer", "#documentDetailsWrapper", "#documentDetailsScroller");
+//        scrollDocumentDetails(".newscontainer", "#documentDetailsWrapper", "#documentDetailsScroller");
     }
 }
 
 function setDocumentInfo(documentDetails, docIcon) {
+    console.log("Inside setDocumentInfo")
     var documentTitle = documentDetails.data[0].title;
     var documentSource = documentDetails.data[0].source.name;
     var documentSummary = documentDetails.data[0].summary;
@@ -103,18 +106,55 @@ function setDocumentInfo(documentDetails, docIcon) {
     var documentMatchedCompanies = documentDetails.data[0].matchedCompanies;
     var documentMatchedTopics = documentDetails.data[0].matchedTopics;
     var documentMatchedPeople = documentDetails.data[0].matchedPeople;
-    $("#documentTitle").html(documentTitle)
-    $("#documentSourceName").html(documentSource)
-    $("#documentSummary").html(documentSummary)
-    $("#documentIcon").attr("src", docIcon)
-    iterateItems(documentMatchedContent, "documentRelatedContent");
-    iterateItems(documentMatchedCompanies, "documentMentionedCompanies");
-    iterateItems(documentMatchedTopics, "documentMentionedTopics");
+    var frContent = ""
+
+    frContent += '<div style="margin: 42px 0px 0px 0px"></div>'
+    frContent += '<div class="container">'
+    frContent += '<div class="item_header red"><span class="itemcounter"></span><span>FirstReads</span></div>'
+    frContent += '<div class="outer">'
+    frContent += '<div class="doc_content">'
+    frContent += '<div class="doc_title">'
+    frContent += '<div class="bookmark">&nbsp;</div>'
+    frContent += '<div class="titlearea">'
+    frContent += '<div class="title">' + documentTitle + '</div>'
+    frContent += '<div class="source"><span class="favicon"><img src="' + docIcon + '" alt=""></span><span class="favicon_name">' + documentSource + '</span><span class="date"></span></div>'
+    frContent += '</div>'
+    frContent += '</div>'
+    frContent += '<div class="doc_summery">'
+    frContent += documentSummary
+    frContent += '</div>'
+
+
+//    $("#documentTitle").html(documentTitle)
+//    $("#documentSourceName").html(documentSource)
+//    $("#documentSummary").html(documentSummary)
+//    $("#documentIcon").attr("src", docIcon)
+    iterateItems(documentMatchedContent, "RelatedContent");
+    iterateItems(documentMatchedCompanies, "MentionedCompanies");
+    iterateItems(documentMatchedTopics, "MentionedTopics");
     function iterateItems(documentType, documentContainer) {
+        frContent += '<div class="relatedCompanies">'
+        frContent += '<div class="title">' + documentContainer + '</div>'
+
         for (var i = 0; i < documentType.length; i++) {
-            $("#" + documentContainer).append('<li class="related_item">' + documentType[i].name + '</li>');
+            frContent += '<div class="company">'
+            frContent += documentType[i].name
+            frContent += '</div>'
+
+//            $("#" + documentContainer).append('<li class="related_item">' + documentType[i].name + '</li>');
         }
+        frContent += '</div>'
     }
+
+    frContent += '</div>'
+    frContent += '<div class="documentActionButtons">'
+    frContent += '<span><input type="button" class="btn grey document" value="Email"></span>'
+    frContent += '<span><input type="button" class="btn grey document" value="Open"></span>'
+    frContent += '</div>'
+
+
+    console.log(frContent)
+    $("#documentDetailsPage").html(frContent)
 
 
 }
