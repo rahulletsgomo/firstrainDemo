@@ -30,7 +30,7 @@ function monitorArticleDetails_document(data, sectionTitle) {
         frContent += '<div class="item_header blue"><span class="itemcounter"></span><span>' + sectionTitle + '</span></div>'
     }
     frContent += '<div class="outer">'
-    frContent += '<div class="doc_content">'
+    frContent += '<div class="doc_content" >'
     frContent += '<div class="doc_title">'
     frContent += '<div class="bookmark">&nbsp;</div>'
     frContent += '<div class="titlearea">'
@@ -74,7 +74,9 @@ function monitorArticleDetails_document(data, sectionTitle) {
     frContent += '</div>'
 //    frContent += '</div>'
 
-    scrollDocumentDetails(".articleContainer", "#articleDetailsWrapper", "#articleDetailsScroller");
+    //scrollDocumentDetails(".articleContainer", "#articleDetailsWrapper", "#articleDetailsScroller");
+    $("#articleDetails .container").addClass("margin37")
+//    $("#articleDetails .container").css("margin-top","2px");
     $("#articleDetails .container").html(frContent)
 
 }
@@ -199,6 +201,7 @@ function monitorArticleDetails_tweet(data) {
 
     frContent += '</div>'
     console.log(frContent)
+    $("#articleDetails .container").addClass("margin37")
     $("#articleDetails .container").html(frContent)
 }
 
@@ -262,6 +265,7 @@ function monitorArticleDetails_MT(data) {
     frContent += '</div>'
     frContent += '</div>'
 
+    $("#articleDetails .container").addClass("margin37")
     $("#articleDetails .container").html(frContent)
 }
 
@@ -319,6 +323,8 @@ function monitorArticleDetails_events(data) {
     frContent += '<span><input type="button" class="btn grey document" value="Open"></span>'
     frContent += '</div>'
     frContent += '</div>'
+
+    $("#articleDetails .container").addClass("margin37")
     $("#articleDetails .container").html(frContent)
 
 

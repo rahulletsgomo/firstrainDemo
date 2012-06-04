@@ -109,7 +109,7 @@ function setDocumentInfo(documentDetails, docIcon) {
     var frContent = ""
 
     frContent += '<div style="margin: 42px 0px 0px 0px"></div>'
-    frContent += '<div class="container">'
+    frContent += '<div class="container margin37">'
     frContent += '<div class="item_header red"><span class="itemcounter"></span><span>FirstReads</span></div>'
     frContent += '<div class="outer">'
     frContent += '<div class="doc_content">'

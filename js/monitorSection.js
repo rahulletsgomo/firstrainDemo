@@ -242,10 +242,10 @@ function allSectionMenu(sectionID, calledFrom) {
     var baseArea = ""
 
     if (calledFrom != "search_keyword") {
-        baseArea += '<div class="all_selection" style="margin: 37px 0px 0px 0px"><input type="button" class="btn blue" value="All Selections"> </div>'
+        baseArea += '<div class="all_selection margin37"><input type="button" class="btn blue" value="All Selections"> </div>'
     }
     else {
-        baseArea += '<div style="margin: 37px 0px 0px 0px"></div>'
+        baseArea += '<div class="margin37"></div>'
     }
     baseArea += '<div class="container">'
     baseArea += '</div>'

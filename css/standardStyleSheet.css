@@ -14,8 +14,11 @@ body {
 .container {
 
     padding: 10px 3%;
-    margin: 0px;
 
+}
+
+.margin37{
+    margin-top: 37px;
 }
 
 .outer {
