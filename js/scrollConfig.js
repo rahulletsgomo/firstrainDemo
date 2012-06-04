@@ -3,7 +3,6 @@ var documentDetailsScroll;
 
 function loaded() {
     var wrapperWidth = $("#homePage").css("width").split("px", 1);
-    console.log("Total Width : " + wrapperWidth)
     if (version == "desktopWidget") {
         wrapperWidth -= 45;
     }

@@ -7,7 +7,6 @@ function manipulateMenu() {
 }
 
 function showMenu() {
-    console.log(">>>> Show menu")
     $(".Menu").css({
         visibility:"visible"
     });
@@ -15,7 +14,6 @@ function showMenu() {
 }
 
 function hideMenu() {
-    console.log(">>>>>>>> Inside hideMenu")
     $(".Menu").css({
         visibility:"hidden"
     });
@@ -27,7 +25,22 @@ function clearDocumentScroll() {
     documentDetailsScroll = null;
 }
 
-function goBack() {
+function goBack(calledFrom) {
+    if (calledFrom == "monitorArticleSection") {
+        console.log("Currently selected Item [goBack] : " + currentItem)
+        if (isCurrentItemChanged) {
+            console.log(">>>>>>> Inside the required condition")
+            if ($("#" + currentItem + " .bookmark_common_h").hasClass("bookmark")) {
+                $("#" + currentItem + " .bookmark_common_h").removeClass("bookmark")
+                $("#" + currentItem + " .bookmark_common_h").addClass("bookmark_active")
+            }
+            else if ($("#" + currentItem + " .bookmark_common_h").hasClass("bookmark_active")) {
+                $("#" + currentItem + " .bookmark_common_h").removeClass("bookmark_active")
+                $("#" + currentItem + " .bookmark_common_h").addClass("bookmark")
+            }
+            isCurrentItemChanged = false;
+        }
+    }
     closeMenu()
     var currentPage = $.mobile.activePage.attr('id')
     if ((currentPage == "documentDetailsPage") || (currentPage == "monitorDetailsPage")) {
@@ -41,7 +54,7 @@ function showHomePage() {
     changeHeader("homePage")
 }
 
-function changeHeader(targetLocation) {
+function changeHeader(targetLocation, calledFrom) {
     var headerContent = "";
     switch (targetLocation) {
         case "homePage" :
@@ -52,8 +65,7 @@ function changeHeader(targetLocation) {
             break;
 
         case "" :
-            console.log(">>>>> Inside back condition")
-            headerContent += '<a href="" data-rel="back" onclick="goBack()"><div class="back_button"><img src="img/back2.png" width="50" height="30"/></div></a>';
+            headerContent += '<a href="" data-rel="back" onclick=\'goBack("' + calledFrom + '")\'><div class="back_button"><img src="img/back2.png" width="50" height="30"/></div></a>';
             headerContent += '<div class="menu_icon" id="openMenu_h"><img src="img/menu1.png"/></div>';
             headerContent += '<div><span class="header search">FirstRain</span></div><div><span class="subheader"></span></div>';
             $(".header_region").html(headerContent);

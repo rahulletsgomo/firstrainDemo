@@ -1,5 +1,4 @@
 function monitorArticleDetails_document(data, sectionTitle) {
-    console.log(">>>>>>> Inside monitorArticleDetails_document")
     $("#articleDetails .container").html(processing)
 
     var articleInfo = data.data.results[0];
@@ -26,9 +25,7 @@ function monitorArticleDetails_document(data, sectionTitle) {
     var tweetArea = ""
 
     var frContent = ""
-    console.log(">>>>>>> Item ID  : " + itemID)
     if (String(sectionTitle) == "undefined") {
-        console.log(">>>>>> Inside undefined state")
         frContent += '<div class="item_header red"><span class="itemcounter"></span><span>FirstReads</span></div>'
     }
     else {
@@ -39,7 +36,7 @@ function monitorArticleDetails_document(data, sectionTitle) {
     frContent += '<div class="doc_title">'
 
     articleBookMarkInfo = (isBookMarked) ? "bookmark_active bookmark_common_h" : "bookmark bookmark_common_h"
-    frContent += '<div class="' + articleBookMarkInfo + '" docID = "' + articleID + '" itemID = "' + itemID + '">&nbsp;</div>'
+    frContent += '<div class="' + articleBookMarkInfo + '"calledFrom = "detailSection" docID = "' + articleID + '" itemID = "' + itemID + '">&nbsp;</div>'
 
     frContent += '<div class="titlearea">'
     frContent += '<div class="title">' + articleTitle + '</div>'
@@ -80,13 +77,11 @@ function monitorArticleDetails_document(data, sectionTitle) {
     frContent += '<span><input type="button" class="btn grey document" value="Email"></span>'
     frContent += '<span><input type="button" class="btn grey document" value="Open"></span>'
     frContent += '</div>'
-//    frContent += '</div>'
 
     //scrollDocumentDetails(".articleContainer", "#articleDetailsWrapper", "#articleDetailsScroller");
     $("#articleDetails .container").addClass("margin37")
-//    $("#articleDetails .container").css("margin-top","2px");
     $("#articleDetails .container").html(frContent)
-    checkBookMarkItem()
+    checkBookMarkItem("detailSection")
 
 
 }
@@ -210,7 +205,6 @@ function monitorArticleDetails_tweet(data) {
     frContent += '</div>'
 
     frContent += '</div>'
-    console.log(frContent)
     $("#articleDetails .container").addClass("margin37")
     $("#articleDetails .container").html(frContent)
 }
@@ -337,11 +331,5 @@ function monitorArticleDetails_events(data) {
     $("#articleDetails .container").addClass("margin37")
     $("#articleDetails .container").html(frContent)
 
-
-    console.log(">>>>>>>>> monitorArticleDetails_events data : " + data)
 }
 
-//function searchPage(searchKeyword) {
-//    var url = URL + "/FRMobileService/authentication.jsp?fn=getSearchResults&q=" + searchKeyword + "&code=" + code
-//    console.log(">>>>> Search using : " + url)
-//}

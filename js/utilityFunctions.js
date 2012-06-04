@@ -1,16 +1,22 @@
-function checkBookMarkItem() {
+function checkBookMarkItem(calledFrom) {
     var docID = ""
     var itemID = ""
     var sectionType = ""
     var url = ""
 
     $(".bookmark_common_h").click(function () {
+
+
         docID = $(this).attr("docID")
         sectionType = $(this).attr("sectionType")
         itemID = $(this).attr("itemID")
 
+        if (String(calledFrom) != "undefined") {
+            isCurrentItemChanged = true
+        }
+        console.log("Current State of isItemChanged : " + isCurrentItemChanged)
+
         if ($(this).hasClass("bookmark")) {
-            console.log(">>>>>>> Inside bookmark")
             $(this).removeClass("bookmark")
             $(this).addClass("bookmark_active")
 
@@ -21,7 +27,6 @@ function checkBookMarkItem() {
             }
         }
         else if ($(this).hasClass("bookmark_active")) {
-            console.log(">>>>>>> Inside bookmark_active")
             $(this).removeClass("bookmark_active")
             $(this).addClass("bookmark")
 
@@ -36,7 +41,6 @@ function checkBookMarkItem() {
 
 
 function closeMenu() {
-    console.log(">>>>>>>>>> Inside closeMenu")
     if (isMenuOpen) {
         hideMenu();
         isMenuOpen = false;

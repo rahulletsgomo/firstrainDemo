@@ -22,6 +22,7 @@ function monitorDetails(data) {
     var frContent = "";
     var tweeterImage = "";
     var bookMarkClass = ""
+    var articleID = ""
     allSectionMenu("#monitorDetailsPage")
 
     for (var i = 0; i < monitorSectionLength; i++) {
@@ -50,7 +51,10 @@ function monitorDetails(data) {
 
 
             sectionResultClass = (sectionResult.type == "TWEETS") ? "search_item_tweet" : "search_item"
-            liOption += '<div class=' + sectionResultClass + '>'
+            articleID = docID.split(":")
+            articleID = articleID[0] + "_" + articleID[1]
+
+            liOption += '<div id="' + articleID + '" class=' + sectionResultClass + '>'
 
 
             if ((monitorSectionType == "HIGHLIGHTS") || (monitorSectionType == "SEARCH")) {
@@ -248,12 +252,13 @@ function allSectionMenu(sectionID, calledFrom) {
 }
 
 function monitorArticleSection(articleID, sectionType, sectionTitle) {
-    changeHeader("")
+    currentItem = articleID.split(":")
+    currentItem = currentItem[0] + "_" + currentItem[1]
+    changeHeader("", "monitorArticleSection")
     $.mobile.changePage("#articleDetails")
     $("#articleDetails .container").html(loading)
     closeMenu()
     console.log(">>>>>> Article ID : " + articleID)
-    console.log(">>>>>> Section Type : " + sectionType)
 
     if (environment == "test") {
         var url = URL + "/FRMobileService/authentication.jsp?fn=getDetails&ids=" + articleID + "&code=" + code
@@ -284,7 +289,6 @@ function monitorArticleSection(articleID, sectionType, sectionTitle) {
 }
 
 function monitorArticleDetails(data, sectionType, sectionTitle) {
-    console.log(">>>>>> Section Type inside monitorArticleDetails: " + sectionType)
     switch (sectionType) {
         case 'ARTICLE' :
             monitorArticleDetails_document(data, sectionTitle)
