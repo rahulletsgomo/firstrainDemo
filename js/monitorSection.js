@@ -21,7 +21,7 @@ function monitorDetails(data) {
     var itemID;
     var frContent = "";
     var tweeterImage = "";
-    var bookMarkInfo = ""
+    var bookMarkClass = ""
     allSectionMenu("#monitorDetailsPage")
 
     for (var i = 0; i < monitorSectionLength; i++) {
@@ -54,8 +54,8 @@ function monitorDetails(data) {
 
 
             if ((monitorSectionType == "HIGHLIGHTS") || (monitorSectionType == "SEARCH")) {
-                bookMarkInfo = (sectionResult.isBookmarked) ? "bookmark_active bookmark_common_h" : "bookmark bookmark_common_h"
-                liOption += '<div class="' + bookMarkInfo + '" docID = "' + docID + '" sectionType = "' + sectionResult.type + '" itemID = "' + itemID + '">&nbsp;</div>'
+                bookMarkClass = (sectionResult.isBookmarked) ? "bookmark_active bookmark_common_h" : "bookmark bookmark_common_h"
+                liOption += '<div class="' + bookMarkClass + '" docID = "' + docID + '" sectionType = "' + sectionResult.type + '" itemID = "' + itemID + '">&nbsp;</div>'
             }
 
             if (sectionResult.type == "TWEETS") {

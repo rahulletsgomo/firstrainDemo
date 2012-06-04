@@ -35,6 +35,9 @@ function searchResults(data, calledFrom) {
     var searchBucketSource = ""
     var searchBucketFavIcon = ""
     var searchBucketDate = ""
+    var itemID = ""
+    var bookMarkClass = ""
+    var isBookMark = ""
     var referSearchResult = 0;
 
 
@@ -48,13 +51,18 @@ function searchResults(data, calledFrom) {
             for (var k = 0; k < searchBucket.baseResults.length; k++) {
                 searchBucketTitle = searchSectionResult[referSearchResult].title
                 searchSectionResultID = searchSectionResult[referSearchResult].id
+                itemID = searchSectionResult[referSearchResult].itemId
                 searchSectionResultType = searchSectionResult[referSearchResult].type
                 searchBucketFavIcon = searchSectionResult[referSearchResult].favicon
                 searchBucketSource = searchSectionResult[referSearchResult].source
                 searchBucketDate = searchSectionResult[referSearchResult].timestamp
+                isBookMark = searchSectionResult[referSearchResult].isBookmarked
                 searchBucketDate = searchBucketDate.split(201, 1)
                 frContent += '<div class="search_item">'
-                frContent += '<div class="bookmark">&nbsp;</div>'
+
+                bookMarkClass = (isBookMark) ? "bookmark_active bookmark_common_h" : "bookmark bookmark_common_h"
+                frContent += '<div class="' + bookMarkClass + '" docID = "' + searchSectionResultID + '" itemID = "' + itemID + '">&nbsp;</div>'
+
                 frContent += '<div class="titlearea" onclick=\'monitorArticleSection("' + searchSectionResultID + '", "' + searchSectionResultType + '", "' + searchSectionTitle + '")\'>'
                 frContent += '<div class="title">' + searchBucketTitle + '</div>'
                 frContent += '<div class="source"><span class="favicon"><img src ="' + searchBucketFavIcon + '" width=16 height=16 /></span>' + searchBucketSource + '<span class="date">' + searchBucketDate + '</span></div>'
@@ -70,6 +78,7 @@ function searchResults(data, calledFrom) {
         }
     }
     $("#monitorDetailsSections .container").html(frContent)
+    checkBookMarkItem();
     console.log(">>>> Total Search Results : " + referSearchResult)
 //    console.log(">>>>>> Total number of buckets : " + searchResultSectionsLength)
 
