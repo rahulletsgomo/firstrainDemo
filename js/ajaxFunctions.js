@@ -1,6 +1,5 @@
 function callAJAX(url, callingFunction, docIcon, sectionType, sectionTitle) {
     console.log(">>>>> Calling Function : " + callingFunction)
-    console.log(">>>>> Section Type : " + sectionType)
     try {
         $.ajax({
             url:url,
@@ -9,7 +8,7 @@ function callAJAX(url, callingFunction, docIcon, sectionType, sectionTitle) {
             async:true,
             success:function (data) {
                 if (data.status != "SUCCESS") {
-                    var alertMsg = (callingFunction == "validateUser") ? "Login Password do not match : " : "Data is not in Successfull state : ";
+                    var alertMsg = (callingFunction == "validateUser") ? "Login Password do not match : " : "Data is not in Successful state : ";
                     alert(alertMsg + data.status)
                 }
                 else {

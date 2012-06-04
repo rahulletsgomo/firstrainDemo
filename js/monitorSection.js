@@ -54,7 +54,7 @@ function monitorDetails(data) {
 
 
             if ((monitorSectionType == "HIGHLIGHTS") || (monitorSectionType == "SEARCH")) {
-                bookMarkInfo = (sectionResult.isBookmarked) ? "bookmark_active bookmark_common" : "bookmark bookmark_common"
+                bookMarkInfo = (sectionResult.isBookmarked) ? "bookmark_active bookmark_common_h" : "bookmark bookmark_common_h"
                 liOption += '<div class="' + bookMarkInfo + '" docID = "' + docID + '" sectionType = "' + sectionResult.type + '" itemID = "' + itemID + '">&nbsp;</div>'
             }
 

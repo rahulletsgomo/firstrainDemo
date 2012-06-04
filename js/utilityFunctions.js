@@ -4,7 +4,7 @@ function checkBookMarkItem() {
     var sectionType = ""
     var url = ""
 
-    $(".bookmark_common").click(function () {
+    $(".bookmark_common_h").click(function () {
         docID = $(this).attr("docID")
         sectionType = $(this).attr("sectionType")
         itemID = $(this).attr("itemID")

@@ -102,13 +102,17 @@ function getDocumentDetails(docID, docIcon) {
 function setDocumentInfo(documentDetails, docIcon) {
     console.log("Inside setDocumentInfo")
     var documentTitle = documentDetails.data[0].title;
+    var documentID = documentDetails.data[0].id;
+    var itemID = documentDetails.data[0].itemId;
     var documentSource = documentDetails.data[0].source.name;
     var documentSummary = documentDetails.data[0].summary;
     var documentMatchedContent = documentDetails.data[0].matchedContentTypes;
     var documentMatchedCompanies = documentDetails.data[0].matchedCompanies;
     var documentMatchedTopics = documentDetails.data[0].matchedTopics;
     var documentMatchedPeople = documentDetails.data[0].matchedPeople;
+    var isBookMarked = documentDetails.data[0].clipped;
     var frContent = ""
+    var bookMarkInfo = ""
 
     frContent += '<div style="margin: 42px 0px 0px 0px"></div>'
     frContent += '<div class="container margin37">'
@@ -116,7 +120,11 @@ function setDocumentInfo(documentDetails, docIcon) {
     frContent += '<div class="outer">'
     frContent += '<div class="doc_content">'
     frContent += '<div class="doc_title">'
-    frContent += '<div class="bookmark">&nbsp;</div>'
+
+    bookMarkInfo = (isBookMarked) ? "bookmark_active bookmark_common_h" : "bookmark bookmark_common_h"
+    frContent += '<div class="' + bookMarkInfo + '" docID = "' + documentID + '" itemID = "' + itemID + '">&nbsp;</div>'
+
+//    frContent += '<div class="bookmark">&nbsp;</div>'
     frContent += '<div class="titlearea">'
     frContent += '<div class="title">' + documentTitle + '</div>'
     frContent += '<div class="source"><span class="favicon"><img src="' + docIcon + '" alt=""></span><span class="favicon_name">' + documentSource + '</span><span class="date"></span></div>'
@@ -154,10 +162,8 @@ function setDocumentInfo(documentDetails, docIcon) {
     frContent += '<span><input type="button" class="btn grey document" value="Open"></span>'
     frContent += '</div>'
 
-
-    console.log(frContent)
     $("#documentDetailsPage").html(frContent)
-
+    checkBookMarkItem()
 
 }
 

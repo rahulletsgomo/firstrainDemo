@@ -2,26 +2,31 @@ function monitorArticleDetails_document(data, sectionTitle) {
     console.log(">>>>>>> Inside monitorArticleDetails_document")
     $("#articleDetails .container").html(processing)
 
-    var articleTitle = (data.data.results[0].title) ? (data.data.results[0].title) : ""
-    var articleUrl = (data.data.results[0].url) ? (data.data.results[0].url) : ""
-    var articleSource = (data.data.results[0].source) ? (data.data.results[0].source) : ""
-    var articleDate = (data.data.results[0].timestamp) ? (data.data.results[0].timestamp) : ""
+    var articleInfo = data.data.results[0];
+    var articleTitle = (articleInfo.title) ? (articleInfo.title) : ""
+    var articleID = (articleInfo.id) ? (articleInfo.id) : ""
+    var itemID = (articleInfo.itemId)
+    var isBookMarked = (articleInfo.isBookmarked) ? (articleInfo.isBookmarked) : ""
+    var articleBookMarkInfo = ""
+    var articleUrl = (articleInfo.url) ? (articleInfo.url) : ""
+    var articleSource = (articleInfo.source) ? (articleInfo.source) : ""
+    var articleDate = (articleInfo.timestamp) ? (articleInfo.timestamp) : ""
     articleDate = articleDate.split(201, 1)
-    var articleImage = (data.data.results[0].image) ? (data.data.results[0].image) : ""
-    var articleFavIcon = (data.data.results[0].favicon) ? (data.data.results[0].favicon) : ""
-    var articleSummary = (data.data.results[0].summary) ? (data.data.results[0].summary) : ""
-    var articleTweet = (data.data.results[0].extra.tweetList) ? (data.data.results[0].extra.tweetList) : ""
+    var articleImage = (articleInfo.image) ? (articleInfo.image) : ""
+    var articleFavIcon = (articleInfo.favicon) ? (articleInfo.favicon) : ""
+    var articleSummary = (articleInfo.summary) ? (articleInfo.summary) : ""
+    var articleTweet = (articleInfo.extra.tweetList) ? (articleInfo.extra.tweetList) : ""
     var articleTweetsTotal = articleTweet.length
-    var articleMatchedContent = (data.data.results[0].extra.matchedContentTypes) ? (data.data.results[0].extra.matchedContentTypes) : ""
+    var articleMatchedContent = (articleInfo.extra.matchedContentTypes) ? (articleInfo.extra.matchedContentTypes) : ""
     var articleMatchedContentTypesTotal = articleMatchedContent.length
-    var articleMatchedCompany = (data.data.results[0].matchedCompanies) ? (data.data.results[0].matchedCompanies) : ""
+    var articleMatchedCompany = (articleInfo.matchedCompanies) ? (articleInfo.matchedCompanies) : ""
     var articleMatchedCompaniesTotal = articleMatchedCompany.length
-    var articleMatchedTopic = (data.data.results[0].matchedTopics) ? (data.data.results[0].matchedTopics) : ""
+    var articleMatchedTopic = (articleInfo.matchedTopics) ? (articleInfo.matchedTopics) : ""
     var articleMatchedTopicsTotal = articleMatchedTopic.length
     var tweetArea = ""
 
     var frContent = ""
-    console.log(">>>>>>> sectionTitle : " + String(sectionTitle))
+    console.log(">>>>>>> Item ID  : " + itemID)
     if (String(sectionTitle) == "undefined") {
         console.log(">>>>>> Inside undefined state")
         frContent += '<div class="item_header red"><span class="itemcounter"></span><span>FirstReads</span></div>'
@@ -32,7 +37,10 @@ function monitorArticleDetails_document(data, sectionTitle) {
     frContent += '<div class="outer">'
     frContent += '<div class="doc_content" >'
     frContent += '<div class="doc_title">'
-    frContent += '<div class="bookmark">&nbsp;</div>'
+
+    articleBookMarkInfo = (isBookMarked) ? "bookmark_active bookmark_common_h" : "bookmark bookmark_common_h"
+    frContent += '<div class="' + articleBookMarkInfo + '" docID = "' + articleID + '" itemID = "' + itemID + '">&nbsp;</div>'
+
     frContent += '<div class="titlearea">'
     frContent += '<div class="title">' + articleTitle + '</div>'
     frContent += '<div class="source"><span class="favicon"><img src="' + articleFavIcon + '" alt=""></span><span class="favicon_name">' + articleSource + '</span><span class="date">' + articleDate + '</span></div>'
@@ -78,6 +86,8 @@ function monitorArticleDetails_document(data, sectionTitle) {
     $("#articleDetails .container").addClass("margin37")
 //    $("#articleDetails .container").css("margin-top","2px");
     $("#articleDetails .container").html(frContent)
+    checkBookMarkItem()
+
 
 }
 
