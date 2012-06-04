@@ -167,7 +167,6 @@ function getMonitorDetails(monitorID) {
     $.mobile.changePage("#monitorDetailsPage");
     $("#monitorDetailsPage").html(loading)
     closeMenu()
-//    $("#monitorDetailsPage .container").html(frContent)
     console.log(">>>>>> Called from : " + monitorID)
 
     if (environment == "test") {

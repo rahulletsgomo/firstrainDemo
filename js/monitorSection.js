@@ -20,10 +20,9 @@ function monitorDetails(data) {
     var docID;
     var frContent = "";
     var tweeterImage = "";
+    var bookMarkInfo = ""
     allSectionMenu("#monitorDetailsPage")
 
-
-//    $(".current_monitor").html(monitorTitle)
     for (var i = 0; i < monitorSectionLength; i++) {
         monitorSectionType = monitorSection[i].type
         monitorSectionHeader = setMonitorHeaderType(monitorSectionType);
@@ -37,7 +36,6 @@ function monitorDetails(data) {
 
         var sectionBaseResultsLength = monitorSection[i].baseResults.length
 
-//        frContent += '<div class="search_item">'
         for (var j = 0; j < sectionBaseResultsLength; j++) {
             sectionResult = monitorSectionResult[referResultID];
 
@@ -54,12 +52,8 @@ function monitorDetails(data) {
 
 
             if ((monitorSectionType == "HIGHLIGHTS") || (monitorSectionType == "SEARCH")) {
-                if (sectionResult.isBookmarked) {
-                    liOption += '<div class="bookmark_active" onclick=\'unBookMarkItem("' + docID + '", "' + sectionResult.type + '")\'>&nbsp;</div>'
-                }
-                else {
-                    liOption += '<div class="bookmark" onclick=\'bookMarkItem("' + docID + '", "' + sectionResult.type + '")\'>&nbsp;</div>'
-                }
+                bookMarkInfo = (sectionResult.isBookmarked) ? "bookmark_active" : "bookmark"
+                liOption += '<div class="' + bookMarkInfo + '" docID = "' + docID + '" sectionType = "' + sectionResult.type + '">&nbsp;</div>'
             }
 
             if (sectionResult.type == "TWEETS") {
@@ -104,11 +98,10 @@ function monitorDetails(data) {
             frContent += '<div class="moresearch"><input type="button" value="More &#187;' + monitorSectionTitle + '" class="monitorDetails_h btn grey" sectionType="' + monitorSectionType + '" monitorId="' + monitorId + '"sectionId = "' + monitorSectionId + '" /></div>'
         }
 
-
-//        frContent += '</div>'
         frContent += '</div>'
     }
     $("#monitorDetailsPage .container").html(frContent)
+    checkBookMarkItem()
 }
 
 

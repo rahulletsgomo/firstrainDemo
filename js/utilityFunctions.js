@@ -1,20 +1,23 @@
-function bookMarkItem(docID, sectionType) {
-    console.log(">>>>>>>>>>> Current Class : " + $(this).class)
-    console.log(">>>>> Doc Item to bookmark : " + docID)
+function checkBookMarkItem() {
+    console.log(">>>>>>> Inside checkBookMarkItem")
+    var docID = ""
+    var sectionType = ""
+    $(".bookmark").click(function () {
+        alert(">>>>>> Inside bookmark click")
+        docID = $(this).attr("docID")
+        sectionType = $(this).attr("sectionType")
+        alert("DocID : " + docID + ", sectionType : " + sectionType)
 
-    if (environment == "test") {
-        var url = URL + "/FRMobileService/authentication.jsp?fn=clip&type=Clipped&refersTo=" + docID + "&code=" + code
-        console.log(">>>>>>> Url to bookmark : " + url)
-    }
+    })
+    $(".bookmark_active").click(function () {
+        alert(">>>>>> Inside bookmark_active click")
+        docID = $(this).attr("docID")
+        sectionType = $(this).attr("sectionType")
+        alert("DocID : " + docID + ", sectionType : " + sectionType)
+
+    })
 }
 
-function unBookMarkItem(docID, sectionType) {
-    console.log(">>>>> Doc Item to unBookmark : " + docID)
-    if (environment == "test") {
-        var url = URL + "/FRMobileService/authentication.jsp?fn=unclip&itemId=" + docID + "&code=" + code
-        console.log(">>>>>>> Url to bookmark : " + url)
-    }
-}
 
 function closeMenu() {
     console.log(">>>>>>>>>> Inside closeMenu")
