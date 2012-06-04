@@ -256,6 +256,7 @@ function monitorArticleSection(articleID, sectionType, sectionTitle) {
     changeHeader("")
     $.mobile.changePage("#articleDetails")
     $("#articleDetails .container").html(loading)
+    closeMenu()
     console.log(">>>>>> Article ID : " + articleID)
     console.log(">>>>>> Section Type : " + sectionType)
 

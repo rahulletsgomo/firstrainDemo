@@ -82,8 +82,10 @@ function getFirstReads(docList, docCount) {
 }
 
 function getDocumentDetails(docID, docIcon) {
+    console.log(">>>> Inside getDocumentDetails")
     changeHeader("")
     $.mobile.changePage("#documentDetailsPage");
+    closeMenu()
     $("#documentDetailsPage").html(loading)
 
     if (environment == "test") {
@@ -164,6 +166,7 @@ function getMonitorDetails(monitorID) {
     changeHeader("")
     $.mobile.changePage("#monitorDetailsPage");
     $("#monitorDetailsPage").html(loading)
+    closeMenu()
 //    $("#monitorDetailsPage .container").html(frContent)
     console.log(">>>>>> Called from : " + monitorID)
 

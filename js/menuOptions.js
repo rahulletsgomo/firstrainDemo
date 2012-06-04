@@ -13,35 +13,22 @@ function manipulateMenu() {
 
 function showMenu() {
     console.log(">>>> Show menu")
-//    var menuHeight = $("#landingPage").css("height");
     $(".Menu").css({
         visibility:"visible"
     });
-//    $("#landingPage").css({
-//        position:"absolute",
-//        left:"150px"
-//    });
+    isMenuOpen = true
 }
 
 function hideMenu() {
     console.log(">>>>>>>> Inside hideMenu")
-//    $("#landingPage").css({
-//        position:"absolute",
-//        left:"0px"
-//    });
     $(".Menu").css({
         visibility:"hidden"
     });
+    isMenuOpen = false;
 }
 
 function clearDocumentScroll() {
-//    if (version == "desktopWidget") {
-//        $.mobile.changePage("#homePage");
-//    }
-//    else{
-//        $("#headerButton").attr("data-rel", "back")
-//    }
-//    changeHeader("homePage")
+    closeMenu()
     var currentPage = $.mobile.activePage.attr('id')
     if ((currentPage == "documentDetailsPage") || (currentPage == "monitorDetailsPage")) {
         changeHeader("homePage")

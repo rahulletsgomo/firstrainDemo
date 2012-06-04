@@ -140,13 +140,13 @@ body {
 
 .active_monitor:active, .active_monitor_active {
 
-    background: url(../img/r-icon_carrot.png) no-repeat scroll 98% 50%, -webkit-gradient(linear, left top, left bottom, from(#EEEEEE), to(#CCCCCC));
+    background: url(../img/r-icon_carrot_p.png) no-repeat scroll 98% 50%, -webkit-gradient(linear, left top, left bottom, from(#EEEEEE), to(#CCCCCC));
     text-shadow: 0 1px 0 #FFFFFF;
     background-size: 9px 14px, 100%;
 }
 
 .active_monitor.unread:active, .active_monitor.unread_active {
-    background: url(../img/r-icon_carrot.png) no-repeat scroll 98% 50%, url(../img/mail_icon_red.png) no-repeat 88% 50%, -webkit-gradient(linear, left top, left bottom, from(#EEEEEE), to(#CCCCCC));
+    background: url(../img/r-icon_carrot_p.png) no-repeat scroll 98% 50%, url(../img/mail_icon_red.png) no-repeat 88% 50%, -webkit-gradient(linear, left top, left bottom, from(#EEEEEE), to(#CCCCCC));
     background-size: 9px 14px, 39px 28px, 100%;
     padding: 15px 25% 15px 3%;
 }

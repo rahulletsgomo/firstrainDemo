@@ -3,7 +3,7 @@ function search_keyword(keyword) {
 //    $("#monitorDetailsSections .container").html(loading)
 
     $("#monitorDetailsSections").html(loading)
-
+    closeMenu()
     if (environment == "test") {
         var url = URL + "/FRMobileService/authentication.jsp?fn=getSearchResults&q=" + keyword + "&code=" + code
         console.log(">>>>> Search using : " + url)
