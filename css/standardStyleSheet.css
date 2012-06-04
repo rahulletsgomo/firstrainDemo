@@ -165,13 +165,6 @@ body {
     width: 5%
 }
 
-/*.bookmark:active{*/
-/*background: url(../img/icon_bookmark_a.png) no-repeat left top;*/
-/*width: 18px;*/
-/*height: 39px;*/
-/*background-size:18px 39px;*/
-/*width:5%;*/
-/*}*/
 .bookmark_active {
     background: url(../img/icon_bookmark_a.png) no-repeat left top;
     width: 18px;

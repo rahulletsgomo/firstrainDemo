@@ -79,6 +79,9 @@ function methodToCall(callingFunction, data, docIcon, sectionType, sectionTitle)
             changeHeader("")
             searchResults(data, callingFunction)
             break;
+        case "checkBookMarkItem":
+            console.log(">>>>>>> Bookmarked document : " + JSON.stringify(data))
+            break;
         default :
             console.log("Nothing to show here ...")
     }

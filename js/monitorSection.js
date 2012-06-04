@@ -18,6 +18,7 @@ function monitorDetails(data) {
     var docTitle;
     var docIcon;
     var docID;
+    var itemID;
     var frContent = "";
     var tweeterImage = "";
     var bookMarkInfo = ""
@@ -40,6 +41,7 @@ function monitorDetails(data) {
             sectionResult = monitorSectionResult[referResultID];
 
             docID = (sectionResult.id) ? sectionResult.id : "";
+            itemID = (sectionResult.itemId) ? sectionResult.itemId : "";
             docSource = (sectionResult.source) ? sectionResult.source : "";
             docTitle = (sectionResult.title) ? sectionResult.title : "";
             docIcon = (sectionResult.favicon) ? sectionResult.favicon : "";
@@ -52,8 +54,8 @@ function monitorDetails(data) {
 
 
             if ((monitorSectionType == "HIGHLIGHTS") || (monitorSectionType == "SEARCH")) {
-                bookMarkInfo = (sectionResult.isBookmarked) ? "bookmark_active" : "bookmark"
-                liOption += '<div class="' + bookMarkInfo + '" docID = "' + docID + '" sectionType = "' + sectionResult.type + '">&nbsp;</div>'
+                bookMarkInfo = (sectionResult.isBookmarked) ? "bookmark_active bookmark_common" : "bookmark bookmark_common"
+                liOption += '<div class="' + bookMarkInfo + '" docID = "' + docID + '" sectionType = "' + sectionResult.type + '" itemID = "' + itemID + '">&nbsp;</div>'
             }
 
             if (sectionResult.type == "TWEETS") {
