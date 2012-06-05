@@ -35,7 +35,8 @@ function methodToCall(callingFunction, data, docIcon, sectionType, sectionTitle)
             userID += "U:";
             userID += data.data.userID;
             console.log(">>>>>> User Id : " + userID)
-            code = data.data.code;
+            code = "cnRGWVVka0puUTR6REhySjcwaTZnbytXK3NJVWhLRlRqR3FlOXI3ZUZoVlkxUjJjNnZDM3AwOTIyczZiSDRvWG1rcUU1UlR4VWY3Qg0KNkhXcW1pQnpqUT09"; //This is only for testing purpose
+//            code = data.data.code;
             console.log(">>>>>> Code : " + code)
             landingPage();
             break;
@@ -71,7 +72,6 @@ function methodToCall(callingFunction, data, docIcon, sectionType, sectionTitle)
             mt_eventsResults(data);
             break;
         case "monitorArticleSection":
-            changeHeader("")
             monitorArticleDetails(data, sectionType, sectionTitle);
             break;
         case "search_keyword":
