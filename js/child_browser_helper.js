@@ -19,7 +19,7 @@ App.phoneGap.delayChildBrowserBy = 4400; // this is a temp timer which will prev
 //App.phoneGap.childBrowser will hold the instantiated object
 
 var PG_childBrowser = function (options) {
-    alert("Inside child : " + options.url)
+    console.log("Inside child : " + options.url)
 
     if (App.phoneGap.delayChildBrowser) {
         return false;

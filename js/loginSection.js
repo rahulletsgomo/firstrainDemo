@@ -1,4 +1,7 @@
 $(function () {
+    $(".container").click(function () {
+        closeMenu()
+    })
 //    $.mobile.changePage("#testPage")
     $("#signinButton").live("click", function () {
         $("#signInLoading").attr("style", "visibility:true");
@@ -21,7 +24,8 @@ function validateUser() {
 
 function landingPage() {
     if (environment == "test") {
-        var url = URL + "/DataProvider/ipad/landingPage?userId=" + userID + "&count=10&rows=40";
+
+        var url = URL + "/FRMobileService/authentication.jsp?fn=landingPage&count=10&rows=40&code=" +code;
         console.log(">>>>> URL : " + url)
         callAJAX(url, "landingPage");
     }

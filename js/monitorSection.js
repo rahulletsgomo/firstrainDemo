@@ -130,22 +130,17 @@ function setMonitorHeaderType(monitorSectionType) {
 
     return monitorSectionHeader;
 }
-//
-//function monitorDetailsTweets(monitorId, sectionId, sectionType) {
-//    $.mobile.changePage("#monitorDetailsTweets");
-//}
 
 function monitorDetailsSearchResults(searchID) {
     $.mobile.changePage("#monitorDetailsSections");
     $("#monitorDetailsSections").html(loading)
+    changeHeader("", "monitorDetailsSearchResults")
 
-    console.log("Inside monitorDetailsSearchResults ....")
     if (environment == "test") {
         var url = URL + "/FRMobileService/authentication.jsp?fn=getSearchResults&id=" + searchID + "&subq=docs&start=0&rows=30&code=" + code
-        callAJAX(url, "monitorDetailsSearchResults")
+        callAJAX(url, "monitorDetailsSearchResults", "", "", "", searchID)
     }
     else if (environment == "dev") {
-        changeHeader("")
         searchResults(searchPageJSON)
     }
 }

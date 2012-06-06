@@ -1,4 +1,4 @@
-function callAJAX(url, callingFunction, docIcon, sectionType, sectionTitle) {
+function callAJAX(url, callingFunction, docIcon, sectionType, sectionTitle, searchToken) {
     console.log(">>>>> Calling Function : " + callingFunction)
     try {
         $.ajax({
@@ -12,10 +12,8 @@ function callAJAX(url, callingFunction, docIcon, sectionType, sectionTitle) {
                     alert(alertMsg + data.status)
                 }
                 else {
-                    if (callingFunction == "getMonitorSearchResults") {
-                        console.log(">>>>>>>>> Inside the success state of getMonitorSearchResults !!!")
-                    }
-                    methodToCall(callingFunction, data, docIcon, sectionType, sectionTitle)
+
+                    methodToCall(callingFunction, data, docIcon, sectionType, sectionTitle, searchToken)
                 }
             },
             error:function (e) {
@@ -28,15 +26,14 @@ function callAJAX(url, callingFunction, docIcon, sectionType, sectionTitle) {
     }
 }
 
-function methodToCall(callingFunction, data, docIcon, sectionType, sectionTitle) {
+function methodToCall(callingFunction, data, docIcon, sectionType, sectionTitle, searchToken) {
     switch (callingFunction) {
         case "validateUser":
             console.log(">>>>>> Data : " + data)
-            userID += "U:";
+            userID = "U:";
             userID += data.data.userID;
             console.log(">>>>>> User Id : " + userID)
-            code = "cnRGWVVka0puUTR6REhySjcwaTZnbytXK3NJVWhLRlRqR3FlOXI3ZUZoVlkxUjJjNnZDM3AwOTIyczZiSDRvWG1rcUU1UlR4VWY3Qg0KNkhXcW1pQnpqUT09"; //This is only for testing purpose
-//            code = data.data.code;
+            code = data.data.code;
             console.log(">>>>>> Code : " + code)
             landingPage();
             break;
@@ -59,9 +56,7 @@ function methodToCall(callingFunction, data, docIcon, sectionType, sectionTitle)
             getMonitorHasMoreSectionsPage();
             break;
         case "monitorDetailsSearchResults":
-            changeHeader("")
-//            $.mobile.changePage("#monitorDetailsSections");
-            searchResults(data);
+            searchResults(data, callingFunction, searchToken);
             break;
         case "monitorDetailsTweetResults":
             changeHeader("")
@@ -75,11 +70,13 @@ function methodToCall(callingFunction, data, docIcon, sectionType, sectionTitle)
             monitorArticleDetails(data, sectionType, sectionTitle);
             break;
         case "search_keyword":
-            changeHeader("")
-            searchResults(data, callingFunction)
+            searchResults(data, callingFunction, searchToken)
             break;
         case "checkBookMarkItem":
             console.log(">>>>>>> Bookmarked document : " + JSON.stringify(data))
+            break;
+        case "handleLoadMore":
+            searchResults(data, "handleLoadMore")
             break;
         default :
             console.log("Nothing to show here ...")

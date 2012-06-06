@@ -26,7 +26,7 @@ function clearDocumentScroll() {
 }
 
 function goBack(calledFrom) {
-    if (calledFrom == "monitorArticleSection") {
+    if ((calledFrom == "monitorArticleSection") || (calledFrom == "monitorDetailsSearchResults")) {
         console.log("Currently selected Item [goBack] : " + currentItem)
         if (isCurrentItemChanged) {
             console.log(">>>>>>> Inside the required condition")
@@ -59,7 +59,7 @@ function changeHeader(targetLocation, calledFrom) {
     switch (targetLocation) {
         case "homePage" :
             headerContent += '<div class="menu_icon" id="openMenu_h"><img src="img/menu1.png"/></div>';
-            headerContent += '<div><span class="header search">FirstRain</span></div><div><span class="subheader"></span></div>';
+            headerContent += '<div><span class="header">FirstRain</span></div><div><span class="subheader"></span></div>';
             $(".header_region").html(headerContent);
             manipulateMenu();
             break;
@@ -67,7 +67,7 @@ function changeHeader(targetLocation, calledFrom) {
         case "" :
             headerContent += '<a href="" data-rel="back" onclick=\'goBack("' + calledFrom + '")\'><div class="back_button"><img src="img/back2.png" width="50" height="30"/></div></a>';
             headerContent += '<div class="menu_icon" id="openMenu_h"><img src="img/menu1.png"/></div>';
-            headerContent += '<div><span class="header search">FirstRain</span></div><div><span class="subheader"></span></div>';
+            headerContent += '<div><span class="header">FirstRain</span></div><div><span class="subheader"></span></div>';
             $(".header_region").html(headerContent);
             manipulateMenu();
             break;

@@ -83,11 +83,9 @@ function monitorArticleDetails_document(data, sectionTitle) {
     $("#articleDetails .container").html(frContent)
     checkBookMarkItem("detailSection")
 
-
 }
 
 function callChildBrowser(url) {
-    alert(url.url)
     PG_childBrowser(url)
 }
 

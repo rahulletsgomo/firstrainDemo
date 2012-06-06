@@ -46,3 +46,28 @@ function closeMenu() {
         isMenuOpen = false;
     }
 }
+
+var startCount = 30;
+function handleLoadMore(keyword) {
+
+//    $(".loadMore_h").click(function () {
+//        console.log(">>>>>> Inside the click event")
+////        $(".loadMore_h").html("Loading ...")
+//
+//        if (environment == "dev") {
+//            console.log(">>>>>> Inside the dev environment for loadMore feature")
+////            $("#monitorDetailsSections .container .additionalContent").append("Rahul")
+////            $("#monitorDetailsSections .container .loadMore_h").html("Rahul")
+//            searchResults(searchPage_keyWord, "handleLoadMore")
+//        }
+//
+//        else if (environment == "test") {
+//            var url = URL + "/FRMobileService/authentication.jsp?fn=getSearchResults&id=" + keyword + "&subq=docs&start=" + startCount + "&rows=30&code=" + code
+//            startCount++
+//            callAJAX(url, "handleLoadMore")
+//            console.log(">>>>>>>>> URL to search for is : " + url)
+//        }
+//    })
+
+}
+

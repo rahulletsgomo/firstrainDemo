@@ -1,13 +1,13 @@
 function search_keyword(keyword) {
     $.mobile.changePage("#monitorDetailsSections");
 //    $("#monitorDetailsSections .container").html(loading)
-
+    changeHeader("")
     $("#monitorDetailsSections").html(loading)
     closeMenu()
     if (environment == "test") {
         var url = URL + "/FRMobileService/authentication.jsp?fn=getSearchResults&q=" + keyword + "&code=" + code
         console.log(">>>>> Search using : " + url)
-        callAJAX(url, "search_keyword")
+        callAJAX(url, "search_keyword", keyword)
     }
     if (environment == "dev") {
         searchResults(searchPage_keyWord, "search_keyword")
@@ -17,12 +17,15 @@ function search_keyword(keyword) {
 }
 
 //This function will process the results of search
-function searchResults(data, calledFrom) {
+function searchResults(data, calledFrom, keyword) {
     console.log(">>>>>>>> Inside search Results !!!!")
+    console.log(">>>>>>>>> Info about calling function : " + calledFrom)
+
     allSectionMenu("#monitorDetailsSections", calledFrom)
 
     var frContent = ''
     var searchTopic = data.data.searches[0].title
+    var hasMore = data.data.sections[0].hasMore
     var searchSection = data.data.sections
     var searchSectionTitle = ""
     var searchSectionResult = data.data.results;
@@ -39,6 +42,7 @@ function searchResults(data, calledFrom) {
     var bookMarkClass = ""
     var isBookMark = ""
     var referSearchResult = 0;
+    var articleID = ""
 
 
     for (var i = 0; i < searchSectionsLength; i++) {
@@ -58,7 +62,9 @@ function searchResults(data, calledFrom) {
                 searchBucketDate = searchSectionResult[referSearchResult].timestamp
                 isBookMark = searchSectionResult[referSearchResult].isBookmarked
                 searchBucketDate = searchBucketDate.split(201, 1)
-                frContent += '<div class="search_item">'
+                articleID = searchSectionResultID.split(":")
+                articleID = articleID[0] + "_" + articleID[1]
+                frContent += '<div id="' + articleID + '" class="search_item">'
 
                 bookMarkClass = (isBookMark) ? "bookmark_active bookmark_common_h" : "bookmark bookmark_common_h"
                 frContent += '<div class="' + bookMarkClass + '" docID = "' + searchSectionResultID + '" itemID = "' + itemID + '">&nbsp;</div>'
@@ -73,13 +79,29 @@ function searchResults(data, calledFrom) {
                 referSearchResult++;
             }
             frContent += '</div>'
+            frContent += '<div class="additionalContent">'
+            frContent += '</div>'
 //            frContent += '</div>'
 //            console.log(">>>> : " + searchBucket.title + " : " + searchBucket.baseResults.length)
         }
     }
-    $("#monitorDetailsSections .container").html(frContent)
+    if (hasMore) {
+        frContent += '<div class="loadMore_h"><input type="button" class="btn blue p20 "   value="Load More"></div>'
+    }
+
+    if (calledFrom == "handleLoadMore") {
+        console.log(">>>>>> Called from handleLoadMore")
+        console.log(">>>>>>> Value inside last element : " + $("#monitorDetailsSections .container .additionalContent").html(frContent))
+    }
+
+    else {
+        $("#monitorDetailsSections .container").append(frContent)
+    }
+
     checkBookMarkItem();
-    console.log(">>>> Total Search Results : " + referSearchResult)
-//    console.log(">>>>>> Total number of buckets : " + searchResultSectionsLength)
+    handleLoadMore(keyword);
+}
+
+function setSearchContent() {
 
 }
